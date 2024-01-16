@@ -1,1 +1,94 @@
-site_name: My Docs
+# Project information
+site_name: Git Refresher
+site_url: https://arcelopera.github.io/git_refresher
+site_description: git notes
+site_author: ArceLopera
+
+# Repository
+repo_url: https://github.com/ArceLopera/git_refresher
+repo_name: ArceLopera/git_refresher
+edit_uri: "" #disables edit button
+
+# Copyright
+copyright: Copyright &copy; 2024
+
+# Social media
+extra:
+  social:
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/ArceLopera
+    - icon: fontawesome/brands/linkedin
+      link: https://linkedin.com/in/carlos-arcelopera
+    - icon: fontawesome/brands/github
+      link: https://github.com/ArceLopera
+    - icon: fontawesome/brands/youtube
+      link: https://www.youtube.com/
+    - icon: fontawesome/solid/paper-plane
+      link: mailto:arcelopera.carlos@gmail.com
+
+# Configuration
+theme:
+  name: material
+  logo: Images/Elephpant.svg
+  #<a href="https://iconscout.com/icons/elephant" class="text-underline font-size-sm" target="_blank">Elephant</a> by <a href="https://iconscout.com/contributors/yogiaprelliyanto" class="text-underline font-size-sm" target="_blank">Yaprativa</a>
+  favicon: Images/elephant.ico
+  palette:
+    
+    - media: "(prefers-color-scheme: light)" 
+      scheme: default
+      primary: deep purple
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)" 
+      scheme: slate
+      primary: amber
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+  font:
+    text: Roboto
+    code: Roboto Mono
+
+  features:
+    - navigation.tabs
+    - navigation.expand
+  icon:
+    repo: fontawesome/brands/github
+
+# Extensions
+markdown_extensions:
+  - admonition # alerts
+  - pymdownx.details #  collapsible alerts
+  - pymdownx.superfences # nest code and content inside alerts
+  - attr_list # add HTML and CSS to Markdown elements
+  - pymdownx.inlinehilite # inline code highlights
+  - pymdownx.keys # show keystroke symbols
+  - pymdownx.snippets # insert content from other files
+  - footnotes
+  - def_list
+  - pymdownx.arithmatex: # mathjax
+      generic: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+      clickable_checkbox: true
+  - pymdownx.highlight:
+      use_pygments: true
+  - toc:
+      toc_depth: 4
+
+# Plugins
+plugins:
+  - search
+
+
+# Extra JS
+extra_javascript:
+  - https://cdnjs.cloudflare.com/ajax/libs/tablesort/5.2.1/tablesort.min.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+# Page tree
+nav:
+  - Home: index.md
+  - Basics: 
+     - General: git_refresh.md
