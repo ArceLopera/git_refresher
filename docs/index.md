@@ -6,7 +6,7 @@ Whether you're a seasoned developer or a code maintainer, this repository is des
 
 |  Basic Topics |  Advanced Topics |
 |:-------------:|:----------------:|
-| [Basics]()        |  [Adv]()  |
+| [Basics](git_refresh.md)        |  [Adv]()  |
 
 </center>
 

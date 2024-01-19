@@ -29,20 +29,20 @@ extra:
 # Configuration
 theme:
   name: material
-  logo: Images/Elephpant.svg
+  logo: Images/git.svg
   #<a href="https://iconscout.com/icons/elephant" class="text-underline font-size-sm" target="_blank">Elephant</a> by <a href="https://iconscout.com/contributors/yogiaprelliyanto" class="text-underline font-size-sm" target="_blank">Yaprativa</a>
-  favicon: Images/elephant.ico
+  favicon: Images/git.ico
   palette:
     
     - media: "(prefers-color-scheme: light)" 
       scheme: default
-      primary: deep purple
+      primary: red
       toggle:
         icon: material/toggle-switch-off-outline
         name: Switch to dark mode
     - media: "(prefers-color-scheme: dark)" 
       scheme: slate
-      primary: amber
+      primary: deep orange
       toggle:
         icon: material/toggle-switch
         name: Switch to light mode

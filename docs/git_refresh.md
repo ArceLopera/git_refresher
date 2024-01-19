@@ -1,7 +1,7 @@
 
 Git is a distributed version control system (VCS) designed to track changes in source code during software development. It was created by Linus Torvalds in 2005 and has become the de facto standard for version control in the software development industry.
 
-## **Key Concepts:**
+## **Key Concepts**
 
 1. **Version Control:**
    Git allows developers to track changes made to their codebase over time. This includes recording who made the changes, what changes were made, and when the changes occurred.
@@ -18,7 +18,7 @@ Git is a distributed version control system (VCS) designed to track changes in s
 5. **History and Accountability**
    Git maintains a detailed history of all changes made to a project. This history provides accountability by attributing each change to a specific user, making it easy to trace the evolution of the codebase.
 
-## **Importance of Git:**
+## **Importance of Git**
 
 1. **Collaboration:**
    Git enables efficient collaboration among developers working on the same project. It allows multiple team members to contribute simultaneously, track changes, and merge their work seamlessly.
