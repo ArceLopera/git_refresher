@@ -12,21 +12,21 @@
         <meta name="author" content="ArceLopera">
       
       
-        <link rel="canonical" href="https://arcelopera.github.io/git_refresher/git_refresh/">
+        <link rel="canonical" href="https://arcelopera.github.io/git_refresher/Basics/git_configuration/">
       
-      <link rel="icon" href="../Images/git.ico">
+      <link rel="icon" href="../../Images/git.ico">
       <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.15">
     
     
       
-        <title>General - Git Refresher</title>
+        <title>Configuring Git - Git Refresher</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.c382b1dc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.c382b1dc.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.cc9b2e1e.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cc9b2e1e.min.css">
         
       
     
@@ -41,7 +41,7 @@
       
     
     
-    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#key-concepts" class="md-skip">
+        <a href="#1-open-a-terminalcommand-prompt" class="md-skip">
           Skip to content
         </a>
       
@@ -83,9 +83,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Git Refresher" class="md-header__button md-logo" aria-label="Git Refresher" data-md-component="logo">
+    <a href="../.." title="Git Refresher" class="md-header__button md-logo" aria-label="Git Refresher" data-md-component="logo">
       
-  <img src="../Images/git.svg" alt="logo">
+  <img src="../../Images/git.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              General
+              Configuring Git
             
           </span>
         </div>
@@ -198,7 +198,7 @@
 
 
   <li class="md-tabs__item">
-    <a href=".." class="md-tabs__link">
+    <a href="../.." class="md-tabs__link">
       Home
     </a>
   </li>
@@ -215,7 +215,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="./" class="md-tabs__link md-tabs__link--active">
+      <a href="../../git_refresh/" class="md-tabs__link md-tabs__link--active">
         Basics
       </a>
     </li>
@@ -243,9 +243,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Git Refresher" class="md-nav__button md-logo" aria-label="Git Refresher" data-md-component="logo">
+    <a href="../.." title="Git Refresher" class="md-nav__button md-logo" aria-label="Git Refresher" data-md-component="logo">
       
-  <img src="../Images/git.svg" alt="logo">
+  <img src="../../Images/git.svg" alt="logo">
 
     </a>
     Git Refresher
@@ -273,7 +273,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         Home
       </a>
     </li>
@@ -314,6 +314,34 @@
               
   
   
+  
+    <li class="md-nav__item">
+      <a href="../../git_refresh/" class="md-nav__link">
+        General
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../git_install/" class="md-nav__link">
+        Installing Git
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
     
   
   
@@ -324,12 +352,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          General
+          Configuring Git
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        General
+        Configuring Git
       </a>
       
         
@@ -346,15 +374,64 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#key-concepts" class="md-nav__link">
-    Key Concepts
+  <a href="#1-open-a-terminalcommand-prompt" class="md-nav__link">
+    1. Open a Terminal/Command Prompt
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#importance-of-git" class="md-nav__link">
-    Importance of Git
+  <a href="#2-set-your-username" class="md-nav__link">
+    2. Set Your Username
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-set-your-email-address" class="md-nav__link">
+    3. Set Your Email Address
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-configure-line-endings" class="md-nav__link">
+    4. Configure Line Endings
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-configure-text-editor-optional" class="md-nav__link">
+    5. Configure Text Editor (Optional)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-enable-color-outputn" class="md-nav__link">
+    6. Enable Color Outputn
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-check-configuration" class="md-nav__link">
+    7. Check Configuration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-verify-configuration" class="md-nav__link">
+    8. Verify Configuration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-tips" class="md-nav__link">
+    Additional Tips
   </a>
   
 </li>
@@ -374,35 +451,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Basics/git_install/" class="md-nav__link">
-        Installing Git
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Basics/git_configuration/" class="md-nav__link">
-        Configuring Git
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Basics/git_start/" class="md-nav__link">
+      <a href="../git_start/" class="md-nav__link">
         Starting a Project
       </a>
     </li>
@@ -441,15 +490,64 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#key-concepts" class="md-nav__link">
-    Key Concepts
+  <a href="#1-open-a-terminalcommand-prompt" class="md-nav__link">
+    1. Open a Terminal/Command Prompt
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#importance-of-git" class="md-nav__link">
-    Importance of Git
+  <a href="#2-set-your-username" class="md-nav__link">
+    2. Set Your Username
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-set-your-email-address" class="md-nav__link">
+    3. Set Your Email Address
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-configure-line-endings" class="md-nav__link">
+    4. Configure Line Endings
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-configure-text-editor-optional" class="md-nav__link">
+    5. Configure Text Editor (Optional)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-enable-color-outputn" class="md-nav__link">
+    6. Enable Color Outputn
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-check-configuration" class="md-nav__link">
+    7. Check Configuration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-verify-configuration" class="md-nav__link">
+    8. Verify Configuration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-tips" class="md-nav__link">
+    Additional Tips
   </a>
   
 </li>
@@ -468,56 +566,63 @@
                 
 
 
-  <h1>General</h1>
+  <h1>Configuring Git</h1>
 
-<p>Git is a distributed version control system (VCS) designed to track changes in source code during software development. It was created by Linus Torvalds in 2005 and has become the de facto standard for version control in the software development industry.</p>
-<h2 id="key-concepts"><strong>Key Concepts</strong></h2>
-<ol>
+<p>After installing Git, the next step is to configure it with your user information. This ensures that your commits are associated with the correct identity. Follow these steps to configure Git with your user information used across all local repositories:</p>
+<h2 id="1-open-a-terminalcommand-prompt">1. <strong>Open a Terminal/Command Prompt</strong></h2>
+<ul>
+<li><strong>Windows:</strong> Git Bash, Command Prompt, or PowerShell.</li>
+<li><strong>macOS/Linux:</strong> Terminal.</li>
+</ul>
+<h2 id="2-set-your-username">2. <strong>Set Your Username</strong></h2>
+<p>Run the following command, replacing "Your Name" with your actual name:
+   <div class="highlight"><pre><span></span><code>git config --global user.name <span class="s2">&quot;firstname Lastname&quot;</span>
+</code></pre></div></p>
+<h2 id="3-set-your-email-address">3. <strong>Set Your Email Address</strong></h2>
+<p>Run the following command, replacing "your.email@example.com" with your actual email address:
+   <div class="highlight"><pre><span></span><code>git config --global user.email <span class="s2">&quot;your.email@example.com&quot;</span>
+</code></pre></div></p>
+<h2 id="4-configure-line-endings">4. <strong>Configure Line Endings</strong></h2>
+<p>To prevent line ending issues when collaborating across different platforms, set your preferred line ending configuration. For Unix-style line endings (LF), run:
+   <div class="highlight"><pre><span></span><code>git config --global core.autocrlf input
+</code></pre></div>
+   For Windows-style line endings (CRLF), run:
+   <div class="highlight"><pre><span></span><code>git config --global core.autocrlf <span class="nb">true</span>
+</code></pre></div></p>
+<h2 id="5-configure-text-editor-optional">5. <strong>Configure Text Editor (Optional)</strong></h2>
+<p>Set your preferred text editor for Git. For example, to use VSCode:
+   <div class="highlight"><pre><span></span><code>git config --global core.editor <span class="s2">&quot;code --wait&quot;</span>
+</code></pre></div></p>
+<h2 id="6-enable-color-outputn">6. <strong>Enable Color Outputn</strong></h2>
+<p>Improve readability by enabling color output in the Git command line:</p>
+<p><div class="highlight"><pre><span></span><code>git config --global color.ui auto
+</code></pre></div>
+This setting adds color to various Git outputs, making it easier to distinguish between different types of information.To view your Git configuration, run:</p>
+<h2 id="7-check-configuration">7. <strong>Check Configuration</strong></h2>
+<p>To view your Git configuration, run:
+   <div class="highlight"><pre><span></span><code>git config --list
+</code></pre></div></p>
+<p>Ensure that your name, email, and other settings are correctly displayed.</p>
+<h2 id="8-verify-configuration">8. <strong>Verify Configuration</strong></h2>
+<p>Run the following commands to verify your configuration:
+   <div class="highlight"><pre><span></span><code>git config user.name
+git config user.email
+</code></pre></div></p>
+<p>These commands should display the values you've just set.</p>
+<h2 id="additional-tips">Additional Tips</h2>
+<ul>
 <li>
-<p><strong>Version Control:</strong>
-   Git allows developers to track changes made to their codebase over time. This includes recording who made the changes, what changes were made, and when the changes occurred.</p>
+<p><strong>Credential Caching</strong>
+  To avoid entering your credentials repeatedly, you can set up credential caching. On Windows, Git Credential Manager is often used. On macOS/Linux, you can use the credential helper provided by Git:
+  <div class="highlight"><pre><span></span><code>git config --global credential.helper cache
+</code></pre></div></p>
 </li>
 <li>
-<p><strong>Distributed System:</strong>
-   Git is decentralized, meaning that each developer has a complete copy of the entire project history on their local machine. This allows for flexibility in development and collaboration.</p>
+<p><strong>SSH Key</strong>
+  If you prefer using SSH for authentication, <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh">generate an SSH key</a> and associate it with your GitHub account.</p>
 </li>
-<li>
-<p><strong>Branching:</strong>
-   Git excels at branching, enabling developers to work on multiple independent features or bug fixes simultaneously. Branches can be created, merged, and deleted without affecting the main codebase until changes are ready to be integrated.</p>
-</li>
-<li>
-<p><strong>Collaboration:</strong>
-   Git facilitates collaboration among developers. Multiple contributors can work on the same project simultaneously without interfering with each other's work. Changes are merged together seamlessly.</p>
-</li>
-<li>
-<p><strong>History and Accountability</strong>
-   Git maintains a detailed history of all changes made to a project. This history provides accountability by attributing each change to a specific user, making it easy to trace the evolution of the codebase.</p>
-</li>
-</ol>
-<h2 id="importance-of-git"><strong>Importance of Git</strong></h2>
-<ol>
-<li>
-<p><strong>Collaboration:</strong>
-   Git enables efficient collaboration among developers working on the same project. It allows multiple team members to contribute simultaneously, track changes, and merge their work seamlessly.</p>
-</li>
-<li>
-<p><strong>Versioning:</strong>
-   Git provides a reliable versioning system, allowing developers to track changes over time. This is crucial for understanding the evolution of a project, reverting to previous states, and identifying when and by whom specific changes were made.</p>
-</li>
-<li>
-<p><strong>Branching and Experimentation</strong>
-   Git's branching model allows developers to experiment with new features or bug fixes in isolation. This promotes a more organized and controlled development process, with the ability to merge changes into the main codebase when they are ready.</p>
-</li>
-<li>
-<p><strong>Fault Tolerance:</strong>
-   The distributed nature of Git ensures that each developer has a complete copy of the repository. This redundancy minimizes the risk of data loss and provides a safety net in case of system failures.</p>
-</li>
-<li>
-<p><strong>Open Source Ecosystem:</strong>
-   Git is the foundation for many open-source projects and contributes to the collaborative nature of the software development community. Platforms like GitHub, GitLab, and Bitbucket leverage Git to host and manage repositories, fostering a rich ecosystem of shared code.</p>
-</li>
-</ol>
-<p>In summary, Git is important because it enhances collaboration, provides effective version control, and empowers developers to work efficiently and reliably on software projects of any scale.</p>
+</ul>
+<p>Your Git configuration is now set up. You can start using Git with your personalized settings for version control and collaboration.</p>
 
               
             </article>
@@ -531,7 +636,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href=".." class="md-footer__link md-footer__link--prev" aria-label="Previous: Home" rel="prev">
+        <a href="../git_install/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Installing Git" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -540,20 +645,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Home
+              Installing Git
             </div>
           </div>
         </a>
       
       
         
-        <a href="../Basics/git_install/" class="md-footer__link md-footer__link--next" aria-label="Next: Installing Git" rel="next">
+        <a href="../git_start/" class="md-footer__link md-footer__link--next" aria-label="Next: Starting a Project" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Installing Git
+              Starting a Project
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -633,10 +738,10 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.expand"], "search": "../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.expand"], "search": "../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.a6c66575.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a6c66575.min.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/tablesort/5.2.1/tablesort.min.js"></script>
       
