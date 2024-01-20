@@ -2,12 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://arcelopera.github.io/git_refresher/</loc>
-         <lastmod>2024-01-19</lastmod>
+         <lastmod>2024-01-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://arcelopera.github.io/git_refresher/git_refresh/</loc>
-         <lastmod>2024-01-19</lastmod>
+         <lastmod>2024-01-20</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://arcelopera.github.io/git_refresher/Basics/git_configuration/</loc>
+         <lastmod>2024-01-20</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://arcelopera.github.io/git_refresher/Basics/git_install/</loc>
+         <lastmod>2024-01-20</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://arcelopera.github.io/git_refresher/Basics/git_start/</loc>
+         <lastmod>2024-01-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
