@@ -32,7 +32,7 @@ After installing Git, the next step is to configure it with your user informatio
    git config --global core.editor "code --wait"
    ```
 
-## 6. **Enable Color Outputn**
+## 6. **Enable Color Output**
 Improve readability by enabling color output in the Git command line:
 
    ```bash

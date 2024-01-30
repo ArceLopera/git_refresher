@@ -95,3 +95,4 @@ nav:
      - Installing Git: Basics/git_install.md
      - Configuring Git: Basics/git_configuration.md
      - Starting a Project: Basics/git_start.md
+     - Aliases: Basics/git_alias.md
