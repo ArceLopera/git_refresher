@@ -96,3 +96,4 @@ nav:
      - Configuring Git: Basics/git_configuration.md
      - Starting a Project: Basics/git_start.md
      - Aliases: Basics/git_alias.md
+     - Snapshotting: Basics/git_stage.md
