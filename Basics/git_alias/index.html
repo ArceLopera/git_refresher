@@ -12,14 +12,14 @@
         <meta name="author" content="ArceLopera">
       
       
-        <link rel="canonical" href="https://arcelopera.github.io/git_refresher/Basics/git_install/">
+        <link rel="canonical" href="https://arcelopera.github.io/git_refresher/Basics/git_alias/">
       
       <link rel="icon" href="../../Images/git.ico">
       <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.15">
     
     
       
-        <title>Installing Git - Git Refresher</title>
+        <title>Aliases - Git Refresher</title>
       
     
     
@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#windows" class="md-skip">
+        <a href="#in-git" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Installing Git
+              Aliases
             
           </span>
         </div>
@@ -328,96 +328,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Installing Git
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../git_install/" class="md-nav__link">
         Installing Git
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#windows" class="md-nav__link">
-    Windows
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#macos" class="md-nav__link">
-    macOS
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#linux" class="md-nav__link">
-    Linux
-  </a>
-  
-    <nav class="md-nav" aria-label="Linux">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ubuntudebian" class="md-nav__link">
-    Ubuntu/Debian
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#fedora" class="md-nav__link">
-    Fedora
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#arch-linux" class="md-nav__link">
-    Arch Linux
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#verify-installation" class="md-nav__link">
-    Verify Installation
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -455,11 +370,213 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../git_alias/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Aliases
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Aliases
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#in-git" class="md-nav__link">
+    In Git
+  </a>
+  
+    <nav class="md-nav" aria-label="In Git">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-adding-git-aliases" class="md-nav__link">
+    1. Adding Git Aliases
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-adding-aliases-to-the-configuration-file" class="md-nav__link">
+    2. Adding Aliases to the Configuration File
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-example-aliases" class="md-nav__link">
+    3. Example Aliases
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-explanation-of-some-aliases" class="md-nav__link">
+    4. Explanation of Some Aliases
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-save-and-exit" class="md-nav__link">
+    5. Save and Exit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-using-aliases" class="md-nav__link">
+    6. Using Aliases
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-additional-tips" class="md-nav__link">
+    7. Additional Tips
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#in-bash" class="md-nav__link">
+    In Bash
+  </a>
+  
+    <nav class="md-nav" aria-label="In Bash">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-open-your-bash-profile" class="md-nav__link">
+    1. Open Your Bash Profile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-add-your-aliases" class="md-nav__link">
+    2. Add Your Aliases
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-example-aliases_1" class="md-nav__link">
+    3. Example Aliases
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-save-and-exit" class="md-nav__link">
+    4. Save and Exit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-reload-your-bash-profile" class="md-nav__link">
+    5. Reload Your Bash Profile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-verify-your-aliases" class="md-nav__link">
+    6. Verify Your Aliases
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#in-powersell" class="md-nav__link">
+    In Powersell
+  </a>
+  
+    <nav class="md-nav" aria-label="In Powersell">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-open-your-powershell-profile" class="md-nav__link">
+    1. Open Your PowerShell Profile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-add-your-aliases_1" class="md-nav__link">
+    2. Add Your Aliases
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-example-aliases_2" class="md-nav__link">
+    3. Example Aliases
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-save-and-exit_1" class="md-nav__link">
+    4. Save and Exit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-reload-your-powershell-profile" class="md-nav__link">
+    5. Reload Your PowerShell Profile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-verify-your-aliases_1" class="md-nav__link">
+    6. Verify Your Aliases
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -524,44 +641,58 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#windows" class="md-nav__link">
-    Windows
+  <a href="#in-git" class="md-nav__link">
+    In Git
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#macos" class="md-nav__link">
-    macOS
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#linux" class="md-nav__link">
-    Linux
-  </a>
-  
-    <nav class="md-nav" aria-label="Linux">
+    <nav class="md-nav" aria-label="In Git">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#ubuntudebian" class="md-nav__link">
-    Ubuntu/Debian
+  <a href="#1-adding-git-aliases" class="md-nav__link">
+    1. Adding Git Aliases
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fedora" class="md-nav__link">
-    Fedora
+  <a href="#2-adding-aliases-to-the-configuration-file" class="md-nav__link">
+    2. Adding Aliases to the Configuration File
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#arch-linux" class="md-nav__link">
-    Arch Linux
+  <a href="#3-example-aliases" class="md-nav__link">
+    3. Example Aliases
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-explanation-of-some-aliases" class="md-nav__link">
+    4. Explanation of Some Aliases
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-save-and-exit" class="md-nav__link">
+    5. Save and Exit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-using-aliases" class="md-nav__link">
+    6. Using Aliases
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-additional-tips" class="md-nav__link">
+    7. Additional Tips
   </a>
   
 </li>
@@ -572,9 +703,112 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#verify-installation" class="md-nav__link">
-    Verify Installation
+  <a href="#in-bash" class="md-nav__link">
+    In Bash
   </a>
+  
+    <nav class="md-nav" aria-label="In Bash">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-open-your-bash-profile" class="md-nav__link">
+    1. Open Your Bash Profile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-add-your-aliases" class="md-nav__link">
+    2. Add Your Aliases
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-example-aliases_1" class="md-nav__link">
+    3. Example Aliases
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-save-and-exit" class="md-nav__link">
+    4. Save and Exit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-reload-your-bash-profile" class="md-nav__link">
+    5. Reload Your Bash Profile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-verify-your-aliases" class="md-nav__link">
+    6. Verify Your Aliases
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#in-powersell" class="md-nav__link">
+    In Powersell
+  </a>
+  
+    <nav class="md-nav" aria-label="In Powersell">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-open-your-powershell-profile" class="md-nav__link">
+    1. Open Your PowerShell Profile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-add-your-aliases_1" class="md-nav__link">
+    2. Add Your Aliases
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-example-aliases_2" class="md-nav__link">
+    3. Example Aliases
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-save-and-exit_1" class="md-nav__link">
+    4. Save and Exit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-reload-your-powershell-profile" class="md-nav__link">
+    5. Reload Your PowerShell Profile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-verify-your-aliases_1" class="md-nav__link">
+    6. Verify Your Aliases
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -592,66 +826,205 @@
                 
 
 
-  <h1>Installing Git</h1>
+  <h1>Aliases</h1>
 
-<p>Git is a powerful version control system that helps you manage and track changes in your codebase. Here's a simple guide on how to install Git on your machine:</p>
-<h2 id="windows">Windows</h2>
-<ol>
-<li>
-<p>Download Git:</p>
-<p>Visit the official Git website at https://git-scm.com/download/win.</p>
-</li>
-<li>
-<p>Run Installer:</p>
-<p>Once the download is complete, run the installer and follow the on-screen instructions. Make sure to leave all default settings unless you have specific preferences.</p>
-</li>
-<li>
-<p>Adjusting your PATH environment:</p>
-<p>Choose the default option to "Use Git from Git Bash only" to avoid potential conflicts with other software. Select "Use the OpenSSL library" for secure connections.</p>
-</li>
-<li>
-<p>Choosing the Terminal Emulator:</p>
-<p>You can use Git Bash as your terminal emulator, providing a Unix-like environment on Windows. Alternatively, you can choose to use the Windows Command Prompt or PowerShell.</p>
-</li>
-<li>
-<p>Configuring Line Endings:</p>
-<p>Select "Checkout as-is, commit Unix-style line endings" unless you have a specific reason to choose otherwise.</p>
-</li>
-<li>
-<p>Completing the Installation:</p>
-<p>Click "Install" to complete the installation process.</p>
-</li>
-</ol>
-<h2 id="macos">macOS</h2>
-<ol>
-<li>
-<p>Install Homebrew:</p>
-<p>Open Terminal and run the following command to install Homebrew, a package manager for macOS:</p>
-<p><div class="highlight"><pre><span></span><code>/bin/bash -c <span class="s2">&quot;</span><span class="k">$(</span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span class="k">)</span><span class="s2">&quot;</span>
+<h2 id="in-git">In Git</h2>
+<p>In Git, aliases are shortcuts or custom commands that you can create to simplify and streamline your workflow. They can be particularly useful to reduce typing and remember complex commands. Here's a step-by-step guide on how to add useful aliases, along with some suggestions for commonly used and helpful aliases:</p>
+<h3 id="1-adding-git-aliases">1. <strong>Adding Git Aliases</strong></h3>
+<p>Open your terminal and run the following command to open the global Git configuration file in your default text editor:</p>
+<div class="highlight"><pre><span></span><code>git config --global --edit
 </code></pre></div>
-2. Install Git:</p>
-<p>Once Homebrew is installed, run the following command to install Git:</p>
-<div class="highlight"><pre><span></span><code>brew install git
+<p>This command opens the global configuration file in your preferred text editor. If you haven't configured a text editor, Git will prompt you to choose one.</p>
+<h3 id="2-adding-aliases-to-the-configuration-file">2. <strong>Adding Aliases to the Configuration File</strong></h3>
+<p>Inside the configuration file, add the following section to set up aliases:</p>
+<div class="highlight"><pre><span></span><code><span class="o">[</span>alias<span class="o">]</span>
+  <span class="nv">alias_name</span> <span class="o">=</span> actual_git_command
 </code></pre></div>
-</li>
-</ol>
-<h2 id="linux">Linux</h2>
-<h3 id="ubuntudebian">Ubuntu/Debian</h3>
-<div class="highlight"><pre><span></span><code>sudo apt update
-sudo apt install git-all
+<p>Replace <code>alias_name</code> with the desired alias and <code>actual_git_command</code> with the Git command or series of commands you want to associate with the alias.</p>
+<h3 id="3-example-aliases">3. <strong>Example Aliases</strong></h3>
+<p>Here are some commonly used and helpful aliases:</p>
+<div class="highlight"><pre><span></span><code><span class="o">[</span>alias<span class="o">]</span>
+  <span class="c1"># Show a compact and colorful log</span>
+  <span class="nv">lg</span> <span class="o">=</span> log --graph --pretty<span class="o">=</span>format:<span class="s1">&#39;%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset&#39;</span> --abbrev-commit --date<span class="o">=</span>relative
+
+  <span class="c1"># Show the current branch</span>
+  current-branch <span class="o">=</span> symbolic-ref --short HEAD
+
+  <span class="c1"># Show a concise status</span>
+  <span class="nv">st</span> <span class="o">=</span> status -s
+
+  <span class="c1"># Commit all changes with a message</span>
+  <span class="nv">ca</span> <span class="o">=</span> !git add -A <span class="o">&amp;&amp;</span> git commit -m
+
+  <span class="c1"># Show the diff of the last commit</span>
+  last-commit-diff <span class="o">=</span> diff HEAD^ HEAD
 </code></pre></div>
-<h3 id="fedora">Fedora</h3>
-<div class="highlight"><pre><span></span><code>sudo dnf install git
+<h3 id="4-explanation-of-some-aliases">4. <strong>Explanation of Some Aliases</strong></h3>
+<ul>
+<li><code>lg</code>: Displays a compact and colorful log.</li>
+<li><code>current-branch</code>: Shows the current branch.</li>
+<li><code>st</code>: Provides a concise status of the repository.</li>
+<li><code>ca</code>: Commits all changes with a message. Usage: <code>git ca "Commit message"</code>.</li>
+<li><code>last-commit-diff</code>: Shows the diff of the last commit.</li>
+</ul>
+<h3 id="5-save-and-exit">5. <strong>Save and Exit</strong></h3>
+<p>Save the configuration file and exit your text editor.</p>
+<h3 id="6-using-aliases">6. <strong>Using Aliases</strong></h3>
+<p>After adding aliases, you can use them in the terminal like regular Git commands. For example:</p>
+<div class="highlight"><pre><span></span><code>git lg
 </code></pre></div>
-<h3 id="arch-linux">Arch Linux</h3>
-<div class="highlight"><pre><span></span><code>sudo pacman -S git
+<p>This will execute the log alias and display a compact and colorful log.</p>
+<h3 id="7-additional-tips">7. <strong>Additional Tips</strong></h3>
+<ul>
+<li>Choose aliases that align with your workflow and make common tasks more efficient.</li>
+<li>Keep aliases short and memorable.</li>
+<li>Test your aliases in a safe environment before using them extensively.</li>
+</ul>
+<p>Creating and using Git aliases can significantly improve your productivity and make Git commands more convenient. Feel free to customize these aliases to suit your preferences and workflow.</p>
+<h2 id="in-bash">In Bash</h2>
+<p>Setting up aliases in Bash involves editing your Bash profile file. The Bash profile file is a script that runs whenever you start a new terminal session. Here's a step-by-step guide on how to set up aliases in Bash:</p>
+<h3 id="1-open-your-bash-profile">1. <strong>Open Your Bash Profile</strong></h3>
+<p>Open your Bash profile file in a text editor. The Bash profile is usually one of the following files, depending on your operating system:</p>
+<ul>
+<li>For Linux/macOS: <code>~/.bashrc</code> or <code>~/.bash_profile</code></li>
+<li>For Windows using Git Bash: <code>~/.bashrc</code></li>
+</ul>
+<p>If the file doesn't exist, you can create it.</p>
+<p><div class="highlight"><pre><span></span><code><span class="c1"># For Linux/macOS</span>
+nano ~/.bashrc   <span class="c1"># or use your preferred text editor</span>
+
+<span class="c1"># For Windows using Git Bash</span>
+nano ~/.bashrc   <span class="c1"># or use your preferred text editor</span>
 </code></pre></div>
-<h2 id="verify-installation">Verify Installation</h2>
-<p>Regardless of your operating system, after installation, open a terminal and run:</p>
-<p><div class="highlight"><pre><span></span><code>git --version
+or using VScode</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># For Linux/macOS</span>
+code ~/.bashrc   <span class="c1"># or use your preferred text editor</span>
+
+<span class="c1"># For Windows using Git Bash</span>
+code ~/.bashrc   <span class="c1"># or use your preferred text editor</span>
 </code></pre></div>
-This should display the installed Git version, confirming a successful installation.</p>
-<p>Now that Git is installed, you're ready to start using version control for your projects!</p>
+<h3 id="2-add-your-aliases">2. <strong>Add Your Aliases</strong></h3>
+<p>In your Bash profile, add lines for each alias you want to create. The syntax is as follows:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">alias</span> <span class="nv">alias_name</span><span class="o">=</span><span class="s1">&#39;actual_command&#39;</span>
+</code></pre></div>
+<p>Replace <code>alias_name</code> with the desired alias and <code>actual_command</code> with the actual command or series of commands you want to associate with the alias.</p>
+<h3 id="3-example-aliases_1">3. <strong>Example Aliases</strong></h3>
+<p>Here are some example aliases:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Git aliases</span>
+<span class="nb">alias</span> <span class="nv">gst</span><span class="o">=</span><span class="s1">&#39;git status&#39;</span>
+<span class="nb">alias</span> <span class="nv">gl</span><span class="o">=</span><span class="s1">&#39;git log&#39;</span>
+<span class="nb">alias</span> <span class="nv">gll</span><span class="o">=</span><span class="s1">&#39;git log --oneline&#39;</span>
+<span class="nb">alias</span> <span class="nv">glog</span><span class="o">=</span><span class="s1">&#39;git log --oneline --decorate --graph&#39;</span>
+<span class="nb">alias</span> <span class="nv">gamend</span><span class="o">=</span><span class="s1">&#39;git commit --amend&#39;</span>
+<span class="nb">alias</span> <span class="nv">gr</span><span class="o">=</span><span class="s1">&#39;git remote -v&#39;</span>
+<span class="nb">alias</span> <span class="nv">gb</span><span class="o">=</span><span class="s1">&#39;git branch&#39;</span>
+<span class="nb">alias</span> <span class="nv">gba</span><span class="o">=</span><span class="s1">&#39;git branch -a&#39;</span>
+<span class="nb">alias</span> <span class="nv">gd</span><span class="o">=</span><span class="s1">&#39;git diff&#39;</span>
+<span class="nb">alias</span> <span class="nv">gds</span><span class="o">=</span><span class="s1">&#39;git diff --staged&#39;</span>
+<span class="nb">alias</span> <span class="nv">gsub</span><span class="o">=</span><span class="s1">&#39;git submodule sync; git submodule update --init --recursive&#39;</span>
+<span class="nb">alias</span> <span class="nv">gsreset</span><span class="o">=</span><span class="s1">&#39;git submodule foreach --recursive git reset --hard&#39;</span>
+
+<span class="c1"># Navigation aliases</span>
+<span class="nb">alias</span> <span class="nv">cdproj</span><span class="o">=</span><span class="s1">&#39;cd ~/projects&#39;</span>
+<span class="nb">alias</span> <span class="nv">cddownloads</span><span class="o">=</span><span class="s1">&#39;cd ~/Downloads&#39;</span>
+<span class="nb">alias</span> <span class="nv">cddesktop</span><span class="o">=</span><span class="s1">&#39;cd ~/Desktop&#39;</span>
+<span class="nb">alias</span> ..<span class="o">=</span><span class="s1">&#39;cd ..&#39;</span>
+<span class="nb">alias</span> ...<span class="o">=</span><span class="s1">&#39;cd ../..&#39;</span>
+<span class="nb">alias</span> ....<span class="o">=</span><span class="s1">&#39;cd ../../..&#39;</span>
+
+<span class="c1"># Shortcuts for common commands</span>
+<span class="nb">alias</span> <span class="nv">ll</span><span class="o">=</span><span class="s1">&#39;ls -alF&#39;</span>
+<span class="nb">alias</span> <span class="nv">la</span><span class="o">=</span><span class="s1">&#39;ls -A&#39;</span>
+<span class="nb">alias</span> <span class="nv">cp</span><span class="o">=</span><span class="s1">&#39;cp -i&#39;</span>
+<span class="nb">alias</span> <span class="nv">mv</span><span class="o">=</span><span class="s1">&#39;mv -i&#39;</span>
+<span class="nb">alias</span> <span class="nv">rm</span><span class="o">=</span><span class="s1">&#39;rm -i&#39;</span>
+
+<span class="c1"># 🤘</span>
+<span class="nb">alias</span> <span class="nv">yolo</span><span class="o">=</span><span class="s1">&#39;git push --force&#39;</span>
+
+<span class="c1"># useful for daily stand-up</span>
+<span class="c1"># See https://dev.to/maxpou/git-cheat-sheet-advanced-3a17</span>
+git-standup<span class="o">()</span> <span class="o">{</span>
+    <span class="nv">AUTHOR</span><span class="o">=</span><span class="si">${</span><span class="nv">AUTHOR</span><span class="p">:=</span><span class="s2">&quot;`git config user.name`&quot;</span><span class="si">}</span>
+
+    <span class="nv">since</span><span class="o">=</span>yesterday
+    <span class="k">if</span> <span class="o">[[</span> <span class="k">$(</span>date +%u<span class="k">)</span> <span class="o">==</span> <span class="m">1</span> <span class="o">]]</span> <span class="p">;</span> <span class="k">then</span>
+        <span class="nv">since</span><span class="o">=</span><span class="s2">&quot;2 days ago&quot;</span>
+    <span class="k">fi</span>
+
+    git log --color --graph --pretty<span class="o">=</span>format:<span class="s1">&#39;%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset&#39;</span> --abbrev-commit --since <span class="s2">&quot;</span><span class="nv">$since</span><span class="s2">&quot;</span> --author<span class="o">=</span><span class="s2">&quot;</span><span class="nv">$AUTHOR</span><span class="s2">&quot;</span>
+<span class="o">}</span>
+</code></pre></div>
+<h3 id="4-save-and-exit">4. <strong>Save and Exit</strong></h3>
+<p>Save your changes and exit the text editor.</p>
+<ul>
+<li>For Nano, press <code>Ctrl</code> + <code>X</code>, then <code>Y</code> to confirm saving, and <code>Enter</code> to exit.</li>
+<li>For other editors, follow their respective save and exit commands.</li>
+</ul>
+<h3 id="5-reload-your-bash-profile">5. <strong>Reload Your Bash Profile</strong></h3>
+<p>To apply the changes without restarting your terminal, either close and reopen the terminal or use the <code>source</code> command:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">source</span> ~/.bashrc
+</code></pre></div>
+<p>This command reloads the Bash profile, making your new aliases immediately available.</p>
+<h3 id="6-verify-your-aliases">6. <strong>Verify Your Aliases</strong></h3>
+<p>To verify that your aliases are set up correctly, you can use the <code>alias</code> command:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">alias</span>
+</code></pre></div>
+<p>This will display a list of all defined aliases in your current session.</p>
+<p>Now you can use your aliases in the terminal for quick and convenient access to frequently used commands. Customize the aliases to match your workflow and make your command-line experience more efficient.</p>
+<h2 id="in-powersell">In Powersell</h2>
+<p>In PowerShell, you can add aliases using your PowerShell profile script. The profile script is a PowerShell script that is automatically executed when you start a PowerShell session. Here's a step-by-step guide on how to add aliases in PowerShell:</p>
+<h3 id="1-open-your-powershell-profile">1. <strong>Open Your PowerShell Profile</strong></h3>
+<p>Open your PowerShell profile script in a text editor. If you don't have a profile, you can create one. The profile script is usually located at one of the following paths:</p>
+<ul>
+<li>Current User, Current Host (for all users): <code>$PROFILE.AllUsersCurrentHost</code></li>
+<li>Current User, Current Host (for the current user): <code>$PROFILE.CurrentUserCurrentHost</code></li>
+<li>All Users, All Hosts (for all users): <code>$PROFILE.AllUsersAllHosts</code></li>
+<li>Current User, All Hosts (for the current user): <code>$PROFILE.CurrentUserAllHosts</code></li>
+</ul>
+<p>To open your profile script, you can use the following command:</p>
+<div class="highlight"><pre><span></span><code><span class="n">notepad</span> <span class="nv">$PROFILE</span>
+</code></pre></div>
+<p>This command opens the profile script in Notepad. If the file doesn't exist, PowerShell will prompt you to create it.</p>
+<p>or use VSCode to open your profile script:</p>
+<div class="highlight"><pre><span></span><code><span class="n">code</span> <span class="nv">$PROFILE</span>
+</code></pre></div>
+<h3 id="2-add-your-aliases_1">2. <strong>Add Your Aliases</strong></h3>
+<p>In your PowerShell profile, add lines for each alias you want to create. The syntax is as follows:</p>
+<div class="highlight"><pre><span></span><code><span class="k">function</span> <span class="n">alias_name</span> <span class="p">{</span>
+    <span class="n">actual_command</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Replace <code>alias_name</code> with the desired alias and <code>actual_command</code> with the actual command or series of commands you want to associate with the alias.</p>
+<h3 id="3-example-aliases_2">3. <strong>Example Aliases</strong></h3>
+<p>Here are some example aliases:</p>
+<div class="highlight"><pre><span></span><code><span class="c"># Git aliases</span>
+<span class="k">function</span> <span class="n">gs</span> <span class="p">{</span> <span class="n">git</span> <span class="n">status</span> <span class="p">}</span>
+<span class="k">function</span> <span class="n">ga</span> <span class="p">{</span> <span class="n">git</span> <span class="n">add</span> <span class="p">}</span>
+<span class="k">function</span> <span class="nb">gc </span><span class="p">{</span> <span class="n">git</span> <span class="n">commit</span> <span class="p">}</span>
+<span class="k">function</span> <span class="nb">gp </span><span class="p">{</span> <span class="n">git</span> <span class="n">push</span> <span class="p">}</span>
+<span class="k">function</span> <span class="nb">gl </span><span class="p">{</span> <span class="n">git</span> <span class="n">log</span> <span class="p">-</span><span class="n">-oneline</span> <span class="p">}</span>
+
+<span class="c"># Navigation aliases</span>
+<span class="k">function</span> <span class="n">cdproj</span> <span class="p">{</span> <span class="nb">Set-Location</span> <span class="n">C</span><span class="p">:\</span><span class="n">Projects</span> <span class="p">}</span>
+<span class="k">function</span> <span class="n">cddownloads</span> <span class="p">{</span> <span class="nb">Set-Location</span> <span class="n">C</span><span class="p">:\</span><span class="n">Users</span><span class="p">\</span><span class="n">YourUsername</span><span class="p">\</span><span class="n">Downloads</span> <span class="p">}</span>
+<span class="k">function</span> <span class="n">cddesktop</span> <span class="p">{</span> <span class="nb">Set-Location</span> <span class="n">C</span><span class="p">:\</span><span class="n">Users</span><span class="p">\</span><span class="n">YourUsername</span><span class="p">\</span><span class="n">Desktop</span> <span class="p">}</span>
+
+<span class="c"># Shortcuts for common commands</span>
+<span class="k">function</span> <span class="n">ll</span> <span class="p">{</span> <span class="nb">Get-ChildItem</span> <span class="n">-Force</span> <span class="p">}</span>
+</code></pre></div>
+<h3 id="4-save-and-exit_1">4. <strong>Save and Exit</strong></h3>
+<p>Save your changes and exit the text editor.</p>
+<h3 id="5-reload-your-powershell-profile">5. <strong>Reload Your PowerShell Profile</strong></h3>
+<p>To apply the changes without restarting PowerShell, you can use the <code>Import-Module</code> cmdlet:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">Import-Module</span> <span class="nv">$PROFILE</span>
+</code></pre></div>
+<h3 id="6-verify-your-aliases_1">6. <strong>Verify Your Aliases</strong></h3>
+<p>To verify that your aliases are set up correctly, you can use the <code>Get-Alias</code> cmdlet:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">Get-Alias</span>
+</code></pre></div>
+<p>This will display a list of all defined aliases in your current PowerShell session.</p>
+<p>Now you can use your aliases in the PowerShell console for quick and convenient access to frequently used commands. Customize the aliases to match your workflow and make your PowerShell experience more efficient.</p>
 
               
             </article>
@@ -665,7 +1038,7 @@ This should display the installed Git version, confirming a successful installat
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../../git_refresh/" class="md-footer__link md-footer__link--prev" aria-label="Previous: General" rel="prev">
+        <a href="../git_start/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Starting a Project" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -674,20 +1047,20 @@ This should display the installed Git version, confirming a successful installat
               <span class="md-footer__direction">
                 Previous
               </span>
-              General
+              Starting a Project
             </div>
           </div>
         </a>
       
       
         
-        <a href="../git_configuration/" class="md-footer__link md-footer__link--next" aria-label="Next: Configuring Git" rel="next">
+        <a href="../git_stage/" class="md-footer__link md-footer__link--next" aria-label="Next: Snapshotting" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Configuring Git
+              Snapshotting
             </div>
           </div>
           <div class="md-footer__button md-icon">
