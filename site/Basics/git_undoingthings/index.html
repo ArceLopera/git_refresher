@@ -12,14 +12,14 @@
         <meta name="author" content="ArceLopera">
       
       
-        <link rel="canonical" href="https://arcelopera.github.io/git_refresher/Basics/git_install/">
+        <link rel="canonical" href="https://arcelopera.github.io/git_refresher/Basics/git_undoingthings/">
       
       <link rel="icon" href="../../Images/git.ico">
       <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.15">
     
     
       
-        <title>Installing Git - Git Refresher</title>
+        <title>Undoing Things - Git Refresher</title>
       
     
     
@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#windows" class="md-skip">
+        <a href="#1-undoing-uncommitted-changes-in-the-working-directory" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Installing Git
+              Undoing Things
             
           </span>
         </div>
@@ -328,96 +328,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Installing Git
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../git_install/" class="md-nav__link">
         Installing Git
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#windows" class="md-nav__link">
-    Windows
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#macos" class="md-nav__link">
-    macOS
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#linux" class="md-nav__link">
-    Linux
-  </a>
-  
-    <nav class="md-nav" aria-label="Linux">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ubuntudebian" class="md-nav__link">
-    Ubuntu/Debian
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#fedora" class="md-nav__link">
-    Fedora
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#arch-linux" class="md-nav__link">
-    Arch Linux
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#verify-installation" class="md-nav__link">
-    Verify Installation
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -483,11 +398,104 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../git_undoingthings/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Undoing Things
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Undoing Things
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-undoing-uncommitted-changes-in-the-working-directory" class="md-nav__link">
+    1. Undoing Uncommitted Changes in the Working Directory
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-undoing-staged-changes" class="md-nav__link">
+    2. Undoing Staged Changes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-undoing-commits" class="md-nav__link">
+    3. Undoing Commits
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-reverting-commits" class="md-nav__link">
+    4. Reverting Commits
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-undoing-remote-changes" class="md-nav__link">
+    5. Undoing Remote Changes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-resetting-to-a-specific-commit" class="md-nav__link">
+    6. Resetting to a Specific Commit
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-cleaning-untracked-files" class="md-nav__link">
+    7. Cleaning Untracked Files
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-interactively-reverting-or-editing-commits" class="md-nav__link">
+    8. Interactively Reverting or Editing Commits
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-restoring-files" class="md-nav__link">
+    9. Restoring Files
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -524,56 +532,64 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#windows" class="md-nav__link">
-    Windows
+  <a href="#1-undoing-uncommitted-changes-in-the-working-directory" class="md-nav__link">
+    1. Undoing Uncommitted Changes in the Working Directory
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#macos" class="md-nav__link">
-    macOS
+  <a href="#2-undoing-staged-changes" class="md-nav__link">
+    2. Undoing Staged Changes
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#linux" class="md-nav__link">
-    Linux
+  <a href="#3-undoing-commits" class="md-nav__link">
+    3. Undoing Commits
   </a>
-  
-    <nav class="md-nav" aria-label="Linux">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ubuntudebian" class="md-nav__link">
-    Ubuntu/Debian
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#fedora" class="md-nav__link">
-    Fedora
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#arch-linux" class="md-nav__link">
-    Arch Linux
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#verify-installation" class="md-nav__link">
-    Verify Installation
+  <a href="#4-reverting-commits" class="md-nav__link">
+    4. Reverting Commits
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-undoing-remote-changes" class="md-nav__link">
+    5. Undoing Remote Changes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-resetting-to-a-specific-commit" class="md-nav__link">
+    6. Resetting to a Specific Commit
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-cleaning-untracked-files" class="md-nav__link">
+    7. Cleaning Untracked Files
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-interactively-reverting-or-editing-commits" class="md-nav__link">
+    8. Interactively Reverting or Editing Commits
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-restoring-files" class="md-nav__link">
+    9. Restoring Files
   </a>
   
 </li>
@@ -592,66 +608,334 @@
                 
 
 
-  <h1>Installing Git</h1>
+  <h1>Undoing Things</h1>
 
-<p>Git is a powerful version control system that helps you manage and track changes in your codebase. Here's a simple guide on how to install Git on your machine:</p>
-<h2 id="windows">Windows</h2>
+<p>Undoing changes in Git involves various commands and strategies, depending on the nature of the changes and the stage at which they are. Here is a comprehensive guide on common Git undo commands and strategies:</p>
+<p>Summary table of common Git undo commands and strategies:</p>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#1-undoing-uncommitted-changes-in-the-working-directory"><strong>Undoing Uncommitted Changes</strong></a></td>
+<td><code>git checkout -- file.txt</code></td>
+<td>Discard changes in a specific file, reverting it to the state in the last commit.</td>
+</tr>
+<tr>
+<td></td>
+<td><code>git reset --hard</code></td>
+<td>Discard all uncommitted changes, reverting the working directory to the state of the last commit.</td>
+</tr>
+<tr>
+<td><a href="#2-undoing-staged-changes"><strong>Undoing Staged Changes</strong></a></td>
+<td><code>git reset file.txt</code></td>
+<td>Unstage changes in a specific file, moving them back to the working directory.</td>
+</tr>
+<tr>
+<td><a href="#3-undoing-commits"><strong>Undoing Commits</strong></a></td>
+<td><code>git reset --soft HEAD^</code></td>
+<td>Undo the last commit, keeping changes staged in the working directory.</td>
+</tr>
+<tr>
+<td></td>
+<td><code>git reset --mixed HEAD^</code></td>
+<td>Undo the last commit, unstaging changes but keeping them in the working directory.</td>
+</tr>
+<tr>
+<td></td>
+<td><code>git reset --hard HEAD^</code></td>
+<td>Undo the last commit, discarding changes both in the commit and the working directory.</td>
+</tr>
+<tr>
+<td></td>
+<td><code>git commit --amend</code></td>
+<td>Amend the last commit by adding new changes or modifying the commit message.</td>
+</tr>
+<tr>
+<td><a href="#4-reverting-commits"><strong>Reverting Commits</strong></a></td>
+<td><code>git revert &lt;commit-hash&gt;</code></td>
+<td>Create a new commit that undoes changes introduced by a specific commit.</td>
+</tr>
+<tr>
+<td><a href="#5-undoing-remote-changes"><strong>Undoing Remote Changes</strong></a></td>
+<td><code>git push --force origin &lt;branch-name&gt;</code></td>
+<td>Force push local changes to a remote branch (use with caution, as it rewrites remote history).</td>
+</tr>
+<tr>
+<td><a href="#6-resetting-to-a-specific-commit"><strong>Resetting to a Specific Commit</strong></a></td>
+<td><code>git reset --hard &lt;commit-hash&gt;</code></td>
+<td>Reset the branch to a specific commit, discarding all changes after that commit.</td>
+</tr>
+<tr>
+<td><a href="#7-cleaning-untracked-files"><strong>Cleaning Untracked Files</strong></a></td>
+<td><code>git clean -fd</code></td>
+<td>Remove untracked files and directories from the working directory.</td>
+</tr>
+<tr>
+<td><a href="#8-interactively-reverting-or-editing-commits"><strong>Interactively Reverting or Editing</strong></a></td>
+<td><code>git rebase -i &lt;commit-hash&gt;</code></td>
+<td>Open an interactive rebase session, allowing you to edit, squash, or drop commits.</td>
+</tr>
+<tr>
+<td><a href="#9-restoring-files"><strong>Restoring Files</strong></a></td>
+<td><code>git restore file.txt</code></td>
+<td>Restore the specified file to the state in the last commit (introduced in Git 2.23).</td>
+</tr>
+</tbody>
+</table>
+<p>Please note that some commands, like force push and hard reset, should be used with caution, especially when collaborating with others, as they can alter Git history. Always be mindful of the consequences and potential impacts on collaborators before executing these commands.</p>
+<h3 id="1-undoing-uncommitted-changes-in-the-working-directory">1. <strong>Undoing Uncommitted Changes in the Working Directory</strong></h3>
+<ul>
+<li><strong>Discard Changes in a File</strong>
+  <div class="highlight"><pre><span></span><code>git checkout -- file.txt
+</code></pre></div></li>
+</ul>
+<p>This command discards changes in the specified file, reverting it to the state in the last commit. It’s important to understand that <code>git checkout -- &lt;file&gt;</code> is a dangerous command. Any local changes you made to that file are gone — Git just replaced that file with the last staged or committed version. Don’t ever use this command unless you absolutely know that you don’t want those unsaved local changes.</p>
+<ul>
+<li><strong>Discard All Changes</strong>
+  <div class="highlight"><pre><span></span><code>git reset --hard
+</code></pre></div></li>
+</ul>
+<p>This command discards all uncommitted changes in the working directory, reverting it to the state of the last commit.</p>
+<h3 id="2-undoing-staged-changes">2. <strong>Undoing Staged Changes</strong></h3>
+<ul>
+<li><strong>Unstage Changes</strong>
+  <div class="highlight"><pre><span></span><code>git reset file.txt
+</code></pre></div></li>
+</ul>
+<p>This command unstages changes in the specified file, moving them back to the working directory.</p>
+<h3 id="3-undoing-commits">3. <strong>Undoing Commits</strong></h3>
+<ul>
+<li><strong>Undo the Last Commit (soft reset)</strong>
+  <div class="highlight"><pre><span></span><code>git reset --soft HEAD^
+</code></pre></div></li>
+</ul>
+<p>This command undoes the last commit, keeping the changes staged in the working directory.</p>
+<ul>
+<li><strong>Undo the Last Commit (mixed reset, default)</strong>
+  <div class="highlight"><pre><span></span><code>git reset --mixed HEAD^
+</code></pre></div></li>
+</ul>
+<p>This command undoes the last commit, unstaging the changes but keeping them in the working directory.</p>
+<ul>
+<li><strong>Undo the Last Commit (hard reset)</strong>
+  <div class="highlight"><pre><span></span><code>git reset --hard HEAD^
+</code></pre></div></li>
+</ul>
+<p>This command undoes the last commit, discarding the changes both in the commit and the working directory.</p>
+<ul>
+<li><strong>Amend the Last Commit</strong>
+  <div class="highlight"><pre><span></span><code>git commit --amend
+</code></pre></div></li>
+</ul>
+<p>This command allows you to amend the last commit by adding new changes or modifying the commit message.</p>
+<h3 id="4-reverting-commits">4. <strong>Reverting Commits</strong></h3>
+<ul>
+<li><strong>Revert a Commit</strong>
+  <div class="highlight"><pre><span></span><code>git revert &lt;commit-hash&gt;
+</code></pre></div></li>
+</ul>
+<p>This command creates a new commit that undoes the changes introduced by a specific commit.</p>
+<h3 id="5-undoing-remote-changes">5. <strong>Undoing Remote Changes</strong></h3>
+<ul>
+<li><strong>Force Push to Remote (use with caution)</strong>
+  <div class="highlight"><pre><span></span><code>git push --force origin &lt;branch-name&gt;
+</code></pre></div></li>
+</ul>
+<p>Use this command to force push local changes to a remote branch. <strong>Be cautious</strong> as it rewrites the remote history.</p>
+<h3 id="6-resetting-to-a-specific-commit">6. <strong>Resetting to a Specific Commit</strong></h3>
+<ul>
+<li><strong>Reset to a Specific Commit</strong>
+  <div class="highlight"><pre><span></span><code>git reset --hard &lt;commit-hash&gt;
+</code></pre></div></li>
+</ul>
+<p>This command resets the branch to a specific commit, discarding all changes after that commit.</p>
+<h3 id="7-cleaning-untracked-files">7. <strong>Cleaning Untracked Files</strong></h3>
+<ul>
+<li><strong>Remove Untracked Files and Directories</strong>
+  <div class="highlight"><pre><span></span><code>git clean -fd
+</code></pre></div></li>
+</ul>
+<p>This command removes untracked files and directories from the working directory.</p>
+<h3 id="8-interactively-reverting-or-editing-commits">8. <strong>Interactively Reverting or Editing Commits</strong></h3>
+<ul>
+<li><strong>Interactive Rebase</strong>
+  <div class="highlight"><pre><span></span><code>git rebase -i &lt;commit-hash&gt;
+</code></pre></div></li>
+</ul>
+<p>This command opens an interactive rebase session, allowing you to edit, squash, or drop commits.
+The <code>git rebase -i HEAD~6</code> command initiates an interactive rebase for the last six commits starting from the current <code>HEAD</code>. This allows you to modify, reorder, squash, or drop commits interactively before applying them onto a new base commit.</p>
+<p>Let's break down the components of this command:</p>
+<ul>
+<li><code>git rebase</code>: The main command for reorganizing or combining commits.</li>
+<li><code>-i</code>: Stands for "interactive," which opens an interactive rebase session.</li>
+<li><code>HEAD~6</code>: Specifies the commit range to rebase. In this case, it's the last six commits from the current <code>HEAD</code>.</li>
+</ul>
+<div class="highlight"><pre><span></span><code>git rebase -i HEAD~6
+</code></pre></div>
+<p>This command opens a text editor with a list of the last six commits in your default branch. The list might look something like this:</p>
+<div class="highlight"><pre><span></span><code>pick abc123 Commit message <span class="m">1</span>
+pick def456 Commit message <span class="m">2</span>
+pick 789ghi Commit message <span class="m">3</span>
+pick jkl012 Commit message <span class="m">4</span>
+pick mno345 Commit message <span class="m">5</span>
+pick pqr678 Commit message <span class="m">6</span>
+</code></pre></div>
+<p>In the interactive rebase editor, you can choose actions for each commit:</p>
+<ul>
+<li><code>pick</code>: Keep the commit as is.</li>
+<li><code>reword</code>: Change the commit message.</li>
+<li><code>edit</code>: Pause for amending the commit.</li>
+<li><code>squash</code> or <code>fixup</code>: Combine the commit with the previous one.</li>
+<li><code>drop</code>: Remove the commit.</li>
+</ul>
+<p>For example, to squash the last three commits into a single commit, you can modify the file to look like this:</p>
+<div class="highlight"><pre><span></span><code>pick abc123 Commit message <span class="m">1</span>
+pick def456 Commit message <span class="m">2</span>
+squash 789ghi Commit message <span class="m">3</span>
+squash jkl012 Commit message <span class="m">4</span>
+squash mno345 Commit message <span class="m">5</span>
+pick pqr678 Commit message <span class="m">6</span>
+</code></pre></div>
+<p>After saving and closing the file, Git will prompt you to modify the commit message for the new squashed commit.</p>
+<ul>
+<li>Interactive rebasing allows you to create a cleaner and more organized commit history.</li>
+<li>Use <code>edit</code> to pause at a specific commit and make changes (e.g., amend, add files, or reword the commit message).</li>
+<li>Always make sure to review and understand the changes you're making during an interactive rebase, as it rewrites commit history.</li>
+</ul>
+<p>Interactive rebasing is a powerful but potentially risky operation. Be cautious and ensure you have a backup or a way to recover your changes if needed.</p>
+<h3 id="9-restoring-files">9. <strong>Restoring Files</strong></h3>
+<p>The <code>git restore</code> command is a versatile command introduced in Git version 2.23. It is designed to restore parts of the working directory or discard changes in a way that is more explicit and flexible than some of the previous commands.</p>
 <ol>
 <li>
-<p>Download Git:</p>
-<p>Visit the official Git website at https://git-scm.com/download/win.</p>
+<p><strong>Restore Uncommitted Changes in a File:</strong></p>
+<p>To discard uncommitted changes in a specific file and restore it to the state in the last commit:</p>
+<div class="highlight"><pre><span></span><code>git restore file.txt
+</code></pre></div>
+<p>This command reverts the changes made to <code>file.txt</code> in the working directory, making it identical to the state of the file in the last commit.</p>
 </li>
 <li>
-<p>Run Installer:</p>
-<p>Once the download is complete, run the installer and follow the on-screen instructions. Make sure to leave all default settings unless you have specific preferences.</p>
+<p><strong>Restore Staged Changes in a File:</strong></p>
+<p>To unstage changes in a file and move them back to the working directory:</p>
+<div class="highlight"><pre><span></span><code>git restore --staged file.txt
+</code></pre></div>
+<p>This command effectively undoes the staging of changes in <code>file.txt</code> and puts them back into the working directory. It is similar to <code>git reset file.txt</code>, but <code>git restore</code> is more explicit in this context.</p>
 </li>
 <li>
-<p>Adjusting your PATH environment:</p>
-<p>Choose the default option to "Use Git from Git Bash only" to avoid potential conflicts with other software. Select "Use the OpenSSL library" for secure connections.</p>
+<p><strong>Restore Specific Commit's State for a File:</strong></p>
+<p>To restore a specific file to the state it had in a particular commit:</p>
+<div class="highlight"><pre><span></span><code>git restore --source<span class="o">=</span>&lt;commit-hash&gt; --staged --worktree file.txt
+</code></pre></div>
+<ul>
+<li><code>--source=&lt;commit-hash&gt;</code>: Specifies the commit from which to take the file state.</li>
+<li><code>--staged</code>: Restores the file to the specified commit's state in the staging area.</li>
+<li><code>--worktree</code>: Restores the file to the specified commit's state in the working directory.</li>
+</ul>
 </li>
 <li>
-<p>Choosing the Terminal Emulator:</p>
-<p>You can use Git Bash as your terminal emulator, providing a Unix-like environment on Windows. Alternatively, you can choose to use the Windows Command Prompt or PowerShell.</p>
+<p><strong>Restore Entire Working Directory:</strong></p>
+<p>To discard all uncommitted changes and restore the entire working directory to the state of the last commit:</p>
+<div class="highlight"><pre><span></span><code>git restore --source<span class="o">=</span>HEAD --staged --worktree --source<span class="o">=</span>HEAD --recursive
+</code></pre></div>
+<ul>
+<li><code>--source=HEAD</code>: Specifies the commit from which to take the file states.</li>
+<li><code>--staged</code>: Restores all changes to the staging area.</li>
+<li><code>--worktree</code>: Restores all changes to the working directory.</li>
+<li><code>--recursive</code>: Applies the operation recursively to all files and directories.</li>
+</ul>
+<p>The <code>git restore</code> command provides a clearer and more explicit syntax for specific use cases, making it a powerful tool for managing changes in the working directory and staging area. Always use it with care, especially when dealing with commands that modify or discard changes.</p>
 </li>
 <li>
-<p>Configuring Line Endings:</p>
-<p>Select "Checkout as-is, commit Unix-style line endings" unless you have a specific reason to choose otherwise.</p>
+<p><strong>Comparing <code>git reset</code> and <code>git restore</code></strong></p>
+<p><code>git reset</code> and <code>git restore</code> are both Git commands that deal with modifying the working directory, staging area, and commit history, but they serve slightly different purposes. Let's compare them in terms of functionality and use cases:</p>
+<ul>
+<li>
+<p><code>git reset</code> </p>
+<ul>
+<li>
+<p>Purpose</p>
+<ul>
+<li>Primarily used for resetting the branch pointer, staging area, and working directory to a specific commit.</li>
+<li>Can be used to undo commits, unstage changes, and discard changes in the working directory.</li>
+</ul>
 </li>
 <li>
-<p>Completing the Installation:</p>
-<p>Click "Install" to complete the installation process.</p>
+<p>Key Options</p>
+<ul>
+<li><code>--soft</code>: Keeps changes in the working directory and staging area.</li>
+<li><code>--mixed</code> (default): Unstages changes but keeps them in the working directory.</li>
+<li><code>--hard</code>: Discards changes in the working directory, staging area, and the commit itself.</li>
+</ul>
+</li>
+<li>
+<p>Examples</p>
+<ul>
+<li>
+<p>Undo the last commit and keep changes in the working directory:
+<div class="highlight"><pre><span></span><code>git reset --soft HEAD^
+</code></pre></div></p>
+</li>
+<li>
+<p>Unstage changes and keep them in the working directory:
+<div class="highlight"><pre><span></span><code>git reset file.txt
+</code></pre></div></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><code>git restore</code></p>
+<ul>
+<li>
+<p>Purpose</p>
+<ul>
+<li>Introduced in Git 2.23 as a more explicit command for restoring parts of the working directory.</li>
+<li>Designed for restoring files, either discarding changes or moving them between the working directory and staging area.</li>
+</ul>
+</li>
+<li>
+<p>Key Options</p>
+<ul>
+<li><code>--source=&lt;commit&gt;</code>: Specifies the commit from which to take the file state.</li>
+<li><code>--staged</code>: Restores the file to the specified commit's state in the staging area.</li>
+<li><code>--worktree</code>: Restores the file to the specified commit's state in the working directory.</li>
+</ul>
+</li>
+<li>
+<p>Examples</p>
+<ul>
+<li>
+<p>Discard uncommitted changes in a file:
+<div class="highlight"><pre><span></span><code>git restore file.txt
+</code></pre></div></p>
+</li>
+<li>
+<p>Unstage changes in a file and move them back to the working directory:
+<div class="highlight"><pre><span></span><code>git restore --staged file.txt
+</code></pre></div></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Use Cases:</strong></p>
+<ul>
+<li><code>git reset</code> is often used for branch-related operations and has more options for handling staged and unstaged changes.</li>
+<li><code>git restore</code> is tailored specifically for restoring parts of the working directory and is focused on clarity.</li>
+<li><code>git reset</code> can be used to amend or undo commits, while <code>git restore</code> focuses more on file-level restoration.</li>
+</ul>
+</li>
+</ul>
+<p>Ultimately, the choice between <code>git reset</code> and <code>git restore</code> depends on the specific use case and the level of clarity you seek in your Git commands.</p>
 </li>
 </ol>
-<h2 id="macos">macOS</h2>
-<ol>
-<li>
-<p>Install Homebrew:</p>
-<p>Open Terminal and run the following command to install Homebrew, a package manager for macOS:</p>
-<p><div class="highlight"><pre><span></span><code>/bin/bash -c <span class="s2">&quot;</span><span class="k">$(</span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span class="k">)</span><span class="s2">&quot;</span>
-</code></pre></div>
-2. Install Git:</p>
-<p>Once Homebrew is installed, run the following command to install Git:</p>
-<div class="highlight"><pre><span></span><code>brew install git
-</code></pre></div>
-</li>
-</ol>
-<h2 id="linux">Linux</h2>
-<h3 id="ubuntudebian">Ubuntu/Debian</h3>
-<div class="highlight"><pre><span></span><code>sudo apt update
-sudo apt install git-all
-</code></pre></div>
-<h3 id="fedora">Fedora</h3>
-<div class="highlight"><pre><span></span><code>sudo dnf install git
-</code></pre></div>
-<h3 id="arch-linux">Arch Linux</h3>
-<div class="highlight"><pre><span></span><code>sudo pacman -S git
-</code></pre></div>
-<h2 id="verify-installation">Verify Installation</h2>
-<p>Regardless of your operating system, after installation, open a terminal and run:</p>
-<p><div class="highlight"><pre><span></span><code>git --version
-</code></pre></div>
-This should display the installed Git version, confirming a successful installation.</p>
-<p>Now that Git is installed, you're ready to start using version control for your projects!</p>
 
               
             </article>
@@ -665,7 +949,7 @@ This should display the installed Git version, confirming a successful installat
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../../git_refresh/" class="md-footer__link md-footer__link--prev" aria-label="Previous: General" rel="prev">
+        <a href="../git_stage/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Snapshotting" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -674,26 +958,11 @@ This should display the installed Git version, confirming a successful installat
               <span class="md-footer__direction">
                 Previous
               </span>
-              General
+              Snapshotting
             </div>
           </div>
         </a>
       
-      
-        
-        <a href="../git_configuration/" class="md-footer__link md-footer__link--next" aria-label="Next: Configuring Git" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Configuring Git
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
       
     </nav>
   

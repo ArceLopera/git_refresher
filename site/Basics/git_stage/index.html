@@ -12,14 +12,14 @@
         <meta name="author" content="ArceLopera">
       
       
-        <link rel="canonical" href="https://arcelopera.github.io/git_refresher/Basics/git_install/">
+        <link rel="canonical" href="https://arcelopera.github.io/git_refresher/Basics/git_stage/">
       
       <link rel="icon" href="../../Images/git.ico">
       <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.15">
     
     
       
-        <title>Installing Git - Git Refresher</title>
+        <title>Snapshotting - Git Refresher</title>
       
     
     
@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#windows" class="md-skip">
+        <a href="#working-with-snapshots-and-the-git-staging-area" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Installing Git
+              Snapshotting
             
           </span>
         </div>
@@ -328,96 +328,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Installing Git
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../git_install/" class="md-nav__link">
         Installing Git
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#windows" class="md-nav__link">
-    Windows
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#macos" class="md-nav__link">
-    macOS
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#linux" class="md-nav__link">
-    Linux
-  </a>
-  
-    <nav class="md-nav" aria-label="Linux">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ubuntudebian" class="md-nav__link">
-    Ubuntu/Debian
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#fedora" class="md-nav__link">
-    Fedora
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#arch-linux" class="md-nav__link">
-    Arch Linux
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#verify-installation" class="md-nav__link">
-    Verify Installation
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -469,11 +384,198 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../git_stage/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Snapshotting
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Snapshotting
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#working-with-snapshots-and-the-git-staging-area" class="md-nav__link">
+    Working with snapshots and the Git staging area.
+  </a>
+  
+    <nav class="md-nav" aria-label="Working with snapshots and the Git staging area.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#git-status" class="md-nav__link">
+    git status
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-add" class="md-nav__link">
+    git add
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-reset" class="md-nav__link">
+    git reset
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-diff" class="md-nav__link">
+    git diff
+  </a>
+  
+    <nav class="md-nav" aria-label="git diff">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#git-diff-staged" class="md-nav__link">
+    git diff --staged
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-difftool" class="md-nav__link">
+    git difftool
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-commit" class="md-nav__link">
+    git commit
+  </a>
+  
+    <nav class="md-nav" aria-label="git commit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#committing-specific-files" class="md-nav__link">
+    Committing Specific Files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#amending-the-last-commit" class="md-nav__link">
+    Amending the Last Commit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interactive-commit" class="md-nav__link">
+    Interactive Commit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#committing-with-multiple-messages" class="md-nav__link">
+    Committing with Multiple Messages
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#committing-with-a-future-date" class="md-nav__link">
+    Committing with a Future Date
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#committing-only-tracked-changes" class="md-nav__link">
+    Committing Only Tracked Changes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tracking-path-changes" class="md-nav__link">
+    Tracking Path Changes
+  </a>
+  
+    <nav class="md-nav" aria-label="Tracking Path Changes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#git-rm" class="md-nav__link">
+    git rm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-mv" class="md-nav__link">
+    git mv
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-clean" class="md-nav__link">
+    git clean
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-log-stat-m" class="md-nav__link">
+    git log --stat -M
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -524,45 +626,113 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#windows" class="md-nav__link">
-    Windows
+  <a href="#working-with-snapshots-and-the-git-staging-area" class="md-nav__link">
+    Working with snapshots and the Git staging area.
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#macos" class="md-nav__link">
-    macOS
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#linux" class="md-nav__link">
-    Linux
-  </a>
-  
-    <nav class="md-nav" aria-label="Linux">
+    <nav class="md-nav" aria-label="Working with snapshots and the Git staging area.">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#ubuntudebian" class="md-nav__link">
-    Ubuntu/Debian
+  <a href="#git-status" class="md-nav__link">
+    git status
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fedora" class="md-nav__link">
-    Fedora
+  <a href="#git-add" class="md-nav__link">
+    git add
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#arch-linux" class="md-nav__link">
-    Arch Linux
+  <a href="#git-reset" class="md-nav__link">
+    git reset
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-diff" class="md-nav__link">
+    git diff
+  </a>
+  
+    <nav class="md-nav" aria-label="git diff">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#git-diff-staged" class="md-nav__link">
+    git diff --staged
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-difftool" class="md-nav__link">
+    git difftool
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-commit" class="md-nav__link">
+    git commit
+  </a>
+  
+    <nav class="md-nav" aria-label="git commit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#committing-specific-files" class="md-nav__link">
+    Committing Specific Files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#amending-the-last-commit" class="md-nav__link">
+    Amending the Last Commit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interactive-commit" class="md-nav__link">
+    Interactive Commit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#committing-with-multiple-messages" class="md-nav__link">
+    Committing with Multiple Messages
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#committing-with-a-future-date" class="md-nav__link">
+    Committing with a Future Date
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#committing-only-tracked-changes" class="md-nav__link">
+    Committing Only Tracked Changes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -572,9 +742,43 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#verify-installation" class="md-nav__link">
-    Verify Installation
+  <a href="#tracking-path-changes" class="md-nav__link">
+    Tracking Path Changes
   </a>
+  
+    <nav class="md-nav" aria-label="Tracking Path Changes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#git-rm" class="md-nav__link">
+    git rm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-mv" class="md-nav__link">
+    git mv
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-clean" class="md-nav__link">
+    git clean
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-log-stat-m" class="md-nav__link">
+    git log --stat -M
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -592,66 +796,234 @@
                 
 
 
-  <h1>Installing Git</h1>
+  <h1>Snapshotting</h1>
 
-<p>Git is a powerful version control system that helps you manage and track changes in your codebase. Here's a simple guide on how to install Git on your machine:</p>
-<h2 id="windows">Windows</h2>
-<ol>
-<li>
-<p>Download Git:</p>
-<p>Visit the official Git website at https://git-scm.com/download/win.</p>
-</li>
-<li>
-<p>Run Installer:</p>
-<p>Once the download is complete, run the installer and follow the on-screen instructions. Make sure to leave all default settings unless you have specific preferences.</p>
-</li>
-<li>
-<p>Adjusting your PATH environment:</p>
-<p>Choose the default option to "Use Git from Git Bash only" to avoid potential conflicts with other software. Select "Use the OpenSSL library" for secure connections.</p>
-</li>
-<li>
-<p>Choosing the Terminal Emulator:</p>
-<p>You can use Git Bash as your terminal emulator, providing a Unix-like environment on Windows. Alternatively, you can choose to use the Windows Command Prompt or PowerShell.</p>
-</li>
-<li>
-<p>Configuring Line Endings:</p>
-<p>Select "Checkout as-is, commit Unix-style line endings" unless you have a specific reason to choose otherwise.</p>
-</li>
-<li>
-<p>Completing the Installation:</p>
-<p>Click "Install" to complete the installation process.</p>
-</li>
-</ol>
-<h2 id="macos">macOS</h2>
-<ol>
-<li>
-<p>Install Homebrew:</p>
-<p>Open Terminal and run the following command to install Homebrew, a package manager for macOS:</p>
-<p><div class="highlight"><pre><span></span><code>/bin/bash -c <span class="s2">&quot;</span><span class="k">$(</span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span class="k">)</span><span class="s2">&quot;</span>
+<h2 id="working-with-snapshots-and-the-git-staging-area">Working with snapshots and the Git staging area.</h2>
+<p>For the basic workflow of staging content and committing it to your history, there are only a few basic commands.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Command</th>
+<th align="center">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><a href="#git-status">git status</a></td>
+<td align="center"><code>bash git status</code></td>
+</tr>
+<tr>
+<td align="center"><a href="#git-add">git add</a></td>
+<td align="center"><code>bash git add myfile.txt</code></td>
+</tr>
+<tr>
+<td align="center"><a href="#git-reset">git reset</a></td>
+<td align="center"><code>bash git reset myfile.txt</code></td>
+</tr>
+<tr>
+<td align="center"><a href="#git-diff">git diff</a></td>
+<td align="center"><code>bash git diff</code></td>
+</tr>
+<tr>
+<td align="center"><a href="#git-commit">git commit</a></td>
+<td align="center"><code>bash git commit -m "Add new feature"</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="git-status">git status</h3>
+<p>Shows the status of your working directory, indicating which files are modified, untracked, and staged for the next commit.
+<div class="highlight"><pre><span></span><code>git status
+</code></pre></div></p>
+<p>This command provides a detailed summary of the changes in your working directory. Files listed under "Changes not staged for commit" are modified but not staged, and files under "Changes to be committed" are staged for the next commit.</p>
+<h3 id="git-add">git add</h3>
+<p>Adds changes in the specified file to the staging area, preparing them for the next commit.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Create or modify a file</span>
+<span class="nb">echo</span> <span class="s2">&quot;Hello, Git!&quot;</span> &gt; myfile.txt
+
+<span class="c1"># Stage the changes</span>
+git add myfile.txt
 </code></pre></div>
-2. Install Git:</p>
-<p>Once Homebrew is installed, run the following command to install Git:</p>
-<div class="highlight"><pre><span></span><code>brew install git
+<p>This sequence of commands creates or modifies <code>myfile.txt</code> and stages the changes for the next commit.</p>
+<p>Use <code>git add .</code> to stage all changes in the working directory.</p>
+<h3 id="git-reset">git reset</h3>
+<p>Unstages changes in the specified file, reverting it to the state in the last commit, while retaining the changes in the working directory.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Unstage the changes in myfile.txt</span>
+git reset myfile.txt
 </code></pre></div>
-</li>
-</ol>
-<h2 id="linux">Linux</h2>
-<h3 id="ubuntudebian">Ubuntu/Debian</h3>
-<div class="highlight"><pre><span></span><code>sudo apt update
-sudo apt install git-all
+<p>This command removes <code>myfile.txt</code> from the staging area, but the changes made to the file remain in the working directory.</p>
+<h3 id="git-diff">git diff</h3>
+<p>The git diff command is used when you want to see differences between any two trees. This could be the difference between your working environment and your staging area (git diff by itself), between your staging area and your last commit (git diff --staged), or between two commits (git diff master branchB).</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Make changes to myfile.txt</span>
+<span class="nb">echo</span> <span class="s2">&quot;Updated content&quot;</span> &gt;&gt; myfile.txt
+
+<span class="c1"># View the differences</span>
+git diff
 </code></pre></div>
-<h3 id="fedora">Fedora</h3>
-<div class="highlight"><pre><span></span><code>sudo dnf install git
+<p>This command displays the unstaged changes in <code>myfile.txt</code> since the last commit.</p>
+<h4 id="git-diff-staged">git diff --staged</h4>
+<p>Shows the differences between the staging area and the last commit (changes that are staged but not yet committed).</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Stage the changes in myfile.txt</span>
+git add myfile.txt
+
+<span class="c1"># View the differences in the staging area</span>
+git diff --staged
 </code></pre></div>
-<h3 id="arch-linux">Arch Linux</h3>
-<div class="highlight"><pre><span></span><code>sudo pacman -S git
+<p>This command displays the changes that are currently staged for the next commit.</p>
+<h4 id="git-difftool">git difftool</h4>
+<p>The git difftool command simply launches an external tool to show you the difference between two trees in case you want to use something other than the built in git diff command.</p>
+<h3 id="git-commit">git commit</h3>
+<p>Commits the changes that are staged in the snapshot, with a descriptive commit message.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Commit the changes with a message</span>
+git commit -m <span class="s2">&quot;Add new feature&quot;</span>
 </code></pre></div>
-<h2 id="verify-installation">Verify Installation</h2>
-<p>Regardless of your operating system, after installation, open a terminal and run:</p>
-<p><div class="highlight"><pre><span></span><code>git --version
+<p>This command creates a new commit with the staged changes and the specified commit message.</p>
+<ul>
+<li>Combine <code>git add</code> and <code>git commit</code> in one step using <code>git commit -am "[descriptive message]"</code> to stage and commit changes.</li>
+</ul>
+<h4 id="committing-specific-files">Committing Specific Files</h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Stage changes in specific files</span>
+git add file1.txt file2.txt
+
+<span class="c1"># Commit the changes with a message</span>
+git commit -m <span class="s2">&quot;Fix issues in file1.txt and file2.txt&quot;</span>
 </code></pre></div>
-This should display the installed Git version, confirming a successful installation.</p>
-<p>Now that Git is installed, you're ready to start using version control for your projects!</p>
+<p>Here, only specific files (<code>file1.txt</code> and <code>file2.txt</code>) are staged and then committed with a message describing the fix.</p>
+<h4 id="amending-the-last-commit">Amending the Last Commit</h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Make additional changes</span>
+<span class="nb">echo</span> <span class="s2">&quot;Additional content&quot;</span> &gt;&gt; myfile.txt
+
+<span class="c1"># Amend the last commit with new changes</span>
+git add myfile.txt
+git commit --amend -m <span class="s2">&quot;Update myfile.txt with additional content&quot;</span>
+</code></pre></div>
+<p>This example adds new content to <code>myfile.txt</code> and then amends the last commit with the additional changes.</p>
+<h4 id="interactive-commit">Interactive Commit</h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Interactively stage changes</span>
+git add -i
+
+<span class="c1"># Follow the interactive prompts to stage changes and commit</span>
+</code></pre></div>
+<p>Running <code>git add -i</code> opens an interactive mode where you can choose which changes to stage, unstage, or commit. This provides a more granular control over the commit process.</p>
+<h4 id="committing-with-multiple-messages">Committing with Multiple Messages</h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Stage changes in files</span>
+git add file1.txt file2.txt
+
+<span class="c1"># Commit changes with multiple messages</span>
+git commit -m <span class="s2">&quot;Fix issues in file1.txt&quot;</span> -m <span class="s2">&quot;Add new feature in file2.txt&quot;</span>
+</code></pre></div>
+<p>You can use the <code>-m</code> option multiple times to provide multiple commit messages. Each <code>-m</code> adds a new paragraph to the commit message.</p>
+<h4 id="committing-with-a-future-date">Committing with a Future Date</h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Stage changes</span>
+git add .
+
+<span class="c1"># Commit with a future date</span>
+git commit --date<span class="o">=</span><span class="s2">&quot;2023-01-01T12:00:00&quot;</span> -m <span class="s2">&quot;Commit with a future date&quot;</span>
+</code></pre></div>
+<p>This example commits changes with a specified future date using the <code>--date</code> option.</p>
+<h4 id="committing-only-tracked-changes">Committing Only Tracked Changes</h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Stage changes in tracked files</span>
+git add -u
+
+<span class="c1"># Commit only tracked changes</span>
+git commit -m <span class="s2">&quot;Commit tracked changes&quot;</span>
+</code></pre></div>
+<p>The <code>git add -u</code> command stages only tracked files, and then a commit is made with a message indicating the commit of tracked changes.</p>
+<h2 id="tracking-path-changes">Tracking Path Changes</h2>
+<p>Versioning file removes and path changes</p>
+<table>
+<thead>
+<tr>
+<th align="center">Command</th>
+<th align="center">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><a href="#git-rm">git rm</a></td>
+<td align="center"><code>bash git rm file.txt</code></td>
+</tr>
+<tr>
+<td align="center"><a href="#git-mv">git mv</a></td>
+<td align="center"><code>bash git mv oldfile.txt newfile.txt</code></td>
+</tr>
+<tr>
+<td align="center"><a href="#git-clean">git clean</a></td>
+<td align="center"><code>bash git clean -ffd</code></td>
+</tr>
+<tr>
+<td align="center"><a href="#git-log---stat--m">git log</a></td>
+<td align="center"><code>bash git log --stat -M</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="git-rm">git rm</h3>
+<p>Removes files from both your working directory and the Git repository. It stages the removal of the specified files, and you need to commit to apply the changes.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Remove a file from the working directory and stage the removal</span>
+git rm file.txt
+
+<span class="c1"># Commit the removal</span>
+git commit -m <span class="s2">&quot;Remove file.txt&quot;</span>
+</code></pre></div>
+<p>This sequence removes <code>file.txt</code> from both the working directory and the Git repository, and the removal is committed.</p>
+<h3 id="git-mv">git mv</h3>
+<p>Renames or moves files in both your working directory and the Git repository. Similar to <code>git rm</code>, it stages the rename/move, and you need to commit to apply the changes.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Rename a file and stage the change</span>
+git mv oldfile.txt newfile.txt
+
+<span class="c1"># Commit the rename</span>
+git commit -m <span class="s2">&quot;Rename oldfile.txt to newfile.txt&quot;</span>
+</code></pre></div>
+<p>This example renames <code>oldfile.txt</code> to <code>newfile.txt</code>, stages the change, and commits the rename.</p>
+<ul>
+<li>With <code>git mv</code>, you can also use it to move files to a different directory, like <code>git mv file.txt new_directory/</code>.</li>
+<li>Use <code>-r</code> with <code>git rm</code> and <code>git mv</code> to handle removals or moves recursively in directories.</li>
+</ul>
+<h3 id="git-clean">git clean</h3>
+<p>Removes untracked files from your working directory. It's useful for cleaning up untracked files that haven't been staged or committed.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># List untracked files that will be removed (dry run)</span>
+git clean -n
+
+<span class="c1"># Remove untracked files</span>
+git clean -f
+</code></pre></div>
+<p>The first command (<code>git clean -n</code>) is a dry run that shows you what files would be removed. The second command (<code>git clean -f</code>) actually removes the untracked files.</p>
+<ul>
+<li><code>git clean</code> has additional options, such as <code>-i</code> for an interactive mode where you can choose which files to clean.</li>
+</ul>
+<h3 id="git-log-stat-m">git log --stat -M</h3>
+<p>This command is used to display the commit history along with statistics about the changes introduced in each commit, including information about file modifications, additions, and deletions. The <code>-M</code> option is particularly used to detect file renames.</p>
+<p>Let's break down the components of this command:</p>
+<ul>
+<li><code>git log</code>: Displays the commit logs.</li>
+<li><code>--stat</code>: Includes additional statistics at the end of each commit entry, providing a summary of changes.</li>
+<li><code>-M</code>: Enables Git's rename detection, which identifies file renames between commits.</li>
+</ul>
+<div class="highlight"><pre><span></span><code>git log --stat -M
+</code></pre></div>
+<p>This command will output a detailed log that includes commit information and statistics. The statistics section shows the number of lines added and removed for each file affected by the commit. Additionally, if a file has been renamed, Git will provide information about the rename.</p>
+<p>Here is a simplified example of what the output might look like:</p>
+<div class="highlight"><pre><span></span><code>commit abcd1234 (HEAD)
+Author: John Doe &lt;john.doe@example.com&gt;
+Date:   Tue Jan 18 12:00:00 2024 +0000
+
+    Updated README.md
+
+ README.md | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+</code></pre></div>
+<p>In this example:</p>
+<ul>
+<li><code>commit abcd1234</code>: The unique identifier of the commit.</li>
+<li><code>Author</code>: The author of the commit.</li>
+<li><code>Date</code>: The date and time of the commit.</li>
+<li><code>Updated README.md</code>: The commit message.</li>
+</ul>
+<p>The statistics section (<code>README.md | 10 +++++-----</code>) indicates that in the file <code>README.md</code>, 10 lines were added, and 5 lines were removed. This section provides a quick overview of the changes made in each commit.</p>
+<p>The <code>-M</code> option enhances this by detecting file renames. If a file has been renamed, Git will track the rename and display the old and new filenames.</p>
+<ul>
+<li>The <code>-M</code> option can take an optional value to set a similarity index for rename detection. For example, <code>-M90%</code> would consider files as renamed if 90% of their content is similar.</li>
+<li>Using <code>-M</code> can be especially useful when you want to track the history of a file that has been renamed over time.</li>
+</ul>
 
               
             </article>
@@ -665,7 +1037,7 @@ This should display the installed Git version, confirming a successful installat
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../../git_refresh/" class="md-footer__link md-footer__link--prev" aria-label="Previous: General" rel="prev">
+        <a href="../git_alias/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Aliases" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -674,20 +1046,20 @@ This should display the installed Git version, confirming a successful installat
               <span class="md-footer__direction">
                 Previous
               </span>
-              General
+              Aliases
             </div>
           </div>
         </a>
       
       
         
-        <a href="../git_configuration/" class="md-footer__link md-footer__link--next" aria-label="Next: Configuring Git" rel="next">
+        <a href="../git_undoingthings/" class="md-footer__link md-footer__link--next" aria-label="Next: Undoing Things" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Configuring Git
+              Undoing Things
             </div>
           </div>
           <div class="md-footer__button md-icon">
