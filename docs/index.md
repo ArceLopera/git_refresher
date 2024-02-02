@@ -4,9 +4,13 @@ Whether you're a seasoned developer or a code maintainer, this repository is des
 
 <center>
 
-|  Basic Topics |  Advanced Topics |
-|:-------------:|:----------------:|
-| [Basics](git_refresh.md)        |  [Adv]()  |
+|                  Basic Topics                  | Advanced Topics |
+| :--------------------------------------------- | :-------------- |
+| [Configuration](Basics/git_configuration.md)   | [Adv]()         |
+| [Aliases](Basics/git_alias.md)                 | [Adv]()         |
+| [Starting a Project](Basics/git_start.md)      | [Adv]()         |
+| [Staging Changes](Basics/git_stage.md)         | [Adv]()         |
+| [Undoing Changes](Basics/git_undoingthings.md) | [Adv]()         |
 
 </center>
 
