@@ -12,19 +12,21 @@
         <meta name="author" content="ArceLopera">
       
       
-      <link rel="icon" href="/git_refresher/Images/git.ico">
+        <link rel="canonical" href="https://arcelopera.github.io/git_refresher/Basics/git_remotes/">
+      
+      <link rel="icon" href="../../Images/git.ico">
       <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.15">
     
     
       
-        <title>Git Refresher</title>
+        <title>Remotes - Git Refresher</title>
       
     
     
-      <link rel="stylesheet" href="/git_refresher/assets/stylesheets/main.c382b1dc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.c382b1dc.min.css">
       
         
-        <link rel="stylesheet" href="/git_refresher/assets/stylesheets/palette.cc9b2e1e.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cc9b2e1e.min.css">
         
       
     
@@ -39,7 +41,7 @@
       
     
     
-    <script>__md_scope=new URL("/git_refresher/",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -66,6 +68,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#1-adding-a-remote" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -76,9 +83,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/git_refresher/." title="Git Refresher" class="md-header__button md-logo" aria-label="Git Refresher" data-md-component="logo">
+    <a href="../.." title="Git Refresher" class="md-header__button md-logo" aria-label="Git Refresher" data-md-component="logo">
       
-  <img src="/git_refresher/Images/git.svg" alt="logo">
+  <img src="../../Images/git.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -94,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              Remotes
             
           </span>
         </div>
@@ -191,7 +198,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="/git_refresher/." class="md-tabs__link">
+    <a href="../.." class="md-tabs__link">
       Home
     </a>
   </li>
@@ -200,13 +207,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="/git_refresher/git_refresh/" class="md-tabs__link">
+      <a href="../../git_refresh/" class="md-tabs__link md-tabs__link--active">
         Basics
       </a>
     </li>
@@ -234,9 +243,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/git_refresher/." title="Git Refresher" class="md-nav__button md-logo" aria-label="Git Refresher" data-md-component="logo">
+    <a href="../.." title="Git Refresher" class="md-nav__button md-logo" aria-label="Git Refresher" data-md-component="logo">
       
-  <img src="/git_refresher/Images/git.svg" alt="logo">
+  <img src="../../Images/git.svg" alt="logo">
 
     </a>
     Git Refresher
@@ -264,7 +273,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/git_refresher/." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         Home
       </a>
     </li>
@@ -277,12 +286,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" data-md-state="indeterminate" type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
       
       
       
@@ -305,7 +316,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/git_refresher/git_refresh/" class="md-nav__link">
+      <a href="../../git_refresh/" class="md-nav__link">
         General
       </a>
     </li>
@@ -319,7 +330,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/git_refresher/Basics/git_install/" class="md-nav__link">
+      <a href="../git_install/" class="md-nav__link">
         Installing Git
       </a>
     </li>
@@ -333,7 +344,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/git_refresher/Basics/git_configuration/" class="md-nav__link">
+      <a href="../git_configuration/" class="md-nav__link">
         Configuring Git
       </a>
     </li>
@@ -347,7 +358,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/git_refresher/Basics/git_start/" class="md-nav__link">
+      <a href="../git_start/" class="md-nav__link">
         Starting a Project
       </a>
     </li>
@@ -361,7 +372,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/git_refresher/Basics/git_alias/" class="md-nav__link">
+      <a href="../git_alias/" class="md-nav__link">
         Aliases
       </a>
     </li>
@@ -375,7 +386,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/git_refresher/Basics/git_stage/" class="md-nav__link">
+      <a href="../git_stage/" class="md-nav__link">
         Snapshotting
       </a>
     </li>
@@ -389,7 +400,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/git_refresher/Basics/git_undoingthings/" class="md-nav__link">
+      <a href="../git_undoingthings/" class="md-nav__link">
         Undoing Things
       </a>
     </li>
@@ -401,11 +412,111 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="/git_refresher/Basics/git_remotes/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Remotes
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Remotes
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-adding-a-remote" class="md-nav__link">
+    1. Adding a Remote
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-viewing-remote-information" class="md-nav__link">
+    2. Viewing Remote Information
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-fetching-changes-from-a-remote" class="md-nav__link">
+    3. Fetching Changes from a Remote
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-pulling-changes-from-a-remote" class="md-nav__link">
+    4. Pulling Changes from a Remote
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-pushing-changes-to-a-remote" class="md-nav__link">
+    5. Pushing Changes to a Remote
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-creating-a-branch-in-a-remote-repository" class="md-nav__link">
+    6. Creating a Branch in a Remote Repository
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-cloning-a-repository" class="md-nav__link">
+    7. Cloning a Repository
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-renaming-a-remote" class="md-nav__link">
+    8. Renaming a Remote
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-removing-a-remote" class="md-nav__link">
+    9. Removing a Remote
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-inspecting-remote-branches" class="md-nav__link">
+    10. Inspecting Remote Branches
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -435,6 +546,84 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-adding-a-remote" class="md-nav__link">
+    1. Adding a Remote
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-viewing-remote-information" class="md-nav__link">
+    2. Viewing Remote Information
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-fetching-changes-from-a-remote" class="md-nav__link">
+    3. Fetching Changes from a Remote
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-pulling-changes-from-a-remote" class="md-nav__link">
+    4. Pulling Changes from a Remote
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-pushing-changes-to-a-remote" class="md-nav__link">
+    5. Pushing Changes to a Remote
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-creating-a-branch-in-a-remote-repository" class="md-nav__link">
+    6. Creating a Branch in a Remote Repository
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-cloning-a-repository" class="md-nav__link">
+    7. Cloning a Repository
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-renaming-a-remote" class="md-nav__link">
+    8. Renaming a Remote
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-removing-a-remote" class="md-nav__link">
+    9. Removing a Remote
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-inspecting-remote-branches" class="md-nav__link">
+    10. Inspecting Remote Branches
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -444,8 +633,72 @@
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
               
-  <h1>404 - Not found</h1>
+                
 
+
+  <h1>Remotes</h1>
+
+<p>Working with remotes in Git involves collaborating with repositories hosted on remote servers. </p>
+<h2 id="1-adding-a-remote">1. <strong>Adding a Remote</strong></h2>
+<p><div class="highlight"><pre><span></span><code>git remote add &lt;remote-name&gt; &lt;remote-url&gt;
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>git remote add origin https://github.com/user/repo.git
+</code></pre></div>
+Adds a remote repository with a given name and URL.</p>
+<h2 id="2-viewing-remote-information">2. <strong>Viewing Remote Information</strong></h2>
+<p><div class="highlight"><pre><span></span><code>git remote -v
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>git remote -v
+</code></pre></div></p>
+<p>Displays the URLs of the remote repositories.</p>
+<h2 id="3-fetching-changes-from-a-remote">3. <strong>Fetching Changes from a Remote</strong></h2>
+<p><div class="highlight"><pre><span></span><code>git fetch &lt;remote-name&gt;
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>git fetch origin
+</code></pre></div>
+Fetches changes from the remote repository but does not merge them into the local branch.</p>
+<h2 id="4-pulling-changes-from-a-remote">4. <strong>Pulling Changes from a Remote</strong></h2>
+<p><div class="highlight"><pre><span></span><code>git pull &lt;remote-name&gt; &lt;branch-name&gt;
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>git pull origin main
+</code></pre></div>
+Fetches changes from the remote repository and merges them into the local branch.</p>
+<h2 id="5-pushing-changes-to-a-remote">5. <strong>Pushing Changes to a Remote</strong></h2>
+<div class="highlight"><pre><span></span><code>git push &lt;remote-name&gt; &lt;branch-name&gt;
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>git push origin main
+</code></pre></div>
+<p>Pushes local commits to the remote repository.</p>
+<h2 id="6-creating-a-branch-in-a-remote-repository">6. <strong>Creating a Branch in a Remote Repository</strong></h2>
+<div class="highlight"><pre><span></span><code>git push &lt;remote-name&gt; &lt;local-branch-name&gt;:&lt;remote-branch-name&gt;
+</code></pre></div>
+<p><div class="highlight"><pre><span></span><code>git push origin feature-branch:feature-branch
+</code></pre></div>
+Creates a new branch in the remote repository based on the local branch.</p>
+<h2 id="7-cloning-a-repository">7. <strong>Cloning a Repository</strong></h2>
+<div class="highlight"><pre><span></span><code>git clone &lt;remote-url&gt;
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>git clone https://github.com/user/repo.git
+</code></pre></div>
+<p>Creates a local copy of a remote repository.</p>
+<h2 id="8-renaming-a-remote">8. <strong>Renaming a Remote</strong></h2>
+<div class="highlight"><pre><span></span><code>git remote rename &lt;old-name&gt; &lt;new-name&gt;
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>git remote rename origin upstream
+</code></pre></div>
+<p>Renames an existing remote.</p>
+<h2 id="9-removing-a-remote">9. <strong>Removing a Remote</strong></h2>
+<p><div class="highlight"><pre><span></span><code>git remote remove &lt;remote-name&gt;
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>git remote remove origin
+</code></pre></div></p>
+<p>Removes a remote from the list of remotes.</p>
+<h2 id="10-inspecting-remote-branches">10. <strong>Inspecting Remote Branches</strong></h2>
+<div class="highlight"><pre><span></span><code>git branch -r
+</code></pre></div>
+<p>Lists remote branches.</p>
+
+              
             </article>
           </div>
         </div>
@@ -453,6 +706,26 @@
       </main>
       
         <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../git_undoingthings/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Undoing Things" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Undoing Things
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -524,10 +797,10 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "/git_refresher/", "features": ["navigation.tabs", "navigation.expand"], "search": "/git_refresher/assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.expand"], "search": "../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="/git_refresher/assets/javascripts/bundle.a6c66575.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a6c66575.min.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/tablesort/5.2.1/tablesort.min.js"></script>
       
