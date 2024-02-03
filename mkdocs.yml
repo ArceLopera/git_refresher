@@ -98,3 +98,4 @@ nav:
      - Aliases: Basics/git_alias.md
      - Snapshotting: Basics/git_stage.md
      - Undoing Things: Basics/git_undoingthings.md
+     - Remotes: Basics/git_remotes.md
