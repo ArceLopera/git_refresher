@@ -674,11 +674,6 @@ Fetches changes from the remote repository and merges them into the local branch
 <div class="highlight"><pre><span></span><code>git push origin main
 </code></pre></div>
 <p>Pushes local commits to the remote repository.</p>
-<p><div class="highlight"><pre><span></span><code>git push &lt;remote-name&gt; &lt;branch-name&gt;:&lt;remote-branch-name&gt;
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>git push origin main:feature-branch
-</code></pre></div>
-Pushes local commits to the remote repository and creates a new branch in the remote repository based on the local branch.</p>
 <h2 id="6-creating-a-branch-in-a-remote-repository">6. <strong>Creating a Branch in a Remote Repository</strong></h2>
 <div class="highlight"><pre><span></span><code>git push &lt;remote-name&gt; &lt;local-branch-name&gt;:&lt;remote-branch-name&gt;
 </code></pre></div>
@@ -707,6 +702,54 @@ Creates a new branch in the remote repository based on the local branch.</p>
 <div class="highlight"><pre><span></span><code>git branch -r
 </code></pre></div>
 <p>Lists remote branches.</p>
+<p>The <code>git remote show</code> command is used to display information about a specific remote repository. It provides details such as the URL of the remote repository, the branches it tracks, and additional information about the remote branches.</p>
+<div class="highlight"><pre><span></span><code>git remote show &lt;remote-name&gt;
+</code></pre></div>
+<p><div class="highlight"><pre><span></span><code>git remote show origin
+</code></pre></div>
+The output of <code>git remote show &lt;remote-name&gt;</code> typically includes the following information:</p>
+<ol>
+<li>
+<p><strong>Remote URL:</strong> The URL of the remote repository.</p>
+</li>
+<li>
+<p><strong>Fetch URL:</strong> The URL used by <code>git fetch</code> to fetch from the remote repository. This may differ from the remote URL if the repository supports fetching from a different location.</p>
+</li>
+<li>
+<p><strong>Push URL:</strong> The URL used by <code>git push</code> to push to the remote repository. This may differ from the remote URL if the repository supports pushing to a different location.</p>
+</li>
+<li>
+<p><strong>Remote branches:</strong> Lists the branches present in the remote repository.</p>
+</li>
+<li>
+<p><strong>Local branch configured for <code>git pull</code>:</strong> Indicates the local branch that <code>git pull</code> will merge into.</p>
+</li>
+<li>
+<p><strong>Local refs configured for <code>git push</code>:</strong> Indicates the local branch that <code>git push</code> will push to.</p>
+</li>
+<li>
+<p><strong>Tracking information for each branch:</strong> Shows information about the local branch's relationship with the remote branches. This includes the branch name, the remote branch it tracks, whether it is up to date, and the number of commits behind or ahead.</p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code>* remote origin
+  Fetch URL: https://github.com/user/repo.git
+  Push  URL: https://github.com/user/repo.git
+  HEAD branch: main
+  Remote branches:
+    main    tracked
+    feature tracked
+  Local branch configured for &#39;git pull&#39;:
+    main merges with remote main
+  Local refs configured for &#39;git push&#39;:
+    main    pushes to main    (up to date)
+    feature pushes to feature (local out of date)
+</code></pre></div>
+<ul>
+<li>The <code>git remote show</code> command is useful for inspecting the configuration and status of a remote repository.</li>
+<li>It helps in understanding how local branches are synchronized with remote branches.</li>
+<li>The output provides valuable information for managing and coordinating work with remote repositories.</li>
+</ul>
+<p>Using <code>git remote show</code> can provide insights into the state of your remote repository, aiding in decision-making when performing operations such as fetching, pulling, or pushing changes.</p>
 
               
             </article>
