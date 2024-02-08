@@ -1,3 +1,7 @@
+**SHARE & UPDATE**
+
+Retrieving updates from another repository and updating local repos.
+
 Working with remotes in Git involves collaborating with repositories hosted on remote servers. 
 
 ## 1. **Adding a Remote**
@@ -15,9 +19,6 @@ Adds a remote repository with a given name and URL.
 ```bash
 git remote -v
 ```
-```bash
-git remote -v
-```
 
 Displays the URLs of the remote repositories.
 
@@ -29,7 +30,16 @@ git fetch <remote-name>
 ```bash
 git fetch origin
 ```
-Fetches changes from the remote repository but does not merge them into the local branch.
+Fetches changes from all branches in the remote repository but does not merge them into the local branch.
+
+
+```bash
+git fetch <remote-name> <branch-name>
+```
+```bash
+git fetch origin main
+```
+Fetches changes from the main branch in the remote repository and merges them into the local branch.
 
 ## 4. **Pulling Changes from a Remote**
 
@@ -52,6 +62,7 @@ git push origin main
 ```
 
 Pushes local commits to the remote repository.
+
 
 ## 6. **Creating a Branch in a Remote Repository**
 
