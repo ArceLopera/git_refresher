@@ -638,6 +638,8 @@
 
   <h1>Remotes</h1>
 
+<p><strong>SHARE &amp; UPDATE</strong></p>
+<p>Retrieving updates from another repository and updating local repos.</p>
 <p>Working with remotes in Git involves collaborating with repositories hosted on remote servers. </p>
 <h2 id="1-adding-a-remote">1. <strong>Adding a Remote</strong></h2>
 <p><div class="highlight"><pre><span></span><code>git remote add &lt;remote-name&gt; &lt;remote-url&gt;
@@ -646,17 +648,20 @@
 </code></pre></div>
 Adds a remote repository with a given name and URL.</p>
 <h2 id="2-viewing-remote-information">2. <strong>Viewing Remote Information</strong></h2>
-<p><div class="highlight"><pre><span></span><code>git remote -v
-</code></pre></div>
 <div class="highlight"><pre><span></span><code>git remote -v
-</code></pre></div></p>
+</code></pre></div>
 <p>Displays the URLs of the remote repositories.</p>
 <h2 id="3-fetching-changes-from-a-remote">3. <strong>Fetching Changes from a Remote</strong></h2>
 <p><div class="highlight"><pre><span></span><code>git fetch &lt;remote-name&gt;
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>git fetch origin
 </code></pre></div>
-Fetches changes from the remote repository but does not merge them into the local branch.</p>
+Fetches changes from all branches in the remote repository but does not merge them into the local branch.</p>
+<p><div class="highlight"><pre><span></span><code>git fetch &lt;remote-name&gt; &lt;branch-name&gt;
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>git fetch origin main
+</code></pre></div>
+Fetches changes from the main branch in the remote repository and merges them into the local branch.</p>
 <h2 id="4-pulling-changes-from-a-remote">4. <strong>Pulling Changes from a Remote</strong></h2>
 <p><div class="highlight"><pre><span></span><code>git pull &lt;remote-name&gt; &lt;branch-name&gt;
 </code></pre></div>
@@ -669,6 +674,11 @@ Fetches changes from the remote repository and merges them into the local branch
 <div class="highlight"><pre><span></span><code>git push origin main
 </code></pre></div>
 <p>Pushes local commits to the remote repository.</p>
+<p><div class="highlight"><pre><span></span><code>git push &lt;remote-name&gt; &lt;branch-name&gt;:&lt;remote-branch-name&gt;
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>git push origin main:feature-branch
+</code></pre></div>
+Pushes local commits to the remote repository and creates a new branch in the remote repository based on the local branch.</p>
 <h2 id="6-creating-a-branch-in-a-remote-repository">6. <strong>Creating a Branch in a Remote Repository</strong></h2>
 <div class="highlight"><pre><span></span><code>git push &lt;remote-name&gt; &lt;local-branch-name&gt;:&lt;remote-branch-name&gt;
 </code></pre></div>
