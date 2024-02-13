@@ -12,21 +12,21 @@
         <meta name="author" content="ArceLopera">
       
       
-        <link rel="canonical" href="https://arcelopera.github.io/git_refresher/">
+        <link rel="canonical" href="https://arcelopera.github.io/git_refresher/Basics/git_branch/">
       
-      <link rel="icon" href="Images/git.ico">
+      <link rel="icon" href="../../Images/git.ico">
       <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.15">
     
     
       
-        <title>Git Refresher</title>
+        <title>Branching - Git Refresher</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.c382b1dc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.c382b1dc.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.cc9b2e1e.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cc9b2e1e.min.css">
         
       
     
@@ -41,7 +41,7 @@
       
     
     
-    <script>__md_scope=new URL(".",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#welcome-to-git-refresher" class="md-skip">
+        <a href="#main-branches" class="md-skip">
           Skip to content
         </a>
       
@@ -83,9 +83,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="Git Refresher" class="md-header__button md-logo" aria-label="Git Refresher" data-md-component="logo">
+    <a href="../.." title="Git Refresher" class="md-header__button md-logo" aria-label="Git Refresher" data-md-component="logo">
       
-  <img src="Images/git.svg" alt="logo">
+  <img src="../../Images/git.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Home
+              Branching
             
           </span>
         </div>
@@ -195,12 +195,10 @@
         
   
   
-    
-  
 
 
   <li class="md-tabs__item">
-    <a href="." class="md-tabs__link md-tabs__link--active">
+    <a href="../.." class="md-tabs__link">
       Home
     </a>
   </li>
@@ -209,13 +207,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="git_refresh/" class="md-tabs__link">
+      <a href="../../git_refresh/" class="md-tabs__link md-tabs__link--active">
         Basics
       </a>
     </li>
@@ -243,9 +243,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Git Refresher" class="md-nav__button md-logo" aria-label="Git Refresher" data-md-component="logo">
+    <a href="../.." title="Git Refresher" class="md-nav__button md-logo" aria-label="Git Refresher" data-md-component="logo">
       
-  <img src="Images/git.svg" alt="logo">
+  <img src="../../Images/git.svg" alt="logo">
 
     </a>
     Git Refresher
@@ -271,21 +271,11 @@
 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
         Home
       </a>
-      
     </li>
   
 
@@ -296,12 +286,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" data-md-state="indeterminate" type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
       
       
       
@@ -324,7 +316,7 @@
   
   
     <li class="md-nav__item">
-      <a href="git_refresh/" class="md-nav__link">
+      <a href="../../git_refresh/" class="md-nav__link">
         General
       </a>
     </li>
@@ -338,7 +330,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Basics/git_install/" class="md-nav__link">
+      <a href="../git_install/" class="md-nav__link">
         Installing Git
       </a>
     </li>
@@ -352,7 +344,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Basics/git_configuration/" class="md-nav__link">
+      <a href="../git_configuration/" class="md-nav__link">
         Configuring Git
       </a>
     </li>
@@ -366,7 +358,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Basics/git_start/" class="md-nav__link">
+      <a href="../git_start/" class="md-nav__link">
         Starting a Project
       </a>
     </li>
@@ -380,7 +372,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Basics/git_alias/" class="md-nav__link">
+      <a href="../git_alias/" class="md-nav__link">
         Aliases
       </a>
     </li>
@@ -394,7 +386,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Basics/git_stage/" class="md-nav__link">
+      <a href="../git_stage/" class="md-nav__link">
         Snapshotting
       </a>
     </li>
@@ -408,7 +400,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Basics/git_undoingthings/" class="md-nav__link">
+      <a href="../git_undoingthings/" class="md-nav__link">
         Undoing Things
       </a>
     </li>
@@ -422,7 +414,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Basics/git_remotes/" class="md-nav__link">
+      <a href="../git_remotes/" class="md-nav__link">
         Remotes
       </a>
     </li>
@@ -436,7 +428,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Basics/git_tagging/" class="md-nav__link">
+      <a href="../git_tagging/" class="md-nav__link">
         Tagging
       </a>
     </li>
@@ -448,11 +440,97 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="Basics/git_branch/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Branching
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Branching
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#main-branches" class="md-nav__link">
+    Main Branches
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-branches" class="md-nav__link">
+    Creating Branches
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewing-branches" class="md-nav__link">
+    Viewing Branches
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#merging-branches" class="md-nav__link">
+    Merging Branches
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deleting-branches" class="md-nav__link">
+    Deleting Branches
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#branching-strategies" class="md-nav__link">
+    Branching Strategies
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remote-branches" class="md-nav__link">
+    Remote Branches
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#branching-best-practices" class="md-nav__link">
+    Branching Best Practices
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -481,8 +559,70 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#main-branches" class="md-nav__link">
+    Main Branches
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-branches" class="md-nav__link">
+    Creating Branches
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewing-branches" class="md-nav__link">
+    Viewing Branches
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#merging-branches" class="md-nav__link">
+    Merging Branches
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deleting-branches" class="md-nav__link">
+    Deleting Branches
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#branching-strategies" class="md-nav__link">
+    Branching Strategies
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remote-branches" class="md-nav__link">
+    Remote Branches
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#branching-best-practices" class="md-nav__link">
+    Branching Best Practices
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -496,41 +636,85 @@
                 
 
 
-<h1 id="welcome-to-git-refresher">Welcome to Git Refresher</h1>
-<p>Whether you're a seasoned developer or a code maintainer, this repository is designed to help you enhance your Git skills and streamline your version control workflows.</p>
-<p><center></p>
-<table>
-<thead>
-<tr>
-<th align="left">Basic Topics</th>
-<th align="left">Advanced Topics</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left"><a href="Basics/git_configuration/">Configuration</a></td>
-<td align="left"><a href="">Adv</a></td>
-</tr>
-<tr>
-<td align="left"><a href="Basics/git_alias/">Aliases</a></td>
-<td align="left"><a href="">Adv</a></td>
-</tr>
-<tr>
-<td align="left"><a href="Basics/git_start/">Starting a Project</a></td>
-<td align="left"><a href="">Adv</a></td>
-</tr>
-<tr>
-<td align="left"><a href="Basics/git_stage/">Staging Changes</a></td>
-<td align="left"><a href="">Adv</a></td>
-</tr>
-<tr>
-<td align="left"><a href="Basics/git_undoingthings/">Undoing Changes</a></td>
-<td align="left"><a href="">Adv</a></td>
-</tr>
-</tbody>
-</table>
-<p></center></p>
-<p>This material is a work in progress, so your feedback is welcome. The best way to provide that feedback is <a href="https://github.com/ArceLopera/git_refresher/issues">to click here and create an issue in this GitHub repository</a>.</p>
+  <h1>Branching</h1>
+
+<p>Branching in Git is a powerful feature that allows developers to diverge from the main line of development (usually referred to as the <code>master</code> branch) and work on separate, isolated lines of development. Each branch represents an independent line of development, enabling multiple features, fixes, or experiments to be worked on simultaneously without interfering with each other. Branching can be a crucial part of software development, as it allows teams to work collaboratively on different features or fixes simultaneously while maintaining a clear and organized codebase.</p>
+<h2 id="main-branches"><strong>Main Branches</strong></h2>
+<ul>
+<li>
+<p><strong>Master Branch:</strong> By convention, the <code>master</code> branch is often used to represent the main line of development. It typically contains stable, production-ready code.</p>
+</li>
+<li>
+<p><strong>Main Branch (Post-Git 2.28):</strong> Some projects have adopted renaming the default branch from <code>master</code> to <code>main</code>. The <code>main</code> branch serves the same purpose as the <code>master</code> branch, but the naming convention aims to promote more inclusive language.</p>
+</li>
+</ul>
+<h2 id="creating-branches"><strong>Creating Branches</strong></h2>
+<ul>
+<li><strong>Creating a New Branch:</strong> To create a new branch, use the <code>git branch &lt;branch-name&gt;</code> command. Optionally, you can switch to the new branch immediately with <code>git checkout -b &lt;branch-name&gt;</code>.</li>
+</ul>
+<div class="highlight"><pre><span></span><code>git branch feature-branch
+</code></pre></div>
+<ul>
+<li><strong>Switching Branches:</strong> To switch between branches, use the <code>git checkout &lt;branch-name&gt;</code> command.</li>
+</ul>
+<div class="highlight"><pre><span></span><code>git checkout feature-branch
+</code></pre></div>
+<h2 id="viewing-branches"><strong>Viewing Branches</strong></h2>
+<ul>
+<li><strong>Listing Branches:</strong> To list all branches in the repository, use the <code>git branch</code> command.</li>
+</ul>
+<div class="highlight"><pre><span></span><code>git branch
+</code></pre></div>
+<h2 id="merging-branches"><strong>Merging Branches</strong></h2>
+<ul>
+<li><strong>Merge:</strong> To merge changes from one branch into another, use the <code>git merge &lt;branch-name&gt;</code> command.</li>
+</ul>
+<div class="highlight"><pre><span></span><code>git merge feature-branch
+</code></pre></div>
+<h2 id="deleting-branches"><strong>Deleting Branches</strong></h2>
+<ul>
+<li><strong>Delete:</strong> To delete a branch, use the <code>git branch -d &lt;branch-name&gt;</code> command.</li>
+</ul>
+<div class="highlight"><pre><span></span><code>git branch -d feature-branch
+</code></pre></div>
+<h2 id="branching-strategies"><strong>Branching Strategies</strong></h2>
+<ul>
+<li>
+<p><strong>Feature Branching:</strong> Create a separate branch for each new feature or task. This isolates changes related to specific features, making them easier to manage and review.</p>
+</li>
+<li>
+<p><strong>Release Branching:</strong> Create branches for each release to stabilize the codebase before deployment.</p>
+</li>
+<li>
+<p><strong>Hotfix Branching:</strong> Create branches to fix critical issues in production code quickly.</p>
+</li>
+</ul>
+<h2 id="remote-branches"><strong>Remote Branches</strong></h2>
+<ul>
+<li><strong>Pushing a Branch:</strong> To push a local branch to a remote repository, use the <code>git push &lt;remote-name&gt; &lt;branch-name&gt;</code> command.</li>
+</ul>
+<div class="highlight"><pre><span></span><code>git push origin feature-branch
+</code></pre></div>
+<ul>
+<li><strong>Tracking Remote Branches:</strong> After pushing a branch to the remote repository, it can be tracked. This means Git remembers the relationship between the local branch and its corresponding remote branch.</li>
+</ul>
+<div class="highlight"><pre><span></span><code>git checkout -b feature-branch origin/feature-branch
+</code></pre></div>
+<h2 id="branching-best-practices"><strong>Branching Best Practices</strong></h2>
+<ul>
+<li>
+<p><strong>Use Descriptive Names:</strong> Choose meaningful names for branches to indicate their purpose or associated feature.</p>
+</li>
+<li>
+<p><strong>Keep Branches Short-Lived:</strong> Merge branches into the main line of development once their purpose is served to avoid branch clutter.</p>
+</li>
+<li>
+<p><strong>Regularly Update Branches:</strong> Keep branches up-to-date with changes in the main line of development by frequently merging or rebasing.</p>
+</li>
+<li>
+<p><strong>Review Branches:</strong> Encourage code review and collaboration by reviewing changes made in feature branches before merging them.</p>
+</li>
+</ul>
 
               
             </article>
@@ -543,21 +727,21 @@
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-      
         
-        <a href="git_refresh/" class="md-footer__link md-footer__link--next" aria-label="Next: General" rel="next">
+        <a href="../git_tagging/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Tagging" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
-                Next
+                Previous
               </span>
-              General
+              Tagging
             </div>
           </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
         </a>
+      
       
     </nav>
   
@@ -631,10 +815,10 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tabs", "navigation.expand"], "search": "assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.expand"], "search": "../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="assets/javascripts/bundle.a6c66575.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a6c66575.min.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/tablesort/5.2.1/tablesort.min.js"></script>
       
