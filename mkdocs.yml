@@ -100,3 +100,4 @@ nav:
      - Undoing Things: Basics/git_undoingthings.md
      - Remotes: Basics/git_remotes.md
      - Tagging: Basics/git_tagging.md
+     - Branching: Basics/git_branch.md
