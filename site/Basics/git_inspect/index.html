@@ -12,21 +12,21 @@
         <meta name="author" content="ArceLopera">
       
       
-        <link rel="canonical" href="https://arcelopera.github.io/git_refresher/">
+        <link rel="canonical" href="https://arcelopera.github.io/git_refresher/Basics/git_inspect/">
       
-      <link rel="icon" href="Images/git.ico">
+      <link rel="icon" href="../../Images/git.ico">
       <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.15">
     
     
       
-        <title>Git Refresher</title>
+        <title>Inspect & Compare - Git Refresher</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.c382b1dc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.c382b1dc.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.cc9b2e1e.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cc9b2e1e.min.css">
         
       
     
@@ -41,7 +41,7 @@
       
     
     
-    <script>__md_scope=new URL(".",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#welcome-to-git-refresher" class="md-skip">
+        <a href="#git-status" class="md-skip">
           Skip to content
         </a>
       
@@ -83,9 +83,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="Git Refresher" class="md-header__button md-logo" aria-label="Git Refresher" data-md-component="logo">
+    <a href="../.." title="Git Refresher" class="md-header__button md-logo" aria-label="Git Refresher" data-md-component="logo">
       
-  <img src="Images/git.svg" alt="logo">
+  <img src="../../Images/git.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Home
+              Inspect & Compare
             
           </span>
         </div>
@@ -195,12 +195,10 @@
         
   
   
-    
-  
 
 
   <li class="md-tabs__item">
-    <a href="." class="md-tabs__link md-tabs__link--active">
+    <a href="../.." class="md-tabs__link">
       Home
     </a>
   </li>
@@ -209,13 +207,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="git_refresh/" class="md-tabs__link">
+      <a href="../../git_refresh/" class="md-tabs__link md-tabs__link--active">
         Basics
       </a>
     </li>
@@ -243,9 +243,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Git Refresher" class="md-nav__button md-logo" aria-label="Git Refresher" data-md-component="logo">
+    <a href="../.." title="Git Refresher" class="md-nav__button md-logo" aria-label="Git Refresher" data-md-component="logo">
       
-  <img src="Images/git.svg" alt="logo">
+  <img src="../../Images/git.svg" alt="logo">
 
     </a>
     Git Refresher
@@ -271,21 +271,11 @@
 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
         Home
       </a>
-      
     </li>
   
 
@@ -296,12 +286,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" data-md-state="indeterminate" type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
       
       
       
@@ -324,7 +316,7 @@
   
   
     <li class="md-nav__item">
-      <a href="git_refresh/" class="md-nav__link">
+      <a href="../../git_refresh/" class="md-nav__link">
         General
       </a>
     </li>
@@ -338,7 +330,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Basics/git_install/" class="md-nav__link">
+      <a href="../git_install/" class="md-nav__link">
         Installing Git
       </a>
     </li>
@@ -352,7 +344,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Basics/git_configuration/" class="md-nav__link">
+      <a href="../git_configuration/" class="md-nav__link">
         Configuring Git
       </a>
     </li>
@@ -366,7 +358,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Basics/git_start/" class="md-nav__link">
+      <a href="../git_start/" class="md-nav__link">
         Starting a Project
       </a>
     </li>
@@ -380,7 +372,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Basics/git_alias/" class="md-nav__link">
+      <a href="../git_alias/" class="md-nav__link">
         Aliases
       </a>
     </li>
@@ -394,7 +386,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Basics/git_stage/" class="md-nav__link">
+      <a href="../git_stage/" class="md-nav__link">
         Snapshotting
       </a>
     </li>
@@ -408,7 +400,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Basics/git_undoingthings/" class="md-nav__link">
+      <a href="../git_undoingthings/" class="md-nav__link">
         Undoing Things
       </a>
     </li>
@@ -422,7 +414,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Basics/git_remotes/" class="md-nav__link">
+      <a href="../git_remotes/" class="md-nav__link">
         Remotes
       </a>
     </li>
@@ -436,7 +428,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Basics/git_tagging/" class="md-nav__link">
+      <a href="../git_tagging/" class="md-nav__link">
         Tagging
       </a>
     </li>
@@ -450,7 +442,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Basics/git_branch/" class="md-nav__link">
+      <a href="../git_branch/" class="md-nav__link">
         Branching
       </a>
     </li>
@@ -462,11 +454,143 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="Basics/git_inspect/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Inspect & Compare
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Inspect & Compare
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#git-status" class="md-nav__link">
+    git status
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git-diff" class="md-nav__link">
+    git diff
+  </a>
+  
+    <nav class="md-nav" aria-label="git diff">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#git-diff-commit-commit" class="md-nav__link">
+    git diff {commit} {commit}
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-diff-branch1-branch2" class="md-nav__link">
+    git diff {branch1} {branch2}
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git-log" class="md-nav__link">
+    git log
+  </a>
+  
+    <nav class="md-nav" aria-label="git log">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#git-log-graph-oneline" class="md-nav__link">
+    git log --graph --oneline
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-log-file" class="md-nav__link">
+    git log {file}
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-log-branchbbrancha" class="md-nav__link">
+    git log branchB..branchA
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-log-follow-file" class="md-nav__link">
+    git log --follow [file]
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git-show-commit" class="md-nav__link">
+    git show {commit}
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git-branch" class="md-nav__link">
+    git branch
+  </a>
+  
+    <nav class="md-nav" aria-label="git branch">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#git-branch-a" class="md-nav__link">
+    git branch -a
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -495,8 +619,116 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#git-status" class="md-nav__link">
+    git status
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git-diff" class="md-nav__link">
+    git diff
+  </a>
+  
+    <nav class="md-nav" aria-label="git diff">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#git-diff-commit-commit" class="md-nav__link">
+    git diff {commit} {commit}
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-diff-branch1-branch2" class="md-nav__link">
+    git diff {branch1} {branch2}
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git-log" class="md-nav__link">
+    git log
+  </a>
+  
+    <nav class="md-nav" aria-label="git log">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#git-log-graph-oneline" class="md-nav__link">
+    git log --graph --oneline
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-log-file" class="md-nav__link">
+    git log {file}
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-log-branchbbrancha" class="md-nav__link">
+    git log branchB..branchA
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-log-follow-file" class="md-nav__link">
+    git log --follow [file]
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git-show-commit" class="md-nav__link">
+    git show {commit}
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git-branch" class="md-nav__link">
+    git branch
+  </a>
+  
+    <nav class="md-nav" aria-label="git branch">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#git-branch-a" class="md-nav__link">
+    git branch -a
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -510,41 +742,70 @@
                 
 
 
-<h1 id="welcome-to-git-refresher">Welcome to Git Refresher</h1>
-<p>Whether you're a seasoned developer or a code maintainer, this repository is designed to help you enhance your Git skills and streamline your version control workflows.</p>
-<p><center></p>
-<table>
-<thead>
-<tr>
-<th align="left">Basic Topics</th>
-<th align="left">Advanced Topics</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left"><a href="Basics/git_configuration/">Configuration</a></td>
-<td align="left"><a href="">Adv</a></td>
-</tr>
-<tr>
-<td align="left"><a href="Basics/git_alias/">Aliases</a></td>
-<td align="left"><a href="">Adv</a></td>
-</tr>
-<tr>
-<td align="left"><a href="Basics/git_start/">Starting a Project</a></td>
-<td align="left"><a href="">Adv</a></td>
-</tr>
-<tr>
-<td align="left"><a href="Basics/git_stage/">Staging Changes</a></td>
-<td align="left"><a href="">Adv</a></td>
-</tr>
-<tr>
-<td align="left"><a href="Basics/git_undoingthings/">Undoing Changes</a></td>
-<td align="left"><a href="">Adv</a></td>
-</tr>
-</tbody>
-</table>
-<p></center></p>
-<p>This material is a work in progress, so your feedback is welcome. The best way to provide that feedback is <a href="https://github.com/ArceLopera/git_refresher/issues">to click here and create an issue in this GitHub repository</a>.</p>
+  <h1>Inspect & Compare</h1>
+
+<p>In Git, several commands allow inspection and comparison of changes, commits, branches, and repository states. </p>
+<h2 id="git-status"><strong>git status</strong></h2>
+<p>Shows the status of the working directory and staging area.</p>
+<p><div class="highlight"><pre><span></span><code>git status
+</code></pre></div>
+ Quickly check which files are modified, staged, or untracked.</p>
+<h2 id="git-diff"><strong>git diff</strong></h2>
+<p>Displays the differences between changes in the working directory and the staging area.</p>
+<p><div class="highlight"><pre><span></span><code>git diff
+</code></pre></div>
+ Review modifications before staging them or to see changes that haven't been staged yet.</p>
+<h3 id="git-diff-commit-commit"><strong>git diff {commit} {commit}</strong></h3>
+<p>Shows the differences between two commits.</p>
+<p><div class="highlight"><pre><span></span><code>git diff abc123 def456
+</code></pre></div>
+ Compare the changes between specific commits.</p>
+<h3 id="git-diff-branch1-branch2"><strong>git diff {branch1} {branch2}</strong></h3>
+<p>Shows the differences between two branches.</p>
+<p><div class="highlight"><pre><span></span><code>git diff main feature-branch
+</code></pre></div>
+ Compare changes between different branches.</p>
+<h2 id="git-log"><strong>git log</strong></h2>
+<p>Displays the commit history.</p>
+<p><div class="highlight"><pre><span></span><code>git log
+</code></pre></div>
+ Review the commit history, including commit messages, authors, dates, and commit hashes.</p>
+<h3 id="git-log-graph-oneline"><strong>git log --graph --oneline</strong></h3>
+<p>Shows a compact view of the commit history with a graph.</p>
+<p><div class="highlight"><pre><span></span><code>git log --graph --oneline
+</code></pre></div>
+ Visualize the branching and merging history of the repository.</p>
+<h3 id="git-log-file"><strong>git log {file}</strong></h3>
+<p>Displays the commit history for a specific file.</p>
+<p><div class="highlight"><pre><span></span><code>git log file.txt
+</code></pre></div>
+ Review the commit history for a particular file, including changes made to it over time.</p>
+<h3 id="git-log-branchbbrancha"><strong>git log branchB..branchA</strong></h3>
+<p>Shows the commits on branchA that are not on branchB.</p>
+<p><div class="highlight"><pre><span></span><code>git log branchB..branchA
+</code></pre></div>
+ Identify the commits unique to one branch compared to another, useful for understanding divergent development paths.</p>
+<h3 id="git-log-follow-file"><strong>git log --follow [file]</strong></h3>
+<p>Shows the commits that changed the specified file, even across renames.</p>
+<p><div class="highlight"><pre><span></span><code>git log --follow file.txt
+</code></pre></div>
+ Track the history of changes for a specific file, even if it was renamed in subsequent commits.</p>
+<h2 id="git-show-commit"><strong>git show {commit}</strong></h2>
+<p>Displays the details of a specific commit.</p>
+<p><div class="highlight"><pre><span></span><code>git show abc123
+</code></pre></div>
+ View the changes introduced by a commit and its metadata.</p>
+<h2 id="git-branch"><strong>git branch</strong></h2>
+<p>Lists all local branches.</p>
+<p><div class="highlight"><pre><span></span><code>git branch
+</code></pre></div>
+ Check the available branches and see the current branch.</p>
+<h3 id="git-branch-a"><strong>git branch -a</strong></h3>
+<p>Lists all local and remote branches.</p>
+<p><div class="highlight"><pre><span></span><code>git branch -a
+</code></pre></div>
+ View all branches, including those from remote repositories.</p>
+<p>These Git commands for inspection and comparison are invaluable for understanding the state of the repository, tracking changes, reviewing history, and identifying differences between branches or commits. Incorporating these commands into your Git workflow can enhance your ability to manage and collaborate on projects effectively.</p>
 
               
             </article>
@@ -557,21 +818,21 @@
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-      
         
-        <a href="git_refresh/" class="md-footer__link md-footer__link--next" aria-label="Next: General" rel="next">
+        <a href="../git_branch/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Branching" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
-                Next
+                Previous
               </span>
-              General
+              Branching
             </div>
           </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
         </a>
+      
       
     </nav>
   
@@ -645,10 +906,10 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tabs", "navigation.expand"], "search": "assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.expand"], "search": "../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="assets/javascripts/bundle.a6c66575.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a6c66575.min.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/tablesort/5.2.1/tablesort.min.js"></script>
       

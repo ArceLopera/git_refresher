@@ -101,3 +101,4 @@ nav:
      - Remotes: Basics/git_remotes.md
      - Tagging: Basics/git_tagging.md
      - Branching: Basics/git_branch.md
+     - Inspect & Compare: Basics/git_inspect.md
