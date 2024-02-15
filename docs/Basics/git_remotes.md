@@ -4,7 +4,7 @@ Retrieving updates from another repository and updating local repos.
 
 Working with remotes in Git involves collaborating with repositories hosted on remote servers. 
 
-## 1. **Adding a Remote**
+## **Adding a Remote**
 
 ```bash
 git remote add <remote-name> <remote-url>
@@ -14,7 +14,7 @@ git remote add origin https://github.com/user/repo.git
 ```
 Adds a remote repository with a given name and URL.
 
-## 2. **Viewing Remote Information**
+## **Viewing Remote Information**
 
 ```bash
 git remote -v
@@ -22,7 +22,7 @@ git remote -v
 
 Displays the URLs of the remote repositories.
 
-## 3. **Fetching Changes from a Remote**
+## **Fetching Changes from a Remote**
 
 ```bash
 git fetch <remote-name>
@@ -41,7 +41,7 @@ git fetch origin main
 ```
 Fetches changes from the main branch in the remote repository and merges them into the local branch.
 
-## 4. **Pulling Changes from a Remote**
+## **Pulling Changes from a Remote**
 
 ```bash
 git pull <remote-name> <branch-name>
@@ -51,7 +51,7 @@ git pull origin main
 ```
 Fetches changes from the remote repository and merges them into the local branch.
 
-## 5. **Pushing Changes to a Remote**
+## **Pushing Changes to a Remote**
 
 ```bash
 git push <remote-name> <branch-name>
@@ -64,7 +64,7 @@ git push origin main
 Pushes local commits to the remote repository.
 
 
-## 6. **Creating a Branch in a Remote Repository**
+## **Creating a Branch in a Remote Repository**
 
 ```bash
 git push <remote-name> <local-branch-name>:<remote-branch-name>
@@ -75,7 +75,7 @@ git push origin feature-branch:feature-branch
 ```
 Creates a new branch in the remote repository based on the local branch.
 
-## 7. **Cloning a Repository**
+## **Cloning a Repository**
 
 ```bash
 git clone <remote-url>
@@ -87,7 +87,7 @@ git clone https://github.com/user/repo.git
 
 Creates a local copy of a remote repository.
 
-## 8. **Renaming a Remote**
+## **Renaming a Remote**
 
 
 ```bash
@@ -100,7 +100,7 @@ git remote rename origin upstream
 
 Renames an existing remote.
 
-## 9. **Removing a Remote**
+## **Removing a Remote**
 
 ```bash
 git remote remove <remote-name>
@@ -111,7 +111,7 @@ git remote remove origin
 
 Removes a remote from the list of remotes.
 
-## 10. **Inspecting Remote Branches**
+## **Inspecting Remote Branches**
 
 ```bash
 git branch -r
