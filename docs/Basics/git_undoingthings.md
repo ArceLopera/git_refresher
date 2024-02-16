@@ -17,6 +17,7 @@ Summary table of common Git undo commands and strategies:
 | [**Cleaning Untracked Files**](#7-cleaning-untracked-files)               | `git clean -fd`                                             | Remove untracked files and directories from the working directory.                                                                                                         |
 | [**Interactively Reverting or Editing**](#8-interactively-reverting-or-editing-commits)    | `git rebase -i <commit-hash>`                               | Open an interactive rebase session, allowing you to edit, squash, or drop commits.                                                                                           |
 | [**Restoring Files**](#9-restoring-files)                       | `git restore file.txt`                                      | Restore the specified file to the state in the last commit (introduced in Git 2.23).                                                                                        |
+| [**Rewriting history**](#10-rewriting-history)                       | `git rebase main`                                      | Apply any commits of the current branch ahead of the specified one.                                                                                        |
 
 Please note that some commands, like force push and hard reset, should be used with caution, especially when collaborating with others, as they can alter Git history. Always be mindful of the consequences and potential impacts on collaborators before executing these commands.
 
@@ -277,3 +278,84 @@ The `git restore` command is a versatile command introduced in Git version 2.23.
         - `git reset` can be used to amend or undo commits, while `git restore` focuses more on file-level restoration.
 
     Ultimately, the choice between `git reset` and `git restore` depends on the specific use case and the level of clarity you seek in your Git commands.
+
+## 10. **Rewriting history**
+In Git, rewriting branches, updating commits, and clearing history are common tasks that allow you to modify the commit history of a repository. These actions can be useful for cleaning up history, organizing commits, or incorporating changes from other branches. Here's an explanation, including the provided commands and additional relevant ones:
+
+### 1. **git rebase [branch]:**
+
+ Apply any commits of the current branch ahead of the specified one.
+
+  ```bash
+  git rebase main
+  ```
+ Incorporate changes from another branch (`main` in this example) into the current branch, moving your commits to the tip of the specified branch.
+
+### 2. **git reset --hard [commit]:**
+
+ Clear the staging area and rewrite the working tree from the specified commit.
+
+  ```bash
+  git reset --hard abc123
+  ```
+ Reset the current branch to the specified commit (`abc123` in this example), discarding any changes and resetting both the working directory and the staging area to match the state of the specified commit.
+
+### 3. **git commit --amend:**
+
+ Modify the last commit by combining staged changes with the previous commit.
+
+  ```bash
+  git commit --amend
+  ```
+ Edit the commit message or add more changes to the previous commit before finalizing it.
+
+### 4. **git rebase -i [commit]:**
+
+ Interactively rebase commits starting from the specified commit.
+
+  ```bash
+  git rebase -i abc123
+  ```
+ Reword, squash, edit, or reorder commits interactively to clean up the commit history.
+
+### 5. **git filter-branch:**
+
+ Rewrite branches to remove unwanted data, such as sensitive information or large files.
+
+  ```bash
+  git filter-branch --tree-filter 'rm -f passwords.txt' HEAD
+  ```
+ Filter branch content by applying a specified command to each commit, useful for history rewriting tasks.
+
+### 6. **git cherry-pick [commit]:**
+
+ Apply the changes introduced by the specified commit to the current branch.
+
+  ```bash
+  git cherry-pick abc123
+  ```
+ Selectively pick specific commits from one branch and apply them to another branch.
+
+Rewriting branches, updating commits, and clearing history in Git are powerful capabilities that should be used with caution, especially in collaborative environments. These commands enable you to maintain a clean and organized history, improving project maintainability and readability. However, always ensure that you understand the consequences of these actions before applying them, as they can alter the commit history irreversibly.
+
+### 7. `git checkout -f`:
+
+ When switching branches, proceed even if the index or the working tree differs from HEAD, and even if there are untracked files in the way.
+ This command is used to forcefully switch branches, discarding any local changes or untracked files that may prevent the branch switch.
+
+  ```bash
+  git checkout -f feature-branch
+  ```
+- **Note:** Be cautious when using this command, as it will discard any local changes without warning.
+
+### 8. `git clean -ffd`:
+
+ Erase all untracked files and directories in the working directory.
+ This command is used to clean up the working directory by removing any untracked files or directories that are not under version control.
+
+  ```bash
+  git clean -ffd
+  ```
+- **Note:** The `-f` option is used to force the clean operation, and the `-d` option is used to include untracked directories.
+
+These commands are useful for cleaning up a Git repository before starting fresh or resolving conflicts that prevent branch switching. However, they should be used with caution, as they can permanently delete local changes and untracked files. It's essential to understand the implications of using these commands and ensure that any necessary changes or files are backed up before proceeding.
