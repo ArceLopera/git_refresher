@@ -66,6 +66,6 @@ This setting adds color to various Git outputs, making it easier to distinguish 
   ```
 
 - **SSH Key**
-  If you prefer using SSH for authentication, [generate an SSH key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh) and associate it with your GitHub account.
+  If you prefer using SSH for authentication, [generate an SSH key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh) and [associate it with your GitHub account](../Github/git_ssh.md).
 
 Your Git configuration is now set up. You can start using Git with your personalized settings for version control and collaboration.

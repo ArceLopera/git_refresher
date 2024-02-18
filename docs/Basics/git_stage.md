@@ -1,4 +1,4 @@
-## Working with snapshots and the Git staging area.
+**Working with snapshots and the Git staging area**
 
 For the basic workflow of staging content and committing it to your history, there are only a few basic commands.
 

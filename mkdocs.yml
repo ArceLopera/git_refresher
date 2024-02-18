@@ -91,17 +91,22 @@ extra_javascript:
 nav:
   - Home: index.md
   - Basics: 
-     - General: git_refresh.md
-     - Installing Git: Basics/git_install.md
-     - Configuring Git: Basics/git_configuration.md
+     - General: 
+        - Git: git_refresh.md
+        - Installing Git: Basics/git_install.md
+        - Configuring Git: Basics/git_configuration.md
      - Starting a Project: Basics/git_start.md
-     - Aliases: Basics/git_alias.md
      - Snapshotting: Basics/git_stage.md
      - Undoing Things: Basics/git_undoingthings.md
      - Remotes: Basics/git_remotes.md
-     - Tagging: Basics/git_tagging.md
-     - Branching: Basics/git_branch.md
      - Inspect & Compare: Basics/git_inspect.md
   - Advanced:
+     - Aliases: Advanced/git_alias.md
+     - Tagging: Advanced/git_tagging.md
+     - Branching: Advanced/git_branch.md
      - Patching: Advanced/git_patches.md
+     - Ignoring Files: Advanced/git_ignore.md
+     - Temporary Commits: Advanced/git_stash.md
      - Interactive Staging: Advanced/git_interactivestaging.md
+  - Github:
+     - Adding SSH Keys: Github/git_ssh.md 
