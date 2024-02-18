@@ -102,3 +102,6 @@ nav:
      - Tagging: Basics/git_tagging.md
      - Branching: Basics/git_branch.md
      - Inspect & Compare: Basics/git_inspect.md
+  - Advanced:
+     - Patching: Advanced/git_patches.md
+     - Interactive Staging: Advanced/git_interactivestaging.md
