@@ -12,14 +12,14 @@
         <meta name="author" content="ArceLopera">
       
       
-        <link rel="canonical" href="https://arcelopera.github.io/git_refresher/Basics/git_branch/">
+        <link rel="canonical" href="https://arcelopera.github.io/git_refresher/Github/git_ssh/">
       
       <link rel="icon" href="../../Images/git.ico">
       <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.15">
     
     
       
-        <title>Branching - Git Refresher</title>
+        <title>Adding SSH Keys - Git Refresher</title>
       
     
     
@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#main-branches" class="md-skip">
+        <a href="#check-for-existing-ssh-keys" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Branching
+              Adding SSH Keys
             
           </span>
         </div>
@@ -207,18 +207,23 @@
         
   
   
-    
-  
 
+
+  
+  
+  
+    
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../git_refresh/" class="md-tabs__link md-tabs__link--active">
+      <a href="../../git_refresh/" class="md-tabs__link">
         Basics
       </a>
     </li>
+  
+
   
 
       
@@ -231,8 +236,26 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../Advanced/git_patches/" class="md-tabs__link">
+      <a href="../../Advanced/git_alias/" class="md-tabs__link">
         Advanced
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="./" class="md-tabs__link md-tabs__link--active">
+        Github
       </a>
     </li>
   
@@ -302,14 +325,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" data-md-state="indeterminate" type="checkbox" id="__nav_2" checked>
       
       
       
@@ -331,9 +352,35 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" data-md-state="indeterminate" type="checkbox" id="__nav_2_1" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1">
+          General
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="General" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          General
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
     <li class="md-nav__item">
       <a href="../../git_refresh/" class="md-nav__link">
-        General
+        Git
       </a>
     </li>
   
@@ -346,7 +393,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../git_install/" class="md-nav__link">
+      <a href="../../Basics/git_install/" class="md-nav__link">
         Installing Git
       </a>
     </li>
@@ -360,9 +407,16 @@
   
   
     <li class="md-nav__item">
-      <a href="../git_configuration/" class="md-nav__link">
+      <a href="../../Basics/git_configuration/" class="md-nav__link">
         Configuring Git
       </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -374,7 +428,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../git_start/" class="md-nav__link">
+      <a href="../../Basics/git_start/" class="md-nav__link">
         Starting a Project
       </a>
     </li>
@@ -388,21 +442,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../git_alias/" class="md-nav__link">
-        Aliases
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../git_stage/" class="md-nav__link">
+      <a href="../../Basics/git_stage/" class="md-nav__link">
         Snapshotting
       </a>
     </li>
@@ -416,7 +456,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../git_undoingthings/" class="md-nav__link">
+      <a href="../../Basics/git_undoingthings/" class="md-nav__link">
         Undoing Things
       </a>
     </li>
@@ -430,7 +470,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../git_remotes/" class="md-nav__link">
+      <a href="../../Basics/git_remotes/" class="md-nav__link">
         Remotes
       </a>
     </li>
@@ -444,134 +484,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../git_tagging/" class="md-nav__link">
-        Tagging
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-    
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Branching
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        Branching
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#main-branches" class="md-nav__link">
-    Main Branches
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#creating-branches" class="md-nav__link">
-    Creating Branches
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#viewing-branches" class="md-nav__link">
-    Viewing Branches
-  </a>
-  
-    <nav class="md-nav" aria-label="Viewing Branches">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#use-cases" class="md-nav__link">
-    Use Cases
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#merging-branches" class="md-nav__link">
-    Merging Branches
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#deleting-branches" class="md-nav__link">
-    Deleting Branches
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#branching-strategies" class="md-nav__link">
-    Branching Strategies
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#remote-branches" class="md-nav__link">
-    Remote Branches
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#branching-best-practices" class="md-nav__link">
-    Branching Best Practices
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../git_inspect/" class="md-nav__link">
+      <a href="../../Basics/git_inspect/" class="md-nav__link">
         Inspect & Compare
       </a>
     </li>
@@ -619,8 +532,78 @@
   
   
     <li class="md-nav__item">
+      <a href="../../Advanced/git_alias/" class="md-nav__link">
+        Aliases
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Advanced/git_tagging/" class="md-nav__link">
+        Tagging
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Advanced/git_branch/" class="md-nav__link">
+        Branching
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../Advanced/git_patches/" class="md-nav__link">
         Patching
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Advanced/git_ignore/" class="md-nav__link">
+        Ignoring Files
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Advanced/git_stash/" class="md-nav__link">
+        Temporary Commits
       </a>
     </li>
   
@@ -636,6 +619,135 @@
       <a href="../../Advanced/git_interactivestaging/" class="md-nav__link">
         Interactive Staging
       </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Github
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Github" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Github
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Adding SSH Keys
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Adding SSH Keys
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#check-for-existing-ssh-keys" class="md-nav__link">
+    Check for Existing SSH Keys
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generate-a-new-ssh-key" class="md-nav__link">
+    Generate a New SSH Key
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-ssh-key-to-ssh-agent" class="md-nav__link">
+    Add SSH Key to SSH Agent
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#copy-ssh-public-key" class="md-nav__link">
+    Copy SSH Public Key
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-ssh-key-to-github" class="md-nav__link">
+    Add SSH Key to GitHub
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test-ssh-connection" class="md-nav__link">
+    Test SSH Connection
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-ssh-for-multiple-accounts-optional" class="md-nav__link">
+    Configure SSH for Multiple Accounts (Optional)
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -672,70 +784,50 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#main-branches" class="md-nav__link">
-    Main Branches
+  <a href="#check-for-existing-ssh-keys" class="md-nav__link">
+    Check for Existing SSH Keys
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#creating-branches" class="md-nav__link">
-    Creating Branches
+  <a href="#generate-a-new-ssh-key" class="md-nav__link">
+    Generate a New SSH Key
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#viewing-branches" class="md-nav__link">
-    Viewing Branches
-  </a>
-  
-    <nav class="md-nav" aria-label="Viewing Branches">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#use-cases" class="md-nav__link">
-    Use Cases
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#merging-branches" class="md-nav__link">
-    Merging Branches
+  <a href="#add-ssh-key-to-ssh-agent" class="md-nav__link">
+    Add SSH Key to SSH Agent
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#deleting-branches" class="md-nav__link">
-    Deleting Branches
+  <a href="#copy-ssh-public-key" class="md-nav__link">
+    Copy SSH Public Key
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#branching-strategies" class="md-nav__link">
-    Branching Strategies
+  <a href="#add-ssh-key-to-github" class="md-nav__link">
+    Add SSH Key to GitHub
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#remote-branches" class="md-nav__link">
-    Remote Branches
+  <a href="#test-ssh-connection" class="md-nav__link">
+    Test SSH Connection
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#branching-best-practices" class="md-nav__link">
-    Branching Best Practices
+  <a href="#configure-ssh-for-multiple-accounts-optional" class="md-nav__link">
+    Configure SSH for Multiple Accounts (Optional)
   </a>
   
 </li>
@@ -754,123 +846,58 @@
                 
 
 
-  <h1>Branching</h1>
+  <h1>Adding SSH Keys</h1>
 
-<p>Branching in Git is a powerful feature that allows developers to diverge from the main line of development (usually referred to as the <code>master</code> branch) and work on separate, isolated lines of development. Each branch represents an independent line of development, enabling multiple features, fixes, or experiments to be worked on simultaneously without interfering with each other. Branching can be a crucial part of software development, as it allows teams to work collaboratively on different features or fixes simultaneously while maintaining a clear and organized codebase. Isolating work in branches, changing context, and integrating changes into the main line of development can help streamline the development process and improve collaboration.</p>
-<h2 id="main-branches"><strong>Main Branches</strong></h2>
-<ul>
-<li>
-<p><strong>Master Branch:</strong> By convention, the <code>master</code> branch is often used to represent the main line of development. It typically contains stable, production-ready code.</p>
-</li>
-<li>
-<p><strong>Main Branch (Post-Git 2.28):</strong> Some projects have adopted renaming the default branch from <code>master</code> to <code>main</code>. The <code>main</code> branch serves the same purpose as the <code>master</code> branch, but the naming convention aims to promote more inclusive language.</p>
-</li>
-</ul>
-<h2 id="creating-branches"><strong>Creating Branches</strong></h2>
-<ul>
-<li><strong>Creating a New Branch:</strong> To create a new branch, use the <code>git branch &lt;branch-name&gt;</code> command. Optionally, you can switch to the new branch immediately with <code>git checkout -b &lt;branch-name&gt;</code>.</li>
-</ul>
-<div class="highlight"><pre><span></span><code>git branch feature-branch
+<p>Setting up SSH keys with GitHub allows you to securely authenticate with GitHub without needing to enter your username and password every time you interact with a repository. Here's a step-by-step guide to setting up SSH keys with GitHub:</p>
+<h2 id="check-for-existing-ssh-keys"><strong>Check for Existing SSH Keys</strong></h2>
+<p>Before generating new SSH keys, check if you already have SSH keys on your system.</p>
+<div class="highlight"><pre><span></span><code>ls -al ~/.ssh
 </code></pre></div>
-<ul>
-<li><strong>Switching Branches:</strong> To switch between branches, use the <code>git checkout &lt;branch-name&gt;</code> command.</li>
-</ul>
-<div class="highlight"><pre><span></span><code>git checkout feature-branch
+<h2 id="generate-a-new-ssh-key"><strong>Generate a New SSH Key</strong></h2>
+<p>If you don't have an SSH key pair, generate one using the <code>ssh-keygen</code> command. Press Enter to accept the default file location and optionally set a passphrase for added security.</p>
+<div class="highlight"><pre><span></span><code>ssh-keygen -t ed25519 -C <span class="s2">&quot;your_email@example.com&quot;</span>
 </code></pre></div>
-<h2 id="viewing-branches"><strong>Viewing Branches</strong></h2>
-<ul>
-<li><strong>Listing Branches:</strong> To list all branches in the repository, use the <code>git branch</code> command.</li>
-</ul>
-<p><div class="highlight"><pre><span></span><code>git branch
+<h2 id="add-ssh-key-to-ssh-agent"><strong>Add SSH Key to SSH Agent</strong></h2>
+<p>Start the SSH agent and add your SSH private key to the agent.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">eval</span> <span class="s2">&quot;</span><span class="k">$(</span>ssh-agent -s<span class="k">)</span><span class="s2">&quot;</span>
+ssh-add ~/.ssh/id_rsa
 </code></pre></div>
-  An asterisk (<code>*</code>) in the output indicates that the branch you are currently on is the currently active branch.</p>
-<p>The <code>git branch -a</code> command is used to list all branches in a Git repository, including both local branches and remote branches.</p>
-<div class="highlight"><pre><span></span><code>git branch -a
+<h2 id="copy-ssh-public-key"><strong>Copy SSH Public Key</strong></h2>
+<p>Copy the SSH public key to your clipboard using the <code>pbcopy</code> command (macOS) or display it in the terminal and manually copy it.</p>
+<div class="highlight"><pre><span></span><code>pbcopy &lt; ~/.ssh/id_rsa.pub  <span class="c1"># macOS</span>
+cat ~/.ssh/id_rsa.pub       <span class="c1"># Linux</span>
 </code></pre></div>
+<h2 id="add-ssh-key-to-github"><strong>Add SSH Key to GitHub</strong></h2>
 <ul>
-<li>
-<p><strong><code>git branch</code>:</strong> This is the Git command used to manage branches in a repository.</p>
-</li>
-<li>
-<p><strong><code>-a</code> (or <code>--all</code>):</strong> This option tells Git to list both local branches and remote branches.</p>
-</li>
+<li>Go to your GitHub account settings.</li>
+<li>Click on "SSH and GPG keys" in the left sidebar.</li>
+<li>Click on "New SSH key" or "Add SSH key."</li>
+<li>Paste your SSH public key into the "Key" field.</li>
+<li>Provide a descriptive title for the SSH key.</li>
+<li>Click on "Add SSH key" or "Save SSH key."</li>
 </ul>
-<p>When you run <code>git branch -a</code>, Git will list all branches in the repository, including:</p>
-<ul>
-<li><strong>Local Branches:</strong> Branches that exist only in your local repository.</li>
-<li><strong>Remote Branches:</strong> Branches that exist on the remote repository (e.g., on GitHub, GitLab).</li>
-<li><strong>Remote Tracking Branches:</strong> Local representations of remote branches, used for tracking changes from the remote repository.</li>
-</ul>
-<p>The output typically looks like this:</p>
-<div class="highlight"><pre><span></span><code>* main
-  feature-branch
-  remotes/origin/HEAD -&gt; origin/main
-  remotes/origin/main
-  remotes/origin/feature-branch
+<h2 id="test-ssh-connection"><strong>Test SSH Connection</strong></h2>
+<p>To verify that your SSH key is correctly set up, try connecting to GitHub.</p>
+<div class="highlight"><pre><span></span><code>ssh -T git@github.com
 </code></pre></div>
-<ul>
-<li>The branches listed without the <code>remotes/</code> prefix are local branches.</li>
-<li>The branches listed with the <code>remotes/</code> prefix are remote branches.</li>
-<li><code>origin</code> is the default name for the remote repository, but you may see other names if you have multiple remotes configured.</li>
-</ul>
-<h3 id="use-cases">Use Cases</h3>
-<ul>
-<li>Checking the status of local and remote branches.</li>
-<li>Identifying available branches for merging, rebasing, or switching.</li>
-<li>Tracking changes from remote branches and syncing local branches accordingly.</li>
-</ul>
-<p>By using <code>git branch -a</code>, you can get a comprehensive overview of all branches in your Git repository, allowing you to manage and navigate through branches effectively.</p>
-<h2 id="merging-branches"><strong>Merging Branches</strong></h2>
-<ul>
-<li><strong>Merge:</strong> To merge changes from one branch into another, use the <code>git merge &lt;branch-name&gt;</code> command.</li>
-</ul>
-<p><div class="highlight"><pre><span></span><code>git merge feature-branch
+<h2 id="configure-ssh-for-multiple-accounts-optional"><strong>Configure SSH for Multiple Accounts (Optional)</strong></h2>
+<p>If you have multiple GitHub accounts, you may need to configure SSH to use different keys for different accounts. This involves creating a <code>config</code> file in your <code>~/.ssh</code> directory.</p>
+<div class="highlight"><pre><span></span><code>touch ~/.ssh/config
 </code></pre></div>
-  Merge the specified branch’s history into the current one.</p>
-<h2 id="deleting-branches"><strong>Deleting Branches</strong></h2>
-<ul>
-<li><strong>Delete:</strong> To delete a branch, use the <code>git branch -d &lt;branch-name&gt;</code> command.</li>
-</ul>
-<div class="highlight"><pre><span></span><code>git branch -d feature-branch
+<p>Edit the <code>config</code> file and specify which SSH key to use for each GitHub hostname:</p>
+<div class="highlight"><pre><span></span><code># Default GitHub
+Host github.com
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/id_rsa
+
+# Second GitHub account
+Host github-other
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/other_id_rsa
 </code></pre></div>
-<h2 id="branching-strategies"><strong>Branching Strategies</strong></h2>
-<ul>
-<li>
-<p><strong>Feature Branching:</strong> Create a separate branch for each new feature or task. This isolates changes related to specific features, making them easier to manage and review.</p>
-</li>
-<li>
-<p><strong>Release Branching:</strong> Create branches for each release to stabilize the codebase before deployment.</p>
-</li>
-<li>
-<p><strong>Hotfix Branching:</strong> Create branches to fix critical issues in production code quickly.</p>
-</li>
-</ul>
-<h2 id="remote-branches"><strong>Remote Branches</strong></h2>
-<ul>
-<li><strong>Pushing a Branch:</strong> To push a local branch to a remote repository, use the <code>git push &lt;remote-name&gt; &lt;branch-name&gt;</code> command.</li>
-</ul>
-<div class="highlight"><pre><span></span><code>git push origin feature-branch
-</code></pre></div>
-<ul>
-<li><strong>Tracking Remote Branches:</strong> After pushing a branch to the remote repository, it can be tracked. This means Git remembers the relationship between the local branch and its corresponding remote branch.</li>
-</ul>
-<div class="highlight"><pre><span></span><code>git checkout -b feature-branch origin/feature-branch
-</code></pre></div>
-<h2 id="branching-best-practices"><strong>Branching Best Practices</strong></h2>
-<ul>
-<li>
-<p><strong>Use Descriptive Names:</strong> Choose meaningful names for branches to indicate their purpose or associated feature.</p>
-</li>
-<li>
-<p><strong>Keep Branches Short-Lived:</strong> Merge branches into the main line of development once their purpose is served to avoid branch clutter.</p>
-</li>
-<li>
-<p><strong>Regularly Update Branches:</strong> Keep branches up-to-date with changes in the main line of development by frequently merging or rebasing.</p>
-</li>
-<li>
-<p><strong>Review Branches:</strong> Encourage code review and collaboration by reviewing changes made in feature branches before merging them.</p>
-</li>
-</ul>
+<p>Setting up SSH keys with GitHub provides a secure and convenient way to authenticate with GitHub repositories. By generating SSH keys, adding them to your GitHub account, and configuring your SSH client, you can securely interact with GitHub repositories without needing to enter your username and password for each operation.</p>
 
               
             </article>
@@ -884,7 +911,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../git_tagging/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Tagging" rel="prev">
+        <a href="../../Advanced/git_interactivestaging/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Interactive Staging" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -893,26 +920,11 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Tagging
+              Interactive Staging
             </div>
           </div>
         </a>
       
-      
-        
-        <a href="../git_inspect/" class="md-footer__link md-footer__link--next" aria-label="Next: Inspect &amp; Compare" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Inspect & Compare
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
       
     </nav>
   
