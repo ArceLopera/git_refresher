@@ -282,7 +282,7 @@ The `git restore` command is a versatile command introduced in Git version 2.23.
 ## 10. **Rewriting history**
 In Git, rewriting branches, updating commits, and clearing history are common tasks that allow you to modify the commit history of a repository. These actions can be useful for cleaning up history, organizing commits, or incorporating changes from other branches. Here's an explanation, including the provided commands and additional relevant ones:
 
-### 1. **git rebase [branch]:**
+### 1. **git rebase [branch]**
 
  Apply any commits of the current branch ahead of the specified one.
 
@@ -291,7 +291,7 @@ In Git, rewriting branches, updating commits, and clearing history are common ta
   ```
  Incorporate changes from another branch (`main` in this example) into the current branch, moving your commits to the tip of the specified branch.
 
-### 2. **git reset --hard [commit]:**
+### 2. **git reset --hard [commit]**
 
  Clear the staging area and rewrite the working tree from the specified commit.
 
@@ -300,7 +300,7 @@ In Git, rewriting branches, updating commits, and clearing history are common ta
   ```
  Reset the current branch to the specified commit (`abc123` in this example), discarding any changes and resetting both the working directory and the staging area to match the state of the specified commit.
 
-### 3. **git commit --amend:**
+### 3. **git commit --amend**
 
  Modify the last commit by combining staged changes with the previous commit.
 
@@ -309,7 +309,7 @@ In Git, rewriting branches, updating commits, and clearing history are common ta
   ```
  Edit the commit message or add more changes to the previous commit before finalizing it.
 
-### 4. **git rebase -i [commit]:**
+### 4. **git rebase -i [commit]**
 
  Interactively rebase commits starting from the specified commit.
 
@@ -318,7 +318,7 @@ In Git, rewriting branches, updating commits, and clearing history are common ta
   ```
  Reword, squash, edit, or reorder commits interactively to clean up the commit history.
 
-### 5. **git filter-branch:**
+### 5. **git filter-branch**
 
  Rewrite branches to remove unwanted data, such as sensitive information or large files.
 
@@ -327,7 +327,7 @@ In Git, rewriting branches, updating commits, and clearing history are common ta
   ```
  Filter branch content by applying a specified command to each commit, useful for history rewriting tasks.
 
-### 6. **git cherry-pick [commit]:**
+### 6. **git cherry-pick [commit]**
 
  Apply the changes introduced by the specified commit to the current branch.
 
@@ -336,9 +336,9 @@ In Git, rewriting branches, updating commits, and clearing history are common ta
   ```
  Selectively pick specific commits from one branch and apply them to another branch.
 
-Rewriting branches, updating commits, and clearing history in Git are powerful capabilities that should be used with caution, especially in collaborative environments. These commands enable you to maintain a clean and organized history, improving project maintainability and readability. However, always ensure that you understand the consequences of these actions before applying them, as they can alter the commit history irreversibly.
+Rewriting branches, updating commits, and clearing history in Git are powerful capabilities that should be used with caution, especially in collaborative environments. These commands enable you to maintain a clean and organized history, improving project maintainability and readability. However, always ensure that you understand the consequences of these actions before applying them, as they can alter the commit history irreversibly. More info is [here](../Advanced/git_cherry.md).
 
-### 7. `git checkout -f`:
+### 7. **git checkout -f**
 
  When switching branches, proceed even if the index or the working tree differs from HEAD, and even if there are untracked files in the way.
  This command is used to forcefully switch branches, discarding any local changes or untracked files that may prevent the branch switch.
@@ -348,7 +348,7 @@ Rewriting branches, updating commits, and clearing history in Git are powerful c
   ```
 - **Note:** Be cautious when using this command, as it will discard any local changes without warning.
 
-### 8. `git clean -ffd`:
+### 8. **git clean -ffd**
 
  Erase all untracked files and directories in the working directory.
  This command is used to clean up the working directory by removing any untracked files or directories that are not under version control.

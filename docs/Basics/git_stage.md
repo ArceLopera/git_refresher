@@ -10,6 +10,36 @@ For the basic workflow of staging content and committing it to your history, the
 | [git diff](#git-diff)        |  ``` bash git diff```  |
 | [git commit](#git-commit)        |  ``` bash git commit -m "Add new feature"```  |
 
+## Snapshooting
+The difference between Git's snapshooting and delta-based version control systems lies in how git store and track changes within a repository.
+
+1. **Git's Snapshooting**
+ Git is a distributed version control system (DVCS) that operates based on snapshots of the entire repository at each point in time.
+ When a commit is made in Git, the entire state of the project at that moment is captured as a snapshot, including all files and their contents. Each commit creates a new snapshot, and Git tracks the changes between snapshots rather than individual file changes.
+    - **Advantages:**
+        - Offers robustness and data integrity since each commit is self-contained and immutable.
+        - Allows for efficient branching and merging operations since entire snapshots are managed independently.
+        - Facilitates offline work and collaboration by enabling users to work with their local repositories and synchronize changes later.
+
+2. **Delta-based Version Control (CVS, Subversion, Perforce)**
+ Delta-based version control systems track changes by storing the differences (or deltas) between successive versions of a file or repository.
+ Instead of storing complete snapshots of files or repositories, delta-based systems store the changes (insertions, deletions, modifications) made to files over time. Each new version is represented as a set of changes applied to the previous version.
+    - **Advantages:**
+        - Can be more space-efficient for repositories with large binary files or frequent, small changes since only the differences are stored.
+        - Allows for quicker network operations when transmitting changes since only the deltas need to be transferred.
+        - May provide more granular control over individual file versions, especially for large files with small modifications.
+
+**Key Differences**
+
++ **Granularity:** Git's snapshot-based approach captures the entire state of the repository at each commit, offering a holistic view of the project's history. Delta-based systems track changes at a finer granularity, focusing on individual file modifications.
+
++ **Efficiency:** Git's approach can be less space-efficient for repositories with frequent changes or large binary files since it stores complete snapshots. Delta-based systems may offer better efficiency in such cases by only storing the differences between versions.
+
++ **Complexity:** Managing deltas and applying them to reconstruct files can introduce complexity and potential performance overhead in delta-based systems. Git's snapshot-based approach simplifies operations like branching and merging since each commit represents a complete, self-contained snapshot.
+
++ **Network Operations:** Git's approach may lead to larger repository sizes due to storing complete snapshots, but it offers efficient network operations since it transfers complete commits during push and pull operations. Delta-based systems may have smaller repository sizes but may require more processing to reconstruct files during network operations.
+
+Overall, Git's snapshot-based approach provides robustness, simplicity, and efficiency for version control, making it a popular choice for software development projects of all sizes. Delta-based version control systems offer advantages in specific use cases where space efficiency or granular control over individual file versions is paramount.
 
 
 ### git status

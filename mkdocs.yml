@@ -108,5 +108,7 @@ nav:
      - Ignoring Files: Advanced/git_ignore.md
      - Temporary Commits: Advanced/git_stash.md
      - Interactive Staging: Advanced/git_interactivestaging.md
+     - CherryPicking: Advanced/git_cherry.md
+     - Checkout: Advanced/git_checkout.md
   - Github:
      - Adding SSH Keys: Github/git_ssh.md 

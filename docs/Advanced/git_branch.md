@@ -122,6 +122,28 @@ By using `git branch -a`, you can get a comprehensive overview of all branches i
   git checkout -b feature-branch origin/feature-branch
   ```
 
+  The `git branch --set-upstream-to` command is used to set up the tracking relationship between a local branch and a remote branch. This command tells Git which remote branch the local branch should track, allowing you to push and pull changes to and from the correct remote branch without specifying it each time. Here's a breakdown of how the command works:
+
+```bash
+git branch --set-upstream-to=<remote>/<branch>
+```
+
+- `<remote>`: The name of the remote repository.
+- `<branch>`: The name of the remote branch.
+
+
+```bash
+git branch --set-upstream-to=origin/main
+```
+
+- This command sets the tracking relationship for the current branch to the specified remote branch (`main` in this example) in the `origin` remote repository.
+- After running this command, Git knows that when you push or pull changes from the current branch, it should interact with the `main` branch in the `origin` remote repository.
+
+- **Setting Upstream Branch** Use `git branch --set-upstream-to` when you want to establish tracking between a local branch and a remote branch that already exists.
+- **Syncing Changes** After setting up tracking, you can simply use `git push` and `git pull` without specifying the remote branch, as Git already knows where to push and pull changes from.
+
+- This command can also be used in combination with `git push -u` or `git push --set-upstream` to set up tracking and push changes to the remote branch in one step.
+
 ## **Branching Best Practices**
 
 - **Use Descriptive Names:** Choose meaningful names for branches to indicate their purpose or associated feature.
