@@ -12,14 +12,14 @@
         <meta name="author" content="ArceLopera">
       
       
-        <link rel="canonical" href="https://arcelopera.github.io/git_refresher/Basics/git_tagging/">
+        <link rel="canonical" href="https://arcelopera.github.io/git_refresher/Advanced/git_ignore/">
       
       <link rel="icon" href="../../Images/git.ico">
       <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.15">
     
     
       
-        <title>Tagging - Git Refresher</title>
+        <title>Ignoring Files - Git Refresher</title>
       
     
     
@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#types-of-tags" class="md-skip">
+        <a href="#creating-or-modifying-gitignore" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Tagging
+              Ignoring Files
             
           </span>
         </div>
@@ -207,6 +207,29 @@
         
   
   
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../git_refresh/" class="md-tabs__link">
+        Basics
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
     
   
 
@@ -215,8 +238,8 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../git_refresh/" class="md-tabs__link md-tabs__link--active">
-        Basics
+      <a href="../git_alias/" class="md-tabs__link md-tabs__link--active">
+        Advanced
       </a>
     </li>
   
@@ -231,8 +254,8 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../Advanced/git_patches/" class="md-tabs__link">
-        Advanced
+      <a href="../../Github/git_ssh/" class="md-tabs__link">
+        Github
       </a>
     </li>
   
@@ -302,14 +325,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" data-md-state="indeterminate" type="checkbox" id="__nav_2" checked>
       
       
       
@@ -331,9 +352,35 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" data-md-state="indeterminate" type="checkbox" id="__nav_2_1" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1">
+          General
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="General" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          General
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
     <li class="md-nav__item">
       <a href="../../git_refresh/" class="md-nav__link">
-        General
+        Git
       </a>
     </li>
   
@@ -346,7 +393,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../git_install/" class="md-nav__link">
+      <a href="../../Basics/git_install/" class="md-nav__link">
         Installing Git
       </a>
     </li>
@@ -360,8 +407,29 @@
   
   
     <li class="md-nav__item">
-      <a href="../git_configuration/" class="md-nav__link">
+      <a href="../../Basics/git_configuration/" class="md-nav__link">
         Configuring Git
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Basics/git_start/" class="md-nav__link">
+        Starting a Project
       </a>
     </li>
   
@@ -374,13 +442,91 @@
   
   
     <li class="md-nav__item">
-      <a href="../git_start/" class="md-nav__link">
-        Starting a Project
+      <a href="../../Basics/git_stage/" class="md-nav__link">
+        Snapshotting
       </a>
     </li>
   
 
             
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Basics/git_undoingthings/" class="md-nav__link">
+        Undoing Things
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Basics/git_remotes/" class="md-nav__link">
+        Remotes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Basics/git_inspect/" class="md-nav__link">
+        Inspect & Compare
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Advanced
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Advanced" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Advanced
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
           
             
               
@@ -402,183 +548,9 @@
   
   
     <li class="md-nav__item">
-      <a href="../git_stage/" class="md-nav__link">
-        Snapshotting
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../git_undoingthings/" class="md-nav__link">
-        Undoing Things
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../git_remotes/" class="md-nav__link">
-        Remotes
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-    
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Tagging
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+      <a href="../git_tagging/" class="md-nav__link">
         Tagging
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#types-of-tags" class="md-nav__link">
-    Types of Tags
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#creating-tags" class="md-nav__link">
-    Creating Tags
-  </a>
-  
-    <nav class="md-nav" aria-label="Creating Tags">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#lightweight-tags" class="md-nav__link">
-    Lightweight Tags
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#annotated-tags" class="md-nav__link">
-    Annotated Tags
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#viewing-tags" class="md-nav__link">
-    Viewing Tags
-  </a>
-  
-    <nav class="md-nav" aria-label="Viewing Tags">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#listing-tags-matching-a-pattern" class="md-nav__link">
-    Listing Tags Matching a Pattern
-  </a>
-  
-    <nav class="md-nav" aria-label="Listing Tags Matching a Pattern">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#listing-tags-starting-with-a-prefix" class="md-nav__link">
-    Listing Tags Starting with a Prefix
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#listing-tags-with-annotated-tags-only" class="md-nav__link">
-    Listing Tags with Annotated Tags Only
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#pushing-tags-to-remote" class="md-nav__link">
-    Pushing Tags to Remote
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#deleting-tags" class="md-nav__link">
-    Deleting Tags
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#checking-out-tags" class="md-nav__link">
-    Checking out Tags
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tagging-best-practices" class="md-nav__link">
-    Tagging Best Practices
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -604,8 +576,149 @@
   
   
     <li class="md-nav__item">
-      <a href="../git_inspect/" class="md-nav__link">
-        Inspect & Compare
+      <a href="../git_patches/" class="md-nav__link">
+        Patching
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Ignoring Files
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Ignoring Files
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#creating-or-modifying-gitignore" class="md-nav__link">
+    Creating or Modifying .gitignore
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-file-patterns" class="md-nav__link">
+    Common File Patterns
+  </a>
+  
+    <nav class="md-nav" aria-label="Common File Patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-ignore-specific-files" class="md-nav__link">
+    a. Ignore Specific Files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-ignore-files-in-a-directory" class="md-nav__link">
+    b. Ignore Files in a Directory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-ignore-files-with-a-specific-extension" class="md-nav__link">
+    c. Ignore Files with a Specific Extension
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-ignore-files-in-subdirectories" class="md-nav__link">
+    d. Ignore Files in Subdirectories
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#applying-gitignore-changes" class="md-nav__link">
+    Applying .gitignore Changes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#global-gitignore" class="md-nav__link">
+    Global .gitignore
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ignoring-changes-in-tracked-files" class="md-nav__link">
+    Ignoring Changes in Tracked Files
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../git_stash/" class="md-nav__link">
+        Temporary Commits
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../git_interactivestaging/" class="md-nav__link">
+        Interactive Staging
       </a>
     </li>
   
@@ -629,20 +742,20 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" data-md-state="indeterminate" type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" data-md-state="indeterminate" type="checkbox" id="__nav_4" checked>
       
       
       
       
-        <label class="md-nav__link" for="__nav_3">
-          Advanced
+        <label class="md-nav__link" for="__nav_4">
+          Github
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Advanced" data-md-level="1">
-        <label class="md-nav__title" for="__nav_3">
+      <nav class="md-nav" aria-label="Github" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
-          Advanced
+          Github
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -652,22 +765,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Advanced/git_patches/" class="md-nav__link">
-        Patching
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../Advanced/git_interactivestaging/" class="md-nav__link">
-        Interactive Staging
+      <a href="../../Github/git_ssh/" class="md-nav__link">
+        Adding SSH Keys
       </a>
     </li>
   
@@ -705,30 +804,44 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#types-of-tags" class="md-nav__link">
-    Types of Tags
+  <a href="#creating-or-modifying-gitignore" class="md-nav__link">
+    Creating or Modifying .gitignore
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#creating-tags" class="md-nav__link">
-    Creating Tags
+  <a href="#common-file-patterns" class="md-nav__link">
+    Common File Patterns
   </a>
   
-    <nav class="md-nav" aria-label="Creating Tags">
+    <nav class="md-nav" aria-label="Common File Patterns">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#lightweight-tags" class="md-nav__link">
-    Lightweight Tags
+  <a href="#a-ignore-specific-files" class="md-nav__link">
+    a. Ignore Specific Files
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#annotated-tags" class="md-nav__link">
-    Annotated Tags
+  <a href="#b-ignore-files-in-a-directory" class="md-nav__link">
+    b. Ignore Files in a Directory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-ignore-files-with-a-specific-extension" class="md-nav__link">
+    c. Ignore Files with a Specific Extension
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-ignore-files-in-subdirectories" class="md-nav__link">
+    d. Ignore Files in Subdirectories
   </a>
   
 </li>
@@ -739,69 +852,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#viewing-tags" class="md-nav__link">
-    Viewing Tags
-  </a>
-  
-    <nav class="md-nav" aria-label="Viewing Tags">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#listing-tags-matching-a-pattern" class="md-nav__link">
-    Listing Tags Matching a Pattern
-  </a>
-  
-    <nav class="md-nav" aria-label="Listing Tags Matching a Pattern">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#listing-tags-starting-with-a-prefix" class="md-nav__link">
-    Listing Tags Starting with a Prefix
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#listing-tags-with-annotated-tags-only" class="md-nav__link">
-    Listing Tags with Annotated Tags Only
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#pushing-tags-to-remote" class="md-nav__link">
-    Pushing Tags to Remote
+  <a href="#applying-gitignore-changes" class="md-nav__link">
+    Applying .gitignore Changes
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#deleting-tags" class="md-nav__link">
-    Deleting Tags
+  <a href="#global-gitignore" class="md-nav__link">
+    Global .gitignore
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#checking-out-tags" class="md-nav__link">
-    Checking out Tags
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tagging-best-practices" class="md-nav__link">
-    Tagging Best Practices
+  <a href="#ignoring-changes-in-tracked-files" class="md-nav__link">
+    Ignoring Changes in Tracked Files
   </a>
   
 </li>
@@ -820,92 +886,101 @@
                 
 
 
-  <h1>Tagging</h1>
+  <h1>Ignoring Files</h1>
 
-<p>In Git, tagging is the process of assigning a meaningful label or marker to a specific commit in the repository's history. Tags are often used to mark significant points in the project's development, such as releases, versions, or milestones. </p>
-<h2 id="types-of-tags"><strong>Types of Tags</strong></h2>
-<p>There are two types of tags in Git:</p>
+<p>In Git, you can ignore files using patterns by creating or modifying a special file called <code>.gitignore</code>. This file contains a list of file patterns that Git should ignore when tracking changes in your repository.</p>
+<h2 id="creating-or-modifying-gitignore"><strong>Creating or Modifying <code>.gitignore</code></strong></h2>
+<p>Specify files or directories that Git should ignore.
+ The <code>.gitignore</code> file should be located at the root of your Git repository.</p>
+<h2 id="common-file-patterns"><strong>Common File Patterns</strong></h2>
+<ul>
+<li><strong>Wildcard (<code>*</code>):</strong> Matches zero or more characters.</li>
+<li><strong>Directory (<code>/</code>):</strong> Denotes a directory.</li>
+<li><strong>Negation (<code>!</code>):</strong> Excludes files or directories that match the pattern.</li>
+</ul>
+<h3 id="a-ignore-specific-files">a. Ignore Specific Files</h3>
+<div class="highlight"><pre><span></span><code># Ignore log files
+*.log
+
+# Ignore build artifacts
+/build/
+</code></pre></div>
+<h3 id="b-ignore-files-in-a-directory">b. Ignore Files in a Directory</h3>
+<div class="highlight"><pre><span></span><code># Ignore all files in the temp directory
+temp/*
+
+# But track one specific file in temp
+!temp/important.txt
+</code></pre></div>
+<h3 id="c-ignore-files-with-a-specific-extension">c. Ignore Files with a Specific Extension</h3>
+<div class="highlight"><pre><span></span><code># Ignore all .pdf files
+*.pdf
+</code></pre></div>
+<h3 id="d-ignore-files-in-subdirectories">d. Ignore Files in Subdirectories</h3>
+<div class="highlight"><pre><span></span><code># Ignore all .class files in any directory
+**/*.class
+</code></pre></div>
+<h2 id="applying-gitignore-changes"><strong>Applying <code>.gitignore</code> Changes</strong></h2>
+<p>After modifying the <code>.gitignore</code> file, you need to commit the changes to apply them to the repository.</p>
+<div class="highlight"><pre><span></span><code>git add .gitignore
+git commit -m <span class="s2">&quot;Add .gitignore to ignore specific files&quot;</span>
+</code></pre></div>
+<h2 id="global-gitignore"><strong>Global <code>.gitignore</code></strong></h2>
+<p>You can create a global <code>.gitignore</code> file that applies to all repositories on your system by configuring Git to use it.</p>
+<p>The command <code>git config --global core.excludesfile [file]</code> is used to specify a system-wide ignore pattern file that Git will use for all local repositories on your system. </p>
+<div class="highlight"><pre><span></span><code>git config --global core.excludesfile <span class="o">[</span>file<span class="o">]</span>
+</code></pre></div>
 <ul>
 <li>
-<p><strong>Lightweight Tags</strong> These are simple pointers to specific commits, similar to branches but immutable. They are created with the <code>-l</code> option.</p>
+<p>Parameters:</p>
+<ul>
+<li><strong><code>--global</code>:</strong> This option specifies that the configuration should be applied globally, affecting all Git repositories on your system.</li>
+<li><strong><code>core.excludesfile</code>:</strong> This is the Git configuration key for specifying the location of the system-wide ignore file.</li>
+<li><strong><code>[file]</code>:</strong> This parameter specifies the path to the file containing the ignore patterns.</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code>git config --global core.excludesfile ~/.gitignore_global
+</code></pre></div>
+<ul>
+<li>This command tells Git to use the specified file (<code>~/.gitignore_global</code> in this example) as the system-wide ignore pattern file.</li>
+<li>Any patterns defined in this file will be applied to all local repositories on your system, regardless of their location.</li>
+</ul>
+<h2 id="ignoring-changes-in-tracked-files"><strong>Ignoring Changes in Tracked Files</strong></h2>
+<p>If you want to ignore changes in files that are already being tracked by Git, you can use the <code>git update-index --assume-unchanged</code> command.</p>
+<p>The <code>git update-index --assume-unchanged</code> command is used to tell Git to temporarily ignore changes to a tracked file. When you run this command, Git updates its index to mark the specified file (<code>config.ini</code> in this example) as "assume unchanged".</p>
+<p>The <code>--assume-unchanged</code> option allows you to tell Git to treat a file as if it hasn't been changed, even if it has been modified since the last commit.</p>
+<div class="highlight"><pre><span></span><code>git update-index --assume-unchanged &lt;file&gt;
+</code></pre></div>
+<ul>
+<li><code>&lt;file&gt;</code>: The path to the file you want to mark as unchanged.</li>
+</ul>
+<div class="highlight"><pre><span></span><code>git update-index --assume-unchanged config.ini
+</code></pre></div>
+<ul>
+<li>When you run this command, Git updates its index to mark the specified file (<code>config.ini</code> in this example) as "assume unchanged".</li>
+<li>After marking a file as "assume unchanged", Git will not track changes to that file in future commits, treating it as if it hasn't been modified.</li>
+<li>This command is useful when you have local changes to a tracked file that you don't want to commit or stage for commit, such as configuration files with local settings that should not be shared with others.</li>
+</ul>
+<h5 id="use-cases">Use Cases</h5>
+<ol>
+<li>
+<p><strong>Ignoring Local Changes:</strong> You can use this command to prevent accidentally committing local changes to certain files, such as configuration files with sensitive information or local overrides.</p>
 </li>
 <li>
-<p><strong>Annotated Tags</strong> These are stored as full objects in the Git database, containing details like the tagger's name, email, date, and a tagging message. They are created with the <code>-a</code> option.</p>
+<p><strong>Performance Optimization:</strong> By marking files as "assume unchanged", Git can improve performance by not having to check these files for changes when performing various operations, such as <code>git status</code> or <code>git add</code>.</p>
 </li>
-</ul>
-<h2 id="creating-tags"><strong>Creating Tags</strong></h2>
-<h3 id="lightweight-tags">Lightweight Tags</h3>
-<p><div class="highlight"><pre><span></span><code>git tag &lt;tag-name&gt; &lt;commit-hash&gt;
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>git tag v1.0.0 7c52d53
-</code></pre></div></p>
-<h3 id="annotated-tags">Annotated Tags</h3>
-<p><div class="highlight"><pre><span></span><code>git tag -a &lt;tag-name&gt; &lt;commit-hash&gt; -m <span class="s2">&quot;Tagging message&quot;</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>git tag -a v1.0.0 7c52d53 -m <span class="s2">&quot;Version 1.0.0 release&quot;</span>
-</code></pre></div>
-The -m specifies a tagging message, which is stored with the tag. If you don’t specify a message for an annotated tag, Git launches your editor so you can type it in.</p>
-<p>Tagging Later : You can also tag commits after you’ve moved past them.</p>
-<h2 id="viewing-tags"><strong>Viewing Tags</strong></h2>
-<p>To view all tags in the repository:
-<div class="highlight"><pre><span></span><code>git tag
-</code></pre></div>
-In Git, listing tags allows you to view all tags present in the repository. You can use wildcards to filter tags based on specific patterns. Here's how you can list tags in Git with examples and wildcards:</p>
-<h3 id="listing-tags-matching-a-pattern"><strong>Listing Tags Matching a Pattern</strong></h3>
-<p>You can use wildcards to list tags matching a specific pattern. Listing tag wildcards requires -l or --list option. The two common wildcards used are:</p>
+</ol>
+<h5 id="caveats">Caveats</h5>
 <ul>
-<li><code>*</code>: Matches any sequence of characters.</li>
-<li><code>?</code>: Matches any single character.</li>
+<li><strong>Manual Updates:</strong> It's important to note that this command only affects how Git treats the file in future operations. If the file is modified again in the future and you want to commit those changes, you will need to remove the "assume unchanged" status using <code>git update-index --no-assume-unchanged &lt;file&gt;</code>.</li>
 </ul>
-<h4 id="listing-tags-starting-with-a-prefix">Listing Tags Starting with a Prefix</h4>
-<p>To list tags starting with a specific prefix (e.g., <code>v1</code>):
-<div class="highlight"><pre><span></span><code>git tag -l <span class="s1">&#39;v1*&#39;</span>
-</code></pre></div></p>
-<h4 id="listing-tags-with-annotated-tags-only"><strong>Listing Tags with Annotated Tags Only</strong></h4>
-<p>To list only annotated tags (excluding lightweight tags):
-<div class="highlight"><pre><span></span><code>git tag -l -n
-</code></pre></div></p>
-<p>Using wildcards with <code>git tag -l</code> allows you to filter and list tags based on specific patterns, making it easier to manage and navigate through tags in your Git repository.</p>
-<h2 id="pushing-tags-to-remote"><strong>Pushing Tags to Remote</strong></h2>
-<p>To push a specific tag to the remote repository:
-<div class="highlight"><pre><span></span><code>git push origin &lt;tag-name&gt;
-</code></pre></div></p>
-<p>To push all tags to the remote repository:
-<div class="highlight"><pre><span></span><code>git push origin --tags
-</code></pre></div></p>
-<div class="highlight"><pre><span></span><code>git push origin v1.0.0
-</code></pre></div>
-<p>git push pushes both types of tags.</p>
-<p>git push <remote> --tags will push both lightweight and annotated tags. There is currently no option to push only lightweight tags, but if you use git push <remote> --follow-tags only annotated tags will be pushed to the remote.</p>
-<h2 id="deleting-tags"><strong>Deleting Tags</strong></h2>
-<p>To delete a specific tag:
-<div class="highlight"><pre><span></span><code>git tag -d &lt;tag-name&gt;
-</code></pre></div></p>
-<div class="highlight"><pre><span></span><code>git tag -d v1.0.0
-</code></pre></div>
-<p>To delete a tag on the remote repository:
-<div class="highlight"><pre><span></span><code>git push origin --delete &lt;tag-name&gt;
-</code></pre></div></p>
-<div class="highlight"><pre><span></span><code>git push origin --delete v1.0.0
-</code></pre></div>
-<h2 id="checking-out-tags"><strong>Checking out Tags</strong></h2>
-<p>To checkout a specific tag and create a detached HEAD state:
-<div class="highlight"><pre><span></span><code>git checkout &lt;tag-name&gt;
-</code></pre></div></p>
-<div class="highlight"><pre><span></span><code>git checkout v1.0.0
-</code></pre></div>
-<p>In “detached HEAD” state, if you make changes and then create a commit, the tag will stay the same, but your new commit won’t belong to any branch and will be unreachable, except by the exact commit hash. Thus, if you need to make changes — say you’re fixing a bug on an older version, for instance — you will generally want to create a branch:</p>
-<p><div class="highlight"><pre><span></span><code>$ git checkout -b version2 v2.0.0
-<span class="c1">#Switched to a new branch &#39;version2&#39;</span>
-</code></pre></div>
-If you do this and make a commit, your version2 branch will be slightly different than your v2.0.0 tag since it will move forward with your new changes, so do be careful.</p>
-<h2 id="tagging-best-practices"><strong>Tagging Best Practices</strong></h2>
+<h5 id="note">Note</h5>
 <ul>
-<li>Use semantic versioning (e.g., v1.0.0, v1.1.0) for version tags to maintain consistency.</li>
-<li>Annotate tags with meaningful messages describing the purpose or significance of the tagged commit.</li>
-<li>Push tags to the remote repository to share them with collaborators and facilitate release management.</li>
+<li>This command only affects your local repository and does not affect the repository's history or other collaborators.</li>
 </ul>
-<p>Git tagging is a powerful feature for marking important points in your project's history, making it easier to navigate and manage releases. </p>
+<p>Using <code>git update-index --assume-unchanged</code> can be a helpful tool for managing local changes to tracked files in your Git repository, allowing you to prevent accidental commits of sensitive or local-specific changes.</p>
+<p>Ignoring files using patterns in Git is essential for preventing certain files or directories from being tracked in your repository. By creating or modifying the <code>.gitignore</code> file and specifying file patterns, you can effectively manage which files Git should ignore. Understanding the common file patterns and how to apply them allows you to tailor Git's behavior to suit your project's needs while keeping the repository clean and manageable.</p>
 
               
             </article>
@@ -919,7 +994,7 @@ If you do this and make a commit, your version2 branch will be slightly differen
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../git_remotes/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Remotes" rel="prev">
+        <a href="../git_patches/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Patching" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -928,20 +1003,20 @@ If you do this and make a commit, your version2 branch will be slightly differen
               <span class="md-footer__direction">
                 Previous
               </span>
-              Remotes
+              Patching
             </div>
           </div>
         </a>
       
       
         
-        <a href="../git_branch/" class="md-footer__link md-footer__link--next" aria-label="Next: Branching" rel="next">
+        <a href="../git_stash/" class="md-footer__link md-footer__link--next" aria-label="Next: Temporary Commits" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Branching
+              Temporary Commits
             </div>
           </div>
           <div class="md-footer__button md-icon">
