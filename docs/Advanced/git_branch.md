@@ -8,17 +8,33 @@ Branching in Git is a powerful feature that allows developers to diverge from th
 
 ## **Creating Branches**
 
-- **Creating a New Branch:** To create a new branch, use the `git branch <branch-name>` command. Optionally, you can switch to the new branch immediately with `git checkout -b <branch-name>`.
+- **Creating a New Branch:** To create a new branch, use the `git branch <branch-name>` command. Optionally, you can switch to the new branch immediately with `git checkout -b <branch-name>` or `git switch -c <branch-name>`.
 
   ```bash
   git branch feature-branch
   ```
 
-- **Switching Branches:** To switch between branches, use the `git checkout <branch-name>` command.
+- **Switching Branches:** To switch between branches, use the `git checkout <branch-name>` command or `git switch <branch-name>`.
+
+### 1. **`git checkout`**
 
   ```bash
   git checkout feature-branch
   ```
+
+
+### 2. **`git switch`**
+ Introduced in Git version 2.23, `git switch` is specifically designed for branch switching. It offers a more intuitive and safer way to switch branches compared to `git checkout`.
+  
+  ```bash
+  git switch <branch-name>
+  ```
+
+- Both `git switch` and `git checkout` are used for switching branches in Git.
+- `git switch` is specifically designed for branch switching and offers a safer and more intuitive experience compared to `git checkout`.
+- While `git checkout` remains a versatile command for various Git operations, `git switch` is recommended for branch switching to promote consistency and safety in your workflow.
+
+ git checkout is a multi-purpose tool, capable of switching branches, discarding changes, and even creating new branches. Conversely, git switch is more specialized, focusing solely on switching and creating branches.
 
 ## **Viewing Branches**
 
