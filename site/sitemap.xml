@@ -21,6 +21,16 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://arcelopera.github.io/git_refresher/Advanced/git_checkout/</loc>
+         <lastmod>2024-02-27</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://arcelopera.github.io/git_refresher/Advanced/git_cherry/</loc>
+         <lastmod>2024-02-27</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://arcelopera.github.io/git_refresher/Advanced/git_ignore/</loc>
          <lastmod>2024-02-27</lastmod>
          <changefreq>daily</changefreq>
