@@ -745,6 +745,34 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../git_cherry/" class="md-nav__link">
+        CherryPicking
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../git_checkout/" class="md-nav__link">
+        Checkout
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -1039,6 +1067,30 @@
 </ul>
 <div class="highlight"><pre><span></span><code>git checkout -b feature-branch origin/feature-branch
 </code></pre></div>
+<p>The <code>git branch --set-upstream-to</code> command is used to set up the tracking relationship between a local branch and a remote branch. This command tells Git which remote branch the local branch should track, allowing you to push and pull changes to and from the correct remote branch without specifying it each time. Here's a breakdown of how the command works:</p>
+<div class="highlight"><pre><span></span><code>git branch --set-upstream-to<span class="o">=</span>&lt;remote&gt;/&lt;branch&gt;
+</code></pre></div>
+<ul>
+<li><code>&lt;remote&gt;</code>: The name of the remote repository.</li>
+<li><code>&lt;branch&gt;</code>: The name of the remote branch.</li>
+</ul>
+<div class="highlight"><pre><span></span><code>git branch --set-upstream-to<span class="o">=</span>origin/main
+</code></pre></div>
+<ul>
+<li>This command sets the tracking relationship for the current branch to the specified remote branch (<code>main</code> in this example) in the <code>origin</code> remote repository.</li>
+<li>
+<p>After running this command, Git knows that when you push or pull changes from the current branch, it should interact with the <code>main</code> branch in the <code>origin</code> remote repository.</p>
+</li>
+<li>
+<p><strong>Setting Upstream Branch</strong> Use <code>git branch --set-upstream-to</code> when you want to establish tracking between a local branch and a remote branch that already exists.</p>
+</li>
+<li>
+<p><strong>Syncing Changes</strong> After setting up tracking, you can simply use <code>git push</code> and <code>git pull</code> without specifying the remote branch, as Git already knows where to push and pull changes from.</p>
+</li>
+<li>
+<p>This command can also be used in combination with <code>git push -u</code> or <code>git push --set-upstream</code> to set up tracking and push changes to the remote branch in one step.</p>
+</li>
+</ul>
 <h2 id="branching-best-practices"><strong>Branching Best Practices</strong></h2>
 <ul>
 <li>

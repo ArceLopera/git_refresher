@@ -12,14 +12,14 @@
         <meta name="author" content="ArceLopera">
       
       
-        <link rel="canonical" href="https://arcelopera.github.io/git_refresher/Basics/git_stage/">
+        <link rel="canonical" href="https://arcelopera.github.io/git_refresher/Advanced/git_checkout/">
       
       <link rel="icon" href="../../Images/git.ico">
       <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.15">
     
     
       
-        <title>Snapshotting - Git Refresher</title>
+        <title>Checkout - Git Refresher</title>
       
     
     
@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#snapshooting" class="md-skip">
+        <a href="#features-of-git-checkout" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Snapshotting
+              Checkout
             
           </span>
         </div>
@@ -207,8 +207,6 @@
         
   
   
-    
-  
 
 
   
@@ -220,7 +218,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../git_refresh/" class="md-tabs__link md-tabs__link--active">
+      <a href="../../git_refresh/" class="md-tabs__link">
         Basics
       </a>
     </li>
@@ -232,13 +230,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../Advanced/git_alias/" class="md-tabs__link">
+      <a href="../git_alias/" class="md-tabs__link md-tabs__link--active">
         Advanced
       </a>
     </li>
@@ -325,14 +325,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" data-md-state="indeterminate" type="checkbox" id="__nav_2" checked>
       
       
       
@@ -395,7 +393,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../git_install/" class="md-nav__link">
+      <a href="../../Basics/git_install/" class="md-nav__link">
         Installing Git
       </a>
     </li>
@@ -409,7 +407,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../git_configuration/" class="md-nav__link">
+      <a href="../../Basics/git_configuration/" class="md-nav__link">
         Configuring Git
       </a>
     </li>
@@ -430,7 +428,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../git_start/" class="md-nav__link">
+      <a href="../../Basics/git_start/" class="md-nav__link">
         Starting a Project
       </a>
     </li>
@@ -442,198 +440,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Snapshotting
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../Basics/git_stage/" class="md-nav__link">
         Snapshotting
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#snapshooting" class="md-nav__link">
-    Snapshooting
-  </a>
-  
-    <nav class="md-nav" aria-label="Snapshooting">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#git-status" class="md-nav__link">
-    git status
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#git-add" class="md-nav__link">
-    git add
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#git-reset" class="md-nav__link">
-    git reset
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#git-diff" class="md-nav__link">
-    git diff
-  </a>
-  
-    <nav class="md-nav" aria-label="git diff">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#git-diff-staged" class="md-nav__link">
-    git diff --staged
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#git-difftool" class="md-nav__link">
-    git difftool
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#git-commit" class="md-nav__link">
-    git commit
-  </a>
-  
-    <nav class="md-nav" aria-label="git commit">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#committing-specific-files" class="md-nav__link">
-    Committing Specific Files
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#amending-the-last-commit" class="md-nav__link">
-    Amending the Last Commit
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#interactive-commit" class="md-nav__link">
-    Interactive Commit
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#committing-with-multiple-messages" class="md-nav__link">
-    Committing with Multiple Messages
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#committing-with-a-future-date" class="md-nav__link">
-    Committing with a Future Date
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#committing-only-tracked-changes" class="md-nav__link">
-    Committing Only Tracked Changes
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tracking-path-changes" class="md-nav__link">
-    Tracking Path Changes
-  </a>
-  
-    <nav class="md-nav" aria-label="Tracking Path Changes">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#git-rm" class="md-nav__link">
-    git rm
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#git-mv" class="md-nav__link">
-    git mv
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#git-clean" class="md-nav__link">
-    git clean
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#git-log-stat-m" class="md-nav__link">
-    git log --stat -M
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -645,7 +456,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../git_undoingthings/" class="md-nav__link">
+      <a href="../../Basics/git_undoingthings/" class="md-nav__link">
         Undoing Things
       </a>
     </li>
@@ -659,7 +470,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../git_remotes/" class="md-nav__link">
+      <a href="../../Basics/git_remotes/" class="md-nav__link">
         Remotes
       </a>
     </li>
@@ -673,7 +484,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../git_inspect/" class="md-nav__link">
+      <a href="../../Basics/git_inspect/" class="md-nav__link">
         Inspect & Compare
       </a>
     </li>
@@ -693,12 +504,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" data-md-state="indeterminate" type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
       
       
       
@@ -721,7 +534,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Advanced/git_alias/" class="md-nav__link">
+      <a href="../git_alias/" class="md-nav__link">
         Aliases
       </a>
     </li>
@@ -735,7 +548,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Advanced/git_tagging/" class="md-nav__link">
+      <a href="../git_tagging/" class="md-nav__link">
         Tagging
       </a>
     </li>
@@ -749,7 +562,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Advanced/git_branch/" class="md-nav__link">
+      <a href="../git_branch/" class="md-nav__link">
         Branching
       </a>
     </li>
@@ -763,7 +576,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Advanced/git_patches/" class="md-nav__link">
+      <a href="../git_patches/" class="md-nav__link">
         Patching
       </a>
     </li>
@@ -777,7 +590,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Advanced/git_ignore/" class="md-nav__link">
+      <a href="../git_ignore/" class="md-nav__link">
         Ignoring Files
       </a>
     </li>
@@ -791,7 +604,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Advanced/git_stash/" class="md-nav__link">
+      <a href="../git_stash/" class="md-nav__link">
         Temporary Commits
       </a>
     </li>
@@ -805,7 +618,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Advanced/git_interactivestaging/" class="md-nav__link">
+      <a href="../git_interactivestaging/" class="md-nav__link">
         Interactive Staging
       </a>
     </li>
@@ -819,7 +632,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Advanced/git_cherry/" class="md-nav__link">
+      <a href="../git_cherry/" class="md-nav__link">
         CherryPicking
       </a>
     </li>
@@ -831,11 +644,82 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../Advanced/git_checkout/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Checkout
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Checkout
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#features-of-git-checkout" class="md-nav__link">
+    Features of git checkout
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparison-with-newer-commands" class="md-nav__link">
+    Comparison with Newer Commands
+  </a>
+  
+    <nav class="md-nav" aria-label="Comparison with Newer Commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#git-switch" class="md-nav__link">
+    git switch
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-restore" class="md-nav__link">
+    git restore
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-cases" class="md-nav__link">
+    Use Cases
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -920,113 +804,31 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#snapshooting" class="md-nav__link">
-    Snapshooting
+  <a href="#features-of-git-checkout" class="md-nav__link">
+    Features of git checkout
   </a>
   
-    <nav class="md-nav" aria-label="Snapshooting">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparison-with-newer-commands" class="md-nav__link">
+    Comparison with Newer Commands
+  </a>
+  
+    <nav class="md-nav" aria-label="Comparison with Newer Commands">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#git-status" class="md-nav__link">
-    git status
+  <a href="#git-switch" class="md-nav__link">
+    git switch
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#git-add" class="md-nav__link">
-    git add
+  <a href="#git-restore" class="md-nav__link">
+    git restore
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#git-reset" class="md-nav__link">
-    git reset
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#git-diff" class="md-nav__link">
-    git diff
-  </a>
-  
-    <nav class="md-nav" aria-label="git diff">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#git-diff-staged" class="md-nav__link">
-    git diff --staged
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#git-difftool" class="md-nav__link">
-    git difftool
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#git-commit" class="md-nav__link">
-    git commit
-  </a>
-  
-    <nav class="md-nav" aria-label="git commit">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#committing-specific-files" class="md-nav__link">
-    Committing Specific Files
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#amending-the-last-commit" class="md-nav__link">
-    Amending the Last Commit
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#interactive-commit" class="md-nav__link">
-    Interactive Commit
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#committing-with-multiple-messages" class="md-nav__link">
-    Committing with Multiple Messages
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#committing-with-a-future-date" class="md-nav__link">
-    Committing with a Future Date
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#committing-only-tracked-changes" class="md-nav__link">
-    Committing Only Tracked Changes
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -1036,43 +838,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#tracking-path-changes" class="md-nav__link">
-    Tracking Path Changes
+  <a href="#use-cases" class="md-nav__link">
+    Use Cases
   </a>
-  
-    <nav class="md-nav" aria-label="Tracking Path Changes">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#git-rm" class="md-nav__link">
-    git rm
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#git-mv" class="md-nav__link">
-    git mv
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#git-clean" class="md-nav__link">
-    git clean
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#git-log-stat-m" class="md-nav__link">
-    git log --stat -M
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1090,280 +858,132 @@
                 
 
 
-  <h1>Snapshotting</h1>
+  <h1>Checkout</h1>
 
-<p><strong>Working with snapshots and the Git staging area</strong></p>
-<p>For the basic workflow of staging content and committing it to your history, there are only a few basic commands.</p>
-<table>
-<thead>
-<tr>
-<th align="center">Command</th>
-<th align="center">Example</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center"><a href="#git-status">git status</a></td>
-<td align="center"><code>bash git status</code></td>
-</tr>
-<tr>
-<td align="center"><a href="#git-add">git add</a></td>
-<td align="center"><code>bash git add myfile.txt</code></td>
-</tr>
-<tr>
-<td align="center"><a href="#git-reset">git reset</a></td>
-<td align="center"><code>bash git reset myfile.txt</code></td>
-</tr>
-<tr>
-<td align="center"><a href="#git-diff">git diff</a></td>
-<td align="center"><code>bash git diff</code></td>
-</tr>
-<tr>
-<td align="center"><a href="#git-commit">git commit</a></td>
-<td align="center"><code>bash git commit -m "Add new feature"</code></td>
-</tr>
-</tbody>
-</table>
-<h2 id="snapshooting">Snapshooting</h2>
-<p>The difference between Git's snapshooting and delta-based version control systems lies in how git store and track changes within a repository.</p>
+<p><code>git checkout</code> is a fundamental Git command used for switching branches, restoring files from previous commits, creating new branches, and more. It has been a core part of Git since its inception and remains widely used. However, Git has introduced newer commands like <code>git switch</code> and <code>git restore</code> that offer similar functionality and improved features.</p>
+<h2 id="features-of-git-checkout">Features of <code>git checkout</code></h2>
 <ol>
 <li>
-<p><strong>Git's Snapshooting</strong>
- Git is a distributed version control system (DVCS) that operates based on snapshots of the entire repository at each point in time.
- When a commit is made in Git, the entire state of the project at that moment is captured as a snapshot, including all files and their contents. Each commit creates a new snapshot, and Git tracks the changes between snapshots rather than individual file changes.</p>
-<ul>
-<li><strong>Advantages:</strong><ul>
-<li>Offers robustness and data integrity since each commit is self-contained and immutable.</li>
-<li>Allows for efficient branching and merging operations since entire snapshots are managed independently.</li>
-<li>Facilitates offline work and collaboration by enabling users to work with their local repositories and synchronize changes later.</li>
-</ul>
-</li>
-</ul>
+<p><strong>Switching Branches</strong></p>
+<p><code>git checkout &lt;branch&gt;</code>
+ Allows you to switch between branches in your repository.</p>
 </li>
 <li>
-<p><strong>Delta-based Version Control (CVS, Subversion, Perforce)</strong>
- Delta-based version control systems track changes by storing the differences (or deltas) between successive versions of a file or repository.
- Instead of storing complete snapshots of files or repositories, delta-based systems store the changes (insertions, deletions, modifications) made to files over time. Each new version is represented as a set of changes applied to the previous version.</p>
-<ul>
-<li><strong>Advantages:</strong><ul>
-<li>Can be more space-efficient for repositories with large binary files or frequent, small changes since only the differences are stored.</li>
-<li>Allows for quicker network operations when transmitting changes since only the deltas need to be transferred.</li>
-<li>May provide more granular control over individual file versions, especially for large files with small modifications.</li>
-</ul>
+<p><strong>Creating New Branches</strong></p>
+<p><code>git checkout -b &lt;new-branch&gt;</code>
+   Creates a new branch and switches to it in one step.</p>
 </li>
-</ul>
+<li>
+<p><strong>Restoring Files</strong></p>
+<p><code>git checkout &lt;commit&gt; -- &lt;file&gt;</code>
+Restores a specific file from a previous commit to the working directory.</p>
+</li>
+<li>
+<p><strong>Discarding Local Changes</strong></p>
+<p><code>git checkout -- &lt;file&gt;</code>
+Discards local changes made to a specific file and restores it to the state from the last commit.</p>
+</li>
+<li>
+<p><strong>Checking Out Files from Other Branches</strong></p>
+<p><code>git checkout &lt;branch&gt; -- &lt;file&gt;</code>
+Checks out a specific file from another branch into the current branch's working directory.</p>
 </li>
 </ol>
-<p><strong>Key Differences</strong></p>
-<ul>
-<li>
-<p><strong>Granularity:</strong> Git's snapshot-based approach captures the entire state of the repository at each commit, offering a holistic view of the project's history. Delta-based systems track changes at a finer granularity, focusing on individual file modifications.</p>
-</li>
-<li>
-<p><strong>Efficiency:</strong> Git's approach can be less space-efficient for repositories with frequent changes or large binary files since it stores complete snapshots. Delta-based systems may offer better efficiency in such cases by only storing the differences between versions.</p>
-</li>
-<li>
-<p><strong>Complexity:</strong> Managing deltas and applying them to reconstruct files can introduce complexity and potential performance overhead in delta-based systems. Git's snapshot-based approach simplifies operations like branching and merging since each commit represents a complete, self-contained snapshot.</p>
-</li>
-<li>
-<p><strong>Network Operations:</strong> Git's approach may lead to larger repository sizes due to storing complete snapshots, but it offers efficient network operations since it transfers complete commits during push and pull operations. Delta-based systems may have smaller repository sizes but may require more processing to reconstruct files during network operations.</p>
-</li>
-</ul>
-<p>Overall, Git's snapshot-based approach provides robustness, simplicity, and efficiency for version control, making it a popular choice for software development projects of all sizes. Delta-based version control systems offer advantages in specific use cases where space efficiency or granular control over individual file versions is paramount.</p>
-<h3 id="git-status">git status</h3>
-<p>Shows the status of your working directory, indicating which files are modified, untracked, and staged for the next commit.
-<div class="highlight"><pre><span></span><code>git status
-</code></pre></div></p>
-<p>This command provides a detailed summary of the changes in your working directory. Files listed under "Changes not staged for commit" are modified but not staged, and files under "Changes to be committed" are staged for the next commit.</p>
-<h3 id="git-add">git add</h3>
-<p>Adds changes in the specified file to the staging area, preparing them for the next commit.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Create or modify a file</span>
-<span class="nb">echo</span> <span class="s2">&quot;Hello, Git!&quot;</span> &gt; myfile.txt
-
-<span class="c1"># Stage the changes</span>
-git add myfile.txt
-</code></pre></div>
-<p>This sequence of commands creates or modifies <code>myfile.txt</code> and stages the changes for the next commit.</p>
-<p>Use <code>git add .</code> to stage all changes in the working directory.</p>
-<h3 id="git-reset">git reset</h3>
-<p>Unstages changes in the specified file, reverting it to the state in the last commit, while retaining the changes in the working directory.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Unstage the changes in myfile.txt</span>
-git reset myfile.txt
-</code></pre></div>
-<p>This command removes <code>myfile.txt</code> from the staging area, but the changes made to the file remain in the working directory.</p>
-<h3 id="git-diff">git diff</h3>
-<p>The git diff command is used when you want to see differences between any two trees. This could be the difference between your working environment and your staging area (git diff by itself), between your staging area and your last commit (git diff --staged), or between two commits (git diff master branchB).</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Make changes to myfile.txt</span>
-<span class="nb">echo</span> <span class="s2">&quot;Updated content&quot;</span> &gt;&gt; myfile.txt
-
-<span class="c1"># View the differences</span>
-git diff
-</code></pre></div>
-<p>This command displays the unstaged changes in <code>myfile.txt</code> since the last commit.</p>
-<h4 id="git-diff-staged">git diff --staged</h4>
-<p>Shows the differences between the staging area and the last commit (changes that are staged but not yet committed).</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Stage the changes in myfile.txt</span>
-git add myfile.txt
-
-<span class="c1"># View the differences in the staging area</span>
-git diff --staged
-</code></pre></div>
-<p>This command displays the changes that are currently staged for the next commit.</p>
-<h4 id="git-difftool">git difftool</h4>
-<p>The git difftool command simply launches an external tool to show you the difference between two trees in case you want to use something other than the built in git diff command.</p>
-<h3 id="git-commit">git commit</h3>
-<p>Commits the changes that are staged in the snapshot, with a descriptive commit message.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Commit the changes with a message</span>
-git commit -m <span class="s2">&quot;Add new feature&quot;</span>
-</code></pre></div>
-<p>This command creates a new commit with the staged changes and the specified commit message.</p>
-<ul>
-<li>Combine <code>git add</code> and <code>git commit</code> in one step using <code>git commit -am "[descriptive message]"</code> to stage and commit changes.</li>
-</ul>
-<h4 id="committing-specific-files">Committing Specific Files</h4>
-<div class="highlight"><pre><span></span><code><span class="c1"># Stage changes in specific files</span>
-git add file1.txt file2.txt
-
-<span class="c1"># Commit the changes with a message</span>
-git commit -m <span class="s2">&quot;Fix issues in file1.txt and file2.txt&quot;</span>
-</code></pre></div>
-<p>Here, only specific files (<code>file1.txt</code> and <code>file2.txt</code>) are staged and then committed with a message describing the fix.</p>
-<h4 id="amending-the-last-commit">Amending the Last Commit</h4>
-<div class="highlight"><pre><span></span><code><span class="c1"># Make additional changes</span>
-<span class="nb">echo</span> <span class="s2">&quot;Additional content&quot;</span> &gt;&gt; myfile.txt
-
-<span class="c1"># Amend the last commit with new changes</span>
-git add myfile.txt
-git commit --amend -m <span class="s2">&quot;Update myfile.txt with additional content&quot;</span>
-</code></pre></div>
-<p>This example adds new content to <code>myfile.txt</code> and then amends the last commit with the additional changes.</p>
-<h4 id="interactive-commit">Interactive Commit</h4>
-<div class="highlight"><pre><span></span><code><span class="c1"># Interactively stage changes</span>
-git add -i
-
-<span class="c1"># Follow the interactive prompts to stage changes and commit</span>
-</code></pre></div>
-<p>Running <code>git add -i</code> opens an interactive mode where you can choose which changes to stage, unstage, or commit. This provides a more granular control over the commit process.</p>
-<h4 id="committing-with-multiple-messages">Committing with Multiple Messages</h4>
-<div class="highlight"><pre><span></span><code><span class="c1"># Stage changes in files</span>
-git add file1.txt file2.txt
-
-<span class="c1"># Commit changes with multiple messages</span>
-git commit -m <span class="s2">&quot;Fix issues in file1.txt&quot;</span> -m <span class="s2">&quot;Add new feature in file2.txt&quot;</span>
-</code></pre></div>
-<p>You can use the <code>-m</code> option multiple times to provide multiple commit messages. Each <code>-m</code> adds a new paragraph to the commit message.</p>
-<h4 id="committing-with-a-future-date">Committing with a Future Date</h4>
-<div class="highlight"><pre><span></span><code><span class="c1"># Stage changes</span>
-git add .
-
-<span class="c1"># Commit with a future date</span>
-git commit --date<span class="o">=</span><span class="s2">&quot;2023-01-01T12:00:00&quot;</span> -m <span class="s2">&quot;Commit with a future date&quot;</span>
-</code></pre></div>
-<p>This example commits changes with a specified future date using the <code>--date</code> option.</p>
-<h4 id="committing-only-tracked-changes">Committing Only Tracked Changes</h4>
-<div class="highlight"><pre><span></span><code><span class="c1"># Stage changes in tracked files</span>
-git add -u
-
-<span class="c1"># Commit only tracked changes</span>
-git commit -m <span class="s2">&quot;Commit tracked changes&quot;</span>
-</code></pre></div>
-<p>The <code>git add -u</code> command stages only tracked files, and then a commit is made with a message indicating the commit of tracked changes.</p>
-<h2 id="tracking-path-changes">Tracking Path Changes</h2>
-<p>Versioning file removes and path changes</p>
+<h2 id="comparison-with-newer-commands">Comparison with Newer Commands</h2>
 <table>
 <thead>
 <tr>
-<th align="center">Command</th>
-<th align="center">Example</th>
+<th>Previous command</th>
+<th>New command</th>
+<th>Explanation</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="center"><a href="#git-rm">git rm</a></td>
-<td align="center"><code>bash git rm file.txt</code></td>
+<td><code>git checkout &lt;branch&gt;</code></td>
+<td><code>git switch &lt;branch&gt;</code></td>
+<td>Both commands are used to switch branches. The new command <code>git switch</code> offers a clearer syntax for this task.</td>
 </tr>
 <tr>
-<td align="center"><a href="#git-mv">git mv</a></td>
-<td align="center"><code>bash git mv oldfile.txt newfile.txt</code></td>
+<td><code>git checkout</code></td>
+<td>N/A (use <code>git status</code>)</td>
+<td>The <code>git checkout</code> command without arguments is often used to check the status of the repository.</td>
 </tr>
 <tr>
-<td align="center"><a href="#git-clean">git clean</a></td>
-<td align="center"><code>bash git clean -ffd</code></td>
+<td><code>git checkout -b &lt;new_branch&gt; [&lt;start_point&gt;]</code></td>
+<td><code>git switch -c &lt;new-branch&gt; [&lt;start-point&gt;]</code></td>
+<td>Both commands are used to create and switch to a new branch. The new command <code>git switch -c</code> offers a clearer syntax for branch creation.</td>
 </tr>
 <tr>
-<td align="center"><a href="#git-log---stat--m">git log</a></td>
-<td align="center"><code>bash git log --stat -M</code></td>
+<td><code>git checkout -B &lt;new_branch&gt; [&lt;start_point&gt;]</code></td>
+<td><code>git switch -C &lt;new-branch&gt; [&lt;start-point&gt;]</code></td>
+<td>Both commands are used to forcibly create and switch to a new branch. The new command <code>git switch -C</code> offers a clearer syntax for this task.</td>
+</tr>
+<tr>
+<td><code>git checkout --orphan &lt;new_branch&gt;</code></td>
+<td><code>git switch --orphan &lt;new-branch&gt;</code></td>
+<td>Both commands are used to create a new orphan branch.</td>
+</tr>
+<tr>
+<td><code>git checkout --orphan &lt;new_branch&gt; &lt;start_point&gt;</code></td>
+<td>N/A (use <code>git switch &lt;start-point&gt;</code> then <code>git switch --orphan &lt;new-branch&gt;</code>)</td>
+<td>There is no direct equivalent for this operation. You can achieve similar behavior by first switching to the start point and then creating the orphan branch.</td>
+</tr>
+<tr>
+<td><code>git checkout [--detach] &lt;commit&gt;</code></td>
+<td><code>git switch --detach &lt;commit&gt;</code></td>
+<td>Both commands are used to checkout a specific commit in a detached HEAD state.</td>
+</tr>
+<tr>
+<td><code>git checkout --detach [&lt;branch&gt;]</code></td>
+<td><code>git switch --detach [&lt;branch&gt;]</code></td>
+<td>Both commands are used to detach the HEAD from the current or specified branch.</td>
+</tr>
+<tr>
+<td><code>git checkout [--] &lt;pathspec&gt;…</code></td>
+<td><code>git restore [--] &lt;pathspec&gt;…</code></td>
+<td>Both commands are used to restore files in the working directory. The new command <code>git restore</code> provides a clearer syntax for this operation.</td>
+</tr>
+<tr>
+<td><code>git checkout --pathspec-from-file=&lt;file&gt;</code></td>
+<td><code>git restore --pathspec-from-file=&lt;file&gt;</code></td>
+<td>Both commands are used to restore files specified in a file. The new command <code>git restore</code> provides a clearer syntax for this operation.</td>
+</tr>
+<tr>
+<td><code>git checkout &lt;tree-ish&gt; [--] &lt;pathspec&gt;…</code></td>
+<td><code>git restore -s &lt;tree&gt; [--] &lt;pathspec&gt;…</code></td>
+<td>Both commands are used to restore files from a specific tree. The new command <code>git restore</code> provides a clearer syntax for this operation.</td>
+</tr>
+<tr>
+<td><code>git checkout &lt;tree-ish&gt; --pathspec-from-file=&lt;file&gt;</code></td>
+<td><code>git restore -s &lt;tree&gt; --pathspec-from-file=&lt;file&gt;</code></td>
+<td>Both commands are used to restore files specified in a file from a specific tree. The new command <code>git restore</code> provides a clearer syntax for this operation.</td>
+</tr>
+<tr>
+<td><code>git checkout -p [&lt;tree-ish&gt;] [--] [&lt;pathspec&gt;…]</code></td>
+<td><code>git restore -p [-s &lt;tree&gt;] [--] [&lt;pathspec&gt;…]</code></td>
+<td>Both commands are used to interactively restore changes from a specific tree. The new command <code>git restore</code> provides a clearer syntax for this operation.</td>
 </tr>
 </tbody>
 </table>
-<h3 id="git-rm">git rm</h3>
-<p>Removes files from both your working directory and the Git repository. It stages the removal of the specified files, and you need to commit to apply the changes.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Remove a file from the working directory and stage the removal</span>
-git rm file.txt
-
-<span class="c1"># Commit the removal</span>
-git commit -m <span class="s2">&quot;Remove file.txt&quot;</span>
-</code></pre></div>
-<p>This sequence removes <code>file.txt</code> from both the working directory and the Git repository, and the removal is committed.</p>
-<h3 id="git-mv">git mv</h3>
-<p>Renames or moves files in both your working directory and the Git repository. Similar to <code>git rm</code>, it stages the rename/move, and you need to commit to apply the changes.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Rename a file and stage the change</span>
-git mv oldfile.txt newfile.txt
-
-<span class="c1"># Commit the rename</span>
-git commit -m <span class="s2">&quot;Rename oldfile.txt to newfile.txt&quot;</span>
-</code></pre></div>
-<p>This example renames <code>oldfile.txt</code> to <code>newfile.txt</code>, stages the change, and commits the rename.</p>
+<p>As shown by this comparison, some prior usages can be converted to the new commands by simply replacing the old command name (checkout) with the new one (switch, restore), whereas others require additional adjustment. Notable changes include:</p>
 <ul>
-<li>With <code>git mv</code>, you can also use it to move files to a different directory, like <code>git mv file.txt new_directory/</code>.</li>
-<li>Use <code>-r</code> with <code>git rm</code> and <code>git mv</code> to handle removals or moves recursively in directories.</li>
+<li>The -b/-B options for creating a new branch before switching are renamed to -c/-C. They also have long option variants (--create/--force-create), unlike before.</li>
+<li>--detach (or -d) is now always required when switching to a detached head, where it was previously optional for commits but required for branches.</li>
+<li>The source tree for restoring is now given by the -s (or --source) option, rather than being an inline argument.</li>
+<li>Switching using --force (or -f) now fails if there are unmerged entries, rather than ignoring them. --force has also been renamed to --discard-changes, with --force being kept as an alias.</li>
 </ul>
-<h3 id="git-clean">git clean</h3>
-<p>Removes untracked files from your working directory. It's useful for cleaning up untracked files that haven't been staged or committed.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># List untracked files that will be removed (dry run)</span>
-git clean -n
-
-<span class="c1"># Remove untracked files</span>
-git clean -f
-</code></pre></div>
-<p>The first command (<code>git clean -n</code>) is a dry run that shows you what files would be removed. The second command (<code>git clean -f</code>) actually removes the untracked files.</p>
+<h3 id="git-switch"><strong><code>git switch</code></strong></h3>
+<p>Provides a clearer and more intuitive syntax specifically for switching branches.</p>
+<h3 id="git-restore"><strong><code>git restore</code></strong></h3>
+<p>Offers dedicated options for restoring files and discarding changes, providing a more explicit and versatile interface for these operations.</p>
+<h2 id="use-cases">Use Cases</h2>
 <ul>
-<li><code>git clean</code> has additional options, such as <code>-i</code> for an interactive mode where you can choose which files to clean.</li>
+<li><strong>Simple Branch Switching</strong> For basic branch switching operations, <code>git checkout</code> remains a straightforward and commonly used command.</li>
+<li><strong>File-Level Operations</strong> When performing file-level operations like restoring files from commits or discarding local changes, <code>git checkout</code> provides a concise syntax.</li>
+<li><strong>Advanced Branch Management</strong> For more advanced branch management tasks or when using newer Git features, <code>git switch</code> and <code>git restore</code> may offer advantages in terms of clarity and functionality.</li>
 </ul>
-<h3 id="git-log-stat-m">git log --stat -M</h3>
-<p>This command is used to display the commit history along with statistics about the changes introduced in each commit, including information about file modifications, additions, and deletions. The <code>-M</code> option is particularly used to detect file renames.</p>
-<p>Let's break down the components of this command:</p>
-<ul>
-<li><code>git log</code>: Displays the commit logs.</li>
-<li><code>--stat</code>: Includes additional statistics at the end of each commit entry, providing a summary of changes.</li>
-<li><code>-M</code>: Enables Git's rename detection, which identifies file renames between commits.</li>
-</ul>
-<div class="highlight"><pre><span></span><code>git log --stat -M
-</code></pre></div>
-<p>This command will output a detailed log that includes commit information and statistics. The statistics section shows the number of lines added and removed for each file affected by the commit. Additionally, if a file has been renamed, Git will provide information about the rename.</p>
-<p>Here is a simplified example of what the output might look like:</p>
-<div class="highlight"><pre><span></span><code>commit abcd1234 (HEAD)
-Author: John Doe &lt;john.doe@example.com&gt;
-Date:   Tue Jan 18 12:00:00 2024 +0000
-
-    Updated README.md
-
- README.md | 10 +++++-----
- 1 file changed, 5 insertions(+), 5 deletions(-)
-</code></pre></div>
-<p>In this example:</p>
-<ul>
-<li><code>commit abcd1234</code>: The unique identifier of the commit.</li>
-<li><code>Author</code>: The author of the commit.</li>
-<li><code>Date</code>: The date and time of the commit.</li>
-<li><code>Updated README.md</code>: The commit message.</li>
-</ul>
-<p>The statistics section (<code>README.md | 10 +++++-----</code>) indicates that in the file <code>README.md</code>, 10 lines were added, and 5 lines were removed. This section provides a quick overview of the changes made in each commit.</p>
-<p>The <code>-M</code> option enhances this by detecting file renames. If a file has been renamed, Git will track the rename and display the old and new filenames.</p>
-<ul>
-<li>The <code>-M</code> option can take an optional value to set a similarity index for rename detection. For example, <code>-M90%</code> would consider files as renamed if 90% of their content is similar.</li>
-<li>Using <code>-M</code> can be especially useful when you want to track the history of a file that has been renamed over time.</li>
-</ul>
+<p><code>git checkout</code> is a versatile Git command with various features for branch switching, file restoration, and more. While newer commands like <code>git switch</code> and <code>git restore</code> offer some improvements and specialized functionality, <code>git checkout</code> remains a fundamental and widely used command in Git workflows. Depending on the specific task at hand and personal preference, you may choose to use <code>git checkout</code> or explore the capabilities of newer Git commands for branch and file management.</p>
 
               
             </article>
@@ -1377,7 +997,7 @@ Date:   Tue Jan 18 12:00:00 2024 +0000
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../git_start/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Starting a Project" rel="prev">
+        <a href="../git_cherry/" class="md-footer__link md-footer__link--prev" aria-label="Previous: CherryPicking" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -1386,20 +1006,20 @@ Date:   Tue Jan 18 12:00:00 2024 +0000
               <span class="md-footer__direction">
                 Previous
               </span>
-              Starting a Project
+              CherryPicking
             </div>
           </div>
         </a>
       
       
         
-        <a href="../git_undoingthings/" class="md-footer__link md-footer__link--next" aria-label="Next: Undoing Things" rel="next">
+        <a href="../../Github/git_ssh/" class="md-footer__link md-footer__link--next" aria-label="Next: Adding SSH Keys" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Undoing Things
+              Adding SSH Keys
             </div>
           </div>
           <div class="md-footer__button md-icon">
