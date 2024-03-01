@@ -1,14 +1,40 @@
+## The Lifecycle of Git files
+
+Understanding the lifecycle of the status of files in Git is crucial for effectively managing changes in your repository. The lifecycle consists of several stages that files can transition through as you work with Git. These stages are reflected in the output of `git status` and represent the state of files in relation to the repository. 
+
+- **Transition between Stages:** Files transition between these stages as you work with Git commands like `git add`, `git commit`, and others.
+- **Workflow:** The typical workflow involves modifying files in the working directory, staging the changes with `git add`, and committing the changes with `git commit`.
+- **Visibility:** Use `git status` to view the current status of files in your repository and identify which stage they are in.
+
+| Stage         | Description                 |  Representation                   | Action                       |
+|---------------|----------------------------|----------------------|-----------------------------------|
+| Untracked     | Files that exist in your working directory but are not yet tracked by Git. These files have not been added to the repository. |Shown in red in the output of `git status`.|Use `git add <file>` to stage untracked files for the next commit. |
+| Tracked  (or Modified)     | Files that have been modified in the working directory after being staged or committed. | Shown in red in the output of `git status`.| Use `git add <file>` to stage the modified files, then commit the changes with `git commit`.                               |
+|Deleted|Files that have been deleted from the working directory after being staged or committed.|Shown in red in the output of `git status`.|Use `git add <file>` to stage the deletion, then commit the changes with `git commit`.|
+|Renamed or Moved| Files that have been renamed or moved in the working directory after being staged or committed.|Shown as both deleted and untracked files in the output of `git status`.|Use `git add <file>` to stage the rename or move, then commit the changes with `git commit`.|
+| Staged (or Indexed)        |  Files that have been added to the staging area. These changes are ready to be included in the next commit. |Shown in green in the output of `git status`.| Use `git commit` to create a commit containing the staged changes.   |
+| Committed (or Unmodified)    | Files are stored securely in the Git repository. They are unchanged and represent a specific snapshot in the project's history. Files that have not been modified since the last commit. | Typically not displayed in the output of `git status` unless using certain flags.|   No action required unless you intend to stage or modify the files.   |
+
+![](../Images/gitstcycle.png)
+
+The working tree is a single checkout of one version of the project. These files are pulled out of the compressed database in the Git directory and placed on disk for you to use or modify.
+
+The staging area is a file, generally contained in your Git directory, that stores information about what will go into your next commit. 
+
+The Git directory is where Git stores the metadata and object database for your project. This is the most important part of Git, and it is what is copied when you clone a repository from another computer.
+
+
 **Working with snapshots and the Git staging area**
 
 For the basic workflow of staging content and committing it to your history, there are only a few basic commands.
 
 |  Command |  Example |
 |:-------------:|:----------------:|
-| [git status](#git-status)       |  ``` bash git status```  |
-| [git add](#git-add)        |  ``` bash git add myfile.txt```  |
-| [git reset](#git-reset)        |  ``` bash git reset myfile.txt```  |
-| [git diff](#git-diff)        |  ``` bash git diff```  |
-| [git commit](#git-commit)        |  ``` bash git commit -m "Add new feature"```  |
+| [git status](#git-status)       |  ``` git status```  |
+| [git add](#git-add)        |  ``` git add myfile.txt```  |
+| [git reset](#git-reset)        |  ``` git reset myfile.txt```  |
+| [git diff](#git-diff)        |  ``` git diff```  |
+| [git commit](#git-commit)        |  ``` git commit -m "Add new feature"```  |
 
 ## Snapshooting
 The difference between Git's snapshooting and delta-based version control systems lies in how git store and track changes within a repository.

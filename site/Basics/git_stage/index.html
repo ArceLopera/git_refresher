@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#snapshooting" class="md-skip">
+        <a href="#the-lifecycle-of-git-files" class="md-skip">
           Skip to content
         </a>
       
@@ -472,6 +472,13 @@
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-lifecycle-of-git-files" class="md-nav__link">
+    The Lifecycle of Git files
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#snapshooting" class="md-nav__link">
@@ -920,6 +927,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#the-lifecycle-of-git-files" class="md-nav__link">
+    The Lifecycle of Git files
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#snapshooting" class="md-nav__link">
     Snapshooting
   </a>
@@ -1092,6 +1106,65 @@
 
   <h1>Snapshotting</h1>
 
+<h2 id="the-lifecycle-of-git-files">The Lifecycle of Git files</h2>
+<p>Understanding the lifecycle of the status of files in Git is crucial for effectively managing changes in your repository. The lifecycle consists of several stages that files can transition through as you work with Git. These stages are reflected in the output of <code>git status</code> and represent the state of files in relation to the repository. </p>
+<ul>
+<li><strong>Transition between Stages:</strong> Files transition between these stages as you work with Git commands like <code>git add</code>, <code>git commit</code>, and others.</li>
+<li><strong>Workflow:</strong> The typical workflow involves modifying files in the working directory, staging the changes with <code>git add</code>, and committing the changes with <code>git commit</code>.</li>
+<li><strong>Visibility:</strong> Use <code>git status</code> to view the current status of files in your repository and identify which stage they are in.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Stage</th>
+<th>Description</th>
+<th>Representation</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Untracked</td>
+<td>Files that exist in your working directory but are not yet tracked by Git. These files have not been added to the repository.</td>
+<td>Shown in red in the output of <code>git status</code>.</td>
+<td>Use <code>git add &lt;file&gt;</code> to stage untracked files for the next commit.</td>
+</tr>
+<tr>
+<td>Tracked  (or Modified)</td>
+<td>Files that have been modified in the working directory after being staged or committed.</td>
+<td>Shown in red in the output of <code>git status</code>.</td>
+<td>Use <code>git add &lt;file&gt;</code> to stage the modified files, then commit the changes with <code>git commit</code>.</td>
+</tr>
+<tr>
+<td>Deleted</td>
+<td>Files that have been deleted from the working directory after being staged or committed.</td>
+<td>Shown in red in the output of <code>git status</code>.</td>
+<td>Use <code>git add &lt;file&gt;</code> to stage the deletion, then commit the changes with <code>git commit</code>.</td>
+</tr>
+<tr>
+<td>Renamed or Moved</td>
+<td>Files that have been renamed or moved in the working directory after being staged or committed.</td>
+<td>Shown as both deleted and untracked files in the output of <code>git status</code>.</td>
+<td>Use <code>git add &lt;file&gt;</code> to stage the rename or move, then commit the changes with <code>git commit</code>.</td>
+</tr>
+<tr>
+<td>Staged (or Indexed)</td>
+<td>Files that have been added to the staging area. These changes are ready to be included in the next commit.</td>
+<td>Shown in green in the output of <code>git status</code>.</td>
+<td>Use <code>git commit</code> to create a commit containing the staged changes.</td>
+</tr>
+<tr>
+<td>Committed (or Unmodified)</td>
+<td>Files are stored securely in the Git repository. They are unchanged and represent a specific snapshot in the project's history. Files that have not been modified since the last commit.</td>
+<td>Typically not displayed in the output of <code>git status</code> unless using certain flags.</td>
+<td>No action required unless you intend to stage or modify the files.</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="" src="../../Images/gitstcycle.png" /></p>
+<p>The working tree is a single checkout of one version of the project. These files are pulled out of the compressed database in the Git directory and placed on disk for you to use or modify.</p>
+<p>The staging area is a file, generally contained in your Git directory, that stores information about what will go into your next commit. </p>
+<p>The Git directory is where Git stores the metadata and object database for your project. This is the most important part of Git, and it is what is copied when you clone a repository from another computer.</p>
 <p><strong>Working with snapshots and the Git staging area</strong></p>
 <p>For the basic workflow of staging content and committing it to your history, there are only a few basic commands.</p>
 <table>
@@ -1104,23 +1177,23 @@
 <tbody>
 <tr>
 <td align="center"><a href="#git-status">git status</a></td>
-<td align="center"><code>bash git status</code></td>
+<td align="center"><code>git status</code></td>
 </tr>
 <tr>
 <td align="center"><a href="#git-add">git add</a></td>
-<td align="center"><code>bash git add myfile.txt</code></td>
+<td align="center"><code>git add myfile.txt</code></td>
 </tr>
 <tr>
 <td align="center"><a href="#git-reset">git reset</a></td>
-<td align="center"><code>bash git reset myfile.txt</code></td>
+<td align="center"><code>git reset myfile.txt</code></td>
 </tr>
 <tr>
 <td align="center"><a href="#git-diff">git diff</a></td>
-<td align="center"><code>bash git diff</code></td>
+<td align="center"><code>git diff</code></td>
 </tr>
 <tr>
 <td align="center"><a href="#git-commit">git commit</a></td>
-<td align="center"><code>bash git commit -m "Add new feature"</code></td>
+<td align="center"><code>git commit -m "Add new feature"</code></td>
 </tr>
 </tbody>
 </table>
