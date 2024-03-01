@@ -174,7 +174,7 @@ git commit --amend -m "Update myfile.txt with additional content"
 
 This example adds new content to `myfile.txt` and then amends the last commit with the additional changes.
 
-#### Interactive Commit
+#### [Interactive Commit](../Advanced/git_interactivestaging.md)
 ```bash
 # Interactively stage changes
 git add -i
@@ -226,10 +226,10 @@ Versioning file removes and path changes
 
 |  Command |  Example |
 |:-------------:|:----------------:|
-| [git rm](#git-rm)        |  ``` bash git rm file.txt```  |
-| [git mv](#git-mv)        |  ``` bash git mv oldfile.txt newfile.txt```  |
-| [git clean](#git-clean)        |  ``` bash git clean -ffd```  |
-| [git log](#git-log---stat--m)        |  ``` bash git log --stat -M```  |
+| [git rm](#git-rm)        |  ``` git rm file.txt```  |
+| [git mv](#git-mv)        |  ``` git mv oldfile.txt newfile.txt```  |
+| [git clean](#git-clean)        |  ``` git clean -ffd```  |
+| [git log](#git-log---stat--m)        |  ``` git log --stat -M```  |
 
 
 ### git rm
