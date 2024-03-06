@@ -17,11 +17,11 @@ Understanding the lifecycle of the status of files in Git is crucial for effecti
 
 ![](../Images/gitstcycle.png)
 
-The working tree is a single checkout of one version of the project. These files are pulled out of the compressed database in the Git directory and placed on disk for you to use or modify.
+The **working tree** is a single checkout of one version of the project. These files are pulled out of the compressed database in the Git directory and placed on disk for you to use or modify.
 
-The staging area is a file, generally contained in your Git directory, that stores information about what will go into your next commit. 
+The **staging area** is a file, generally contained in your Git directory, that stores information about what will go into your next commit. 
 
-The Git directory is where Git stores the metadata and object database for your project. This is the most important part of Git, and it is what is copied when you clone a repository from another computer.
+The **Git directory** is where Git stores the metadata and object database for your project. This is the most important part of Git, and it is what is copied when you clone a repository from another computer.
 
 
 **Working with snapshots and the Git staging area**
@@ -79,6 +79,8 @@ This command provides a detailed summary of the changes in your working director
 
 ### git add
 
+![](../Images/add.png)
+
 Adds changes in the specified file to the staging area, preparing them for the next commit.
 
 ```bash
@@ -95,14 +97,81 @@ Use `git add .` to stage all changes in the working directory.
 
 ### git reset
 
-Unstages changes in the specified file, reverting it to the state in the last commit, while retaining the changes in the working directory.
+![](../Images/reset.png)
+
+ The `git reset` command in Git is a powerful tool for manipulating the commit history, moving branches, and resetting the staging area. It has several options, each affecting different parts of the Git repository. 
+
+#### **git reset --soft <commit\>**
+
+Resets the current branch's HEAD to the specified commit, leaving the changes staged.
+Moves the HEAD pointer to the specified commit, keeping the changes from commits after that commit staged for a new commit.
 
 ```bash
-# Unstage the changes in myfile.txt
-git reset myfile.txt
+git reset --soft HEAD~3
+```
+This command resets the current branch's HEAD to three commits behind the current position, keeping the changes staged. It essentially undid the last 3 git commit commands.You could now update the index (by adding or removing files) and run git commit again to accomplish what git commit --amend would have done.
+
+#### **git reset --mixed <commit\>**
+Resets the current branch's HEAD to the specified commit, unstaging the changes. This is also the default, so if you specify no option at all (just git reset HEAD~3 in this case).
+Moves the HEAD pointer to the specified commit, unstaging the changes from commits after that commit.
+
+```bash
+git reset --mixed HEAD~3
+```
+This command resets the current branch's HEAD to three commits behind the current position, unstaging the changes.  You rolled back to before you ran all your git add and git commit commands.
+
+#### **git reset --hard <commit\>**
+Resets the current branch's HEAD to the specified commit, discarding all changes.
+Moves the HEAD pointer to the specified commit, discarding all changes made after that commit.
+
+```bash
+git reset --hard HEAD~3
+```
+This command resets the current branch's HEAD to three commits behind the current position, discarding all changes. Use when you want to completely replace the current branch with the specified commit by discarding all changes made after that commit.
+
+Remember to use `git reset` with caution, especially the `--hard` option, as it can lead to irreversible data loss. Always make sure you understand the consequences of the reset operation before executing it.
+
+#### **git reset file.txt**
+The command git reset with a path to a file (since a commit SHA-1 or branch is not specified) is shorthand for git reset --mixed HEAD file.txt. It will:
+
+1. Move the branch HEAD points to (skipped).
+
+2. Make the index look like HEAD (stop here).
+
+So it essentially just copies file.txt from HEAD to the index. This has the practical effect of unstaging the file. If we look at the diagram for that command and think about what git add does, they are exact opposites. This is why the output of the git status command suggests that you run this to unstage a file. 
+
+We could just as easily not let Git assume we meant “pull the data from HEAD” by specifying a specific commit to pull that file version from. We would just run something like:
+```	bash
+git reset eb43bf file.txt
 ```
 
-This command removes `myfile.txt` from the staging area, but the changes made to the file remain in the working directory.
+#### git reset vs git checkout
+
+##### Without Paths
+Running git checkout [branch] is pretty similar to running git reset --hard [branch] in that it updates all three trees for you to look like [branch], but there are two important differences.
+
+1. Unlike git reset --hard, git checkout is working-directory safe.  It tries to do a trivial merge in the  working directory, so all of the files you haven’t changed will be updated. git reset --hard, on the other hand, will simply replace everything across the board without checking.
+
+2. git checkout will move HEAD itself to point to another branch or commit, while git reset will move the branch that HEAD points to. That is why when using git checkout you may end up with a detached HEAD, which is not possible with git reset. 
+
+##### With Paths 
+
+The other way to run checkout is with a file path, which, like reset, does not move HEAD. It is just like git reset [branch] file in that it updates the index with that file at that commit, but it also overwrites the file in the working directory. It would be exactly like git reset --hard [branch] file (if reset would let you run that) — it’s not working-directory safe, and it does not move HEAD.
+
+#### Cheat-sheet 
+
+This table shows a cheat-sheet for which commands affect which trees. The “HEAD” column reads “REF” if that command moves the reference (branch) that HEAD points to, and “HEAD” if it moves HEAD itself. Pay especial attention to the 'WD Safe?' column — if it says NO, take a second to think before running that command.
+
+||HEAD|	Index|	Workdir|	WD Safe?|
+|---|---|---|---|---|
+|Commit Level|||||
+|reset --soft [commit]|REF|NO|NO|YES|
+|reset [commit]|REF|YES|NO|YES|
+|reset --hard [commit]|REF|YES|YES|NO|
+|checkout <commit>|HEAD|YES|YES|YES|
+|File Level|||||
+|reset [commit] <paths>|NO|YES|NO|YES|
+|checkout [commit] <paths>|NO|YES|YES|NO|
 
 ### git diff
 

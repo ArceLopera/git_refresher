@@ -507,6 +507,54 @@
     git reset
   </a>
   
+    <nav class="md-nav" aria-label="git reset">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#git-reset-soft-commit" class="md-nav__link">
+    git reset --soft &lt;commit>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-reset-mixed-commit" class="md-nav__link">
+    git reset --mixed &lt;commit>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-reset-hard-commit" class="md-nav__link">
+    git reset --hard &lt;commit>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-reset-filetxt" class="md-nav__link">
+    git reset file.txt
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-reset-vs-git-checkout" class="md-nav__link">
+    git reset vs git checkout
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cheat-sheet" class="md-nav__link">
+    Cheat-sheet
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -960,6 +1008,54 @@
     git reset
   </a>
   
+    <nav class="md-nav" aria-label="git reset">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#git-reset-soft-commit" class="md-nav__link">
+    git reset --soft &lt;commit>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-reset-mixed-commit" class="md-nav__link">
+    git reset --mixed &lt;commit>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-reset-hard-commit" class="md-nav__link">
+    git reset --hard &lt;commit>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-reset-filetxt" class="md-nav__link">
+    git reset file.txt
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-reset-vs-git-checkout" class="md-nav__link">
+    git reset vs git checkout
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cheat-sheet" class="md-nav__link">
+    Cheat-sheet
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1162,9 +1258,9 @@
 </tbody>
 </table>
 <p><img alt="" src="../../Images/gitstcycle.png" /></p>
-<p>The working tree is a single checkout of one version of the project. These files are pulled out of the compressed database in the Git directory and placed on disk for you to use or modify.</p>
-<p>The staging area is a file, generally contained in your Git directory, that stores information about what will go into your next commit. </p>
-<p>The Git directory is where Git stores the metadata and object database for your project. This is the most important part of Git, and it is what is copied when you clone a repository from another computer.</p>
+<p>The <strong>working tree</strong> is a single checkout of one version of the project. These files are pulled out of the compressed database in the Git directory and placed on disk for you to use or modify.</p>
+<p>The <strong>staging area</strong> is a file, generally contained in your Git directory, that stores information about what will go into your next commit. </p>
+<p>The <strong>Git directory</strong> is where Git stores the metadata and object database for your project. This is the most important part of Git, and it is what is copied when you clone a repository from another computer.</p>
 <p><strong>Working with snapshots and the Git staging area</strong></p>
 <p>For the basic workflow of staging content and committing it to your history, there are only a few basic commands.</p>
 <table>
@@ -1249,6 +1345,7 @@
 </code></pre></div></p>
 <p>This command provides a detailed summary of the changes in your working directory. Files listed under "Changes not staged for commit" are modified but not staged, and files under "Changes to be committed" are staged for the next commit.</p>
 <h3 id="git-add">git add</h3>
+<p><img alt="" src="../../Images/add.png" /></p>
 <p>Adds changes in the specified file to the staging area, preparing them for the next commit.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Create or modify a file</span>
 <span class="nb">echo</span> <span class="s2">&quot;Hello, Git!&quot;</span> &gt; myfile.txt
@@ -1259,11 +1356,125 @@ git add myfile.txt
 <p>This sequence of commands creates or modifies <code>myfile.txt</code> and stages the changes for the next commit.</p>
 <p>Use <code>git add .</code> to stage all changes in the working directory.</p>
 <h3 id="git-reset">git reset</h3>
-<p>Unstages changes in the specified file, reverting it to the state in the last commit, while retaining the changes in the working directory.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Unstage the changes in myfile.txt</span>
-git reset myfile.txt
+<p><img alt="" src="../../Images/reset.png" /></p>
+<p>The <code>git reset</code> command in Git is a powerful tool for manipulating the commit history, moving branches, and resetting the staging area. It has several options, each affecting different parts of the Git repository. </p>
+<h4 id="git-reset-soft-commit"><strong>git reset --soft &lt;commit></strong></h4>
+<p>Resets the current branch's HEAD to the specified commit, leaving the changes staged.
+Moves the HEAD pointer to the specified commit, keeping the changes from commits after that commit staged for a new commit.</p>
+<p><div class="highlight"><pre><span></span><code>git reset --soft HEAD~3
 </code></pre></div>
-<p>This command removes <code>myfile.txt</code> from the staging area, but the changes made to the file remain in the working directory.</p>
+This command resets the current branch's HEAD to three commits behind the current position, keeping the changes staged. It essentially undid the last 3 git commit commands.You could now update the index (by adding or removing files) and run git commit again to accomplish what git commit --amend would have done.</p>
+<h4 id="git-reset-mixed-commit"><strong>git reset --mixed &lt;commit></strong></h4>
+<p>Resets the current branch's HEAD to the specified commit, unstaging the changes. This is also the default, so if you specify no option at all (just git reset HEAD~3 in this case).
+Moves the HEAD pointer to the specified commit, unstaging the changes from commits after that commit.</p>
+<p><div class="highlight"><pre><span></span><code>git reset --mixed HEAD~3
+</code></pre></div>
+This command resets the current branch's HEAD to three commits behind the current position, unstaging the changes.  You rolled back to before you ran all your git add and git commit commands.</p>
+<h4 id="git-reset-hard-commit"><strong>git reset --hard &lt;commit></strong></h4>
+<p>Resets the current branch's HEAD to the specified commit, discarding all changes.
+Moves the HEAD pointer to the specified commit, discarding all changes made after that commit.</p>
+<p><div class="highlight"><pre><span></span><code>git reset --hard HEAD~3
+</code></pre></div>
+This command resets the current branch's HEAD to three commits behind the current position, discarding all changes. Use when you want to completely replace the current branch with the specified commit by discarding all changes made after that commit.</p>
+<p>Remember to use <code>git reset</code> with caution, especially the <code>--hard</code> option, as it can lead to irreversible data loss. Always make sure you understand the consequences of the reset operation before executing it.</p>
+<h4 id="git-reset-filetxt"><strong>git reset file.txt</strong></h4>
+<p>The command git reset with a path to a file (since a commit SHA-1 or branch is not specified) is shorthand for git reset --mixed HEAD file.txt. It will:</p>
+<ol>
+<li>
+<p>Move the branch HEAD points to (skipped).</p>
+</li>
+<li>
+<p>Make the index look like HEAD (stop here).</p>
+</li>
+</ol>
+<p>So it essentially just copies file.txt from HEAD to the index. This has the practical effect of unstaging the file. If we look at the diagram for that command and think about what git add does, they are exact opposites. This is why the output of the git status command suggests that you run this to unstage a file. </p>
+<p>We could just as easily not let Git assume we meant “pull the data from HEAD” by specifying a specific commit to pull that file version from. We would just run something like:
+<div class="highlight"><pre><span></span><code>git reset eb43bf file.txt
+</code></pre></div></p>
+<h4 id="git-reset-vs-git-checkout">git reset vs git checkout</h4>
+<h5 id="without-paths">Without Paths</h5>
+<p>Running git checkout [branch] is pretty similar to running git reset --hard [branch] in that it updates all three trees for you to look like [branch], but there are two important differences.</p>
+<ol>
+<li>
+<p>Unlike git reset --hard, git checkout is working-directory safe.  It tries to do a trivial merge in the  working directory, so all of the files you haven’t changed will be updated. git reset --hard, on the other hand, will simply replace everything across the board without checking.</p>
+</li>
+<li>
+<p>git checkout will move HEAD itself to point to another branch or commit, while git reset will move the branch that HEAD points to. That is why when using git checkout you may end up with a detached HEAD, which is not possible with git reset. </p>
+</li>
+</ol>
+<h5 id="with-paths">With Paths</h5>
+<p>The other way to run checkout is with a file path, which, like reset, does not move HEAD. It is just like git reset [branch] file in that it updates the index with that file at that commit, but it also overwrites the file in the working directory. It would be exactly like git reset --hard [branch] file (if reset would let you run that) — it’s not working-directory safe, and it does not move HEAD.</p>
+<h4 id="cheat-sheet">Cheat-sheet</h4>
+<p>This table shows a cheat-sheet for which commands affect which trees. The “HEAD” column reads “REF” if that command moves the reference (branch) that HEAD points to, and “HEAD” if it moves HEAD itself. Pay especial attention to the 'WD Safe?' column — if it says NO, take a second to think before running that command.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>HEAD</th>
+<th>Index</th>
+<th>Workdir</th>
+<th>WD Safe?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Commit Level</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>reset --soft [commit]</td>
+<td>REF</td>
+<td>NO</td>
+<td>NO</td>
+<td>YES</td>
+</tr>
+<tr>
+<td>reset [commit]</td>
+<td>REF</td>
+<td>YES</td>
+<td>NO</td>
+<td>YES</td>
+</tr>
+<tr>
+<td>reset --hard [commit]</td>
+<td>REF</td>
+<td>YES</td>
+<td>YES</td>
+<td>NO</td>
+</tr>
+<tr>
+<td>checkout <commit></td>
+<td>HEAD</td>
+<td>YES</td>
+<td>YES</td>
+<td>YES</td>
+</tr>
+<tr>
+<td>File Level</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>reset [commit] <paths></td>
+<td>NO</td>
+<td>YES</td>
+<td>NO</td>
+<td>YES</td>
+</tr>
+<tr>
+<td>checkout [commit] <paths></td>
+<td>NO</td>
+<td>YES</td>
+<td>YES</td>
+<td>NO</td>
+</tr>
+</tbody>
+</table>
 <h3 id="git-diff">git diff</h3>
 <p>The git diff command is used when you want to see differences between any two trees. This could be the difference between your working environment and your staging area (git diff by itself), between your staging area and your last commit (git diff --staged), or between two commits (git diff master branchB).</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Make changes to myfile.txt</span>
