@@ -207,7 +207,18 @@ The git difftool command simply launches an external tool to show you the differ
 
 ### git commit 
 
-Commits the changes that are staged in the snapshot, with a descriptive commit message.
+The `git commit` command in Git is a powerful tool for creating and committing changes. It has several options, each affecting different parts of the Git repository.
+
+```bash
+git commit
+```
+When you run `git commit` without any arguments, it opens your editor of choice to create a commit message.
+
+You can see that the default commit message contains the latest output of the git status command commented out and one empty line on top. You can remove these comments and type your commit message, or you can leave them there to help you remember what you’re committing.
+When you exit the editor, Git creates your commit with that commit message (with the comments and diff stripped out).
+
+
+Alternatively, you can type your commit message inline with the commit command by specifying it after a -m flag. This commits the changes that are staged in the snapshot, with a descriptive commit message.
 
 ```bash
 # Commit the changes with a message
@@ -217,6 +228,8 @@ git commit -m "Add new feature"
 This command creates a new commit with the staged changes and the specified commit message.
 
 - Combine `git add` and `git commit` in one step using `git commit -am "[descriptive message]"` to stage and commit changes.
+
+For an even more explicit reminder of what you’ve modified, you can pass the -v option to git commit. Doing so also puts the diff of your change in the editor so you can see exactly what changes you’re committing.
 
 #### Committing Specific Files
 
@@ -300,6 +313,7 @@ Versioning file removes and path changes
 | [git clean](#git-clean)        |  ``` git clean -ffd```  |
 | [git log](#git-log---stat--m)        |  ``` git log --stat -M```  |
 
+![](../images/rm.png)
 
 ### git rm
 
