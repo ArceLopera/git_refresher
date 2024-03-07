@@ -317,17 +317,38 @@ Versioning file removes and path changes
 
 ### git rm
 
-Removes files from both your working directory and the Git repository. It stages the removal of the specified files, and you need to commit to apply the changes.
+Removes files from both your working directory and the staging area. It stages the removal of the specified files, and you need to commit to apply the changes.
 
 ```bash
-# Remove a file from the working directory and stage the removal
-git rm file.txt
+# Remove a file from the staging area and stage the removal
+git rm -f file.txt
 
 # Commit the removal
 git commit -m "Remove file.txt"
 ```
 
-This sequence removes `file.txt` from both the working directory and the Git repository, and the removal is committed.
+This sequence removes `file.txt` from both the staging area and the working directory , and the removal is committed.
+
+Another useful thing you may want to do is to keep the file in your working tree but remove it from your staging area.
+
+```bash
+# Remove a file from the staging area
+git rm --cached file.txt
+```	
+
+You can pass files, directories, and file-glob patterns to the git rm command. That means you can do things such as:
+```bash
+$ git rm log/\*.log
+```
+
+Note the backslash (\) in front of the *. This is necessary because Git does its own filename expansion in addition to your shell’s filename expansion. This command removes all files that have the .log extension in the log/ directory. Or, you can do something like this:
+
+```bash
+$ git rm \*~
+
+```
+
+This command removes all files whose names end with a ~.
 
 ### git mv
 
