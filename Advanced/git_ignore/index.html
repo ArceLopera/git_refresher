@@ -662,6 +662,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#e-more-examples" class="md-nav__link">
+    e. More examples
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -874,6 +881,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#e-more-examples" class="md-nav__link">
+    e. More examples
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -926,6 +940,25 @@
 <li><strong>Directory (<code>/</code>):</strong> Denotes a directory.</li>
 <li><strong>Negation (<code>!</code>):</strong> Excludes files or directories that match the pattern.</li>
 </ul>
+<p>The rules for the patterns you can put in the .gitignore file are as follows:</p>
+<ul>
+<li>
+<p>Blank lines or lines starting with # are ignored.</p>
+</li>
+<li>
+<p>Standard glob patterns work, and will be applied recursively throughout the entire working tree.</p>
+</li>
+<li>
+<p>You can start patterns with a forward slash (/) to avoid recursivity.</p>
+</li>
+<li>
+<p>You can end patterns with a forward slash (/) to specify a directory.</p>
+</li>
+<li>
+<p>You can negate a pattern by starting it with an exclamation point (!).</p>
+</li>
+</ul>
+<p>Glob patterns are like simplified regular expressions that shells use. An asterisk (<em>) matches zero or more characters; [abc] matches any character inside the brackets (in this case a, b, or c); a question mark (?) matches a single character; and brackets enclosing characters separated by a hyphen ([0-9]) matches any character between them (in this case 0 through 9). You can also use two asterisks to match nested directories; a/</em>*/z would match a/z, a/b/z, a/b/c/z, and so on.</p>
 <h3 id="a-ignore-specific-files">a. Ignore Specific Files</h3>
 <div class="highlight"><pre><span></span><code># Ignore log files
 *.log
@@ -948,6 +981,26 @@ temp/*
 <div class="highlight"><pre><span></span><code># Ignore all .class files in any directory
 **/*.class
 </code></pre></div>
+<h3 id="e-more-examples">e. More examples</h3>
+<p><div class="highlight"><pre><span></span><code># ignore all .a files
+*.a
+
+# but do track lib.a, even though you&#39;re ignoring .a files above
+!lib.a
+
+# only ignore the TODO file in the current directory, not subdir/TODO
+/TODO
+
+# ignore all files in any directory named build
+build/
+
+# ignore doc/notes.txt, but not doc/server/arch.txt
+doc/*.txt
+
+# ignore all .pdf files in the doc/ directory and any of its subdirectories
+doc/**/*.pdf
+</code></pre></div>
+More examples from <a href="https://github.com/github/gitignore">GitHub</a>.</p>
 <h2 id="applying-gitignore-changes"><strong>Applying <code>.gitignore</code> Changes</strong></h2>
 <p>After modifying the <code>.gitignore</code> file, you need to commit the changes to apply them to the repository.</p>
 <div class="highlight"><pre><span></span><code>git add .gitignore
