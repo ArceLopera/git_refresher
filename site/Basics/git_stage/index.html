@@ -1496,7 +1496,13 @@ git diff --staged
 <h4 id="git-difftool">git difftool</h4>
 <p>The git difftool command simply launches an external tool to show you the difference between two trees in case you want to use something other than the built in git diff command.</p>
 <h3 id="git-commit">git commit</h3>
-<p>Commits the changes that are staged in the snapshot, with a descriptive commit message.</p>
+<p>The <code>git commit</code> command in Git is a powerful tool for creating and committing changes. It has several options, each affecting different parts of the Git repository.</p>
+<p><div class="highlight"><pre><span></span><code>git commit
+</code></pre></div>
+When you run <code>git commit</code> without any arguments, it opens your editor of choice to create a commit message.</p>
+<p>You can see that the default commit message contains the latest output of the git status command commented out and one empty line on top. You can remove these comments and type your commit message, or you can leave them there to help you remember what you’re committing.
+When you exit the editor, Git creates your commit with that commit message (with the comments and diff stripped out).</p>
+<p>Alternatively, you can type your commit message inline with the commit command by specifying it after a -m flag. This commits the changes that are staged in the snapshot, with a descriptive commit message.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Commit the changes with a message</span>
 git commit -m <span class="s2">&quot;Add new feature&quot;</span>
 </code></pre></div>
@@ -1504,6 +1510,7 @@ git commit -m <span class="s2">&quot;Add new feature&quot;</span>
 <ul>
 <li>Combine <code>git add</code> and <code>git commit</code> in one step using <code>git commit -am "[descriptive message]"</code> to stage and commit changes.</li>
 </ul>
+<p>For an even more explicit reminder of what you’ve modified, you can pass the -v option to git commit. Doing so also puts the diff of your change in the editor so you can see exactly what changes you’re committing.</p>
 <h4 id="committing-specific-files">Committing Specific Files</h4>
 <div class="highlight"><pre><span></span><code><span class="c1"># Stage changes in specific files</span>
 git add file1.txt file2.txt
@@ -1580,15 +1587,27 @@ git commit -m <span class="s2">&quot;Commit tracked changes&quot;</span>
 </tr>
 </tbody>
 </table>
+<p><img alt="" src="../../Images/rm.png" /></p>
 <h3 id="git-rm">git rm</h3>
-<p>Removes files from both your working directory and the Git repository. It stages the removal of the specified files, and you need to commit to apply the changes.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Remove a file from the working directory and stage the removal</span>
-git rm file.txt
+<p>Removes files from both your working directory and the staging area. It stages the removal of the specified files, and you need to commit to apply the changes.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Remove a file from the staging area and stage the removal</span>
+git rm -f file.txt
 
 <span class="c1"># Commit the removal</span>
 git commit -m <span class="s2">&quot;Remove file.txt&quot;</span>
 </code></pre></div>
-<p>This sequence removes <code>file.txt</code> from both the working directory and the Git repository, and the removal is committed.</p>
+<p>This sequence removes <code>file.txt</code> from both the staging area and the working directory , and the removal is committed.</p>
+<p>Another useful thing you may want to do is to keep the file in your working tree but remove it from your staging area.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Remove a file from the staging area</span>
+git rm --cached file.txt
+</code></pre></div>
+<p>You can pass files, directories, and file-glob patterns to the git rm command. That means you can do things such as:
+<div class="highlight"><pre><span></span><code>$ git rm log/<span class="se">\*</span>.log
+</code></pre></div></p>
+<p>Note the backslash () in front of the *. This is necessary because Git does its own filename expansion in addition to your shell’s filename expansion. This command removes all files that have the .log extension in the log/ directory. Or, you can do something like this:</p>
+<div class="highlight"><pre><span></span><code>$ git rm <span class="se">\*</span>~
+</code></pre></div>
+<p>This command removes all files whose names end with a ~.</p>
 <h3 id="git-mv">git mv</h3>
 <p>Renames or moves files in both your working directory and the Git repository. Similar to <code>git rm</code>, it stages the rename/move, and you need to commit to apply the changes.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Rename a file and stage the change</span>
