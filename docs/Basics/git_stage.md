@@ -313,7 +313,7 @@ Versioning file removes and path changes
 | [git clean](#git-clean)        |  ``` git clean -ffd```  |
 | [git log](#git-log---stat--m)        |  ``` git log --stat -M```  |
 
-![](../images/rm.png)
+![](../Images/rm.png)
 
 ### git rm
 
