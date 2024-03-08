@@ -81,6 +81,64 @@ Shows the status of the working directory and staging area.
   ```
  Track the history of changes for a specific file, even if it was renamed in subsequent commits.
 
+### **git log --patch**
+
+Shows the commit history in a unified diff format. One of the more helpful options is -p or --patch, which shows the difference (the patch output) introduced in each commit. You can also limit the number of log entries displayed, such as using -2 to show only the last two entries.
+
+```bash
+git log -p -2
+```
+### **git log --stat**
+
+Shows the commit history in a more readable format.
+
+```bash
+git log --stat
+```
+The --stat option prints below each commit entry a list of modified files, how many files were changed, and how many lines in those files were added and removed. It also puts a summary of the information at the end.
+
+### Limit the output of git log
+
+|Option|	Description|
+| --- | --- |
+|-<n\>|Show only the last n commits.|
+|--since, --after|Limit the commits to those made after the specified date.|
+|--until, --before|Limit the commits to those made before the specified date.|
+|--author|Only show commits in which the author entry matches the specified string.|
+|--committer|Only show commits in which the committer entry matches the specified string.|
+|--grep|Only show commits with a commit message containing the string.|
+|-S|Only show commits adding or removing code matching the string.|
+
+
+```bash
+git log --pretty="%h - %s" --author='Junio C Hamano' --since="2008-10-01" --before="2008-11-01" --no-merges -- t/
+```
+
+This `git log` command is used to display a filtered and formatted list of commits from the Git repository. 
+
+1. **`git log`:**
+This is the main Git command for viewing commit history.
+
+2. **`--pretty="%h - %s"`:**
+The `--pretty` option specifies the output format for each commit. In this case, `%h` represents the abbreviated commit hash and `%s` represents the commit subject. The format string `%h - %s` prints the abbreviated commit hash followed by the commit subject.
+
+3. **`--author='Junio C Hamano'`:**
+The `--author` option filters the commits based on the author's name. Only commits authored by "Junio C Hamano" will be included in the output.
+
+4. **`--since="2008-10-01"`:**
+The `--since` option specifies the start date for filtering commits. Only commits made after October 1st, 2008, will be included in the output.
+
+5. **`--before="2008-11-01"`:**
+The `--before` option specifies the end date for filtering commits. Only commits made before November 1st, 2008, will be included in the output.
+
+6. **`--no-merges`:**
+The `--no-merges` option excludes merge commits from the output. Only non-merge commits will be displayed.
+
+7. **`-- t/`:**
+This specifies the pathspec, which limits the commits to those that affect files or directories under the `t/` directory.
+
+
+
 ## **git show \{commit\}**
 
  Displays the details of a specific commit.
