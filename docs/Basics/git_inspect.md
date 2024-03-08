@@ -43,7 +43,7 @@ Shows the status of the working directory and staging area.
   ```bash
   git log
   ```
- Review the commit history, including commit messages, authors, dates, and commit hashes.
+ Review the commit history, including commit messages, authors, dates, and commit hashes. By default, with no arguments, git log lists the commits made in that repository in reverse chronological order; that is, the most recent commits show up first
 
 ### **git log --graph --oneline**
 
