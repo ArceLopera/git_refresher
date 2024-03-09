@@ -585,6 +585,27 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#git-log-patch" class="md-nav__link">
+    git log --patch
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-log-stat" class="md-nav__link">
+    git log --stat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limit-the-output-of-git-log" class="md-nav__link">
+    Limit the output of git log
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -934,6 +955,27 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#git-log-patch" class="md-nav__link">
+    git log --patch
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-log-stat" class="md-nav__link">
+    git log --stat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limit-the-output-of-git-log" class="md-nav__link">
+    Limit the output of git log
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1007,7 +1049,7 @@
 <p>Displays the commit history.</p>
 <p><div class="highlight"><pre><span></span><code>git log
 </code></pre></div>
- Review the commit history, including commit messages, authors, dates, and commit hashes.</p>
+ Review the commit history, including commit messages, authors, dates, and commit hashes. By default, with no arguments, git log lists the commits made in that repository in reverse chronological order; that is, the most recent commits show up first</p>
 <h3 id="git-log-graph-oneline"><strong>git log --graph --oneline</strong></h3>
 <p>Shows a compact view of the commit history with a graph.</p>
 <p><div class="highlight"><pre><span></span><code>git log --graph --oneline
@@ -1028,6 +1070,87 @@
 <p><div class="highlight"><pre><span></span><code>git log --follow file.txt
 </code></pre></div>
  Track the history of changes for a specific file, even if it was renamed in subsequent commits.</p>
+<h3 id="git-log-patch"><strong>git log --patch</strong></h3>
+<p>Shows the commit history in a unified diff format. One of the more helpful options is -p or --patch, which shows the difference (the patch output) introduced in each commit. You can also limit the number of log entries displayed, such as using -2 to show only the last two entries.</p>
+<div class="highlight"><pre><span></span><code>git log -p -2
+</code></pre></div>
+<h3 id="git-log-stat"><strong>git log --stat</strong></h3>
+<p>Shows the commit history in a more readable format.</p>
+<p><div class="highlight"><pre><span></span><code>git log --stat
+</code></pre></div>
+The --stat option prints below each commit entry a list of modified files, how many files were changed, and how many lines in those files were added and removed. It also puts a summary of the information at the end.</p>
+<h3 id="limit-the-output-of-git-log">Limit the output of git log</h3>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-&lt;n></td>
+<td>Show only the last n commits.</td>
+</tr>
+<tr>
+<td>--since, --after</td>
+<td>Limit the commits to those made after the specified date.</td>
+</tr>
+<tr>
+<td>--until, --before</td>
+<td>Limit the commits to those made before the specified date.</td>
+</tr>
+<tr>
+<td>--author</td>
+<td>Only show commits in which the author entry matches the specified string.</td>
+</tr>
+<tr>
+<td>--committer</td>
+<td>Only show commits in which the committer entry matches the specified string.</td>
+</tr>
+<tr>
+<td>--grep</td>
+<td>Only show commits with a commit message containing the string.</td>
+</tr>
+<tr>
+<td>-S</td>
+<td>Only show commits adding or removing code matching the string.</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>git log --pretty<span class="o">=</span><span class="s2">&quot;%h - %s&quot;</span> --author<span class="o">=</span><span class="s1">&#39;Junio C Hamano&#39;</span> --since<span class="o">=</span><span class="s2">&quot;2008-10-01&quot;</span> --before<span class="o">=</span><span class="s2">&quot;2008-11-01&quot;</span> --no-merges -- t/
+</code></pre></div>
+<p>This <code>git log</code> command is used to display a filtered and formatted list of commits from the Git repository. </p>
+<ol>
+<li>
+<p><strong><code>git log</code>:</strong>
+This is the main Git command for viewing commit history.</p>
+</li>
+<li>
+<p><strong><code>--pretty="%h - %s"</code>:</strong>
+The <code>--pretty</code> option specifies the output format for each commit. In this case, <code>%h</code> represents the abbreviated commit hash and <code>%s</code> represents the commit subject. The format string <code>%h - %s</code> prints the abbreviated commit hash followed by the commit subject.</p>
+</li>
+<li>
+<p><strong><code>--author='Junio C Hamano'</code>:</strong>
+The <code>--author</code> option filters the commits based on the author's name. Only commits authored by "Junio C Hamano" will be included in the output.</p>
+</li>
+<li>
+<p><strong><code>--since="2008-10-01"</code>:</strong>
+The <code>--since</code> option specifies the start date for filtering commits. Only commits made after October 1st, 2008, will be included in the output.</p>
+</li>
+<li>
+<p><strong><code>--before="2008-11-01"</code>:</strong>
+The <code>--before</code> option specifies the end date for filtering commits. Only commits made before November 1st, 2008, will be included in the output.</p>
+</li>
+<li>
+<p><strong><code>--no-merges</code>:</strong>
+The <code>--no-merges</code> option excludes merge commits from the output. Only non-merge commits will be displayed.</p>
+</li>
+<li>
+<p><strong><code>-- t/</code>:</strong>
+This specifies the pathspec, which limits the commits to those that affect files or directories under the <code>t/</code> directory.</p>
+</li>
+</ol>
 <h2 id="git-show-commit"><strong>git show {commit}</strong></h2>
 <p>Displays the details of a specific commit.</p>
 <p><div class="highlight"><pre><span></span><code>git show abc123
