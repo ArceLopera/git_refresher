@@ -228,6 +228,8 @@ The `git restore` command is a versatile command introduced in Git version 2.23.
 |Restore Entire Working Directory| [`git reset --hard <commit>`](#git-reset---hard-commit) | [`git restore --source=<commit> --worktree --staged --worktree .`](#restore-entire-working-directory) |
 
 
+![](../Images/restore.png)
+
 When comparing using `git restore` with `git reset` there are a few key differences to consider:
 
 **Effect on Staging Area and Working Directory:**
