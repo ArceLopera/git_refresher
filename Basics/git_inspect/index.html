@@ -1076,9 +1076,41 @@
 </code></pre></div>
 <h3 id="git-log-stat"><strong>git log --stat</strong></h3>
 <p>Shows the commit history in a more readable format.</p>
-<p><div class="highlight"><pre><span></span><code>git log --stat
+<p><div class="highlight"><pre><span></span><code>git log --stat -M
 </code></pre></div>
 The --stat option prints below each commit entry a list of modified files, how many files were changed, and how many lines in those files were added and removed. It also puts a summary of the information at the end.</p>
+<p>This command is used to display the commit history along with statistics about the changes introduced in each commit, including information about file modifications, additions, and deletions. The <code>-M</code> option is particularly used to detect file renames.</p>
+<ul>
+<li><code>git log</code>: Displays the commit logs.</li>
+<li><code>--stat</code>: Includes additional statistics at the end of each commit entry, providing a summary of changes.</li>
+<li><code>-M</code>: Enables Git's rename detection, which identifies file renames between commits.</li>
+</ul>
+<div class="highlight"><pre><span></span><code>git log --stat -M
+</code></pre></div>
+<p>This command will output a detailed log that includes commit information and statistics. The statistics section shows the number of lines added and removed for each file affected by the commit. Additionally, if a file has been renamed, Git will provide information about the rename.</p>
+<p>Here is a simplified example of what the output might look like:</p>
+<div class="highlight"><pre><span></span><code>commit abcd1234 (HEAD)
+Author: John Doe &lt;john.doe@example.com&gt;
+Date:   Tue Jan 18 12:00:00 2024 +0000
+
+    Updated README.md
+
+ README.md | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+</code></pre></div>
+<p>In this example:</p>
+<ul>
+<li><code>commit abcd1234</code>: The unique identifier of the commit.</li>
+<li><code>Author</code>: The author of the commit.</li>
+<li><code>Date</code>: The date and time of the commit.</li>
+<li><code>Updated README.md</code>: The commit message.</li>
+</ul>
+<p>The statistics section (<code>README.md | 10 +++++-----</code>) indicates that in the file <code>README.md</code>, 10 lines were added, and 5 lines were removed. This section provides a quick overview of the changes made in each commit.</p>
+<p>The <code>-M</code> option enhances this by detecting file renames. If a file has been renamed, Git will track the rename and display the old and new filenames.</p>
+<ul>
+<li>The <code>-M</code> option can take an optional value to set a similarity index for rename detection. For example, <code>-M90%</code> would consider files as renamed if 90% of their content is similar.</li>
+<li>Using <code>-M</code> can be especially useful when you want to track the history of a file that has been renamed over time.</li>
+</ul>
 <h3 id="limit-the-output-of-git-log">Limit the output of git log</h3>
 <table>
 <thead>
