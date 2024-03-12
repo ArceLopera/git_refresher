@@ -1,21 +1,27 @@
 Undoing changes in Git involves various commands and strategies, depending on the nature of the changes and the stage at which they are. Here is a comprehensive guide on common Git undo commands and strategies:
 
-Summary table of common Git undo commands and strategies:
+## Summary table 
+of common Git undo commands and strategies:
 
 | Action                                    | Command                                                     | Description                                                                                                                                                               |
 |-------------------------------------------|-------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |[**Undoing Commits**](#1-undoing-commits)             | [`git commit --amend`](#amend-the-last-commit)                                        | Amend the last commit by adding new changes or modifying the commit message.                                                                                                |
 |                      | [`git revert <commit-hash>`](#reverting-commits)                                  | Create a new commit that undoes changes introduced by a specific commit.                                                                                                   |
 |     | [`git rebase -i <commit-hash>`](#interactively-reverting-or-editing-commits)                               | Open an interactive rebase session, allowing you to edit, squash, or drop commits.                                                                                           |
-| [**Undoing Uncommitted Changes**](#1-undoing-uncommitted-changes-in-the-working-directory)            | [`git checkout -- file.txt`](#discard-changes-in-a-file)                                  | Discard changes in a specific file, reverting it to the state in the last commit.                                                                                          |
+| [**Undoing Uncommitted Changes**](#2-undoing-uncommitted-changes)            | [`git checkout -- file.txt`](#discard-changes-in-a-file)                                  | Discard changes in a specific file, reverting it to the state in the last commit.                                                                                          |
 |                                           | [`git reset --hard`](#discard-all-changes)                                          | Discard all uncommitted changes, reverting the working directory to the state of the last commit.                                                                          |
-| [**Undoing Staged Changes**](#2-undoing-staged-changes)                 | [`git reset file.txt`](#git-reset-filetxt)                                        | Unstage changes in a specific file, moving them back to the working directory.                                                                                             |
+| [**Undoing Staged Changes**](#3-undoing-staged-changes)                 | [`git reset file.txt`](#git-reset-filetxt)                                        | Unstage changes in a specific file, moving them back to the working directory.                                                                                             |
 |                    | [`git reset --soft HEAD^`](#git-reset---soft-commit)                                    | Undo the last commit, keeping changes staged in the working directory.                                                                                                     |
 |                                           | [`git reset --mixed HEAD^`](#git-reset---mixed-commit)                                   | Undo the last commit, unstaging changes but keeping them in the working directory.                                                                                         |
 |                                           | [`git reset --hard HEAD^`](#git-reset---hard-commit)                                    | Undo the last commit, discarding changes both in the commit and the working directory.                                                                                     |
-| [**Undoing Remote Changes**](#5-undoing-remote-changes)                 | `git push --force origin <branch-name>`                     | Force push local changes to a remote branch (use with caution, as it rewrites remote history).                                                                             |
-| [**Restoring Files**](#9-restoring-files)                       | [`git restore file.txt`](#discard-uncommitted-changes-in-a-file)                                      | Restore the specified file to the state in the last commit (introduced in Git 2.23).                                                                                        |
-| [**Rewriting history**](#10-rewriting-history)                       | `git rebase main`                                      | Apply any commits of the current branch ahead of the specified one.                                                                                        |
+| [**Undoing Remote Changes**](#4-undoing-remote-changes)                 | `git push --force origin <branch-name>`                     | Force push local changes to a remote branch (use with caution, as it rewrites remote history).                                                                             |
+| [**Restoring Files**](#5-restoring-files)                       | [`git restore file.txt`](#discard-uncommitted-changes-in-a-file)                                      | Restore the specified file to the state in the last commit (introduced in Git 2.23).                                                                                        |
+| [**Rewriting history**](#6-rewriting-history)                       | [`git rebase main`](#git-rebase-branch)                                      | Apply any commits of the current branch ahead of the specified one.                                                                                        |
+||[`git filter-branch`](#git-filter-branch)|Rewrite branches to remove unwanted data|
+|[**Removing files**](#7-removing-files)|[`git rm`](#git-rm)| Remove files|
+||[`git mv`](#git-mv)| Rename files|
+||[`git checkout -f [branch]`](#git-checkout--f)|Switch branches, discarding any local changes|
+||[`git clean -ffd`](#git-clean--ffd)|Erase all untracked files and directories in the working directory|
 
 Please note that some commands, like force push and hard reset, should be used with caution, especially when collaborating with others, as they can alter Git history. Always be mindful of the consequences and potential impacts on collaborators before executing these commands.
 
@@ -23,14 +29,14 @@ Please note that some commands, like force push and hard reset, should be used w
 
 `git commit --amend`, and `git revert` are all Git commands used to manipulate commit history, but they serve different purposes and are used in different scenarios.
 
-#### **Amend the Last Commit**
+##### **Amend the Last Commit**
 
 ```bash
 git commit --amend
 ```
 `git commit --amend` is used to modify the most recent commit by adding or changing files or the commit message. It allows you to make corrections to the most recent commit before pushing it to the remote repository. Use `git commit --amend` when you want to make minor adjustments to the most recent commit, such as fixing typos in the commit message or adding files that were forgotten to be included. Only amend commits that are still local and have not been pushed somewhere. Amending previously pushed commits and force pushing the branch will cause problems for your collaborators.
 
-#### **Reverting Commits**
+##### **Reverting Commits**
 
   ```bash
   git revert <commit-hash>
@@ -41,7 +47,7 @@ git commit --amend
 
 `git revert` is used to undo the changes introduced by a specific commit by creating a new commit that undoes those changes. It's a safe way to undo commits without altering the commit history. Use `git revert` when you want to undo the changes introduced by a particular commit while preserving the commit history. It's useful for reverting changes that have already been shared with others or pushed to a remote repository.
 
-#### **Interactively Reverting or Editing Commits**
+##### **Interactively Reverting or Editing Commits**
 
   ```bash
   git rebase -i <commit-hash>
@@ -101,14 +107,14 @@ Interactive rebasing is a powerful but potentially risky operation. Be cautious 
 
 ### 2. **Undoing Uncommitted Changes**
 
-#### **Discard Changes in a File**
+##### **Discard Changes in a File**
   ```bash
   git checkout -- file.txt
   ```
 
   This command discards changes in the specified file, reverting it to the state in the last commit. It’s important to understand that `git checkout -- <file>` is a dangerous command. Any local changes you made to that file are gone — Git just replaced that file with the last staged or committed version. Don’t ever use this command unless you absolutely know that you don’t want those unsaved local changes.
 
-#### **Discard All Changes**
+##### **Discard All Changes**
   ```bash
   git reset --hard
   ```
@@ -292,10 +298,10 @@ git restore -s master .
 Both worktree and index could also be restored at the same time (from a tree) when both --staged and --worktree are specified. This overlaps with 'git checkout [tree] [paths]'. Specify the restore location. If neither option is specified, by default the working tree is restored. Specifying --staged will only restore the index. Specifying both restores both.
 
 
-## 6. **Rewriting history**
+### 6. **Rewriting history**
 In Git, rewriting branches, updating commits, and clearing history are common tasks that allow you to modify the commit history of a repository. These actions can be useful for cleaning up history, organizing commits, or incorporating changes from other branches. 
 
-### **git rebase [branch]**
+##### **git rebase [branch]**
 
  Apply any commits of the current branch ahead of the specified one.
 
@@ -304,7 +310,7 @@ In Git, rewriting branches, updating commits, and clearing history are common ta
   ```
  Incorporate changes from another branch (`main` in this example) into the current branch, moving your commits to the tip of the specified branch.
 
-### **git filter-branch**
+##### **git filter-branch**
 
  Rewrite branches to remove unwanted data, such as sensitive information or large files.
 
@@ -313,52 +319,7 @@ In Git, rewriting branches, updating commits, and clearing history are common ta
   ```
  Filter branch content by applying a specified command to each commit, useful for history rewriting tasks.
 
-### **git cherry-pick [commit]**
-
- Apply the changes introduced by the specified commit to the current branch.
-
-  ```bash
-  git cherry-pick abc123
-  ```
- Selectively pick specific commits from one branch and apply them to another branch.
-
-Rewriting branches, updating commits, and clearing history in Git are powerful capabilities that should be used with caution, especially in collaborative environments. These commands enable you to maintain a clean and organized history, improving project maintainability and readability. However, always ensure that you understand the consequences of these actions before applying them, as they can alter the commit history irreversibly. More info is [here](../Advanced/git_cherry.md).
-
-### **git checkout -f**
-
- When switching branches, proceed even if the index or the working tree differs from HEAD, and even if there are untracked files in the way.
- This command is used to forcefully switch branches, discarding any local changes or untracked files that may prevent the branch switch.
-
-  ```bash
-  git checkout -f feature-branch
-  ```
-- **Note:** Be cautious when using this command, as it will discard any local changes without warning.
-
-### **git clean -ffd**
-
- Erase all untracked files and directories in the working directory.
- This command is used to clean up the working directory by removing any untracked files or directories that are not under version control.
-
-  ```bash
-  git clean -ffd
-  ```
-- **Note:** The `-f` option is used to force the clean operation, and the `-d` option is used to include untracked directories.
-
-These commands are useful for cleaning up a Git repository before starting fresh or resolving conflicts that prevent branch switching. However, they should be used with caution, as they can permanently delete local changes and untracked files. It's essential to understand the implications of using these commands and ensure that any necessary changes or files are backed up before proceeding.
-
-```bash
-# List untracked files that will be removed (dry run)
-git clean -n
-
-# Remove untracked files
-git clean -f
-```
-
-The command (`git clean -n`) is a dry run that shows you what files would be removed. The second command (`git clean -f`) actually removes the untracked files.
-
-- `git clean` has additional options, such as `-i` for an interactive mode where you can choose which files to clean.
-
-## 7. **Tracking Path Changes**
+### 7. **Removing Files**
 
 Versioning file removes and path changes
 
@@ -366,12 +327,12 @@ Versioning file removes and path changes
 |:-------------:|:----------------:|
 | [git rm](#git-rm)        |  ``` git rm file.txt```  |
 | [git mv](#git-mv)        |  ``` git mv oldfile.txt newfile.txt```  |
+|[git checkout](#git-checkout)| ``` git checkout -f feature-branch```  |
 | [git clean](#git-clean)        |  ``` git clean -ffd```  |
-| [git log](#git-log---stat--m)        |  ``` git log --stat -M```  |
 
 ![](../Images/rm.png)
 
-### git rm
+##### git rm
 
 Removes files from both your working directory and the staging area. It stages the removal of the specified files, and you need to commit to apply the changes.
 
@@ -406,7 +367,7 @@ $ git rm \*~
 
 This command removes all files whose names end with a ~.
 
-### git mv
+##### git mv
 
 Renames or moves files in both your working directory and the Git repository. Similar to `git rm`, it stages the rename/move, and you need to commit to apply the changes.
 
@@ -423,45 +384,36 @@ This example renames `oldfile.txt` to `newfile.txt`, stages the change, and comm
 - With `git mv`, you can also use it to move files to a different directory, like `git mv file.txt new_directory/`.
 - Use `-r` with `git rm` and `git mv` to handle removals or moves recursively in directories.
 
-### git log --stat -M
+##### **git checkout**
 
-This command is used to display the commit history along with statistics about the changes introduced in each commit, including information about file modifications, additions, and deletions. The `-M` option is particularly used to detect file renames.
+ When switching branches, proceed even if the index or the working tree differs from HEAD, and even if there are untracked files in the way.
+ This command is used to forcefully switch branches, discarding any local changes or untracked files that may prevent the branch switch.
 
-Let's break down the components of this command:
+  ```bash
+  git checkout -f feature-branch
+  ```
+- **Note:** Be cautious when using this command, as it will discard any local changes without warning.
 
-- `git log`: Displays the commit logs.
-- `--stat`: Includes additional statistics at the end of each commit entry, providing a summary of changes.
-- `-M`: Enables Git's rename detection, which identifies file renames between commits.
+##### **git clean**
+
+ Erase all untracked files and directories in the working directory.
+ This command is used to clean up the working directory by removing any untracked files or directories that are not under version control.
+
+  ```bash
+  git clean -ffd
+  ```
+- **Note:** The `-f` option is used to force the clean operation, and the `-d` option is used to include untracked directories.
+
+These commands are useful for cleaning up a Git repository before starting fresh or resolving conflicts that prevent branch switching. However, they should be used with caution, as they can permanently delete local changes and untracked files. It's essential to understand the implications of using these commands and ensure that any necessary changes or files are backed up before proceeding.
 
 ```bash
-git log --stat -M
+# List untracked files that will be removed (dry run)
+git clean -n
+
+# Remove untracked files
+git clean -f
 ```
 
-This command will output a detailed log that includes commit information and statistics. The statistics section shows the number of lines added and removed for each file affected by the commit. Additionally, if a file has been renamed, Git will provide information about the rename.
+The command (`git clean -n`) is a dry run that shows you what files would be removed. The second command (`git clean -f`) actually removes the untracked files.
 
-Here is a simplified example of what the output might look like:
-
-```
-commit abcd1234 (HEAD)
-Author: John Doe <john.doe@example.com>
-Date:   Tue Jan 18 12:00:00 2024 +0000
-
-    Updated README.md
-
- README.md | 10 +++++-----
- 1 file changed, 5 insertions(+), 5 deletions(-)
-```
-
-In this example:
-
-- `commit abcd1234`: The unique identifier of the commit.
-- `Author`: The author of the commit.
-- `Date`: The date and time of the commit.
-- `Updated README.md`: The commit message.
-
-The statistics section (`README.md | 10 +++++-----`) indicates that in the file `README.md`, 10 lines were added, and 5 lines were removed. This section provides a quick overview of the changes made in each commit.
-
-The `-M` option enhances this by detecting file renames. If a file has been renamed, Git will track the rename and display the old and new filenames.
-
-- The `-M` option can take an optional value to set a similarity index for rename detection. For example, `-M90%` would consider files as renamed if 90% of their content is similar.
-- Using `-M` can be especially useful when you want to track the history of a file that has been renamed over time.
+- `git clean` has additional options, such as `-i` for an interactive mode where you can choose which files to clean.

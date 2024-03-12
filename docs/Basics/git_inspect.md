@@ -93,9 +93,49 @@ git log -p -2
 Shows the commit history in a more readable format.
 
 ```bash
-git log --stat
+git log --stat -M
 ```
 The --stat option prints below each commit entry a list of modified files, how many files were changed, and how many lines in those files were added and removed. It also puts a summary of the information at the end.
+
+This command is used to display the commit history along with statistics about the changes introduced in each commit, including information about file modifications, additions, and deletions. The `-M` option is particularly used to detect file renames.
+
+- `git log`: Displays the commit logs.
+- `--stat`: Includes additional statistics at the end of each commit entry, providing a summary of changes.
+- `-M`: Enables Git's rename detection, which identifies file renames between commits.
+
+```bash
+git log --stat -M
+```
+
+This command will output a detailed log that includes commit information and statistics. The statistics section shows the number of lines added and removed for each file affected by the commit. Additionally, if a file has been renamed, Git will provide information about the rename.
+
+Here is a simplified example of what the output might look like:
+
+```
+commit abcd1234 (HEAD)
+Author: John Doe <john.doe@example.com>
+Date:   Tue Jan 18 12:00:00 2024 +0000
+
+    Updated README.md
+
+ README.md | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+```
+
+In this example:
+
+- `commit abcd1234`: The unique identifier of the commit.
+- `Author`: The author of the commit.
+- `Date`: The date and time of the commit.
+- `Updated README.md`: The commit message.
+
+The statistics section (`README.md | 10 +++++-----`) indicates that in the file `README.md`, 10 lines were added, and 5 lines were removed. This section provides a quick overview of the changes made in each commit.
+
+The `-M` option enhances this by detecting file renames. If a file has been renamed, Git will track the rename and display the old and new filenames.
+
+- The `-M` option can take an optional value to set a similarity index for rename detection. For example, `-M90%` would consider files as renamed if 90% of their content is similar.
+- Using `-M` can be especially useful when you want to track the history of a file that has been renamed over time.
+
 
 ### Limit the output of git log
 
