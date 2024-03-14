@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#adding-a-remote" class="md-skip">
+        <a href="#viewing-remote-information" class="md-skip">
           Skip to content
         </a>
       
@@ -502,15 +502,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#adding-a-remote" class="md-nav__link">
-    Adding a Remote
+  <a href="#viewing-remote-information" class="md-nav__link">
+    Viewing Remote Information
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#viewing-remote-information" class="md-nav__link">
-    Viewing Remote Information
+  <a href="#adding-a-remote" class="md-nav__link">
+    Adding a Remote
   </a>
   
 </li>
@@ -833,15 +833,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#adding-a-remote" class="md-nav__link">
-    Adding a Remote
+  <a href="#viewing-remote-information" class="md-nav__link">
+    Viewing Remote Information
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#viewing-remote-information" class="md-nav__link">
-    Viewing Remote Information
+  <a href="#adding-a-remote" class="md-nav__link">
+    Adding a Remote
   </a>
   
 </li>
@@ -921,17 +921,23 @@
 <p><strong>SHARE &amp; UPDATE</strong></p>
 <p>Retrieving updates from another repository and updating local repos.</p>
 <p>Working with remotes in Git involves collaborating with repositories hosted on remote servers. </p>
+<h2 id="viewing-remote-information"><strong>Viewing Remote Information</strong></h2>
+<p>To see which remote servers you have configured, run the following command:</p>
+<div class="highlight"><pre><span></span><code>git remote -v
+</code></pre></div>
+<p>Displays the URLs of the remote repositories.  It lists the shortnames of each remote handle you’ve specified. If you’ve cloned your repository, you should at least see origin — that is the default name Git gives to the server you cloned from. The -v flag displays the full remote URLs.
+When you have multiple remotes then you can pull contributions from any of these remotes.</p>
 <h2 id="adding-a-remote"><strong>Adding a Remote</strong></h2>
+<p>Here’s how to add a new remote explicitly.</p>
 <p><div class="highlight"><pre><span></span><code>git remote add &lt;remote-name&gt; &lt;remote-url&gt;
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>git remote add origin https://github.com/user/repo.git
 </code></pre></div>
-Adds a remote repository with a given name and URL.</p>
-<h2 id="viewing-remote-information"><strong>Viewing Remote Information</strong></h2>
-<div class="highlight"><pre><span></span><code>git remote -v
+Adds a remote repository with a given name and URL. Now you can use the string origin on the command line in lieu of the whole URL. For example, if you want to fetch all the information from the remote repository, you can use:</p>
+<div class="highlight"><pre><span></span><code>git fetch origin
 </code></pre></div>
-<p>Displays the URLs of the remote repositories.</p>
 <h2 id="fetching-changes-from-a-remote"><strong>Fetching Changes from a Remote</strong></h2>
+<p>The command goes out to that remote project and pulls down all the data from that remote project that you don’t have yet. After you do this, you should have references to all the branches from that remote, which you can merge in or inspect at any time.</p>
 <p><div class="highlight"><pre><span></span><code>git fetch &lt;remote-name&gt;
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>git fetch origin
@@ -948,6 +954,13 @@ Fetches changes from the main branch in the remote repository and merges them in
 <div class="highlight"><pre><span></span><code>git pull origin main
 </code></pre></div>
 Fetches changes from the remote repository and merges them into the local branch.</p>
+<p>From Git version 2.27 onward, git pull will give a warning if the pull.rebase variable is not set. Git will keep warning you until you set the variable.</p>
+<p>If you want the default behavior of Git (fast-forward if possible, else create a merge commit): 
+<div class="highlight"><pre><span></span><code>git config --global pull.rebase <span class="s2">&quot;false&quot;</span>
+</code></pre></div>
+If you want to rebase when pulling: 
+<div class="highlight"><pre><span></span><code>git config --global pull.rebase <span class="s2">&quot;true&quot;</span>
+</code></pre></div></p>
 <h2 id="pushing-changes-to-a-remote"><strong>Pushing Changes to a Remote</strong></h2>
 <div class="highlight"><pre><span></span><code>git push &lt;remote-name&gt; &lt;branch-name&gt;
 </code></pre></div>
