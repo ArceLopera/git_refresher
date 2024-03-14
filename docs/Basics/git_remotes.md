@@ -4,7 +4,20 @@ Retrieving updates from another repository and updating local repos.
 
 Working with remotes in Git involves collaborating with repositories hosted on remote servers. 
 
+## **Viewing Remote Information**
+
+To see which remote servers you have configured, run the following command:
+
+```bash
+git remote -v
+```
+
+Displays the URLs of the remote repositories.  It lists the shortnames of each remote handle you’ve specified. If you’ve cloned your repository, you should at least see origin — that is the default name Git gives to the server you cloned from. The -v flag displays the full remote URLs.
+When you have multiple remotes then you can pull contributions from any of these remotes.
+
 ## **Adding a Remote**
+
+Here’s how to add a new remote explicitly.
 
 ```bash
 git remote add <remote-name> <remote-url>
@@ -12,17 +25,15 @@ git remote add <remote-name> <remote-url>
 ```bash
 git remote add origin https://github.com/user/repo.git
 ```
-Adds a remote repository with a given name and URL.
-
-## **Viewing Remote Information**
+Adds a remote repository with a given name and URL. Now you can use the string origin on the command line in lieu of the whole URL. For example, if you want to fetch all the information from the remote repository, you can use:
 
 ```bash
-git remote -v
+git fetch origin
 ```
 
-Displays the URLs of the remote repositories.
-
 ## **Fetching Changes from a Remote**
+
+The command goes out to that remote project and pulls down all the data from that remote project that you don’t have yet. After you do this, you should have references to all the branches from that remote, which you can merge in or inspect at any time.
 
 ```bash
 git fetch <remote-name>
@@ -51,7 +62,19 @@ git pull origin main
 ```
 Fetches changes from the remote repository and merges them into the local branch.
 
+From Git version 2.27 onward, git pull will give a warning if the pull.rebase variable is not set. Git will keep warning you until you set the variable.
+
+If you want the default behavior of Git (fast-forward if possible, else create a merge commit): 
+```bash
+git config --global pull.rebase "false"
+```
+If you want to rebase when pulling: 
+```bash
+git config --global pull.rebase "true"
+```
 ## **Pushing Changes to a Remote**
+
+When you have your project at a point that you want to share, you have to push it upstream. The command for this is simple.
 
 ```bash
 git push <remote-name> <branch-name>
@@ -61,7 +84,7 @@ git push <remote-name> <branch-name>
 git push origin main
 ```
 
-Pushes local commits to the remote repository.
+Pushes local commits to the remote repository. This command works only if you cloned from a server to which you have write access and if nobody has pushed in the meantime. If you and someone else clone at the same time and they push upstream and then you push upstream, your push will rightly be rejected. You’ll have to fetch their work first and incorporate it into yours before you’ll be allowed to push.
 
 
 ## **Creating a Branch in a Remote Repository**
