@@ -4,6 +4,8 @@ Retrieving updates from another repository and updating local repos.
 
 Working with remotes in Git involves collaborating with repositories hosted on remote servers. 
 
+![](../Images/remotes.png)
+
 ## **Viewing Remote Information**
 
 To see which remote servers you have configured, run the following command:

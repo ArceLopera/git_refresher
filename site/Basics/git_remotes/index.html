@@ -921,6 +921,7 @@
 <p><strong>SHARE &amp; UPDATE</strong></p>
 <p>Retrieving updates from another repository and updating local repos.</p>
 <p>Working with remotes in Git involves collaborating with repositories hosted on remote servers. </p>
+<p><img alt="" src="../../Images/remotes.png" /></p>
 <h2 id="viewing-remote-information"><strong>Viewing Remote Information</strong></h2>
 <p>To see which remote servers you have configured, run the following command:</p>
 <div class="highlight"><pre><span></span><code>git remote -v
@@ -962,11 +963,12 @@ If you want to rebase when pulling:
 <div class="highlight"><pre><span></span><code>git config --global pull.rebase <span class="s2">&quot;true&quot;</span>
 </code></pre></div></p>
 <h2 id="pushing-changes-to-a-remote"><strong>Pushing Changes to a Remote</strong></h2>
+<p>When you have your project at a point that you want to share, you have to push it upstream. The command for this is simple.</p>
 <div class="highlight"><pre><span></span><code>git push &lt;remote-name&gt; &lt;branch-name&gt;
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>git push origin main
 </code></pre></div>
-<p>Pushes local commits to the remote repository.</p>
+<p>Pushes local commits to the remote repository. This command works only if you cloned from a server to which you have write access and if nobody has pushed in the meantime. If you and someone else clone at the same time and they push upstream and then you push upstream, your push will rightly be rejected. You’ll have to fetch their work first and incorporate it into yours before you’ll be allowed to push.</p>
 <h2 id="creating-a-branch-in-a-remote-repository"><strong>Creating a Branch in a Remote Repository</strong></h2>
 <div class="highlight"><pre><span></span><code>git push &lt;remote-name&gt; &lt;local-branch-name&gt;:&lt;remote-branch-name&gt;
 </code></pre></div>
