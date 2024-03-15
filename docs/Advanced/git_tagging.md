@@ -57,10 +57,11 @@ To list only annotated tags (excluding lightweight tags):
 git tag -l -n
 ```
 
-Using wildcards with `git tag -l` allows you to filter and list tags based on specific patterns, making it easier to manage and navigate through tags in your Git repository.
+Using wildcards with `git tag -l` allows you to filter and list tags based on specific patterns, making it easier to manage and navigate through tags in your Git repository. Listing tag wildcards requires -l or --list option.
 
 ## **Pushing Tags to Remote**
 
+By default, the git push command doesn’t transfer tags to remote servers.
 To push a specific tag to the remote repository:
 ```bash
 git push origin <tag-name>
