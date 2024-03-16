@@ -1027,7 +1027,8 @@ In Git, listing tags allows you to view all tags present in the repository. You 
 </code></pre></div></p>
 <p>Using wildcards with <code>git tag -l</code> allows you to filter and list tags based on specific patterns, making it easier to manage and navigate through tags in your Git repository. Listing tag wildcards requires -l or --list option.</p>
 <h2 id="pushing-tags-to-remote"><strong>Pushing Tags to Remote</strong></h2>
-<p>To push a specific tag to the remote repository:
+<p>By default, the git push command doesn’t transfer tags to remote servers.
+To push a specific tag to the remote repository:
 <div class="highlight"><pre><span></span><code>git push origin &lt;tag-name&gt;
 </code></pre></div></p>
 <p>To push all tags to the remote repository:
