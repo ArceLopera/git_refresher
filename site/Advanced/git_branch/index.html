@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#main-branches" class="md-skip">
+        <a href="#what-are-branches" class="md-skip">
           Skip to content
         </a>
       
@@ -592,6 +592,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#what-are-branches" class="md-nav__link">
+    What are Branches?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#main-branches" class="md-nav__link">
     Main Branches
   </a>
@@ -852,6 +859,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#what-are-branches" class="md-nav__link">
+    What are Branches?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#main-branches" class="md-nav__link">
     Main Branches
   </a>
@@ -957,6 +971,19 @@
   <h1>Branching</h1>
 
 <p>Branching in Git is a powerful feature that allows developers to diverge from the main line of development (usually referred to as the <code>master</code> branch) and work on separate, isolated lines of development. Each branch represents an independent line of development, enabling multiple features, fixes, or experiments to be worked on simultaneously without interfering with each other. Branching can be a crucial part of software development, as it allows teams to work collaboratively on different features or fixes simultaneously while maintaining a clear and organized codebase. Isolating work in branches, changing context, and integrating changes into the main line of development can help streamline the development process and improve collaboration.</p>
+<h2 id="what-are-branches"><strong>What are Branches?</strong></h2>
+<p>Git doesn’t store data as a series of changesets or differences, but instead as a series of snapshots. When you make a commit, Git stores a commit object that contains a pointer to the snapshot of the content you staged. This object also contains the author’s name and email address, the message that you typed, and pointers to the commit or commits that directly came before this commit (its parent or parents): zero parents for the initial commit, one parent for a normal commit, and multiple parents for a commit that results from a merge of two or more branches.</p>
+<p>Let’s assume that you have a directory containing three files, and you stage them all and commit. Staging the files computes a checksum for each one (the SHA-1 hash), stores that version of the file in the Git repository (Git refers to them as blobs), and adds that checksum to the staging area:</p>
+<p><div class="highlight"><pre><span></span><code>$ git add .
+$ git commit -m <span class="s2">&quot;initial commit&quot;</span>
+</code></pre></div>
+When you create the commit by running git commit, Git checksums each subdirectory (in this case, just the root project directory) and stores them as a tree object in the Git repository. Git then creates a commit object that has the metadata and a pointer to the root project tree so it can re-create that snapshot when needed.</p>
+<p>Your Git repository now contains five objects: three blobs (each representing the contents of one of the three files), one tree that lists the contents of the directory and specifies which file names are stored as which blobs, and one commit with the pointer to that root tree and all the commit metadata.</p>
+<p><img alt="" src="../../Images/commit-and-tree.png" /></p>
+<p>If you make some changes and commit again, the next commit stores a pointer to the commit that came immediately before it.</p>
+<p><img alt="" src="../../Images/commitspapa.png" /></p>
+<p>A branch in Git is simply a lightweight movable pointer to one of these commits. The default branch name in Git is master. As you start making commits, you’re given a master branch that points to the last commit you made. Every time you commit, the master branch pointer moves forward automatically. The pointer HEAD tells you where you are in the repository. When you switch branches, HEAD moves to the tip of the new branch.</p>
+<p><img alt="" src="../../Images/branchistory.png" /></p>
 <h2 id="main-branches"><strong>Main Branches</strong></h2>
 <ul>
 <li>
@@ -970,14 +997,17 @@
 <ul>
 <li><strong>Creating a New Branch:</strong> To create a new branch, use the <code>git branch &lt;branch-name&gt;</code> command. Optionally, you can switch to the new branch immediately with <code>git checkout -b &lt;branch-name&gt;</code> or <code>git switch -c &lt;branch-name&gt;</code>.</li>
 </ul>
+<p><img alt="" src="../../Images/branch1.png" /></p>
 <div class="highlight"><pre><span></span><code>git branch feature-branch
 </code></pre></div>
+<p><img alt="" src="../../Images/branchistory.png" /></p>
 <ul>
 <li><strong>Switching Branches:</strong> To switch between branches, use the <code>git checkout &lt;branch-name&gt;</code> command or <code>git switch &lt;branch-name&gt;</code>.</li>
 </ul>
 <h3 id="1-git-checkout">1. <strong><code>git checkout</code></strong></h3>
-<div class="highlight"><pre><span></span><code>git checkout feature-branch
+<p><div class="highlight"><pre><span></span><code>git checkout feature-branch
 </code></pre></div>
+<img alt="" src="../../Images/branch2.png" /></p>
 <h3 id="2-git-switch">2. <strong><code>git switch</code></strong></h3>
 <p>Introduced in Git version 2.23, <code>git switch</code> is specifically designed for branch switching. It offers a more intuitive and safer way to switch branches compared to <code>git checkout</code>.</p>
 <div class="highlight"><pre><span></span><code>git switch &lt;branch-name&gt;
