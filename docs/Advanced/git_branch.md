@@ -96,20 +96,92 @@ By using `git branch -a`, you can get a comprehensive overview of all branches i
 
 ## **Merging Branches**
 
-- **Merge:** To merge changes from one branch into another, use the `git merge <branch-name>` command.
+Let's do another commit on the `feature-branch` branch. 
 
-  ```bash
-  git merge feature-branch
-  ```
-  Merge the specified branch’s history into the current one.
+![](../Images/branch3.png)
 
-## **Deleting Branches**
+We will want eventually to merge this commit into the `main` branch. However, other collaborators are working on the other features (hotfixes) and create another branch for a hotfix.
 
-- **Delete:** To delete a branch, use the `git branch -d <branch-name>` command.
+### Fast-forward merges
 
-  ```bash
-  git branch -d feature-branch
-  ```
+To merge changes from one branch into another, use the `git merge <branch-name>` command.
+
+However you have to first checkout to the branch you want to merge into.
+
+```bash
+git checkout master
+```
+![](../Images/branch4.png)
+
+```bash
+git merge hotfix-branch
+```
+
+![](../Images/branch5.png)
+
+You’ll notice the phrase “fast-forward” in that merge. Because the commit pointed to by the branch hotfix (d45a6) you merged in was directly ahead of the commit (fe456) you’re on, Git simply moves the pointer forward.  Git simplifies things by moving the pointer forward because there is no divergent work to merge together — this is called a “fast-forward”.
+
+
+
+### **Deleting Branches**
+
+Now, that the hotfix branch is no longer needed, we can delete it.
+To delete a branch, use the `git branch -d <branch-name>` command.
+
+```bash
+git branch -d hotfix-branch
+```
+
+![](../Images/branch6.png)
+
+### Recursive merge
+
+Now we can switch back to our work-in-progress branch in order to continue working on our project.
+
+```bash
+git checkout feature-branch
+```
+And do more commits on the feature branch.
+
+![](../Images/branch7.png)
+
+As you can see, now there is a divergent work to merge. Because the commit on the branch you’re on isn’t a direct ancestor of the branch you’re merging in. To merge merge changes into the master branch, we must first switch to the master branch. then we can merge the feature branch into the master branch.
+
+
+```bash
+git checkout master
+```
+
+then 
+
+```bash
+git merge feature-branch
+```
+You will notice the info: Merge made by the 'recursive' strategy.  Git does a simple three-way merge, using the two snapshots pointed to by the branch tips and the common ancestor of the two. Instead of just moving the branch pointer forward, Git creates a new snapshot that results from this three-way merge and automatically creates a new commit that points to it. This is referred to as a merge commit, and is special in that it has more than one parent.
+
+![](../Images/branch8.png)
+
+Now that our work is merged in, we have no further need for the feature branch. We can close the issue in the issue-tracking system, and delete the branch:
+
+```bash
+git branch -d feature-branch
+```
+
+### Merging conflicts
+
+ If you changed the same part of the same file differently in the two branches you’re merging, Git won’t be able to merge them cleanly. In this case, you’ll see a merge conflict in the output, and Git will tell you which files you need to resolve the conflict with. Git hasn’t automatically created a new merge commit. It has paused the process while you resolve the conflict. If you want to see which files are unmerged at any point after a merge conflict, you can run git status.
+
+ This resolution has a little of each section, and the <<<<<<<, =======, and >>>>>>> lines have been completely removed. After you’ve resolved each of these sections in each conflicted file, run git add on each file to mark it as resolved. Staging the file marks it as resolved in Git.
+
+ If you want to use a graphical tool to resolve these issues, you can run git mergetool, which fires up an appropriate visual merge tool and walks you through the conflicts. After you exit the merge tool, Git asks you if the merge was successful. If you tell the script that it was, it stages the file to mark it as resolved for you. You can run git status again to verify that all conflicts have been resolved.
+If you’re happy with that, and you verify that everything that had conflicts has been staged, you can type git commit to finalize the merge commit. 
+
+
+
+```bash
+git status
+```
+Anything that has merge conflicts and hasn’t been resolved is listed as unmerged. Git adds standard conflict-resolution markers to the files that have conflicts, so you can open them manually and resolve those conflicts.
 
 ## **Branching Strategies**
 
