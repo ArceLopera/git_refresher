@@ -86,13 +86,47 @@ The output typically looks like this:
 - The branches listed with the `remotes/` prefix are remote branches.
 - `origin` is the default name for the remote repository, but you may see other names if you have multiple remotes configured.
 
-### Use Cases
+### Useful flags
 
-- Checking the status of local and remote branches.
-- Identifying available branches for merging, rebasing, or switching.
-- Tracking changes from remote branches and syncing local branches accordingly.
+To display information about branches, you can use the following flags:
 
-By using `git branch -a`, you can get a comprehensive overview of all branches in your Git repository, allowing you to manage and navigate through branches effectively.
+- `-v, --verbose`: Displays additional information about each branch, showing the commit message or commit SHA of the last commit on each branch.
+- `-vv`: Displays more verbose information about each branch, including tracking information.
+- `-l, --list`: Lists branches matching the given pattern.
+- `-a, --all`: Lists all branches in the repository, including local and remote branches.
+- `-r, --remote`: Lists only remote branches.
+
+To manage branches, you can use the following flags:
+
+- `-d, --delete`: Deletes the specified branch.
+- `-D`:  Shortcut for `--delete --force`. Deletes the specified branch forcibly, even if it has unmerged changes.
+- `-m, --move`: Renames the specified branch locally.
+``` bash
+# Rename the branch locally
+git branch --move bad-branch-name corrected-branch-name
+# Push the branch to the remote repository
+git push --set-upstream origin corrected-branch-name
+# delete bad branch in the remote repository
+git push origin --delete bad-branch-name
+```
+
+- `-c, --copy`: Copies the specified branch.
+
+To filter branches, you can use the following flags:
+
+- `--merged`: Lists only branches that have been merged into the current branch.
+- `--no-merged`: Lists only branches that have not been merged into the current branch.
+- `--contains`: Lists only branches that contain the specified commit.
+- `--no-contains`: Lists only branches that do not contain the specified commit.
+- `--points-at`: Lists only branches that point at the specified commit.
+- `--no-points-at`: Lists only branches that do not point at the specified commit.
+
+--merged and --no-merged will, if not given a commit or branch name as an argument, show you what is, respectively, merged or not merged into your current branch. 
+But if you provide an additional argument to ask about the merge state with respect to some other branch without checking that other branch out first, as in, what is not merged into the master branch?
+
+```bash
+git branch --no-merged master
+```
 
 ## **Merging Branches**
 

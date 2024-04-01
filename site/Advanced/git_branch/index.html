@@ -641,8 +641,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#use-cases" class="md-nav__link">
-    Use Cases
+  <a href="#useful-flags" class="md-nav__link">
+    Useful flags
   </a>
   
 </li>
@@ -935,8 +935,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#use-cases" class="md-nav__link">
-    Use Cases
+  <a href="#useful-flags" class="md-nav__link">
+    Useful flags
   </a>
   
 </li>
@@ -1098,13 +1098,46 @@
 <li>The branches listed with the <code>remotes/</code> prefix are remote branches.</li>
 <li><code>origin</code> is the default name for the remote repository, but you may see other names if you have multiple remotes configured.</li>
 </ul>
-<h3 id="use-cases">Use Cases</h3>
+<h3 id="useful-flags">Useful flags</h3>
+<p>To display information about branches, you can use the following flags:</p>
 <ul>
-<li>Checking the status of local and remote branches.</li>
-<li>Identifying available branches for merging, rebasing, or switching.</li>
-<li>Tracking changes from remote branches and syncing local branches accordingly.</li>
+<li><code>-v, --verbose</code>: Displays additional information about each branch, showing the commit message or commit SHA of the last commit on each branch.</li>
+<li><code>-vv</code>: Displays more verbose information about each branch, including tracking information.</li>
+<li><code>-l, --list</code>: Lists branches matching the given pattern.</li>
+<li><code>-a, --all</code>: Lists all branches in the repository, including local and remote branches.</li>
+<li><code>-r, --remote</code>: Lists only remote branches.</li>
 </ul>
-<p>By using <code>git branch -a</code>, you can get a comprehensive overview of all branches in your Git repository, allowing you to manage and navigate through branches effectively.</p>
+<p>To manage branches, you can use the following flags:</p>
+<ul>
+<li><code>-d, --delete</code>: Deletes the specified branch.</li>
+<li><code>-D</code>:  Shortcut for <code>--delete --force</code>. Deletes the specified branch forcibly, even if it has unmerged changes.</li>
+<li>
+<p><code>-m, --move</code>: Renames the specified branch locally.
+<div class="highlight"><pre><span></span><code><span class="c1"># Rename the branch locally</span>
+git branch --move bad-branch-name corrected-branch-name
+<span class="c1"># Push the branch to the remote repository</span>
+git push --set-upstream origin corrected-branch-name
+<span class="c1"># delete bad branch in the remote repository</span>
+git push origin --delete bad-branch-name
+</code></pre></div></p>
+</li>
+<li>
+<p><code>-c, --copy</code>: Copies the specified branch.</p>
+</li>
+</ul>
+<p>To filter branches, you can use the following flags:</p>
+<ul>
+<li><code>--merged</code>: Lists only branches that have been merged into the current branch.</li>
+<li><code>--no-merged</code>: Lists only branches that have not been merged into the current branch.</li>
+<li><code>--contains</code>: Lists only branches that contain the specified commit.</li>
+<li><code>--no-contains</code>: Lists only branches that do not contain the specified commit.</li>
+<li><code>--points-at</code>: Lists only branches that point at the specified commit.</li>
+<li><code>--no-points-at</code>: Lists only branches that do not point at the specified commit.</li>
+</ul>
+<p>--merged and --no-merged will, if not given a commit or branch name as an argument, show you what is, respectively, merged or not merged into your current branch. 
+But if you provide an additional argument to ask about the merge state with respect to some other branch without checking that other branch out first, as in, what is not merged into the master branch?</p>
+<div class="highlight"><pre><span></span><code>git branch --no-merged master
+</code></pre></div>
 <h2 id="merging-branches"><strong>Merging Branches</strong></h2>
 <p>Let's do another commit on the <code>feature-branch</code> branch. </p>
 <p><img alt="" src="../../Images/branch3.png" /></p>
