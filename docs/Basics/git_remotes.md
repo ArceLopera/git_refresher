@@ -190,3 +190,41 @@ The output of `git remote show <remote-name>` typically includes the following i
 - The output provides valuable information for managing and coordinating work with remote repositories.
 
 Using `git remote show` can provide insights into the state of your remote repository, aiding in decision-making when performing operations such as fetching, pulling, or pushing changes.
+
+## **Tracking Branches**
+
+Checking out a local branch from a remote-tracking branch automatically creates what is called a “tracking branch” (and the branch it tracks is called an “upstream branch”). Tracking branches are local branches that have a direct relationship to a remote branch. If you’re on a tracking branch and type git pull, Git automatically knows which server to fetch from and which branch to merge in.
+
+When you clone a repository, it generally automatically creates a master branch that tracks origin/master. However, you can set up other tracking branches if you wish — ones that track branches on other remotes, or don’t track the master branch.
+
+``` bash
+git checkout -b <branch> <remote>/<branch>
+```
+
+This is a common enough operation that Git provides the --track shorthand:
+
+```bash
+git checkout --track origin/hotfix
+```
+
+In fact, this is so common that there’s even a shortcut for that shortcut. If the branch name you’re trying to checkout (a) doesn’t exist and (b) exactly matches a name on only one remote, Git will create a tracking branch for you:
+
+```bash
+git checkout hotfix
+```
+To set up a local branch with a different name than the remote branch, you can easily use the first version with a different local branch name:
+
+```bash
+git checkout -b htfx origin/hotfix
+```
+
+Now, your local branch htfx will automatically pull from origin/hotfix.
+
+If you already have a local branch and want to set it to a remote branch you just pulled down, or want to change the upstream branch you’re tracking, you can use the -u or --set-upstream-to option to git branch to explicitly set it at any time.
+
+```bash
+git branch -u origin/hotfix
+```
+
+**Upstream shorthand**
+When you have a tracking branch set up, you can reference its upstream branch with the @{upstream} or @{u} shorthand. So if you’re on the master branch and it’s tracking origin/master, you can say something like `git merge @{u}` instead of `git merge origin/master` if you wish.
