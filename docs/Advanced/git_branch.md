@@ -307,3 +307,60 @@ git merge feature-branch
 Rebasing makes for a cleaner history. If you examine the log of a rebased branch, it looks like a linear history: it appears that all the work happened in series, even when it originally happened in parallel.
 
 ### **--onto flag**
+
+The `--onto` flag in the `git rebase` command is used to specify a new base (or starting point) for the rebase operation. This flag allows you to reapply a series of commits onto a different branch or commit, effectively changing the parent of the commits being rebased.
+
+```
+git rebase --onto <new_base> <old_base> <branch>
+```
+
+- `<new_base>`: Specifies the new base commit or branch where you want the series of commits to be reapplied.
+- `<old_base>`: Specifies the original base commit or branch from which the series of commits should be moved.
+- `<branch>`: Specifies the branch containing the commits you want to rebase.
+
+**Steps:**
+
+1. **Identify the Commits to Rebase:** The rebase operation will take the commits from `<old_base>` up to (but not including) the current branch's tip.
+
+2. **Detach the Commits:** The commits to be rebased are temporarily detached from their original base.
+
+3. **Apply the Commits to the New Base:** The detached commits are then applied one by one on top of the `<new_base>`.
+
+4. **Reattach the Branch:** Finally, the branch pointer is moved to the last commit that was applied, completing the rebase operation.
+
+**Use Cases:**
+
+- **Restructuring Commit History:** You can use `--onto` to move a series of commits from one branch to another, effectively restructuring the commit history.
+- **Creating Feature Branches:** If you started working on a feature branch from the wrong starting point, you can use `--onto` to rebase your changes onto the correct branch or commit.
+
+**Example:**
+
+Suppose you have the following commit history:
+
+```
+          A -- B -- C (feature)
+         /
+... -- X -- Y -- Z (master)
+```
+
+To move commits `B` and `C` from the `feature` branch onto `master`, you can use:
+
+```bash
+git rebase --onto master feature~2 feature
+```
+
+After the rebase, the commit history would look like:
+
+```
+              B' -- C' (feature)
+             /
+... -- X -- Y -- Z -- A -- B -- C (master)
+```
+
+In this example, `B'` and `C'` represent the rebased commits on the `feature` branch, applied on top of the `master` branch. The original `B` and `C` commits are effectively moved onto the `master` branch.
+
+**Notes:**
+
+- Always exercise caution when using `git rebase`, especially with `--onto`, as it rewrites commit history.
+- Make sure you understand the implications of rebasing and its potential impact on collaboration and shared branches.
+- Do not rebase commits that exist outside your repository and that people may have based work on. When you rebase stuff, you’re abandoning existing commits and creating new ones that are similar but different. If you push commits somewhere and others pull them down and base work on them, and then you rewrite those commits with git rebase and push them up again, your collaborators will have to re-merge their work and things will get messy when you try to pull their work back into yours.
