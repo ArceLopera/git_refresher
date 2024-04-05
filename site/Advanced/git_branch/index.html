@@ -701,6 +701,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#branching-best-practices" class="md-nav__link">
+    Branching Best Practices
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#remote-branches" class="md-nav__link">
     Remote Branches
   </a>
@@ -708,9 +715,29 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#branching-best-practices" class="md-nav__link">
-    Branching Best Practices
+  <a href="#rebasing" class="md-nav__link">
+    Rebasing
   </a>
+  
+    <nav class="md-nav" aria-label="Rebasing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-basic-rebase" class="md-nav__link">
+    The Basic Rebase
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-onto-flag" class="md-nav__link">
+    --onto flag
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -995,6 +1022,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#branching-best-practices" class="md-nav__link">
+    Branching Best Practices
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#remote-branches" class="md-nav__link">
     Remote Branches
   </a>
@@ -1002,9 +1036,29 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#branching-best-practices" class="md-nav__link">
-    Branching Best Practices
+  <a href="#rebasing" class="md-nav__link">
+    Rebasing
   </a>
+  
+    <nav class="md-nav" aria-label="Rebasing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-basic-rebase" class="md-nav__link">
+    The Basic Rebase
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-onto-flag" class="md-nav__link">
+    --onto flag
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1196,6 +1250,21 @@ Anything that has merge conflicts and hasn’t been resolved is listed as unmerg
 <p><strong>Hotfix Branching:</strong> Create branches to fix critical issues in production code quickly.</p>
 </li>
 </ul>
+<h2 id="branching-best-practices"><strong>Branching Best Practices</strong></h2>
+<ul>
+<li>
+<p><strong>Use Descriptive Names:</strong> Choose meaningful names for branches to indicate their purpose or associated feature.</p>
+</li>
+<li>
+<p><strong>Keep Branches Short-Lived:</strong> Merge branches into the main line of development once their purpose is served to avoid branch clutter.</p>
+</li>
+<li>
+<p><strong>Regularly Update Branches:</strong> Keep branches up-to-date with changes in the main line of development by frequently merging or rebasing.</p>
+</li>
+<li>
+<p><strong>Review Branches:</strong> Encourage code review and collaboration by reviewing changes made in feature branches before merging them.</p>
+</li>
+</ul>
 <h2 id="remote-branches"><strong>Remote Branches</strong></h2>
 <ul>
 <li><strong>Pushing a Branch:</strong> To push a local branch to a remote repository, use the <code>git push &lt;remote-name&gt; &lt;branch-name&gt;</code> command.</li>
@@ -1222,21 +1291,24 @@ After running this command, Git knows that when you push or pull changes from th
 <ul>
 <li>This command can also be used in combination with <code>git push -u</code> or <code>git push --set-upstream</code> to set up tracking and push changes to the remote branch in one step.</li>
 </ul>
-<h2 id="branching-best-practices"><strong>Branching Best Practices</strong></h2>
-<ul>
-<li>
-<p><strong>Use Descriptive Names:</strong> Choose meaningful names for branches to indicate their purpose or associated feature.</p>
-</li>
-<li>
-<p><strong>Keep Branches Short-Lived:</strong> Merge branches into the main line of development once their purpose is served to avoid branch clutter.</p>
-</li>
-<li>
-<p><strong>Regularly Update Branches:</strong> Keep branches up-to-date with changes in the main line of development by frequently merging or rebasing.</p>
-</li>
-<li>
-<p><strong>Review Branches:</strong> Encourage code review and collaboration by reviewing changes made in feature branches before merging them.</p>
-</li>
-</ul>
+<h2 id="rebasing"><strong>Rebasing</strong></h2>
+<p>In Git, there are two main ways to integrate changes from one branch into another: the merge and the rebase.</p>
+<h3 id="the-basic-rebase">The Basic Rebase</h3>
+<p>The merge command performs a three-way merge between the two latest branch snapshots (d45a6 and a615b) and the most recent common ancestor of the two (fe456), creating a new snapshot (and commit 1ac5b).</p>
+<p><img alt="" src="../../Images/branch8.png" /></p>
+<p>However, there is another way: you can take the patch of the change that was introduced in a615b and reapply it on top of d45a6. In Git, this is called rebasing. With the rebase command, you can take all the changes that were committed on one branch and replay them on a different branch. </p>
+<p>This operation works by going to the common ancestor of the two branches (the one you’re on and the one you’re rebasing onto), getting the diff introduced by each commit of the branch you’re on, saving those diffs to temporary files, resetting the current branch to the same commit as the branch you are rebasing onto, and finally applying each change in turn.</p>
+<div class="highlight"><pre><span></span><code>git checkout feature-branch
+git rebase master
+</code></pre></div>
+<p><img alt="" src="../../Images/branch9.png" /></p>
+<p>At this point, you can go back to the master branch and do a fast-forward merge.</p>
+<div class="highlight"><pre><span></span><code>git checkout master
+git merge feature-branch
+</code></pre></div>
+<p><img alt="" src="../../Images/branch10.png" /></p>
+<p>Rebasing makes for a cleaner history. If you examine the log of a rebased branch, it looks like a linear history: it appears that all the work happened in series, even when it originally happened in parallel.</p>
+<h3 id="-onto-flag"><strong>--onto flag</strong></h3>
 
               
             </article>

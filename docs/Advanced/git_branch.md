@@ -96,6 +96,8 @@ To display information about branches, you can use the following flags:
 - `-a, --all`: Lists all branches in the repository, including local and remote branches.
 - `-r, --remote`: Lists only remote branches.
 
+
+
 To manage branches, you can use the following flags:
 
 - `-d, --delete`: Deletes the specified branch.
@@ -227,6 +229,16 @@ Git encourages workflows that branch and merge often, even multiple times in a d
 
 - **Hotfix Branching:** Create branches to fix critical issues in production code quickly.
 
+## **Branching Best Practices**
+
+- **Use Descriptive Names:** Choose meaningful names for branches to indicate their purpose or associated feature.
+
+- **Keep Branches Short-Lived:** Merge branches into the main line of development once their purpose is served to avoid branch clutter.
+
+- **Regularly Update Branches:** Keep branches up-to-date with changes in the main line of development by frequently merging or rebasing.
+
+- **Review Branches:** Encourage code review and collaboration by reviewing changes made in feature branches before merging them.
+
 ## **Remote Branches**
 
 - **Pushing a Branch:** To push a local branch to a remote repository, use the `git push <remote-name> <branch-name>` command.
@@ -262,12 +274,36 @@ After running this command, Git knows that when you push or pull changes from th
 
 - This command can also be used in combination with `git push -u` or `git push --set-upstream` to set up tracking and push changes to the remote branch in one step.
 
-## **Branching Best Practices**
+## **Rebasing**
 
-- **Use Descriptive Names:** Choose meaningful names for branches to indicate their purpose or associated feature.
+In Git, there are two main ways to integrate changes from one branch into another: the merge and the rebase.
 
-- **Keep Branches Short-Lived:** Merge branches into the main line of development once their purpose is served to avoid branch clutter.
+### The Basic Rebase
 
-- **Regularly Update Branches:** Keep branches up-to-date with changes in the main line of development by frequently merging or rebasing.
+The merge command performs a three-way merge between the two latest branch snapshots (d45a6 and a615b) and the most recent common ancestor of the two (fe456), creating a new snapshot (and commit 1ac5b).
 
-- **Review Branches:** Encourage code review and collaboration by reviewing changes made in feature branches before merging them.
+![](../Images/branch8.png)
+
+However, there is another way: you can take the patch of the change that was introduced in a615b and reapply it on top of d45a6. In Git, this is called rebasing. With the rebase command, you can take all the changes that were committed on one branch and replay them on a different branch. 
+
+This operation works by going to the common ancestor of the two branches (the one you’re on and the one you’re rebasing onto), getting the diff introduced by each commit of the branch you’re on, saving those diffs to temporary files, resetting the current branch to the same commit as the branch you are rebasing onto, and finally applying each change in turn.
+
+``` bash
+git checkout feature-branch
+git rebase master
+```
+
+![](../Images/branch9.png)
+
+At this point, you can go back to the master branch and do a fast-forward merge.
+
+``` bash
+git checkout master
+git merge feature-branch
+```
+
+![](../Images/branch10.png)
+
+Rebasing makes for a cleaner history. If you examine the log of a rebased branch, it looks like a linear history: it appears that all the work happened in series, even when it originally happened in parallel.
+
+### **--onto flag**
