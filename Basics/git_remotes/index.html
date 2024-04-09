@@ -578,6 +578,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#updating-remote-branches" class="md-nav__link">
+    Updating Remote Branches
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -916,6 +923,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#updating-remote-branches" class="md-nav__link">
+    Updating Remote Branches
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1079,6 +1093,17 @@ To set up a local branch with a different name than the remote branch, you can e
 </code></pre></div>
 <p><strong>Upstream shorthand</strong>
 When you have a tracking branch set up, you can reference its upstream branch with the @{upstream} or @{u} shorthand. So if you’re on the master branch and it’s tracking origin/master, you can say something like <code>git merge @{u}</code> instead of <code>git merge origin/master</code> if you wish.</p>
+<h2 id="updating-remote-branches"><strong>Updating Remote Branches</strong></h2>
+<p><strong><code>git remote update origin --prune</code></strong></p>
+<p>This command updates the local list of remote branches (<code>origin</code>) and prunes (removes) any remote-tracking branches that no longer exist on the remote repository.
+<code>git remote update</code> is equivalent to <code>git fetch</code>, but it updates all remote-tracking branches instead of just the default one. <code>--prune</code> ensures that any remote-tracking branches that have been deleted on the remote repository are also deleted locally.</p>
+<p><strong><code>git fetch --prune</code></strong></p>
+<p>This command fetches updates from the remote repository and prunes (removes) any remote-tracking branches that no longer exist on the remote repository. It's similar to <code>git remote update origin --prune</code>, but it only updates the default remote and its branches.</p>
+<p><strong><code>git config remote.origin.prune true</code></strong></p>
+<p>Setting this configuration option makes <code>--prune</code> automatic for <code>git fetch</code> when fetching from the <code>origin</code> remote.
+With this configuration, running <code>git fetch</code> will automatically prune stale remote branches from the local copy.</p>
+<p><strong><code>git fetch --all --prune --tags --prune-tags --progress</code></strong></p>
+<p>This command fetches updates from all remotes (<code>--all</code>) and prunes (removes) any remote-tracking branches and tags that no longer exist on their respective remotes. <code>--tags</code> ensures that tags are also fetched. <code>--prune-tags</code> prunes any local tags that no longer exist on the remote.  <code>--progress</code> displays progress information during the fetch operation.</p>
 
               
             </article>

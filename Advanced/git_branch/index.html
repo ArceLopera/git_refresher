@@ -1309,6 +1309,55 @@ git merge feature-branch
 <p><img alt="" src="../../Images/branch10.png" /></p>
 <p>Rebasing makes for a cleaner history. If you examine the log of a rebased branch, it looks like a linear history: it appears that all the work happened in series, even when it originally happened in parallel.</p>
 <h3 id="-onto-flag"><strong>--onto flag</strong></h3>
+<p>The <code>--onto</code> flag in the <code>git rebase</code> command is used to specify a new base (or starting point) for the rebase operation. This flag allows you to reapply a series of commits onto a different branch or commit, effectively changing the parent of the commits being rebased.</p>
+<div class="highlight"><pre><span></span><code>git rebase --onto &lt;new_base&gt; &lt;old_base&gt; &lt;branch&gt;
+</code></pre></div>
+<ul>
+<li><code>&lt;new_base&gt;</code>: Specifies the new base commit or branch where you want the series of commits to be reapplied.</li>
+<li><code>&lt;old_base&gt;</code>: Specifies the original base commit or branch from which the series of commits should be moved.</li>
+<li><code>&lt;branch&gt;</code>: Specifies the branch containing the commits you want to rebase.</li>
+</ul>
+<p><strong>Steps:</strong></p>
+<ol>
+<li>
+<p><strong>Identify the Commits to Rebase:</strong> The rebase operation will take the commits from <code>&lt;old_base&gt;</code> up to (but not including) the current branch's tip.</p>
+</li>
+<li>
+<p><strong>Detach the Commits:</strong> The commits to be rebased are temporarily detached from their original base.</p>
+</li>
+<li>
+<p><strong>Apply the Commits to the New Base:</strong> The detached commits are then applied one by one on top of the <code>&lt;new_base&gt;</code>.</p>
+</li>
+<li>
+<p><strong>Reattach the Branch:</strong> Finally, the branch pointer is moved to the last commit that was applied, completing the rebase operation.</p>
+</li>
+</ol>
+<p><strong>Use Cases:</strong></p>
+<ul>
+<li><strong>Restructuring Commit History:</strong> You can use <code>--onto</code> to move a series of commits from one branch to another, effectively restructuring the commit history.</li>
+<li><strong>Creating Feature Branches:</strong> If you started working on a feature branch from the wrong starting point, you can use <code>--onto</code> to rebase your changes onto the correct branch or commit.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>Suppose you have the following commit history:</p>
+<div class="highlight"><pre><span></span><code>          A -- B -- C (feature)
+         /
+... -- X -- Y -- Z (master)
+</code></pre></div>
+<p>To move commits <code>B</code> and <code>C</code> from the <code>feature</code> branch onto <code>master</code>, you can use:</p>
+<div class="highlight"><pre><span></span><code>git rebase --onto master feature~2 feature
+</code></pre></div>
+<p>After the rebase, the commit history would look like:</p>
+<div class="highlight"><pre><span></span><code>              B&#39; -- C&#39; (feature)
+             /
+... -- X -- Y -- Z -- A -- B -- C (master)
+</code></pre></div>
+<p>In this example, <code>B'</code> and <code>C'</code> represent the rebased commits on the <code>feature</code> branch, applied on top of the <code>master</code> branch. The original <code>B</code> and <code>C</code> commits are effectively moved onto the <code>master</code> branch.</p>
+<p><strong>Notes:</strong></p>
+<ul>
+<li>Always exercise caution when using <code>git rebase</code>, especially with <code>--onto</code>, as it rewrites commit history.</li>
+<li>Make sure you understand the implications of rebasing and its potential impact on collaboration and shared branches.</li>
+<li>Do not rebase commits that exist outside your repository and that people may have based work on. When you rebase stuff, you’re abandoning existing commits and creating new ones that are similar but different. If you push commits somewhere and others pull them down and base work on them, and then you rewrite those commits with git rebase and push them up again, your collaborators will have to re-merge their work and things will get messy when you try to pull their work back into yours.</li>
+</ul>
 
               
             </article>
