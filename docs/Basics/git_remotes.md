@@ -228,3 +228,23 @@ git branch -u origin/hotfix
 
 **Upstream shorthand**
 When you have a tracking branch set up, you can reference its upstream branch with the @{upstream} or @{u} shorthand. So if you’re on the master branch and it’s tracking origin/master, you can say something like `git merge @{u}` instead of `git merge origin/master` if you wish.
+
+## **Updating Remote Branches**
+
+**`git remote update origin --prune`**
+
+This command updates the local list of remote branches (`origin`) and prunes (removes) any remote-tracking branches that no longer exist on the remote repository.
+`git remote update` is equivalent to `git fetch`, but it updates all remote-tracking branches instead of just the default one. `--prune` ensures that any remote-tracking branches that have been deleted on the remote repository are also deleted locally.
+
+**`git fetch --prune`**
+
+This command fetches updates from the remote repository and prunes (removes) any remote-tracking branches that no longer exist on the remote repository. It's similar to `git remote update origin --prune`, but it only updates the default remote and its branches.
+
+**`git config remote.origin.prune true`**
+
+Setting this configuration option makes `--prune` automatic for `git fetch` when fetching from the `origin` remote.
+With this configuration, running `git fetch` will automatically prune stale remote branches from the local copy.
+
+**`git fetch --all --prune --tags --prune-tags --progress`**
+
+This command fetches updates from all remotes (`--all`) and prunes (removes) any remote-tracking branches and tags that no longer exist on their respective remotes. `--tags` ensures that tags are also fetched. `--prune-tags` prunes any local tags that no longer exist on the remote.  `--progress` displays progress information during the fetch operation.

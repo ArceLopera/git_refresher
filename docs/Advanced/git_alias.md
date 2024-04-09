@@ -132,6 +132,8 @@ alias gd='git diff'
 alias gds='git diff --staged'
 alias gsub='git submodule sync; git submodule update --init --recursive'
 alias gsreset='git submodule foreach --recursive git reset --hard'
+alias gf='git fetch --all --prune --tags --prune-tags --progress'
+alias gc='git commit'
 
 # Navigation aliases
 alias cdproj='cd ~/projects'
