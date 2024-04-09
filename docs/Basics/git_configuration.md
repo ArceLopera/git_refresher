@@ -31,6 +31,29 @@ After installing Git, the next step is to configure it with your user informatio
    ```bash
    git config --global core.editor "code --wait"
    ```
+   use VS Code's diff and merge capabilities even when using Git from command-line. Add the following to your Git configurations to use VS Code as the diff and merge tool:
+   ```bash
+   git config --global -e
+   ```
+and change the following:
+   ```bash
+   [diff]
+      tool = default-difftool
+   [difftool "default-difftool"]
+      cmd = code --wait --diff $LOCAL $REMOTE
+   [merge]
+      tool = code
+   [mergetool "code"]
+      cmd = code --wait --merge $REMOTE $LOCAL $BASE $MERGED
+   ```
+This uses the --diff option that can be passed to VS Code to compare two files side by side. The merge tool will be used the next time Git discovers a merge conflict.
+
+To summarize, here are some examples of where you can use VS Code as the editor:
+
+- `git rebase HEAD~3 -i` do interactive rebase using VS Code
+- `git commit` use VS Code for the commit message
+- `git add -p` followed by `e` for interactive add
+- `git difftool <commit>^ <commit>` use VS Code as the diff editor for changes
 
 ## 6. **Enable Color Output**
 Improve readability by enabling color output in the Git command line:
