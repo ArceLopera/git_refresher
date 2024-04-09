@@ -930,7 +930,28 @@
 <h2 id="5-configure-text-editor-optional">5. <strong>Configure Text Editor (Optional)</strong></h2>
 <p>Set your preferred text editor for Git. For example, to use VSCode:
    <div class="highlight"><pre><span></span><code>git config --global core.editor <span class="s2">&quot;code --wait&quot;</span>
-</code></pre></div></p>
+</code></pre></div>
+   use VS Code's diff and merge capabilities even when using Git from command-line. Add the following to your Git configurations to use VS Code as the diff and merge tool:
+   <div class="highlight"><pre><span></span><code>git config --global -e
+</code></pre></div>
+and change the following:
+   <div class="highlight"><pre><span></span><code><span class="o">[</span>diff<span class="o">]</span>
+   <span class="nv">tool</span> <span class="o">=</span> default-difftool
+<span class="o">[</span>difftool <span class="s2">&quot;default-difftool&quot;</span><span class="o">]</span>
+   <span class="nv">cmd</span> <span class="o">=</span> code --wait --diff <span class="nv">$LOCAL</span> <span class="nv">$REMOTE</span>
+<span class="o">[</span>merge<span class="o">]</span>
+   <span class="nv">tool</span> <span class="o">=</span> code
+<span class="o">[</span>mergetool <span class="s2">&quot;code&quot;</span><span class="o">]</span>
+   <span class="nv">cmd</span> <span class="o">=</span> code --wait --merge <span class="nv">$REMOTE</span> <span class="nv">$LOCAL</span> <span class="nv">$BASE</span> <span class="nv">$MERGED</span>
+</code></pre></div>
+This uses the --diff option that can be passed to VS Code to compare two files side by side. The merge tool will be used the next time Git discovers a merge conflict.</p>
+<p>To summarize, here are some examples of where you can use VS Code as the editor:</p>
+<ul>
+<li><code>git rebase HEAD~3 -i</code> do interactive rebase using VS Code</li>
+<li><code>git commit</code> use VS Code for the commit message</li>
+<li><code>git add -p</code> followed by <code>e</code> for interactive add</li>
+<li><code>git difftool &lt;commit&gt;^ &lt;commit&gt;</code> use VS Code as the diff editor for changes</li>
+</ul>
 <h2 id="6-enable-color-output">6. <strong>Enable Color Output</strong></h2>
 <p>Improve readability by enabling color output in the Git command line:</p>
 <p><div class="highlight"><pre><span></span><code>git config --global color.ui auto
