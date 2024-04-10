@@ -1231,12 +1231,14 @@ You will notice the info: Merge made by the 'recursive' strategy.  Git does a si
 </code></pre></div>
 <h3 id="merging-conflicts">Merging conflicts</h3>
 <p>If you changed the same part of the same file differently in the two branches you’re merging, Git won’t be able to merge them cleanly. In this case, you’ll see a merge conflict in the output, and Git will tell you which files you need to resolve the conflict with. Git hasn’t automatically created a new merge commit. It has paused the process while you resolve the conflict. If you want to see which files are unmerged at any point after a merge conflict, you can run git status.</p>
-<p>This resolution has a little of each section, and the &lt;&lt;&lt;&lt;&lt;&lt;&lt;, =======, and &gt;&gt;&gt;&gt;&gt;&gt;&gt; lines have been completely removed. After you’ve resolved each of these sections in each conflicted file, run git add on each file to mark it as resolved. Staging the file marks it as resolved in Git.</p>
-<p>If you want to use a graphical tool to resolve these issues, you can run git mergetool, which fires up an appropriate visual merge tool and walks you through the conflicts. After you exit the merge tool, Git asks you if the merge was successful. If you tell the script that it was, it stages the file to mark it as resolved for you. You can run git status again to verify that all conflicts have been resolved.
-If you’re happy with that, and you verify that everything that had conflicts has been staged, you can type git commit to finalize the merge commit. </p>
 <p><div class="highlight"><pre><span></span><code>git status
 </code></pre></div>
 Anything that has merge conflicts and hasn’t been resolved is listed as unmerged. Git adds standard conflict-resolution markers to the files that have conflicts, so you can open them manually and resolve those conflicts.</p>
+<p>Merge conflicts are recognized by VS Code. Differences are highlighted and there are inline actions to accept either one or both changes. These inline actions are shown in the editor at the top of the merge conflict. Once the conflicts are resolved, stage the conflicting file so you can commit those changes.</p>
+<p><img alt="" src="../../Images/merge-conflict.png" /></p>
+<p>This resolution of the merge conflict needs to be done in Git. The &lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;, =======, and &gt;&gt;&gt;&gt;&gt;&gt;&gt; lines need to be completely removed. After you’ve resolved each of these sections in each conflicted file, run git add on each file to mark it as resolved. Staging the file marks it as resolved in Git.</p>
+<p>If you want to use a graphical tool to resolve these issues, you can run git mergetool, which fires up an appropriate visual merge tool and walks you through the conflicts. After you exit the merge tool, Git asks you if the merge was successful. If you tell the script that it was, it stages the file to mark it as resolved for you. You can run git status again to verify that all conflicts have been resolved.
+If you’re happy with that, and you verify that everything that had conflicts has been staged, you can type git commit to finalize the merge commit. </p>
 <h2 id="branching-strategies"><strong>Branching Strategies</strong></h2>
 <p>Git encourages workflows that branch and merge often, even multiple times in a day. Understanding and mastering this feature gives you a powerful and unique tool and can entirely change the way that you develop. The way Git branches is incredibly lightweight, making branching operations nearly instantaneous, and switching back and forth between branches generally just as fast.</p>
 <ul>
@@ -1354,9 +1356,15 @@ git merge feature-branch
 <p>In this example, <code>B'</code> and <code>C'</code> represent the rebased commits on the <code>feature</code> branch, applied on top of the <code>master</code> branch. The original <code>B</code> and <code>C</code> commits are effectively moved onto the <code>master</code> branch.</p>
 <p><strong>Notes:</strong></p>
 <ul>
-<li>Always exercise caution when using <code>git rebase</code>, especially with <code>--onto</code>, as it rewrites commit history.</li>
-<li>Make sure you understand the implications of rebasing and its potential impact on collaboration and shared branches.</li>
-<li>Do not rebase commits that exist outside your repository and that people may have based work on. When you rebase stuff, you’re abandoning existing commits and creating new ones that are similar but different. If you push commits somewhere and others pull them down and base work on them, and then you rewrite those commits with git rebase and push them up again, your collaborators will have to re-merge their work and things will get messy when you try to pull their work back into yours.</li>
+<li>
+<p>Always exercise caution when using <code>git rebase</code>, especially with <code>--onto</code>, as it rewrites commit history.</p>
+</li>
+<li>
+<p>Make sure you understand the implications of rebasing and its potential impact on collaboration and shared branches.</p>
+</li>
+<li>
+<p>Do not rebase commits that exist outside your repository and that people may have based work on. When you rebase stuff, you’re abandoning existing commits and creating new ones that are similar but different. If you push commits somewhere and others pull them down and base work on them, and then you rewrite those commits with git rebase and push them up again, your collaborators will have to re-merge their work and things will get messy when you try to pull their work back into yours.</p>
+</li>
 </ul>
 
               
