@@ -205,19 +205,23 @@ git branch -d feature-branch
 
 ### Merging conflicts
 
- If you changed the same part of the same file differently in the two branches you’re merging, Git won’t be able to merge them cleanly. In this case, you’ll see a merge conflict in the output, and Git will tell you which files you need to resolve the conflict with. Git hasn’t automatically created a new merge commit. It has paused the process while you resolve the conflict. If you want to see which files are unmerged at any point after a merge conflict, you can run git status.
-
- This resolution has a little of each section, and the <<<<<<<, =======, and >>>>>>> lines have been completely removed. After you’ve resolved each of these sections in each conflicted file, run git add on each file to mark it as resolved. Staging the file marks it as resolved in Git.
-
- If you want to use a graphical tool to resolve these issues, you can run git mergetool, which fires up an appropriate visual merge tool and walks you through the conflicts. After you exit the merge tool, Git asks you if the merge was successful. If you tell the script that it was, it stages the file to mark it as resolved for you. You can run git status again to verify that all conflicts have been resolved.
-If you’re happy with that, and you verify that everything that had conflicts has been staged, you can type git commit to finalize the merge commit. 
-
-
+If you changed the same part of the same file differently in the two branches you’re merging, Git won’t be able to merge them cleanly. In this case, you’ll see a merge conflict in the output, and Git will tell you which files you need to resolve the conflict with. Git hasn’t automatically created a new merge commit. It has paused the process while you resolve the conflict. If you want to see which files are unmerged at any point after a merge conflict, you can run git status.
 
 ```bash
 git status
 ```
 Anything that has merge conflicts and hasn’t been resolved is listed as unmerged. Git adds standard conflict-resolution markers to the files that have conflicts, so you can open them manually and resolve those conflicts.
+
+Merge conflicts are recognized by VS Code. Differences are highlighted and there are inline actions to accept either one or both changes. These inline actions are shown in the editor at the top of the merge conflict. Once the conflicts are resolved, stage the conflicting file so you can commit those changes.
+
+![](../Images/merge-conflict.png)
+
+This resolution of the merge conflict needs to be done in Git. The <<<<<<<<<, =======, and >>>>>>> lines need to be completely removed. After you’ve resolved each of these sections in each conflicted file, run git add on each file to mark it as resolved. Staging the file marks it as resolved in Git.
+
+If you want to use a graphical tool to resolve these issues, you can run git mergetool, which fires up an appropriate visual merge tool and walks you through the conflicts. After you exit the merge tool, Git asks you if the merge was successful. If you tell the script that it was, it stages the file to mark it as resolved for you. You can run git status again to verify that all conflicts have been resolved.
+If you’re happy with that, and you verify that everything that had conflicts has been staged, you can type git commit to finalize the merge commit. 
+
+
 
 ## **Branching Strategies**
 
@@ -306,6 +310,7 @@ git merge feature-branch
 
 Rebasing makes for a cleaner history. If you examine the log of a rebased branch, it looks like a linear history: it appears that all the work happened in series, even when it originally happened in parallel.
 
+
 ### **--onto flag**
 
 The `--onto` flag in the `git rebase` command is used to specify a new base (or starting point) for the rebase operation. This flag allows you to reapply a series of commits onto a different branch or commit, effectively changing the parent of the commits being rebased.
@@ -362,5 +367,7 @@ In this example, `B'` and `C'` represent the rebased commits on the `feature` br
 **Notes:**
 
 - Always exercise caution when using `git rebase`, especially with `--onto`, as it rewrites commit history.
+
 - Make sure you understand the implications of rebasing and its potential impact on collaboration and shared branches.
+
 - Do not rebase commits that exist outside your repository and that people may have based work on. When you rebase stuff, you’re abandoning existing commits and creating new ones that are similar but different. If you push commits somewhere and others pull them down and base work on them, and then you rewrite those commits with git rebase and push them up again, your collaborators will have to re-merge their work and things will get messy when you try to pull their work back into yours.
