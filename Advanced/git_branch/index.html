@@ -688,6 +688,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#3-way-merge-editor" class="md-nav__link">
+    3-way merge editor
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1009,6 +1016,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#3-way-merge-editor" class="md-nav__link">
+    3-way merge editor
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1239,6 +1253,15 @@ Anything that has merge conflicts and hasn’t been resolved is listed as unmerg
 <p>This resolution of the merge conflict needs to be done in Git. The &lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;, =======, and &gt;&gt;&gt;&gt;&gt;&gt;&gt; lines need to be completely removed. After you’ve resolved each of these sections in each conflicted file, run git add on each file to mark it as resolved. Staging the file marks it as resolved in Git.</p>
 <p>If you want to use a graphical tool to resolve these issues, you can run git mergetool, which fires up an appropriate visual merge tool and walks you through the conflicts. After you exit the merge tool, Git asks you if the merge was successful. If you tell the script that it was, it stages the file to mark it as resolved for you. You can run git status again to verify that all conflicts have been resolved.
 If you’re happy with that, and you verify that everything that had conflicts has been staged, you can type git commit to finalize the merge commit. </p>
+<h3 id="3-way-merge-editor">3-way merge editor</h3>
+<p>To help you resolve merge conflicts, VS Code provides a 3-way merge editor where you can interactively accept incoming and current changes and view and edit the resulting merged file. The 3-way merge editor is opened by selecting the Resolve in Merge Editor button in the bottom right corner of a file with Git merge conflicts. The 3-way merge editor displays separate views for Incoming changes (on the left), Current changes (on the right), and the Result of the merge (at the bottom). Conflicts are highlighted and can be resolved by using the CodeLens buttons.</p>
+<p><img alt="" src="../../Images/merge-editor-overview.png" /></p>
+<p>The 3-way merge editor allows you to resolve conflicts by accepting either one or both changes. You can also manually edit the result of the merge.</p>
+<p>For some conflicts, the merge editor shows an Accept Combination button. Accepting the combination resolves the current conflict by smartly merging both changes. This is especially useful for changes in the same line that don't touch the same characters.</p>
+<p>Use the Ignore buttons to accept neither the incoming nor current change, but mark the conflict as resolved. This resets the conflicting area to the state before any changes were made.</p>
+<p>You can use the conflict counter in the right of the result editor to keep track of how many unresolved conflicts are remaining. Clicking on the counter jumps to the next unresolved conflict. Once all conflicts are resolved, you can complete the merge by selecting Complete Merge in the bottom right corner. This stages the file and closes the merge editor.</p>
+<p>Selecting the three dots (···) in the top right corner of the merge editor opens a context menu with additional options. You can switch to a vertical layout and display the base view, which shows the state of the file before any changes were made.</p>
+<p>The three dots next to Incoming, Current, and Result offer options for each view, such as showing a side-by-side diff against base, accepting all changes, or resetting the result.</p>
 <h2 id="branching-strategies"><strong>Branching Strategies</strong></h2>
 <p>Git encourages workflows that branch and merge often, even multiple times in a day. Understanding and mastering this feature gives you a powerful and unique tool and can entirely change the way that you develop. The way Git branches is incredibly lightweight, making branching operations nearly instantaneous, and switching back and forth between branches generally just as fast.</p>
 <ul>
