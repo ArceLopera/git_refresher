@@ -150,6 +150,7 @@ This command displays the changes that are currently staged for the next commit.
 #### git difftool
 The git difftool command simply launches an external tool to show you the difference between two trees in case you want to use something other than the built in git diff command.
 
+##### P4Merge
 For example, P4Merge is a visual diff and merge tool provided by Perforce. It offers a user-friendly interface for comparing and merging files and directories, making it a popular choice among developers and teams working with version control systems like Git.
 
 Here are some key features of P4Merge:
@@ -163,6 +164,16 @@ Here are some key features of P4Merge:
 4. **Folder Diff:** P4Merge can compare entire directories, displaying side-by-side comparisons of files within the folders. This feature is useful for understanding the overall differences between two directory structures and identifying missing or added files.
 
 5. **Customizable Settings:** Users can customize various aspects of P4Merge, such as colors, fonts, and keyboard shortcuts, to tailor the tool to their preferences and workflow.
+
+##### VS Code
+
+The git difftool command can be used with VS Code's diff and merge capabilities. The Diff editor has a separate gutter in the middle, which enables you to Stage or Revert changes code blocks. If you select a block of text, you can revert or stage the changes that are included in the selection.
+
+You can diff any two files by first right clicking on a file in the Explorer or OPEN EDITORS list and selecting Select for Compare and then right-click on the second file to compare with and select Compare with 'file_name_you_chose'. Alternatively from the keyboard hit Ctrl+Shift+P and select File: Compare Active File With and you will be presented with a list of recent files.
+
+![](../Images/diffEditor.gif)
+
+There is an Accessible Diff Viewer in the Diff editor that presents changes in a unified patch format. You can navigate between changes with Go to Next Difference (F7) and Go to Previous Difference (Shift+F7). Lines can be navigated with arrow keys and pressing Enter will jump back in the Diff editor and the selected line. This experience is especially helpful for screen reader users.
 
 
 ### git commit 
