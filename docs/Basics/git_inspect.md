@@ -36,6 +36,14 @@ Shows the status of the working directory and staging area.
   ```
  Compare changes between different branches.
 
+### Timeline view
+
+The Timeline view, accessible at the bottom of the File Explorer by default, is a unified view for visualizing time-series events (for example, Git commits) for a file.
+
+![](../Images/timeline-view.png)
+
+VS Code's built-in Git support provides the Git commit history of the specified file. Selecting a commit will open a diff view of the changes introduced by that commit. When you right-click on a commit, you'll get options to Copy Commit ID and Copy Commit Message.
+
 ## **git log**
 
  Displays the commit history.
