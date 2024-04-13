@@ -473,6 +473,19 @@
     5. Configure Text Editor (Optional)
   </a>
   
+    <nav class="md-nav" aria-label="5. Configure Text Editor (Optional)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#git-output-window" class="md-nav__link">
+    Git output window
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -860,6 +873,19 @@
     5. Configure Text Editor (Optional)
   </a>
   
+    <nav class="md-nav" aria-label="5. Configure Text Editor (Optional)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#git-output-window" class="md-nav__link">
+    Git output window
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -928,6 +954,7 @@
    <div class="highlight"><pre><span></span><code>git config --global core.autocrlf <span class="nb">true</span>
 </code></pre></div></p>
 <h2 id="5-configure-text-editor-optional">5. <strong>Configure Text Editor (Optional)</strong></h2>
+<p>When you launch VS Code from the command line, you can pass the --wait argument to make the launch command wait until you have closed the new VS Code instance. This can be useful when you configure VS Code as your Git external editor so Git will wait until you close the launched VS Code instance.</p>
 <p>Set your preferred text editor for Git. For example, to use VSCode:
    <div class="highlight"><pre><span></span><code>git config --global core.editor <span class="s2">&quot;code --wait&quot;</span>
 </code></pre></div>
@@ -952,6 +979,9 @@ This uses the --diff option that can be passed to VS Code to compare two files s
 <li><code>git add -p</code> followed by <code>e</code> for interactive add</li>
 <li><code>git difftool &lt;commit&gt;^ &lt;commit&gt;</code> use VS Code as the diff editor for changes</li>
 </ul>
+<h3 id="git-output-window">Git output window</h3>
+<p>You can always peek under the hood to see the Git commands that are being run. This is helpful if something strange is happening or if you are just curious.</p>
+<p>To open the Git output window, run View &gt; Output and select Log (Git) from the dropdown list.</p>
 <h2 id="6-enable-color-output">6. <strong>Enable Color Output</strong></h2>
 <p>Improve readability by enabling color output in the Git command line:</p>
 <p><div class="highlight"><pre><span></span><code>git config --global color.ui auto

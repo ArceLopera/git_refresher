@@ -174,6 +174,14 @@ Using `git init --separate-git-dir=<git_dir>` provides flexibility in managing y
      ```bash
      git init --quiet
      ```
+
+### Using VSCode
+If your workspace is on your local machine, you can enable Git source control by creating a Git repository with the Initialize Repository command. When VS Code doesn't detect an existing Git repository, the Source Control view will give you the options to Initialize Repository or Publish to GitHub.
+
+![](../Images/initialize-repository.png)
+
+You can also run the Git: Initialize Repository and Publish to GitHub commands from the Command Palette (Ctrl+Shift+P). Running Initialize Repository will create the necessary Git repository metadata files and show your workspace files as untracked changes ready to be staged. Publish to GitHub will directly publish your workspace folder to a GitHub repository, allowing you to choose between private and public repositories.
+
 ## Clone an existing Git Repository
 
 The `git clone` command is used to create a copy of a remote Git repository. It copies the entire repository, including the commit history, branches, and files, to your local machine. Here's a detailed explanation of the `git clone` command along with some commonly used flags and options:

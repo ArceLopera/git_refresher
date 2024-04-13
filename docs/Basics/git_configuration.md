@@ -27,6 +27,9 @@ After installing Git, the next step is to configure it with your user informatio
    ```
 
 ## 5. **Configure Text Editor (Optional)**
+   
+   When you launch VS Code from the command line, you can pass the --wait argument to make the launch command wait until you have closed the new VS Code instance. This can be useful when you configure VS Code as your Git external editor so Git will wait until you close the launched VS Code instance.
+
    Set your preferred text editor for Git. For example, to use VSCode:
    ```bash
    git config --global core.editor "code --wait"
@@ -54,6 +57,11 @@ To summarize, here are some examples of where you can use VS Code as the editor:
 - `git commit` use VS Code for the commit message
 - `git add -p` followed by `e` for interactive add
 - `git difftool <commit>^ <commit>` use VS Code as the diff editor for changes
+
+### Git output window
+You can always peek under the hood to see the Git commands that are being run. This is helpful if something strange is happening or if you are just curious.
+
+To open the Git output window, run View > Output and select Log (Git) from the dropdown list.
 
 ## 6. **Enable Color Output**
 Improve readability by enabling color output in the Git command line:
