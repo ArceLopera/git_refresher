@@ -6,9 +6,9 @@ Whether you're a seasoned developer or a code maintainer, this repository is des
 
 |                  Basic Topics                  |         Advanced Topics          |         Github Topics         |
 | :--------------------------------------------- | :------------------------------- | :---------------------------- |
-| [Configuration](Basics/git_configuration.md)   | [Aliases](Advanced/git_alias.md) |  |
+| [Configuration](Basics/git_configuration.md)   | [Aliases](Advanced/git_alias.md) |  [SSH Keys](Github/git_ssh.md) |
 | [Starting a Project](Basics/git_start.md)      | [Tagging](Advanced/git_tagging.md) |                               |
-| [Staging Changes](Basics/git_stage.md)         | [Branches](Advanced/git_branch.md) | [SSH Keys](Github/git_ssh.md)  |
+| [Staging Changes](Basics/git_stage.md)         | [Branches](Advanced/git_branch.md) |   |
 | [Undoing Changes](Basics/git_undoingthings.md) | [Patching](Advanced/git_patches.md) |                               |
 | [Remotes](Basics/git_remotes.md)               | [Ignoring Files](Advanced/git_ignore.md)  |                               |
 | [Inspect & Compare](Basics/git_inspect.md)     | [Temporary Commits](Advanced/git_stash.md)   |                               |
