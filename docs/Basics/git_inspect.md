@@ -9,6 +9,19 @@ Shows the status of the working directory and staging area.
   ```
  Quickly check which files are modified, staged, or untracked.
 
+In VS Code, selecting a file in the Source Control panel will open a diff view of the changes introduced by that file. There is a Synchronize Changes action in the Status Bar, next to the branch indicator, when the current checked out branch has an upstream branch configured. Synchronize Changes will pull remote changes down to your local repository and then push local commits to the upstream branch. If there is no upstream branch configured and the Git repository has remotes set up, the Publish action is enabled. This will let you publish the current branch to a remote.
+
+### Gutter indicators
+
+If you open a folder that is a Git repository and begin making changes, VS Code will add useful annotations to the gutter and to the overview ruler.
+
++ A red triangle indicates where lines have been deleted
++ A green bar indicates new added lines
++ A blue bar indicates modified lines
+
+![](../Images/gutter.png)
+
+
 ## **git diff**
 
  Displays the differences between changes in the working directory and the staging area.
