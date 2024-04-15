@@ -520,6 +520,19 @@
     git status
   </a>
   
+    <nav class="md-nav" aria-label="git status">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gutter-indicators" class="md-nav__link">
+    Gutter indicators
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -897,6 +910,19 @@
     git status
   </a>
   
+    <nav class="md-nav" aria-label="git status">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gutter-indicators" class="md-nav__link">
+    Gutter indicators
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1044,6 +1070,15 @@
 <p><div class="highlight"><pre><span></span><code>git status
 </code></pre></div>
  Quickly check which files are modified, staged, or untracked.</p>
+<p>In VS Code, selecting a file in the Source Control panel will open a diff view of the changes introduced by that file. There is a Synchronize Changes action in the Status Bar, next to the branch indicator, when the current checked out branch has an upstream branch configured. Synchronize Changes will pull remote changes down to your local repository and then push local commits to the upstream branch. If there is no upstream branch configured and the Git repository has remotes set up, the Publish action is enabled. This will let you publish the current branch to a remote.</p>
+<h3 id="gutter-indicators">Gutter indicators</h3>
+<p>If you open a folder that is a Git repository and begin making changes, VS Code will add useful annotations to the gutter and to the overview ruler.</p>
+<ul>
+<li>A red triangle indicates where lines have been deleted</li>
+<li>A green bar indicates new added lines</li>
+<li>A blue bar indicates modified lines</li>
+</ul>
+<p><img alt="" src="../../Images/gutter.png" /></p>
 <h2 id="git-diff"><strong>git diff</strong></h2>
 <p>Displays the differences between changes in the working directory and the staging area.</p>
 <p><div class="highlight"><pre><span></span><code>git diff
