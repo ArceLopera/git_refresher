@@ -110,5 +110,6 @@ nav:
      - Interactive Staging: Advanced/git_interactivestaging.md
      - CherryPicking: Advanced/git_cherry.md
      - Checkout: Advanced/git_checkout.md
-  - Github:
-     - Adding SSH Keys: Github/git_ssh.md 
+  - More:
+     - Adding SSH Keys to Github: Github/git_ssh.md
+     - Plumbing Tools: More/plumbing.md 
