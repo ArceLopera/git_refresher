@@ -12,21 +12,21 @@
         <meta name="author" content="ArceLopera">
       
       
-        <link rel="canonical" href="https://arcelopera.github.io/git_refresher/git_refresh/">
+        <link rel="canonical" href="https://arcelopera.github.io/git_refresher/More/plumbing/">
       
-      <link rel="icon" href="../Images/git.ico">
+      <link rel="icon" href="../../Images/git.ico">
       <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.15">
     
     
       
-        <title>Git - Git Refresher</title>
+        <title>Plumbing Tools - Git Refresher</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.c382b1dc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.c382b1dc.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.cc9b2e1e.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cc9b2e1e.min.css">
         
       
     
@@ -41,7 +41,7 @@
       
     
     
-    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#key-concepts" class="md-skip">
+        <a href="#git-rev-parse" class="md-skip">
           Skip to content
         </a>
       
@@ -83,9 +83,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Git Refresher" class="md-header__button md-logo" aria-label="Git Refresher" data-md-component="logo">
+    <a href="../.." title="Git Refresher" class="md-header__button md-logo" aria-label="Git Refresher" data-md-component="logo">
       
-  <img src="../Images/git.svg" alt="logo">
+  <img src="../../Images/git.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Git
+              Plumbing Tools
             
           </span>
         </div>
@@ -198,7 +198,7 @@
 
 
   <li class="md-tabs__item">
-    <a href=".." class="md-tabs__link">
+    <a href="../.." class="md-tabs__link">
       Home
     </a>
   </li>
@@ -206,8 +206,6 @@
       
         
   
-  
-    
   
 
 
@@ -220,7 +218,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="./" class="md-tabs__link md-tabs__link--active">
+      <a href="../../git_refresh/" class="md-tabs__link">
         Basics
       </a>
     </li>
@@ -238,7 +236,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../Advanced/git_alias/" class="md-tabs__link">
+      <a href="../../Advanced/git_alias/" class="md-tabs__link">
         Advanced
       </a>
     </li>
@@ -248,13 +246,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../Github/git_ssh/" class="md-tabs__link">
+      <a href="../../Github/git_ssh/" class="md-tabs__link md-tabs__link--active">
         More
       </a>
     </li>
@@ -282,9 +282,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Git Refresher" class="md-nav__button md-logo" aria-label="Git Refresher" data-md-component="logo">
+    <a href="../.." title="Git Refresher" class="md-nav__button md-logo" aria-label="Git Refresher" data-md-component="logo">
       
-  <img src="../Images/git.svg" alt="logo">
+  <img src="../../Images/git.svg" alt="logo">
 
     </a>
     Git Refresher
@@ -312,7 +312,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         Home
       </a>
     </li>
@@ -325,14 +325,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" data-md-state="indeterminate" type="checkbox" id="__nav_2" checked>
       
       
       
@@ -353,14 +351,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" data-md-state="indeterminate" type="checkbox" id="__nav_2_1" checked>
       
       
       
@@ -381,55 +377,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Git
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../git_refresh/" class="md-nav__link">
         Git
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#key-concepts" class="md-nav__link">
-    Key Concepts
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#importance-of-git" class="md-nav__link">
-    Importance of Git
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -441,7 +393,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Basics/git_install/" class="md-nav__link">
+      <a href="../../Basics/git_install/" class="md-nav__link">
         Installing Git
       </a>
     </li>
@@ -455,7 +407,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Basics/git_configuration/" class="md-nav__link">
+      <a href="../../Basics/git_configuration/" class="md-nav__link">
         Configuring Git
       </a>
     </li>
@@ -476,7 +428,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Basics/git_start/" class="md-nav__link">
+      <a href="../../Basics/git_start/" class="md-nav__link">
         Starting a Project
       </a>
     </li>
@@ -490,7 +442,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Basics/git_stage/" class="md-nav__link">
+      <a href="../../Basics/git_stage/" class="md-nav__link">
         Snapshotting
       </a>
     </li>
@@ -504,7 +456,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Basics/git_undoingthings/" class="md-nav__link">
+      <a href="../../Basics/git_undoingthings/" class="md-nav__link">
         Undoing Things
       </a>
     </li>
@@ -518,7 +470,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Basics/git_remotes/" class="md-nav__link">
+      <a href="../../Basics/git_remotes/" class="md-nav__link">
         Remotes
       </a>
     </li>
@@ -532,7 +484,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Basics/git_inspect/" class="md-nav__link">
+      <a href="../../Basics/git_inspect/" class="md-nav__link">
         Inspect & Compare
       </a>
     </li>
@@ -580,7 +532,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Advanced/git_alias/" class="md-nav__link">
+      <a href="../../Advanced/git_alias/" class="md-nav__link">
         Aliases
       </a>
     </li>
@@ -594,7 +546,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Advanced/git_tagging/" class="md-nav__link">
+      <a href="../../Advanced/git_tagging/" class="md-nav__link">
         Tagging
       </a>
     </li>
@@ -608,7 +560,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Advanced/git_branch/" class="md-nav__link">
+      <a href="../../Advanced/git_branch/" class="md-nav__link">
         Branching
       </a>
     </li>
@@ -622,7 +574,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Advanced/git_patches/" class="md-nav__link">
+      <a href="../../Advanced/git_patches/" class="md-nav__link">
         Patching
       </a>
     </li>
@@ -636,7 +588,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Advanced/git_ignore/" class="md-nav__link">
+      <a href="../../Advanced/git_ignore/" class="md-nav__link">
         Ignoring Files
       </a>
     </li>
@@ -650,7 +602,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Advanced/git_stash/" class="md-nav__link">
+      <a href="../../Advanced/git_stash/" class="md-nav__link">
         Temporary Commits
       </a>
     </li>
@@ -664,7 +616,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Advanced/git_interactivestaging/" class="md-nav__link">
+      <a href="../../Advanced/git_interactivestaging/" class="md-nav__link">
         Interactive Staging
       </a>
     </li>
@@ -678,7 +630,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Advanced/git_cherry/" class="md-nav__link">
+      <a href="../../Advanced/git_cherry/" class="md-nav__link">
         CherryPicking
       </a>
     </li>
@@ -692,7 +644,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Advanced/git_checkout/" class="md-nav__link">
+      <a href="../../Advanced/git_checkout/" class="md-nav__link">
         Checkout
       </a>
     </li>
@@ -712,12 +664,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" data-md-state="indeterminate" type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
       
       
       
@@ -740,7 +694,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Github/git_ssh/" class="md-nav__link">
+      <a href="../../Github/git_ssh/" class="md-nav__link">
         Adding SSH Keys to Github
       </a>
     </li>
@@ -752,11 +706,90 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../More/plumbing/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Plumbing Tools
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Plumbing Tools
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#git-rev-parse" class="md-nav__link">
+    git rev-parse
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git-reflog" class="md-nav__link">
+    git reflog
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git-cat-file" class="md-nav__link">
+    git cat-file
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git-hash-object" class="md-nav__link">
+    git hash-object
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git-ls-tree" class="md-nav__link">
+    git ls-tree
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git-update-ref" class="md-nav__link">
+    git update-ref
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git-commit-tree" class="md-nav__link">
+    git commit-tree
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -793,15 +826,50 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#key-concepts" class="md-nav__link">
-    Key Concepts
+  <a href="#git-rev-parse" class="md-nav__link">
+    git rev-parse
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#importance-of-git" class="md-nav__link">
-    Importance of Git
+  <a href="#git-reflog" class="md-nav__link">
+    git reflog
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git-cat-file" class="md-nav__link">
+    git cat-file
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git-hash-object" class="md-nav__link">
+    git hash-object
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git-ls-tree" class="md-nav__link">
+    git ls-tree
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git-update-ref" class="md-nav__link">
+    git update-ref
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git-commit-tree" class="md-nav__link">
+    git commit-tree
   </a>
   
 </li>
@@ -820,56 +888,45 @@
                 
 
 
-  <h1>Git</h1>
+  <h1>Plumbing Tools</h1>
 
-<p>Git is a distributed version control system (VCS) designed to track changes in source code during software development. It was created by Linus Torvalds in 2005 and has become the de facto standard for version control in the software development industry.</p>
-<h2 id="key-concepts"><strong>Key Concepts</strong></h2>
-<ol>
-<li>
-<p><strong>Version Control:</strong>
-   Git allows developers to track changes made to their codebase over time. This includes recording who made the changes, what changes were made, and when the changes occurred.</p>
-</li>
-<li>
-<p><strong>Distributed System:</strong>
-   Git is decentralized, meaning that each developer has a complete copy of the entire project history on their local machine. This allows for flexibility in development and collaboration.</p>
-</li>
-<li>
-<p><strong>Branching:</strong>
-   Git excels at branching, enabling developers to work on multiple independent features or bug fixes simultaneously. Branches can be created, merged, and deleted without affecting the main codebase until changes are ready to be integrated.</p>
-</li>
-<li>
-<p><strong>Collaboration:</strong>
-   Git facilitates collaboration among developers. Multiple contributors can work on the same project simultaneously without interfering with each other's work. Changes are merged together seamlessly.</p>
-</li>
-<li>
-<p><strong>History and Accountability</strong>
-   Git maintains a detailed history of all changes made to a project. This history provides accountability by attributing each change to a specific user, making it easy to trace the evolution of the codebase.</p>
-</li>
-</ol>
-<h2 id="importance-of-git"><strong>Importance of Git</strong></h2>
-<ol>
-<li>
-<p><strong>Collaboration:</strong>
-   Git enables efficient collaboration among developers working on the same project. It allows multiple team members to contribute simultaneously, track changes, and merge their work seamlessly.</p>
-</li>
-<li>
-<p><strong>Versioning:</strong>
-   Git provides a reliable versioning system, allowing developers to track changes over time. This is crucial for understanding the evolution of a project, reverting to previous states, and identifying when and by whom specific changes were made.</p>
-</li>
-<li>
-<p><strong>Branching and Experimentation</strong>
-   Git's branching model allows developers to experiment with new features or bug fixes in isolation. This promotes a more organized and controlled development process, with the ability to merge changes into the main codebase when they are ready.</p>
-</li>
-<li>
-<p><strong>Fault Tolerance:</strong>
-   The distributed nature of Git ensures that each developer has a complete copy of the repository. This redundancy minimizes the risk of data loss and provides a safety net in case of system failures.</p>
-</li>
-<li>
-<p><strong>Open Source Ecosystem:</strong>
-   Git is the foundation for many open-source projects and contributes to the collaborative nature of the software development community. Platforms like GitHub, GitLab, and Bitbucket leverage Git to host and manage repositories, fostering a rich ecosystem of shared code.</p>
-</li>
-</ol>
-<p>In summary, Git is important because it enhances collaboration, provides effective version control, and empowers developers to work efficiently and reliably on software projects of any scale.</p>
+<p>Plumbing tools in Git are low-level commands that interact directly with the Git repository's internal data structures, providing access to detailed information about commits, branches, and other objects. They are primarily used for scripting, automation, or accessing detailed repository information that may not be readily available with porcelain commands (higher-level commands). They provide direct access to the Git object database and are essential for building more complex Git workflows and tools.</p>
+<h2 id="git-rev-parse"><strong><code>git rev-parse</code></strong></h2>
+<p>This command is used to parse Git references such as branch names, commit hashes, tags, and symbolic references into commit identifiers or other meaningful information.
+It can be used to retrieve the SHA-1 hash of commits, tags, and other Git objects, or to resolve symbolic references like branch names to their corresponding commit hashes.</p>
+<div class="highlight"><pre><span></span><code>git rev-parse HEAD         <span class="c1"># Get the commit hash of the current HEAD</span>
+git rev-parse main         <span class="c1"># Get the commit hash of the &#39;main&#39; branch</span>
+git rev-parse v1.0         <span class="c1"># Get the commit hash of the tag &#39;v1.0&#39;</span>
+</code></pre></div>
+<h2 id="git-reflog"><strong><code>git reflog</code></strong></h2>
+<p>This command displays the commit history of the local repository's HEAD reference, showing a chronological list of all recent HEAD movements and associated commit identifiers.
+It's useful for recovering lost commits or understanding changes to the repository's history, especially after potentially destructive operations like rebasing or resetting.</p>
+<div class="highlight"><pre><span></span><code>git reflog                <span class="c1"># Show the reflog for the current branch</span>
+git reflog main           <span class="c1"># Show the reflog for the &#39;main&#39; branch</span>
+</code></pre></div>
+<h2 id="git-cat-file"><strong><code>git cat-file</code></strong></h2>
+<p>This command provides various information about Git objects (commits, trees, tags, or blobs).
+It can be used to display the contents, type, size, or even raw data of a specific Git object.</p>
+<div class="highlight"><pre><span></span><code>git cat-file -p HEAD      <span class="c1"># Show the contents of the commit pointed to by HEAD</span>
+git cat-file -t v1.0      <span class="c1"># Show the type of the tag &#39;v1.0&#39;</span>
+</code></pre></div>
+<h2 id="git-hash-object"><strong><code>git hash-object</code></strong></h2>
+<p>This command computes the SHA-1 hash of a given file or data and optionally stores it in the Git object database. It's commonly used for hashing file contents before storing them as Git objects or verifying data integrity.</p>
+<div class="highlight"><pre><span></span><code>git hash-object file.txt  <span class="c1"># Compute the SHA-1 hash of &#39;file.txt&#39;</span>
+</code></pre></div>
+<h2 id="git-ls-tree"><strong><code>git ls-tree</code></strong></h2>
+<p>This command lists the contents of a tree object (directory) in the Git object database.
+It can be used to view the files and subdirectories stored within a specific tree object.</p>
+<div class="highlight"><pre><span></span><code>git ls-tree HEAD          <span class="c1"># List the contents of the commit pointed to by HEAD</span>
+</code></pre></div>
+<h2 id="git-update-ref"><strong><code>git update-ref</code></strong></h2>
+<p>This command allows you to update the references in the Git repository, such as branches or tags, directly. It's commonly used for advanced Git operations or scripting workflows that involve manipulating references.</p>
+<div class="highlight"><pre><span></span><code>git update-ref refs/heads/main &lt;commit&gt;  <span class="c1"># Update the &#39;main&#39; branch to point to a specific commit</span>
+</code></pre></div>
+<h2 id="git-commit-tree"><strong><code>git commit-tree</code></strong></h2>
+<p>This command creates a new commit object based on the provided tree object and parent commit(s) and optionally stores it in the Git object database.It's typically used in advanced Git workflows or scripting scenarios where manual creation of commits is necessary.</p>
+<div class="highlight"><pre><span></span><code>git commit-tree &lt;tree&gt; -p &lt;parent&gt; -m <span class="s2">&quot;Commit message&quot;</span>  <span class="c1"># Create a new commit object with the given tree and parent commit</span>
+</code></pre></div>
 
               
             </article>
@@ -883,7 +940,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href=".." class="md-footer__link md-footer__link--prev" aria-label="Previous: Home" rel="prev">
+        <a href="../../Github/git_ssh/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Adding SSH Keys to Github" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -892,26 +949,11 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Home
+              Adding SSH Keys to Github
             </div>
           </div>
         </a>
       
-      
-        
-        <a href="../Basics/git_install/" class="md-footer__link md-footer__link--next" aria-label="Next: Installing Git" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Installing Git
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
       
     </nav>
   
@@ -985,10 +1027,10 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.expand"], "search": "../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.expand"], "search": "../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.a6c66575.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a6c66575.min.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/tablesort/5.2.1/tablesort.min.js"></script>
       
