@@ -95,6 +95,84 @@ This can also be written HEAD~~, which again is the first parent of the first pa
 
 You can also combine these syntaxes — you can get the second parent of the previous reference (assuming it was a merge commit) by using HEAD~3^2, and so on.
 
+## Commit Ranges
+
+This is particularly useful for managing your branches — if you have a lot of branches, you can use range specifications to answer questions such as, “What work is on this branch that I haven’t yet merged into my main branch?”
+
+### Double Dot
+
+The most common range specification is the double-dot syntax. This basically asks Git to resolve a range of commits that are reachable from one commit but aren’t reachable from another.
+
+![](../Images/ranges.png)
+
+Say you want to see what is in your experiment branch that hasn’t yet been merged into your master branch. You can ask Git to show you a log of just those commits with master..experiment — that means “all commits reachable from experiment that aren’t reachable from master.”
+
+```bash
+git log master..experiment
+```
+```
+ty29a
+fe56a
+```
+
+If, on the other hand, you want to see the opposite — all commits in master that aren’t in experiment — you can reverse the branch names. experiment..master shows you everything in master not reachable from experiment:
+
+```bash
+git log experiment..master
+```
+```
+tr54a
+d45a6
+```
+This is useful if you want to keep the experiment branch up to date and preview what you’re about to merge. Another frequent use of this syntax is to see what you’re about to push to a remote:
+
+```bash
+git log origin/master..HEAD
+```
+
+This command shows you any commits in your current branch that aren’t in the master branch on your origin remote. If you run a git push and your current branch is tracking origin/master, the commits listed by git log origin/master..HEAD are the commits that will be transferred to the server. You can also leave off one side of the syntax to have Git assume HEAD. For example, you can get the same results as in the previous example by typing git log origin/master.. — Git substitutes HEAD if one side is missing.
+
+### Multiple Points
+The double-dot syntax is useful as a shorthand, but perhaps you want to specify more than two branches to indicate your revision, such as seeing what commits are in any of several branches that aren’t in the branch you’re currently on. Git allows you to do this by using either the ^ character or --not before any reference from which you don’t want to see reachable commits. Thus, the following three commands are equivalent:
+
+```bash
+git log refA..refB
+git log ^refA refB
+git log refB --not refA
+```
+This is nice because with this syntax you can specify more than two references in your query, which you cannot do with the double-dot syntax. For instance, if you want to see all commits that are reachable from refA or refB but not from refC, you can use either of:
+
+```bash
+git log refA refB ^refC
+git log refA refB --not refC
+```
+This makes for a very powerful revision query system that should help you figure out what is in your branches.
+
+
+
+### Triple Dot
+The last major range-selection syntax is the triple-dot syntax, which specifies all the commits that are reachable by either of two references but not by both of them.
+
+ If you want to see what is in master or experiment but not any common references, you can run:
+
+```bash
+git log master...experiment
+```
+Again, this gives you normal log output but shows you only the commit information for those four commits, appearing in the traditional commit date ordering.
+
+A common switch to use with the log command in this case is --left-right, which shows you which side of the range each commit is in. 
+
+
+```bash
+git log --left-right master...experiment
+```
+```
+< tr54a
+< d45a6
+> ty29a
+> fe56a
+```
+With these tools, you can much more easily let Git know what commit or commits you want to inspect.
 
 ## **`git cat-file`**
 
