@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#1-start-interactive-staging" class="md-skip">
+        <a href="#start-interactive-staging" class="md-skip">
           Skip to content
         </a>
       
@@ -648,71 +648,57 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-start-interactive-staging" class="md-nav__link">
-    1. Start Interactive Staging
+  <a href="#start-interactive-staging" class="md-nav__link">
+    Start Interactive Staging
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-select-staging-mode" class="md-nav__link">
-    2. Select Staging Mode
+  <a href="#staging-modes" class="md-nav__link">
+    Staging Modes
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-review-and-select-changes" class="md-nav__link">
-    3. Review and Select Changes
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-stage-changes" class="md-nav__link">
-    4. Stage Changes
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example" class="md-nav__link">
-    Example:
-  </a>
-  
-    <nav class="md-nav" aria-label="Example:">
+    <nav class="md-nav" aria-label="Staging Modes">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#interactive-staging-with-status-mode" class="md-nav__link">
-    Interactive Staging with status Mode
+  <a href="#update-mode-to-stage-changes" class="md-nav__link">
+    Update Mode to Stage Changes
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#interactive-staging-with-update-mode" class="md-nav__link">
-    Interactive Staging with update Mode:
+  <a href="#unstaging-changes-with-revert-mode" class="md-nav__link">
+    Unstaging Changes with Revert Mode
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#interactive-staging-with-patch-mode" class="md-nav__link">
-    Interactive Staging with patch Mode:
+  <a href="#status-mode" class="md-nav__link">
+    Status Mode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diff-changes" class="md-nav__link">
+    Diff Changes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#staging-patches" class="md-nav__link">
+    Staging Patches
   </a>
   
 </li>
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
-    Summary:
-  </a>
   
 </li>
       
@@ -846,71 +832,57 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-start-interactive-staging" class="md-nav__link">
-    1. Start Interactive Staging
+  <a href="#start-interactive-staging" class="md-nav__link">
+    Start Interactive Staging
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-select-staging-mode" class="md-nav__link">
-    2. Select Staging Mode
+  <a href="#staging-modes" class="md-nav__link">
+    Staging Modes
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-review-and-select-changes" class="md-nav__link">
-    3. Review and Select Changes
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-stage-changes" class="md-nav__link">
-    4. Stage Changes
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example" class="md-nav__link">
-    Example:
-  </a>
-  
-    <nav class="md-nav" aria-label="Example:">
+    <nav class="md-nav" aria-label="Staging Modes">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#interactive-staging-with-status-mode" class="md-nav__link">
-    Interactive Staging with status Mode
+  <a href="#update-mode-to-stage-changes" class="md-nav__link">
+    Update Mode to Stage Changes
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#interactive-staging-with-update-mode" class="md-nav__link">
-    Interactive Staging with update Mode:
+  <a href="#unstaging-changes-with-revert-mode" class="md-nav__link">
+    Unstaging Changes with Revert Mode
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#interactive-staging-with-patch-mode" class="md-nav__link">
-    Interactive Staging with patch Mode:
+  <a href="#status-mode" class="md-nav__link">
+    Status Mode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diff-changes" class="md-nav__link">
+    Diff Changes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#staging-patches" class="md-nav__link">
+    Staging Patches
   </a>
   
 </li>
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
-    Summary:
-  </a>
   
 </li>
       
@@ -931,91 +903,145 @@
   <h1>Interactive Staging</h1>
 
 <p><a href="https://git-scm.com/book/en/v2/Git-Tools-Interactive-Staging">Interactive staging</a>, also known as interactive mode or interactive patching, is a feature in Git that allows you to selectively stage changes from your working directory for a commit, offering more control over the staging process. It's particularly useful when you have made several changes in a single file or across multiple files and want to stage them selectively instead of committing all changes at once. </p>
-<h3 id="1-start-interactive-staging">1. <strong>Start Interactive Staging</strong></h3>
+<h3 id="start-interactive-staging"><strong>Start Interactive Staging</strong></h3>
 <p>To start interactive staging, use the <code>git add -i</code> or <code>git add --interactive</code> command followed by the name of the file or directory you want to stage changes from.</p>
-<div class="highlight"><pre><span></span><code>git add -i myfile.txt
+<p><div class="highlight"><pre><span></span><code>git add -i myfile.txt
 </code></pre></div>
-<h3 id="2-select-staging-mode">2. <strong>Select Staging Mode</strong></h3>
-<p>Git will prompt you to choose the staging mode. Common options include:</p>
-<ul>
-<li><strong><code>status</code></strong>: Interactively stage changes from the current status of the repository.</li>
-<li><strong><code>patch</code></strong>: Interactively stage changes file by file, allowing you to review and select changes within each file.</li>
-<li><strong><code>update</code></strong>: Interactively stage changes from tracked files that have been modified or deleted.</li>
-</ul>
-<p>Choose the appropriate mode by entering its corresponding number or letter.</p>
-<h3 id="3-review-and-select-changes">3. <strong>Review and Select Changes</strong></h3>
-<p>Once in interactive staging mode, Git will display a list of changes to review. For each change, Git will prompt you with options to stage, skip, or split the change into smaller parts.</p>
-<ul>
-<li><strong><code>y</code></strong>: Stage the change.</li>
-<li><strong><code>n</code></strong>: Skip the change.</li>
-<li><strong><code>s</code></strong>: Split the change into smaller parts for finer-grained staging.</li>
-<li><strong><code>q</code></strong>: Quit interactive staging.</li>
-</ul>
-<p>Choose the appropriate action for each change by entering its corresponding key.</p>
-<h3 id="4-stage-changes">4. <strong>Stage Changes</strong></h3>
-<p>After reviewing and selecting changes, Git will stage the changes according to your selections. You can then proceed to commit the staged changes using <code>git commit</code>.</p>
-<h3 id="example">Example:</h3>
-<p>Let's say you have made changes to <code>myfile.txt</code> and want to interactively stage them:</p>
-<div class="highlight"><pre><span></span><code>git add -i myfile.txt
-</code></pre></div>
-<p>Git will prompt you to choose the staging mode:</p>
 <div class="highlight"><pre><span></span><code>           staged     unstaged path
-  1:    unchanged        +4/-2 myfile.txt
+  1:    unchanged        +0/-1 TODO
+  2:    unchanged        +1/-1 index.html
+  3:    unchanged        +5/-1 lib/simplegit.rb
 
 *** Commands ***
-  1: status   2: update   3: revert   4: add untracked
-  5: patch    6: diff     7: quit     8: help
+  1: [s]tatus     2: [u]pdate      3: [r]evert     4: [a]dd untracked
+  5: [p]atch      6: [d]iff        7: [q]uit       8: [h]elp
 What now&gt;
+</code></pre></div></p>
+<p>Showing the same information you get with git status but a bit more succinct and informative. It lists the changes you’ve staged on the left and unstaged changes on the right. After this comes a “Commands” section, which allows you to do a number of things like staging and unstaging files, staging parts of files, adding untracked files, and displaying diffs of what has been staged.</p>
+<h3 id="staging-modes"><strong>Staging Modes</strong></h3>
+<h4 id="update-mode-to-stage-changes"><strong>Update Mode to Stage Changes</strong></h4>
+<p>If you type u or 2 (for update) at the What now&gt; prompt, you’re prompted for which files you want to stage:</p>
+<div class="highlight"><pre><span></span><code>What now&gt; u
+           staged     unstaged path
+  1:    unchanged        +0/-1 TODO
+  2:    unchanged        +1/-1 index.html
+  3:    unchanged        +5/-1 lib/simplegit.rb
+Update&gt;&gt;
 </code></pre></div>
-<p>You can then enter <code>5</code> to choose the <code>patch</code> mode. Git will display the changes within <code>myfile.txt</code> and prompt you with options to stage, skip, or split each change.</p>
-<p>Sure, let's dive deeper into each staging mode with additional examples:</p>
-<h4 id="interactive-staging-with-status-mode"><strong>Interactive Staging with <code>status</code> Mode</strong></h4>
-<p>In this mode, Git displays the changes in the current status of the repository and allows you to interactively stage them.</p>
-<div class="highlight"><pre><span></span><code>git add -i
+<p>You can then select the files you want to stage by entering the numbers corresponding to the files. You can select multiple files by separating the numbers with spaces.</p>
+<p><div class="highlight"><pre><span></span><code>Update&gt;&gt; 1,2
+           staged     unstaged path
+* 1:    unchanged        +0/-1 TODO
+* 2:    unchanged        +1/-1 index.html
+  3:    unchanged        +5/-1 lib/simplegit.rb
+Update&gt;&gt;
 </code></pre></div>
-<p>Git will prompt you to choose the staging mode. Enter <code>1</code> for <code>status</code>.</p>
-<div class="highlight"><pre><span></span><code>           staged     unstaged path
-  1:    unchanged        +4/-2 myfile.txt
-  2:    unchanged        +2/-1 anotherfile.txt
+The * next to each file means the file is selected to be staged. If you press Enter after typing nothing at the Update&gt;&gt; prompt, Git takes anything selected and stages it for you:</p>
+<div class="highlight"><pre><span></span><code>Update&gt;&gt;
+updated 2 paths
 
 *** Commands ***
-  1: status   2: update   3: revert   4: add untracked
-  5: patch    6: diff     7: quit     8: help
-What now&gt;
+  1: [s]tatus     2: [u]pdate      3: [r]evert     4: [a]dd untracked
+  5: [p]atch      6: [d]iff        7: [q]uit       8: [h]elp
+What now&gt; s
+           staged     unstaged path
+  1:        +0/-1      nothing TODO
+  2:        +1/-1      nothing index.html
+  3:    unchanged        +5/-1 lib/simplegit.rb
 </code></pre></div>
-<p>You can then choose individual files to stage by entering their corresponding numbers.</p>
-<h4 id="interactive-staging-with-update-mode"><strong>Interactive Staging with <code>update</code> Mode:</strong></h4>
-<p>In this mode, Git displays changes from tracked files that have been modified or deleted and allows you to interactively stage them.</p>
-<div class="highlight"><pre><span></span><code>git add -i
+<h4 id="unstaging-changes-with-revert-mode"><strong>Unstaging Changes with Revert Mode</strong></h4>
+<p>Now you can see that the TODO and index.html files are staged and the simplegit.rb file is still unstaged. If you want to unstage the TODO file at this point, you use the r or 3 (for revert) option:</p>
+<div class="highlight"><pre><span></span><code>*** Commands ***
+  1: [s]tatus     2: [u]pdate      3: [r]evert     4: [a]dd untracked
+  5: [p]atch      6: [d]iff        7: [q]uit       8: [h]elp
+What now&gt; r
+           staged     unstaged path
+  1:        +0/-1      nothing TODO
+  2:        +1/-1      nothing index.html
+  3:    unchanged        +5/-1 lib/simplegit.rb
+Revert&gt;&gt; 1
+           staged     unstaged path
+* 1:        +0/-1      nothing TODO
+  2:        +1/-1      nothing index.html
+  3:    unchanged        +5/-1 lib/simplegit.rb
+Revert&gt;&gt; [enter]
+reverted one path
 </code></pre></div>
-<p>Git will prompt you to choose the staging mode. Enter <code>2</code> for <code>update</code>.</p>
-<div class="highlight"><pre><span></span><code>           staged     unstaged path
-  1:    unchanged        +4/-2 myfile.txt
-  2:    unchanged        +2/-1 anotherfile.txt
+<h4 id="status-mode"><strong>Status Mode</strong></h4>
+<p>Looking at your Git status again, you can see that you’ve unstaged the TODO file:</p>
+<div class="highlight"><pre><span></span><code>*** Commands ***
+  1: [s]tatus     2: [u]pdate      3: [r]evert     4: [a]dd untracked
+  5: [p]atch      6: [d]iff        7: [q]uit       8: [h]elp
+What now&gt; s
+           staged     unstaged path
+  1:    unchanged        +0/-1 TODO
+  2:        +1/-1      nothing index.html
+  3:    unchanged        +5/-1 lib/simplegit.rb
+</code></pre></div>
+<h4 id="diff-changes"><strong>Diff Changes</strong></h4>
+<p>To see the diff of what you’ve staged, you can use the d or 6 (for diff) command. It shows you a list of your staged files, and you can select the ones for which you would like to see the staged diff. This is much like specifying git diff --cached on the command line:</p>
+<div class="highlight"><pre><span></span><code>*** Commands ***
+  1: [s]tatus     2: [u]pdate      3: [r]evert     4: [a]dd untracked
+  5: [p]atch      6: [d]iff        7: [q]uit       8: [h]elp
+What now&gt; d
+           staged     unstaged path
+  1:        +1/-1      nothing index.html
+Review diff&gt;&gt; 1
+diff --git a/index.html b/index.html
+index 4d07108..4335f49 100644
+--- a/index.html
++++ b/index.html
+@@ -16,7 +16,7 @@ Date Finder
 
-*** Commands ***
-  1: status   2: update   3: revert   4: add untracked
-  5: patch    6: diff     7: quit     8: help
-What now&gt;
-</code></pre></div>
-<p>You can then select individual changes to stage by entering their corresponding numbers.</p>
-<h4 id="interactive-staging-with-patch-mode"><strong>Interactive Staging with <code>patch</code> Mode:</strong></h4>
-<p>In this mode, Git displays changes within each file and allows you to interactively stage them.</p>
-<div class="highlight"><pre><span></span><code>git add -i
-</code></pre></div>
-<p>Git will prompt you to choose the staging mode. Enter <code>5</code> for <code>patch</code>.</p>
-<div class="highlight"><pre><span></span><code>           staged     unstaged path
-  1:    unchanged        +4/-2 myfile.txt
-  2:    unchanged        +2/-1 anotherfile.txt
+ &lt;p id=&quot;out&quot;&gt;...&lt;/p&gt;
 
-*** Commands ***
-  1: status   2: update   3: revert   4: add untracked
-  5: patch    6: diff     7: quit     8: help
-What now&gt;
+-&lt;div id=&quot;footer&quot;&gt;contact : support@github.com&lt;/div&gt;
++&lt;div id=&quot;footer&quot;&gt;contact : email.support@github.com&lt;/div&gt;
+
+ &lt;script type=&quot;text/javascript&quot;&gt;
 </code></pre></div>
-<p>You can then choose a file to review and interactively stage changes within it.</p>
-<h3 id="summary">Summary:</h3>
-<p>Interactive staging modes in Git provide granular control over the staging process, allowing you to review and selectively stage changes from your working directory. By using different staging modes, you can stage changes based on the current status of the repository, modifications to tracked files, or changes within specific files. This level of control helps ensure that only relevant changes are included in your commits, leading to cleaner and more organized version control. By using interactive staging, you can commit changes more precisely, avoiding accidental commits of unrelated changes and ensuring cleaner commit histories. This feature is particularly useful when dealing with complex changes or when you want to review changes before committing them to the repository.</p>
+<h4 id="staging-patches"><strong>Staging Patches</strong></h4>
+<p>In this mode, Git displays changes within each file and allows you to interactively stage them. 
+It’s also possible for Git to stage certain parts of files and not the rest. For example, if you make two changes to your simplegit.rb file and want to stage one of them and not the other, doing so is very easy in Git.  To do so, you can type p or 5 (for patch). Git will ask you which files you would like to partially stage; then, for each section of the selected files, it will display hunks of the file diff and ask if you would like to stage them, one by one:</p>
+<p><div class="highlight"><pre><span></span><code>diff --git a/lib/simplegit.rb b/lib/simplegit.rb
+index dd5ecc4..57399e0 100644
+--- a/lib/simplegit.rb
++++ b/lib/simplegit.rb
+@@ -22,7 +22,7 @@ class SimpleGit
+   end
+
+   def log(treeish = &#39;master&#39;)
+-    command(&quot;git log -n 25 #{treeish}&quot;)
++    command(&quot;git log -n 30 #{treeish}&quot;)
+   end
+
+   def blame(path)
+Stage this hunk [y,n,a,d,/,j,J,g,e,?]?
+</code></pre></div>
+You have a lot of options at this point. Typing ? shows a list of what you can do:</p>
+<div class="highlight"><pre><span></span><code>Stage this hunk [y,n,a,d,/,j,J,g,e,?]? ?
+y - stage this hunk
+n - do not stage this hunk
+a - stage this and all the remaining hunks in the file
+d - do not stage this hunk nor any of the remaining hunks in the file
+g - select a hunk to go to
+/ - search for a hunk matching the given regex
+j - leave this hunk undecided, see next undecided hunk
+J - leave this hunk undecided, see next hunk
+k - leave this hunk undecided, see previous undecided hunk
+K - leave this hunk undecided, see previous hunk
+s - split the current hunk into smaller hunks
+e - manually edit the current hunk
+? - print help
+</code></pre></div>
+<p>Generally, you’ll type y or n if you want to stage each hunk, but staging all of them in certain files or skipping a hunk decision until later can be helpful too. If you stage one part of the file and leave another part unstaged, your status output will look like this:</p>
+<div class="highlight"><pre><span></span><code>What now&gt; 1
+           staged     unstaged path
+  1:    unchanged        +0/-1 TODO
+  2:        +1/-1      nothing index.html
+  3:        +1/-1        +4/-0 lib/simplegit.rb
+</code></pre></div>
+<p>It shows you that a couple of lines are staged and a couple are unstaged. You’ve partially staged this file. At this point, you can exit the interactive adding script and run git commit to commit the partially staged files.</p>
 
               
             </article>
