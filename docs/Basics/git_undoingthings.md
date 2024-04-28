@@ -20,8 +20,8 @@ of common Git undo commands and strategies:
 ||[`git filter-branch`](#git-filter-branch)|Rewrite branches to remove unwanted data|
 |[**Removing files**](#7-removing-files)|[`git rm`](#git-rm)| Remove files|
 ||[`git mv`](#git-mv)| Rename files|
-||[`git checkout -f [branch]`](#git-checkout--f)|Switch branches, discarding any local changes|
-||[`git clean -ffd`](#git-clean--ffd)|Erase all untracked files and directories in the working directory|
+||[`git checkout -f [branch]`](#git-checkout)|Switch branches, discarding any local changes|
+||[`git clean -ffd`](#git-clean)|Erase all untracked files and directories in the working directory|
 
 Please note that some commands, like force push and hard reset, should be used with caution, especially when collaborating with others, as they can alter Git history. Always be mindful of the consequences and potential impacts on collaborators before executing these commands.
 
@@ -404,7 +404,7 @@ This example renames `oldfile.txt` to `newfile.txt`, stages the change, and comm
   ```bash
   git clean -ffd
   ```
-- **Note:** The `-f` option is used to force the clean operation, and the `-d` option is used to include untracked directories.
+- **Note:** The `-f` option is used to force the clean operation, and the `-d` option is used to include untracked directories. There is a quirky situation where you might need to be extra forceful in asking Git to clean your working directory. If you happen to be in a working directory under which you’ve copied or cloned other Git repositories (perhaps as submodules), even git clean -fd will refuse to delete those directories. In cases like that, you need to add a second -f option for emphasis.
 
 These commands are useful for cleaning up a Git repository before starting fresh or resolving conflicts that prevent branch switching. However, they should be used with caution, as they can permanently delete local changes and untracked files. It's essential to understand the implications of using these commands and ensure that any necessary changes or files are backed up before proceeding.
 
@@ -416,6 +416,10 @@ git clean -n
 git clean -f
 ```
 
-The command (`git clean -n`) is a dry run that shows you what files would be removed. The second command (`git clean -f`) actually removes the untracked files.
+The command (`git clean -n` or `git clean --dry-run`) is a dry run that shows you what files would be removed. The second command (`git clean -f`) actually removes the untracked files.
 
 - `git clean` has additional options, such as `-i` for an interactive mode where you can choose which files to clean.
+
+The -f means 'force' or “really do this,” and is required if the Git configuration variable clean.requireForce is not explicitly set to false.
+
+By default, the git clean command will only remove untracked files that are not ignored. Any file that matches a pattern in your .gitignore or other ignore files will not be removed. If you want to remove those files too, such as to remove all .o files generated from a build so you can do a fully clean build, you can add a -x to the clean command.
