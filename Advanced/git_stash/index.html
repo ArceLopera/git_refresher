@@ -638,6 +638,33 @@
     Stashing Changes
   </a>
   
+    <nav class="md-nav" aria-label="Stashing Changes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#-keep-index" class="md-nav__link">
+    --keep-index
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-include-untracked" class="md-nav__link">
+    --include-untracked
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-patch" class="md-nav__link">
+    --patch
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -673,18 +700,12 @@
     Clearing Stashes
   </a>
   
-    <nav class="md-nav" aria-label="Clearing Stashes">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#use-cases" class="md-nav__link">
-    Use Cases
-  </a>
-  
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#creating-a-branch-from-a-stash" class="md-nav__link">
+    Creating a Branch from a Stash
+  </a>
   
 </li>
       
@@ -836,6 +857,33 @@
     Stashing Changes
   </a>
   
+    <nav class="md-nav" aria-label="Stashing Changes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#-keep-index" class="md-nav__link">
+    --keep-index
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-include-untracked" class="md-nav__link">
+    --include-untracked
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-patch" class="md-nav__link">
+    --patch
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -871,18 +919,12 @@
     Clearing Stashes
   </a>
   
-    <nav class="md-nav" aria-label="Clearing Stashes">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#use-cases" class="md-nav__link">
-    Use Cases
-  </a>
-  
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#creating-a-branch-from-a-stash" class="md-nav__link">
+    Creating a Branch from a Stash
+  </a>
   
 </li>
       
@@ -906,15 +948,18 @@
 <h2 id="stashing-changes"><strong>Stashing Changes</strong></h2>
 <p><div class="highlight"><pre><span></span><code>git stash
 </code></pre></div>
-- This command saves your current changes in a "stash" without committing them to the repository.
-- Git removes the changes from the working directory and staging area, allowing you to switch branches or perform other operations.</p>
+This command saves your current changes in a "stash" without committing them to the repository. Git removes the changes from the working directory and staging area, allowing you to switch branches or perform other operations.</p>
+<p>The <code>git stash</code> command can be used to save the changes you have made to the working directory. It can also be used to save the changes you have made to the staging area. Stashing is useful when you need to switch to another task or branch but want to keep your current changes for later use. </p>
+<h3 id="-keep-index"><strong>--keep-index</strong></h3>
+<p>To save the changes in the staging area, use the --keep-index option to the git stash command. This tells Git to not only include all staged content in the stash being created, but simultaneously leave it in the index.</p>
+<h3 id="-include-untracked"><strong>--include-untracked</strong></h3>
+<p>If you specify --include-untracked or -u, Git will include the untracked files as well as the tracked ones. By default, git stash will stash only modified and staged <strong>tracked</strong> files. If you specify --include-untracked or -u, Git will include untracked files in the stash being created. However, including untracked files in the stash will still not include explicitly ignored files; to additionally include ignored files, use --all (or just -a).</p>
+<h3 id="-patch"><strong>--patch</strong></h3>
+<p>If you specify the --patch flag, Git will not stash everything that is modified but will instead prompt you interactively which of the changes you would like to stash and which you would like to keep in your working directory.</p>
 <h2 id="listing-stashes"><strong>Listing Stashes</strong></h2>
 <div class="highlight"><pre><span></span><code>git stash list
 </code></pre></div>
-<ul>
-<li>This command lists all stashes you have saved.</li>
-<li>Each stash is identified by a unique identifier, typically a number.</li>
-</ul>
+<p>This command lists all stashes you have saved. Each stash is identified by a unique identifier, typically a number.</p>
 <h2 id="applying-stashed-changes"><strong>Applying Stashed Changes</strong></h2>
 <div class="highlight"><pre><span></span><code>git stash apply <span class="o">[</span>&lt;stash&gt;<span class="o">]</span>
 </code></pre></div>
@@ -924,6 +969,8 @@
 <li>This command applies the changes from the specified stash to the current working directory.</li>
 <li>If no stash is specified, Git applies the most recent stash by default.</li>
 </ul>
+<p>You can save a stash on one branch, switch to another branch later, and try to reapply the changes. You can also have modified and uncommitted files in your working directory when you apply a stash — Git gives you merge conflicts if anything no longer applies cleanly.</p>
+<p>The --index option with git stash apply applies both the changes from the stash and the staged changes (changes that were added to the index) that were present when the changes were stashed. This option is particularly useful when you have staged changes that you also want to apply along with the unstaged changes from the stash.</p>
 <h2 id="popping-stashed-changes"><strong>Popping Stashed Changes</strong></h2>
 <div class="highlight"><pre><span></span><code>git stash pop <span class="o">[</span>&lt;stash&gt;<span class="o">]</span>
 </code></pre></div>
@@ -935,38 +982,36 @@
 </ul>
 <h2 id="droping-stashed-changes"><strong>Droping Stashed Changes</strong></h2>
 <p>The <code>git stash drop</code> command is used to remove stashed changes from the stash list.</p>
-<p><div class="highlight"><pre><span></span><code>git stash drop <span class="o">[</span>&lt;stash&gt;<span class="o">]</span>
+<div class="highlight"><pre><span></span><code>git stash drop <span class="o">[</span>&lt;stash&gt;<span class="o">]</span>
 </code></pre></div>
-- <code>&lt;stash&gt;</code>: Optional. Specifies the stash to drop. If not provided, Git drops the most recent stash by default.</p>
 <div class="highlight"><pre><span></span><code>git stash drop stash@<span class="o">{</span><span class="m">0</span><span class="o">}</span>
 </code></pre></div>
-<ul>
-<li>This command removes the specified stash from the stash list.</li>
-<li>If no stash is specified, Git drops the most recent stash by default.</li>
-<li>
-<p>Once dropped, the changes stored in the stash are permanently deleted and cannot be recovered.</p>
-</li>
-<li>
-<p><strong>Cleanup:</strong> Use <code>git stash drop</code> to remove unwanted or obsolete stashes from the stash list, freeing up space and decluttering your repository.</p>
-</li>
-<li>
-<p><strong>Permanent Deletion:</strong> Be cautious when using <code>git stash drop</code>, as it permanently deletes the specified stash and its associated changes. Ensure that you no longer need the changes before dropping the stash.</p>
-</li>
-</ul>
+<p>This command removes the specified stash from the stash list. If no stash is specified, Git drops the most recent stash by default.
+Once dropped, the changes stored in the stash are permanently deleted and cannot be recovered.</p>
 <h2 id="clearing-stashes"><strong>Clearing Stashes</strong></h2>
 <div class="highlight"><pre><span></span><code>git stash clear
 </code></pre></div>
-<ul>
-<li>This command removes all stashes from the stash list.</li>
-<li>Use with caution, as it permanently deletes all stashed changes.</li>
-</ul>
-<h3 id="use-cases">Use Cases</h3>
-<ul>
-<li><strong>Switching Tasks:</strong> Stash changes when you need to switch tasks or work on a different branch temporarily.</li>
-<li><strong>Experimentation:</strong> Stash changes before experimenting with code changes, allowing you to revert easily if needed.</li>
-<li><strong>Conflict Resolution:</strong> Stash changes when resolving conflicts during a merge or rebase operation.</li>
-</ul>
-<p>Stashing changes in Git provides a convenient way to save your work temporarily without committing it to the repository. By stashing changes, you can switch tasks, experiment with code changes, or resolve conflicts with confidence, knowing that your work is safely stored and can be easily reapplied when needed. Stashing is a valuable tool for managing your workflow effectively in Git.</p>
+<p>This command removes all stashes from the stash list. Use with caution, as it permanently deletes all stashed changes.</p>
+<h2 id="creating-a-branch-from-a-stash">Creating a Branch from a Stash</h2>
+<p>If you stash some work, leave it there for a while, and continue on the branch from which you stashed the work, you may have a problem reapplying the work. If the apply tries to modify a file that you’ve since modified, you’ll get a merge conflict and will have to try to resolve it. If you want an easier way to test the stashed changes again, you can run git stash branch <new branchname>, which creates a new branch for you with your selected branch name, checks out the commit you were on when you stashed your work, reapplies your work there, and then drops the stash if it applies successfully.</p>
+<div class="highlight"><pre><span></span><code>$ git stash branch testchanges
+M   index.html
+M   lib/simplegit.rb
+Switched to a new branch <span class="s1">&#39;testchanges&#39;</span>
+On branch testchanges
+Changes to be committed:
+  <span class="o">(</span>use <span class="s2">&quot;git reset HEAD &lt;file&gt;...&quot;</span> to unstage<span class="o">)</span>
+
+    modified:   index.html
+
+Changes not staged <span class="k">for</span> commit:
+  <span class="o">(</span>use <span class="s2">&quot;git add &lt;file&gt;...&quot;</span> to update what will be committed<span class="o">)</span>
+  <span class="o">(</span>use <span class="s2">&quot;git checkout -- &lt;file&gt;...&quot;</span> to discard changes <span class="k">in</span> working directory<span class="o">)</span>
+
+    modified:   lib/simplegit.rb
+
+Dropped refs/stash@<span class="o">{</span><span class="m">0</span><span class="o">}</span> <span class="o">(</span>29d385a81d163dfd45a452a2ce816487a6b8b014<span class="o">)</span>
+</code></pre></div>
 
               
             </article>
