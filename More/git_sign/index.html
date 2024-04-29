@@ -12,14 +12,14 @@
         <meta name="author" content="ArceLopera">
       
       
-        <link rel="canonical" href="https://arcelopera.github.io/git_refresher/Advanced/git_ignore/">
+        <link rel="canonical" href="https://arcelopera.github.io/git_refresher/More/git_sign/">
       
       <link rel="icon" href="../../Images/git.ico">
       <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.15">
     
     
       
-        <title>Ignoring Files - Git Refresher</title>
+        <title>Signing Commits - Git Refresher</title>
       
     
     
@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#creating-or-modifying-gitignore" class="md-skip">
+        <a href="#gpg-introduction" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Ignoring Files
+              Signing Commits
             
           </span>
         </div>
@@ -230,15 +230,13 @@
         
   
   
-    
-  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../git_alias/" class="md-tabs__link md-tabs__link--active">
+      <a href="../../Advanced/git_alias/" class="md-tabs__link">
         Advanced
       </a>
     </li>
@@ -248,13 +246,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../Github/git_ssh/" class="md-tabs__link">
+      <a href="../../Github/git_ssh/" class="md-tabs__link md-tabs__link--active">
         More
       </a>
     </li>
@@ -504,14 +504,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" data-md-state="indeterminate" type="checkbox" id="__nav_3" checked>
       
       
       
@@ -534,7 +532,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../git_alias/" class="md-nav__link">
+      <a href="../../Advanced/git_alias/" class="md-nav__link">
         Aliases
       </a>
     </li>
@@ -548,7 +546,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../git_tagging/" class="md-nav__link">
+      <a href="../../Advanced/git_tagging/" class="md-nav__link">
         Tagging
       </a>
     </li>
@@ -562,7 +560,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../git_branch/" class="md-nav__link">
+      <a href="../../Advanced/git_branch/" class="md-nav__link">
         Branching
       </a>
     </li>
@@ -576,7 +574,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../git_patches/" class="md-nav__link">
+      <a href="../../Advanced/git_patches/" class="md-nav__link">
         Patching
       </a>
     </li>
@@ -588,117 +586,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Ignoring Files
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../Advanced/git_ignore/" class="md-nav__link">
         Ignoring Files
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#creating-or-modifying-gitignore" class="md-nav__link">
-    Creating or Modifying .gitignore
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#common-file-patterns" class="md-nav__link">
-    Common File Patterns
-  </a>
-  
-    <nav class="md-nav" aria-label="Common File Patterns">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#a-ignore-specific-files" class="md-nav__link">
-    a. Ignore Specific Files
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#b-ignore-files-in-a-directory" class="md-nav__link">
-    b. Ignore Files in a Directory
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#c-ignore-files-with-a-specific-extension" class="md-nav__link">
-    c. Ignore Files with a Specific Extension
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#d-ignore-files-in-subdirectories" class="md-nav__link">
-    d. Ignore Files in Subdirectories
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#e-more-examples" class="md-nav__link">
-    e. More examples
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#applying-gitignore-changes" class="md-nav__link">
-    Applying .gitignore Changes
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#global-gitignore" class="md-nav__link">
-    Global .gitignore
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ignoring-changes-in-tracked-files" class="md-nav__link">
-    Ignoring Changes in Tracked Files
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -710,7 +602,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../git_stash/" class="md-nav__link">
+      <a href="../../Advanced/git_stash/" class="md-nav__link">
         Temporary Commits
       </a>
     </li>
@@ -724,7 +616,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../git_interactivestaging/" class="md-nav__link">
+      <a href="../../Advanced/git_interactivestaging/" class="md-nav__link">
         Interactive Staging
       </a>
     </li>
@@ -738,7 +630,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../git_cherry/" class="md-nav__link">
+      <a href="../../Advanced/git_cherry/" class="md-nav__link">
         CherryPicking
       </a>
     </li>
@@ -752,7 +644,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../git_checkout/" class="md-nav__link">
+      <a href="../../Advanced/git_checkout/" class="md-nav__link">
         Checkout
       </a>
     </li>
@@ -772,12 +664,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" data-md-state="indeterminate" type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
       
       
       
@@ -812,11 +706,76 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../More/git_sign/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Signing Commits
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Signing Commits
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#gpg-introduction" class="md-nav__link">
+    GPG Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signing-tags" class="md-nav__link">
+    Signing Tags
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verifying-tags" class="md-nav__link">
+    Verifying Tags
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signing-commits" class="md-nav__link">
+    Signing Commits
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    Summary
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -828,7 +787,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../More/plumbing/" class="md-nav__link">
+      <a href="../plumbing/" class="md-nav__link">
         Plumbing Tools
       </a>
     </li>
@@ -867,77 +826,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#creating-or-modifying-gitignore" class="md-nav__link">
-    Creating or Modifying .gitignore
+  <a href="#gpg-introduction" class="md-nav__link">
+    GPG Introduction
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#common-file-patterns" class="md-nav__link">
-    Common File Patterns
-  </a>
-  
-    <nav class="md-nav" aria-label="Common File Patterns">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#a-ignore-specific-files" class="md-nav__link">
-    a. Ignore Specific Files
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#b-ignore-files-in-a-directory" class="md-nav__link">
-    b. Ignore Files in a Directory
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#c-ignore-files-with-a-specific-extension" class="md-nav__link">
-    c. Ignore Files with a Specific Extension
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#d-ignore-files-in-subdirectories" class="md-nav__link">
-    d. Ignore Files in Subdirectories
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#e-more-examples" class="md-nav__link">
-    e. More examples
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#applying-gitignore-changes" class="md-nav__link">
-    Applying .gitignore Changes
+  <a href="#signing-tags" class="md-nav__link">
+    Signing Tags
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#global-gitignore" class="md-nav__link">
-    Global .gitignore
+  <a href="#verifying-tags" class="md-nav__link">
+    Verifying Tags
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#ignoring-changes-in-tracked-files" class="md-nav__link">
-    Ignoring Changes in Tracked Files
+  <a href="#signing-commits" class="md-nav__link">
+    Signing Commits
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    Summary
   </a>
   
 </li>
@@ -956,140 +874,32 @@
                 
 
 
-  <h1>Ignoring Files</h1>
+  <h1>Signing Commits</h1>
 
-<p>In Git, you can ignore files using patterns by creating or modifying a special file called <code>.gitignore</code>. This file contains a list of file patterns that Git should ignore when tracking changes in your repository.</p>
-<h2 id="creating-or-modifying-gitignore"><strong>Creating or Modifying <code>.gitignore</code></strong></h2>
-<p>Specify files or directories that Git should ignore.
- The <code>.gitignore</code> file should be located at the root of your Git repository.</p>
-<h2 id="common-file-patterns"><strong>Common File Patterns</strong></h2>
+<h2 id="gpg-introduction">GPG Introduction</h2>
+<p>GPG (GNU Privacy Guard) is a free and open-source software for secure communication and data encryption. In Git, GPG is used for cryptographic signing to verify the authenticity of commits and tags. When you sign a commit or tag with your GPG key, it proves that the changes were indeed made by you and haven't been tampered with.</p>
+<h2 id="signing-tags">Signing Tags</h2>
+<p>To sign a tag with GPG, you can use the <code>-s</code> or <code>--sign</code> option with the <code>git tag</code> command. For example:</p>
+<div class="highlight"><pre><span></span><code>git tag -s v1.0 -m <span class="s2">&quot;Release version 1.0&quot;</span>
+</code></pre></div>
+<p>This creates a signed tag <code>v1.0</code> with the specified message. When someone verifies this tag, they can see that it's been signed by your GPG key.</p>
+<h2 id="verifying-tags">Verifying Tags</h2>
+<p>To verify the authenticity of a signed tag, you can use the <code>git tag -v</code> command followed by the tag name. For example:</p>
+<div class="highlight"><pre><span></span><code>git tag -v v1.0
+</code></pre></div>
+<p>Git will check the signature of the tag against the associated GPG public key and display whether the tag is valid or not.</p>
+<h2 id="signing-commits">Signing Commits</h2>
+<p>To sign commits with GPG, you can use the <code>-S</code> or <code>--gpg-sign</code> option with the <code>git commit</code> command. For example:</p>
+<div class="highlight"><pre><span></span><code>git commit -S -m <span class="s2">&quot;Commit message&quot;</span>
+</code></pre></div>
+<p>This signs the commit with your GPG key. When others view the commit, they can verify its authenticity using your GPG public key.</p>
+<h2 id="summary">Summary</h2>
 <ul>
-<li><strong>Wildcard (<code>*</code>):</strong> Matches zero or more characters.</li>
-<li><strong>Directory (<code>/</code>):</strong> Denotes a directory.</li>
-<li><strong>Negation (<code>!</code>):</strong> Excludes files or directories that match the pattern.</li>
+<li>GPG (GNU Privacy Guard) is used for cryptographic signing in Git to verify the authenticity of commits and tags.</li>
+<li>You can sign tags using the <code>git tag -s</code> command and verify them with <code>git tag -v</code>.</li>
+<li>Commits can be signed using the <code>git commit -S</code> command.</li>
+<li>GPG signing ensures the integrity and authenticity of your Git history, providing a layer of trust and security for your repository.</li>
 </ul>
-<p>The rules for the patterns you can put in the .gitignore file are as follows:</p>
-<ul>
-<li>
-<p>Blank lines or lines starting with # are ignored.</p>
-</li>
-<li>
-<p>Standard glob patterns work, and will be applied recursively throughout the entire working tree.</p>
-</li>
-<li>
-<p>You can start patterns with a forward slash (/) to avoid recursivity.</p>
-</li>
-<li>
-<p>You can end patterns with a forward slash (/) to specify a directory.</p>
-</li>
-<li>
-<p>You can negate a pattern by starting it with an exclamation point (!).</p>
-</li>
-</ul>
-<p>Glob patterns are like simplified regular expressions that shells use. An asterisk (<em>) matches zero or more characters; [abc] matches any character inside the brackets (in this case a, b, or c); a question mark (?) matches a single character; and brackets enclosing characters separated by a hyphen ([0-9]) matches any character between them (in this case 0 through 9). You can also use two asterisks to match nested directories; a/</em>*/z would match a/z, a/b/z, a/b/c/z, and so on.</p>
-<h3 id="a-ignore-specific-files">a. Ignore Specific Files</h3>
-<div class="highlight"><pre><span></span><code># Ignore log files
-*.log
-
-# Ignore build artifacts
-/build/
-</code></pre></div>
-<h3 id="b-ignore-files-in-a-directory">b. Ignore Files in a Directory</h3>
-<div class="highlight"><pre><span></span><code># Ignore all files in the temp directory
-temp/*
-
-# But track one specific file in temp
-!temp/important.txt
-</code></pre></div>
-<h3 id="c-ignore-files-with-a-specific-extension">c. Ignore Files with a Specific Extension</h3>
-<div class="highlight"><pre><span></span><code># Ignore all .pdf files
-*.pdf
-</code></pre></div>
-<h3 id="d-ignore-files-in-subdirectories">d. Ignore Files in Subdirectories</h3>
-<div class="highlight"><pre><span></span><code># Ignore all .class files in any directory
-**/*.class
-</code></pre></div>
-<h3 id="e-more-examples">e. More examples</h3>
-<p><div class="highlight"><pre><span></span><code># ignore all .a files
-*.a
-
-# but do track lib.a, even though you&#39;re ignoring .a files above
-!lib.a
-
-# only ignore the TODO file in the current directory, not subdir/TODO
-/TODO
-
-# ignore all files in any directory named build
-build/
-
-# ignore doc/notes.txt, but not doc/server/arch.txt
-doc/*.txt
-
-# ignore all .pdf files in the doc/ directory and any of its subdirectories
-doc/**/*.pdf
-</code></pre></div>
-More examples from <a href="https://github.com/github/gitignore">GitHub</a>.</p>
-<h2 id="applying-gitignore-changes"><strong>Applying <code>.gitignore</code> Changes</strong></h2>
-<p>After modifying the <code>.gitignore</code> file, you need to commit the changes to apply them to the repository.</p>
-<div class="highlight"><pre><span></span><code>git add .gitignore
-git commit -m <span class="s2">&quot;Add .gitignore to ignore specific files&quot;</span>
-</code></pre></div>
-<h2 id="global-gitignore"><strong>Global <code>.gitignore</code></strong></h2>
-<p>You can create a global <code>.gitignore</code> file that applies to all repositories on your system by configuring Git to use it.</p>
-<p>The command <code>git config --global core.excludesfile [file]</code> is used to specify a system-wide ignore pattern file that Git will use for all local repositories on your system. </p>
-<div class="highlight"><pre><span></span><code>git config --global core.excludesfile <span class="o">[</span>file<span class="o">]</span>
-</code></pre></div>
-<ul>
-<li>
-<p>Parameters:</p>
-<ul>
-<li><strong><code>--global</code>:</strong> This option specifies that the configuration should be applied globally, affecting all Git repositories on your system.</li>
-<li><strong><code>core.excludesfile</code>:</strong> This is the Git configuration key for specifying the location of the system-wide ignore file.</li>
-<li><strong><code>[file]</code>:</strong> This parameter specifies the path to the file containing the ignore patterns.</li>
-</ul>
-</li>
-</ul>
-<div class="highlight"><pre><span></span><code>git config --global core.excludesfile ~/.gitignore_global
-</code></pre></div>
-<ul>
-<li>This command tells Git to use the specified file (<code>~/.gitignore_global</code> in this example) as the system-wide ignore pattern file.</li>
-<li>Any patterns defined in this file will be applied to all local repositories on your system, regardless of their location.</li>
-</ul>
-<h2 id="ignoring-changes-in-tracked-files"><strong>Ignoring Changes in Tracked Files</strong></h2>
-<p>If you want to ignore changes in files that are already being tracked by Git, you can use the <code>git update-index --assume-unchanged</code> command.</p>
-<p>The <code>git update-index --assume-unchanged</code> command is used to tell Git to temporarily ignore changes to a tracked file. When you run this command, Git updates its index to mark the specified file (<code>config.ini</code> in this example) as "assume unchanged".</p>
-<p>The <code>--assume-unchanged</code> option allows you to tell Git to treat a file as if it hasn't been changed, even if it has been modified since the last commit.</p>
-<div class="highlight"><pre><span></span><code>git update-index --assume-unchanged &lt;file&gt;
-</code></pre></div>
-<ul>
-<li><code>&lt;file&gt;</code>: The path to the file you want to mark as unchanged.</li>
-</ul>
-<div class="highlight"><pre><span></span><code>git update-index --assume-unchanged config.ini
-</code></pre></div>
-<ul>
-<li>When you run this command, Git updates its index to mark the specified file (<code>config.ini</code> in this example) as "assume unchanged".</li>
-<li>After marking a file as "assume unchanged", Git will not track changes to that file in future commits, treating it as if it hasn't been modified.</li>
-<li>This command is useful when you have local changes to a tracked file that you don't want to commit or stage for commit, such as configuration files with local settings that should not be shared with others.</li>
-</ul>
-<h5 id="use-cases">Use Cases</h5>
-<ol>
-<li>
-<p><strong>Ignoring Local Changes:</strong> You can use this command to prevent accidentally committing local changes to certain files, such as configuration files with sensitive information or local overrides.</p>
-</li>
-<li>
-<p><strong>Performance Optimization:</strong> By marking files as "assume unchanged", Git can improve performance by not having to check these files for changes when performing various operations, such as <code>git status</code> or <code>git add</code>.</p>
-</li>
-</ol>
-<h5 id="caveats">Caveats</h5>
-<ul>
-<li><strong>Manual Updates:</strong> It's important to note that this command only affects how Git treats the file in future operations. If the file is modified again in the future and you want to commit those changes, you will need to remove the "assume unchanged" status using <code>git update-index --no-assume-unchanged &lt;file&gt;</code>.</li>
-</ul>
-<h5 id="note">Note</h5>
-<ul>
-<li>This command only affects your local repository and does not affect the repository's history or other collaborators.</li>
-</ul>
-<p>Using <code>git update-index --assume-unchanged</code> can be a helpful tool for managing local changes to tracked files in your Git repository, allowing you to prevent accidental commits of sensitive or local-specific changes.</p>
-<p>Ignoring files using patterns in Git is essential for preventing certain files or directories from being tracked in your repository. By creating or modifying the <code>.gitignore</code> file and specifying file patterns, you can effectively manage which files Git should ignore. Understanding the common file patterns and how to apply them allows you to tailor Git's behavior to suit your project's needs while keeping the repository clean and manageable.</p>
 
               
             </article>
@@ -1103,7 +913,7 @@ git commit -m <span class="s2">&quot;Add .gitignore to ignore specific files&quo
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../git_patches/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Patching" rel="prev">
+        <a href="../../Github/git_ssh/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Adding SSH Keys to Github" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -1112,20 +922,20 @@ git commit -m <span class="s2">&quot;Add .gitignore to ignore specific files&quo
               <span class="md-footer__direction">
                 Previous
               </span>
-              Patching
+              Adding SSH Keys to Github
             </div>
           </div>
         </a>
       
       
         
-        <a href="../git_stash/" class="md-footer__link md-footer__link--next" aria-label="Next: Temporary Commits" rel="next">
+        <a href="../plumbing/" class="md-footer__link md-footer__link--next" aria-label="Next: Plumbing Tools" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Temporary Commits
+              Plumbing Tools
             </div>
           </div>
           <div class="md-footer__button md-icon">
