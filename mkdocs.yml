@@ -112,4 +112,5 @@ nav:
      - Checkout: Advanced/git_checkout.md
   - More:
      - Adding SSH Keys to Github: Github/git_ssh.md
+     - Signing Commits: More/git_sign.md
      - Plumbing Tools: More/plumbing.md 
