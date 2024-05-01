@@ -878,6 +878,16 @@
 
 <h2 id="gpg-introduction">GPG Introduction</h2>
 <p>GPG (GNU Privacy Guard) is a free and open-source software for secure communication and data encryption. In Git, GPG is used for cryptographic signing to verify the authenticity of commits and tags. When you sign a commit or tag with your GPG key, it proves that the changes were indeed made by you and haven't been tampered with.</p>
+<p>First of all, if you want to sign anything you need to get GPG configured and your personal key installed.
+<div class="highlight"><pre><span></span><code>gpg --list-keys
+</code></pre></div>
+If you don’t have a key installed, you can generate one with gpg --gen-key.</p>
+<p><div class="highlight"><pre><span></span><code>gpg --gen-key
+</code></pre></div>
+Once you have a private key to sign with, you can configure Git to use it for signing things by setting the user.signingkey config setting.</p>
+<div class="highlight"><pre><span></span><code>git config --global user.signingkey 0A46826A!
+</code></pre></div>
+<p>Now Git will use your key by default to sign tags and commits if you want.</p>
 <h2 id="signing-tags">Signing Tags</h2>
 <p>To sign a tag with GPG, you can use the <code>-s</code> or <code>--sign</code> option with the <code>git tag</code> command. For example:</p>
 <div class="highlight"><pre><span></span><code>git tag -s v1.0 -m <span class="s2">&quot;Release version 1.0&quot;</span>
