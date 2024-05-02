@@ -37,7 +37,7 @@ To verify the authenticity of a signed tag, you can use the `git tag -v` command
 git tag -v v1.0
 ```
 
-Git will check the signature of the tag against the associated GPG public key and display whether the tag is valid or not.
+Git will check the signature of the tag against the associated GPG public key and display whether the tag is valid or not.  You need the signer’s public key in your keyring for this to work properly.
 
 ## Signing Commits
 

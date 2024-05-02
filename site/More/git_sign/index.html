@@ -897,7 +897,7 @@ Once you have a private key to sign with, you can configure Git to use it for si
 <p>To verify the authenticity of a signed tag, you can use the <code>git tag -v</code> command followed by the tag name. For example:</p>
 <div class="highlight"><pre><span></span><code>git tag -v v1.0
 </code></pre></div>
-<p>Git will check the signature of the tag against the associated GPG public key and display whether the tag is valid or not.</p>
+<p>Git will check the signature of the tag against the associated GPG public key and display whether the tag is valid or not.  You need the signer’s public key in your keyring for this to work properly.</p>
 <h2 id="signing-commits">Signing Commits</h2>
 <p>To sign commits with GPG, you can use the <code>-S</code> or <code>--gpg-sign</code> option with the <code>git commit</code> command. For example:</p>
 <div class="highlight"><pre><span></span><code>git commit -S -m <span class="s2">&quot;Commit message&quot;</span>
