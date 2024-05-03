@@ -86,9 +86,27 @@ git commit -S -m "Commit message"
 
 This signs the commit with your GPG key. When others view the commit, they can verify its authenticity using your GPG public key.
 
+To see and verify these signatures, there is also a --show-signature option to git log.
+
+```bash
+git log --show-signature -1
+```
+
+Additionally, you can configure git log to check any signatures it finds and list them in its output with the %G? format.
+
+```bash
+git log --pretty="format:%h %G? %aN  %s"
+```
+In Git 1.8.3 and later, git merge and git pull can be told to inspect and reject when merging a commit that does not carry a trusted GPG signature with the --verify-signatures command.
+
+```bash
+git merge --verify-signatures signed-branch
+```
+
 ## Summary
 
 - GPG (GNU Privacy Guard) is used for cryptographic signing in Git to verify the authenticity of commits and tags.
 - You can sign tags using the `git tag -s` command and verify them with `git tag -v`.
 - Commits can be signed using the `git commit -S` command.
 - GPG signing ensures the integrity and authenticity of your Git history, providing a layer of trust and security for your repository.
+- Signing tags and commits is great, but if you decide to use this in your normal workflow, you’ll have to make sure that everyone on your team understands how to do so. This can be achieved by asking everyone working with the repository to run git config --local commit.gpgsign true to automatically have all of their commits in the repository signed by default. If you don’t, you’ll end up spending a lot of time helping people figure out how to rewrite their commits with signed versions. Make sure you understand GPG and the benefits of signing things before adopting this as part of your standard workflow.

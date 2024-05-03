@@ -952,12 +952,22 @@ Follow the prompts to set the trust level for the key.</p>
 <div class="highlight"><pre><span></span><code>git commit -S -m <span class="s2">&quot;Commit message&quot;</span>
 </code></pre></div>
 <p>This signs the commit with your GPG key. When others view the commit, they can verify its authenticity using your GPG public key.</p>
+<p>To see and verify these signatures, there is also a --show-signature option to git log.</p>
+<div class="highlight"><pre><span></span><code>git log --show-signature -1
+</code></pre></div>
+<p>Additionally, you can configure git log to check any signatures it finds and list them in its output with the %G? format.</p>
+<p><div class="highlight"><pre><span></span><code>git log --pretty<span class="o">=</span><span class="s2">&quot;format:%h %G? %aN  %s&quot;</span>
+</code></pre></div>
+In Git 1.8.3 and later, git merge and git pull can be told to inspect and reject when merging a commit that does not carry a trusted GPG signature with the --verify-signatures command.</p>
+<div class="highlight"><pre><span></span><code>git merge --verify-signatures signed-branch
+</code></pre></div>
 <h2 id="summary">Summary</h2>
 <ul>
 <li>GPG (GNU Privacy Guard) is used for cryptographic signing in Git to verify the authenticity of commits and tags.</li>
 <li>You can sign tags using the <code>git tag -s</code> command and verify them with <code>git tag -v</code>.</li>
 <li>Commits can be signed using the <code>git commit -S</code> command.</li>
 <li>GPG signing ensures the integrity and authenticity of your Git history, providing a layer of trust and security for your repository.</li>
+<li>Signing tags and commits is great, but if you decide to use this in your normal workflow, you’ll have to make sure that everyone on your team understands how to do so. This can be achieved by asking everyone working with the repository to run git config --local commit.gpgsign true to automatically have all of their commits in the repository signed by default. If you don’t, you’ll end up spending a lot of time helping people figure out how to rewrite their commits with signed versions. Make sure you understand GPG and the benefits of signing things before adopting this as part of your standard workflow.</li>
 </ul>
 
               
