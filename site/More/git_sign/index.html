@@ -756,6 +756,19 @@
     Verifying Tags
   </a>
   
+    <nav class="md-nav" aria-label="Verifying Tags">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adding-the-gpg-public-key-to-your-keyring" class="md-nav__link">
+    Adding the GPG Public Key to Your Keyring
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -844,6 +857,19 @@
     Verifying Tags
   </a>
   
+    <nav class="md-nav" aria-label="Verifying Tags">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adding-the-gpg-public-key-to-your-keyring" class="md-nav__link">
+    Adding the GPG Public Key to Your Keyring
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -898,6 +924,29 @@ Once you have a private key to sign with, you can configure Git to use it for si
 <div class="highlight"><pre><span></span><code>git tag -v v1.0
 </code></pre></div>
 <p>Git will check the signature of the tag against the associated GPG public key and display whether the tag is valid or not.  You need the signer’s public key in your keyring for this to work properly.</p>
+<h3 id="adding-the-gpg-public-key-to-your-keyring">Adding the GPG Public Key to Your Keyring</h3>
+<p>If you don't have the signer's public key and you want to obtain it and save it in your GPG keyring, you can follow these steps:</p>
+<p><strong>Obtain the Public Key</strong></p>
+<p>The signer can provide their public key in various ways:
++ Send it to you via email.
++ Upload it to a key server (e.g., <code>pgp.mit.edu</code>, <code>keys.openpgp.org</code>).
++ Provide a URL where the public key can be downloaded.</p>
+<p><strong>Import the Public Key</strong></p>
+<p>Once you have obtained the public key, save it to a file on your system (e.g., <code>signer_public_key.asc</code>).
+Use the <code>gpg --import</code> command to import the public key into your GPG keyring:
+<div class="highlight"><pre><span></span><code>gpg --import signer_public_key.asc
+</code></pre></div></p>
+<p><strong>Verify the Key</strong></p>
+<p>After importing the public key, you should verify its fingerprint with the signer to ensure its authenticity. The fingerprint uniquely identifies the key and can be used to verify its integrity.
+<div class="highlight"><pre><span></span><code>gpg --fingerprint <span class="o">[</span>key_id<span class="o">]</span>
+</code></pre></div></p>
+<p><strong>Trust the Key (Optional)</strong></p>
+<p>Once you have verified the key, you may choose to trust it to establish a level of confidence in the signer's identity:
+<div class="highlight"><pre><span></span><code>gpg --edit-key <span class="o">[</span>key_id<span class="o">]</span>
+trust
+</code></pre></div>
+Follow the prompts to set the trust level for the key.</p>
+<p>By following these steps, you can obtain the signer's public key, import it into your GPG keyring, and establish trust in their identity if desired. This allows you to verify their signatures and communicate securely with them using GPG encryption.</p>
 <h2 id="signing-commits">Signing Commits</h2>
 <p>To sign commits with GPG, you can use the <code>-S</code> or <code>--gpg-sign</code> option with the <code>git commit</code> command. For example:</p>
 <div class="highlight"><pre><span></span><code>git commit -S -m <span class="s2">&quot;Commit message&quot;</span>

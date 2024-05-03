@@ -39,6 +39,43 @@ git tag -v v1.0
 
 Git will check the signature of the tag against the associated GPG public key and display whether the tag is valid or not.  You need the signer’s public key in your keyring for this to work properly.
 
+### Adding the GPG Public Key to Your Keyring
+If you don't have the signer's public key and you want to obtain it and save it in your GPG keyring, you can follow these steps:
+
+**Obtain the Public Key**
+
+The signer can provide their public key in various ways:
++ Send it to you via email.
++ Upload it to a key server (e.g., `pgp.mit.edu`, `keys.openpgp.org`).
++ Provide a URL where the public key can be downloaded.
+
+
+**Import the Public Key**
+
+Once you have obtained the public key, save it to a file on your system (e.g., `signer_public_key.asc`).
+Use the `gpg --import` command to import the public key into your GPG keyring:
+```bash
+gpg --import signer_public_key.asc
+```
+
+**Verify the Key**
+   
+After importing the public key, you should verify its fingerprint with the signer to ensure its authenticity. The fingerprint uniquely identifies the key and can be used to verify its integrity.
+```bash
+gpg --fingerprint [key_id]
+```
+
+**Trust the Key (Optional)**
+
+Once you have verified the key, you may choose to trust it to establish a level of confidence in the signer's identity:
+```bash
+gpg --edit-key [key_id]
+trust
+```
+Follow the prompts to set the trust level for the key.
+
+By following these steps, you can obtain the signer's public key, import it into your GPG keyring, and establish trust in their identity if desired. This allows you to verify their signatures and communicate securely with them using GPG encryption.
+
 ## Signing Commits
 
 To sign commits with GPG, you can use the `-S` or `--gpg-sign` option with the `git commit` command. For example:
