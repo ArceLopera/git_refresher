@@ -114,3 +114,4 @@ nav:
      - Adding SSH Keys to Github: Github/git_ssh.md
      - Signing Commits: More/git_sign.md
      - Plumbing Tools: More/plumbing.md 
+     - Searching Tools: More/git_search.md
