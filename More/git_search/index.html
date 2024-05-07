@@ -933,6 +933,101 @@
 <p>Git offers several tools and commands for searching through your repository's history and content. These tools provide powerful capabilities for searching through your repository's history and content, allowing you to find specific commits, changes, or patterns quickly and efficiently.</p>
 <h2 id="git-grep">git grep</h2>
 <p>The <code>git grep</code> command searches through the contents of files in the repository for a specific pattern. It supports options like <code>--all-match</code> to match all patterns, <code>--ignore-case</code> for case-insensitive searches, and <code>--extended-regexp</code> to use extended regular expressions.</p>
+<p><strong><code>git grep &lt;pattern&gt;</code></strong>: Searches for the specified <code>&lt;pattern&gt;</code> in the contents of tracked files within the Git repository.</p>
+<p><strong>Options</strong>:</p>
+<ul>
+<li><code>-i</code> or <code>--ignore-case</code>: Performs a case-insensitive search.</li>
+<li><code>-n</code> or <code>--line-number</code>: Shows line numbers where the pattern is found.</li>
+<li><code>-w</code> or <code>--word-regexp</code>: Matches whole words only.</li>
+<li><code>-e &lt;pattern&gt;</code>: Searches for multiple patterns.</li>
+<li><code>--cached</code>: Searches staged changes instead of working directory files.</li>
+<li><code>-I</code>: Excludes files that match patterns from <code>.gitignore</code> and <code>.git/info/exclude</code>.</li>
+<li><code>--untracked</code>: Includes untracked files in the search.</li>
+<li><code>--all-match</code>: This option, when used with <code>git grep</code>, ensures that only lines containing all of the specified patterns are matched. By default, when you provide multiple patterns, <code>git grep</code> matches lines containing any of the provided patterns. With <code>--all-match</code>, only lines containing all patterns are considered matches.</li>
+<li><code>--extended-regexp</code>: This option allows you to use extended regular expressions (ERE) instead of the default basic regular expressions (BRE). Extended regular expressions provide additional features such as alternation (<code>|</code>), grouping (<code>()</code>), and quantifiers (<code>{}</code>, <code>?</code>, <code>*</code>, <code>+</code>) which can make pattern matching more flexible and powerful.</li>
+<li><code>-c</code> or <code>--count</code>: This option causes <code>git grep</code> to only display a count of the lines that match the given pattern, rather than displaying the actual matching lines themselves. This can be useful when you're interested in the total number of occurrences of a pattern across multiple files, rather than the specific lines where the pattern occurs.</li>
+<li>
+<p><code>-p</code> or <code>--show-function</code> option in <code>git grep</code> allows you to display the surrounding function context of the matched lines, providing more context for each match. This can be particularly useful when searching through source code files where functions are defined.</p>
+</li>
+<li>
+<p><strong>Basic Usage</strong>
+   <div class="highlight"><pre><span></span><code>git grep <span class="s2">&quot;search_string&quot;</span>
+</code></pre></div>
+   This command searches for "search_string" in all tracked files in the repository.</p>
+</li>
+<li>
+<p><strong>Case-Insensitive Search</strong>
+   <div class="highlight"><pre><span></span><code>git grep -i <span class="s2">&quot;pattern&quot;</span>
+</code></pre></div>
+   Performs a case-insensitive search for "pattern".</p>
+</li>
+<li>
+<p><strong>Search in Specific Files</strong>
+   <div class="highlight"><pre><span></span><code>git grep <span class="s2">&quot;pattern&quot;</span> file1.txt file2.txt
+</code></pre></div>
+   Searches for "pattern" only in <code>file1.txt</code> and <code>file2.txt</code>.</p>
+</li>
+<li>
+<p><strong>Search with Line Numbers</strong>
+   <div class="highlight"><pre><span></span><code>git grep -n <span class="s2">&quot;pattern&quot;</span>
+</code></pre></div>
+   Shows line numbers where "pattern" is found.</p>
+</li>
+<li>
+<p><strong>Search for Whole Words</strong>
+   <div class="highlight"><pre><span></span><code>git grep -w <span class="s2">&quot;pattern&quot;</span>
+</code></pre></div>
+   Matches "pattern" as a whole word only.</p>
+</li>
+<li>
+<p><strong>Search for Multiple Patterns</strong>
+   <div class="highlight"><pre><span></span><code>git grep -e <span class="s2">&quot;pattern1&quot;</span> -e <span class="s2">&quot;pattern2&quot;</span>
+</code></pre></div>
+   Searches for both "pattern1" and "pattern2".</p>
+</li>
+<li>
+<p><strong>Search Staged Changes</strong>
+   <div class="highlight"><pre><span></span><code>git grep --cached <span class="s2">&quot;pattern&quot;</span>
+</code></pre></div>
+   Searches staged changes instead of working directory files.</p>
+</li>
+<li>
+<p><strong>Exclude Files from .gitignore</strong>
+   <div class="highlight"><pre><span></span><code>git grep -I <span class="s2">&quot;pattern&quot;</span>
+</code></pre></div>
+   Excludes files that match patterns from <code>.gitignore</code> and <code>.git/info/exclude</code>.</p>
+</li>
+<li>
+<p><strong>Include Untracked Files</strong>
+   <div class="highlight"><pre><span></span><code>git grep --untracked <span class="s2">&quot;pattern&quot;</span>
+</code></pre></div>
+   Includes untracked files in the search.</p>
+</li>
+<li>
+<p><strong>Using <code>--all-match</code></strong>:
+   <div class="highlight"><pre><span></span><code>git grep --all-match <span class="s2">&quot;pattern1&quot;</span> <span class="s2">&quot;pattern2&quot;</span>
+</code></pre></div>
+   This command searches for lines that contain both "pattern1" and "pattern2". If a line contains only one of the patterns, it won't be considered a match.</p>
+</li>
+<li>
+<p><strong>Using <code>--extended-regexp</code></strong>:
+   <div class="highlight"><pre><span></span><code>git grep --extended-regexp <span class="s2">&quot;pattern1|pattern2&quot;</span>
+</code></pre></div>
+   This command enables the use of extended regular expressions, allowing you to specify more complex patterns using features like alternation (<code>|</code>). Here, the search matches lines containing either "pattern1" or "pattern2".</p>
+</li>
+<li>
+<p><strong>Using <code>-c</code> to Count Matches</strong>:
+   <div class="highlight"><pre><span></span><code>git grep -c <span class="s2">&quot;pattern&quot;</span>
+</code></pre></div>
+   This command searches for "pattern" in all tracked files and displays the total count of lines matching the pattern across all files.</p>
+</li>
+<li>
+<p><strong>Using <code>-p</code> to Show Function Context</strong>:
+   <div class="highlight"><pre><span></span><code>git grep -p <span class="s2">&quot;pattern&quot;</span>
+</code></pre></div>
+   This command searches for "pattern" in all tracked files and displays the matching lines along with their surrounding function context.</p>
+</li>
+</ul>
 <h2 id="git-log">git log</h2>
 <p>The <code>git log</code> command displays the commit history of the repository. It allows you to search for commits based on various criteria such as author, date range, commit message, and paths affected. You can use options like <code>--grep</code> to search for commits with specific patterns in their commit messages.</p>
 <h3 id="git-log-s"><strong><code>git log -S</code></strong></h3>
