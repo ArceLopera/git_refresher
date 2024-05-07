@@ -6,110 +6,164 @@ The `git grep` command searches through the contents of files in the repository 
 
 **`git grep <pattern>`**: Searches for the specified `<pattern>` in the contents of tracked files within the Git repository.
 
-**Options**:
-
-  - `-i` or `--ignore-case`: Performs a case-insensitive search.
-  - `-n` or `--line-number`: Shows line numbers where the pattern is found.
-  - `-w` or `--word-regexp`: Matches whole words only.
-  - `-e <pattern>`: Searches for multiple patterns.
-  - `--cached`: Searches staged changes instead of working directory files.
-  - `-I`: Excludes files that match patterns from `.gitignore` and `.git/info/exclude`.
-  - `--untracked`: Includes untracked files in the search.
-  - `--all-match`: This option, when used with `git grep`, ensures that only lines containing all of the specified patterns are matched. By default, when you provide multiple patterns, `git grep` matches lines containing any of the provided patterns. With `--all-match`, only lines containing all patterns are considered matches.
-  - `--extended-regexp`: This option allows you to use extended regular expressions (ERE) instead of the default basic regular expressions (BRE). Extended regular expressions provide additional features such as alternation (`|`), grouping (`()`), and quantifiers (`{}`, `?`, `*`, `+`) which can make pattern matching more flexible and powerful.
-  - `-c` or `--count`: This option causes `git grep` to only display a count of the lines that match the given pattern, rather than displaying the actual matching lines themselves. This can be useful when you're interested in the total number of occurrences of a pattern across multiple files, rather than the specific lines where the pattern occurs.
-  - `-p` or `--show-function` option in `git grep` allows you to display the surrounding function context of the matched lines, providing more context for each match. This can be particularly useful when searching through source code files where functions are defined.
-
-1. **Basic Usage**
+**Basic Usage**
    ```bash
    git grep "search_string"
    ```
    This command searches for "search_string" in all tracked files in the repository.
 
-2. **Case-Insensitive Search**
+**Search in Specific Files**
    ```bash
-   git grep -i "pattern"
-   ```
-   Performs a case-insensitive search for "pattern".
-
-3. **Search in Specific Files**
-   ```bash
+   # Searches for "pattern" only in `file1.txt` and `file2.txt`.
    git grep "pattern" file1.txt file2.txt
    ```
-   Searches for "pattern" only in `file1.txt` and `file2.txt`.
 
-4. **Search with Line Numbers**
+### **Options**
+
+  - `-i` or `--ignore-case`: Performs a **Case-Insensitive Search**.
    ```bash
+   # Performs a case-insensitive search for "pattern".
+   git grep -i "pattern"
+   ```
+
+  - `-n` or `--line-number`: Shows line numbers where the pattern is found.
+   ```bash
+   # Shows line numbers where "pattern" is found.
    git grep -n "pattern"
    ```
-   Shows line numbers where "pattern" is found.
-
-5. **Search for Whole Words**
+   
+  - `-w` or `--word-regexp`: **Search for Whole Words**
    ```bash
+   # Matches "pattern" as a whole word only.
    git grep -w "pattern"
    ```
-   Matches "pattern" as a whole word only.
-
-6. **Search for Multiple Patterns**
+   
+  - `-e <pattern>`: **Search for Multiple Patterns**
    ```bash
+   # Searches for both "pattern1" and "pattern2".
    git grep -e "pattern1" -e "pattern2"
    ```
-   Searches for both "pattern1" and "pattern2".
+   
 
-7. **Search Staged Changes**
+  - `--cached`: Searches staged changes instead of working directory files.
    ```bash
    git grep --cached "pattern"
    ```
-   Searches staged changes instead of working directory files.
 
-8. **Exclude Files from .gitignore**
+  - `-I`: Excludes files that match patterns from `.gitignore` and `.git/info/exclude`.
    ```bash
    git grep -I "pattern"
    ```
-   Excludes files that match patterns from `.gitignore` and `.git/info/exclude`.
 
-9. **Include Untracked Files**
+
+  - `--untracked`: Includes untracked files in the search.
    ```bash
    git grep --untracked "pattern"
    ```
-   Includes untracked files in the search.
 
-10. **Using `--all-match`**:
+  - `--all-match`: Only lines containing all of the specified patterns are matched. 
    ```bash
    git grep --all-match "pattern1" "pattern2"
    ```
-   This command searches for lines that contain both "pattern1" and "pattern2". If a line contains only one of the patterns, it won't be considered a match.
+   By default, when you provide multiple patterns, `git grep` matches lines containing any of the provided patterns. With `--all-match`, only lines containing all patterns are considered matches.
 
-11. **Using `--extended-regexp`**:
+  - `--extended-regexp`: 
+   This option allows you to use extended regular expressions (ERE) instead of the default basic regular expressions (BRE). Extended regular expressions provide additional features such as alternation (`|`), grouping (`()`), and quantifiers (`{}`, `?`, `*`, `+`) which can make pattern matching more flexible and powerful.
    ```bash
    git grep --extended-regexp "pattern1|pattern2"
    ```
-   This command enables the use of extended regular expressions, allowing you to specify more complex patterns using features like alternation (`|`). Here, the search matches lines containing either "pattern1" or "pattern2".
-
-12. **Using `-c` to Count Matches**:
+  - `-c` or `--count`: Only display a count of the lines that match the given pattern.
    ```bash
    git grep -c "pattern"
    ```
-   This command searches for "pattern" in all tracked files and displays the total count of lines matching the pattern across all files.
+   This command searches for "pattern" in all tracked files and displays the total count of lines matching the pattern across all files, rather than displaying the actual matching lines themselves. This can be useful when you're interested in the total number of occurrences of a pattern across multiple files, rather than the specific lines where the pattern occurs.
 
-13. **Using `-p` to Show Function Context**:
+  - `-p` or `--show-function` option in `git grep` allows you to display the surrounding function context of the matched lines, providing more context for each match. This can be particularly useful when searching through source code files where functions are defined.
    ```bash
    git grep -p "pattern"
    ```
-   This command searches for "pattern" in all tracked files and displays the matching lines along with their surrounding function context.
+
 
 ## git log
 
-The `git log` command displays the commit history of the repository. It allows you to search for commits based on various criteria such as author, date range, commit message, and paths affected. You can use options like `--grep` to search for commits with specific patterns in their commit messages.
+The `git log` command displays the commit history of the repository. It allows you to search for commits based on various criteria such as author, date range, commit message, and paths affected. You can use options like `--grep` to search for commits with specific patterns in their commit messages. Perhaps you’re looking not for where a term exists, but when it existed or was introduced. The git log command has a number of powerful tools for finding specific commits by the content of their messages or even the content of the diff they introduce.
 
-### **`git log -S`** 
+### **`git log --grep`**
+
+To search the commit log (across all branches) for the given text:
+```bash
+git log --all --grep='Build 0051'
+```
+
+To do so while ignoring case in the grep search:
+
+```bash
+git log --all -i --grep='Build 0051'
+```
+
+To search the actual content of commits through a repo's history, use:
+
+```bash
+git grep 'Build 0051' $(git rev-list --all)
+```
+to show all instances of the given text, the containing file name, and the commit sha1.
+
+And to do this while ignoring case, use:
+
+```bash
+git grep -i 'Build 0051' $(git rev-list --all)
+```
+
+Note that this searches the entire content of the commit at each stage, and not just the diff changes. To search just the diff changes, use one of the following:
+
+[git log -S[searchTerm]](#git-log--s-git-pickaxe-option)
+
+[git log -G[searchTerm]](#git-log--g)
+
+
+### **`git log -S` (Git “pickaxe” option)** 
 
 The `-S` option with `git log` allows you to search for commits that introduced or removed specific strings of text. It's useful for finding commits that added or removed specific functionality or code snippets.
+
+```bash
+git log -S "string" --oneline
+```
+If you need to be more specific, you can provide a regular expression to search for with the -G option.
 
 ### **`git log -G`**
 
 The `-G` option with `git log` allows you to search for commits that changed the number of occurrences of a specific regular expression. It's useful for finding commits that modified specific patterns in the codebase.
 
+```bash
+git log -G "pattern"
+```
+
+To illustrate the difference between -S<regex> --pickaxe-regex and -G<regex>, consider a commit with the following diff in the same file:
+``` bash
++    return frotz(nitfol, two->ptr, 1, 0);
+...
+-    hit = frotz(nitfol, mf2.ptr, 1, 0);
+```
+
+While `git log -G"frotz\(nitfol"` will show this commit, `git log -S"frotz\(nitfol" --pickaxe-regex` will not (because the number of occurrences of that string did not change).
+
+Unless `--text` is supplied patches of binary files without a textconv filter will be ignored.
+
+### Line Log Search
+
+git log with the -L option, and it will show you the history of a function or line of code in your codebase.
+
+```bash
+git log -L '/int main/',/^}/:main.c
+#Shows how the function main() in the file main.c evolved over time.
+```
+For example, if we wanted to see every change made to the function git_deflate_bound in the zlib.c file, we could run 
+
+```bash
+git log -L :git_deflate_bound:zlib.c 
+```
+
+This will try to figure out what the bounds of that function are and then look through the history and show us every change that was made to the function as a series of patches back to when the function was first created. You could also give it a range of lines or a single line number and you’ll get the same sort of output.
 
 ## git blame
 
