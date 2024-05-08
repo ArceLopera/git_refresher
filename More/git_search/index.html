@@ -985,7 +985,7 @@
   <h1>Searching Tools</h1>
 
 <p>Git offers several tools and commands for searching through your repository's history and content. These tools provide powerful capabilities for searching through your repository's history and content, allowing you to find specific commits, changes, or patterns quickly and efficiently.</p>
-<h2 id="git-grep">git grep</h2>
+<h2 id="git-grep"><strong><code>git grep</code></strong></h2>
 <p>The <code>git grep</code> command searches through the contents of files in the repository for a specific pattern. It supports options like <code>--all-match</code> to match all patterns, <code>--ignore-case</code> for case-insensitive searches, and <code>--extended-regexp</code> to use extended regular expressions.</p>
 <p><strong><code>git grep &lt;pattern&gt;</code></strong>: Searches for the specified <code>&lt;pattern&gt;</code> in the contents of tracked files within the Git repository.</p>
 <p><strong>Basic Usage</strong>
@@ -1061,7 +1061,7 @@ git grep -e <span class="s2">&quot;pattern1&quot;</span> -e <span class="s2">&qu
 </code></pre></div></p>
 </li>
 </ul>
-<h2 id="git-log">git log</h2>
+<h2 id="git-log"><strong><code>git log</code></strong></h2>
 <p>The <code>git log</code> command displays the commit history of the repository. It allows you to search for commits based on various criteria such as author, date range, commit message, and paths affected. You can use options like <code>--grep</code> to search for commits with specific patterns in their commit messages. Perhaps you’re looking not for where a term exists, but when it existed or was introduced. The git log command has a number of powerful tools for finding specific commits by the content of their messages or even the content of the diff they introduce.</p>
 <h3 id="git-log-grep"><strong><code>git log --grep</code></strong></h3>
 <p>To search the commit log (across all branches) for the given text:
@@ -1105,7 +1105,7 @@ For example, if we wanted to see every change made to the function git_deflate_b
 <div class="highlight"><pre><span></span><code>git log -L :git_deflate_bound:zlib.c 
 </code></pre></div>
 <p>This will try to figure out what the bounds of that function are and then look through the history and show us every change that was made to the function as a series of patches back to when the function was first created. You could also give it a range of lines or a single line number and you’ll get the same sort of output.</p>
-<h2 id="git-blame">git blame</h2>
+<h2 id="git-blame"><strong><code>git blame</code></strong></h2>
 <p>The <code>git blame</code> command shows the revision and author of each line in a file. It's useful for identifying when and by whom each line was last modified. You can use it to track down the origin of specific changes.</p>
 <h2 id="git-rev-list"><strong><code>git rev-list</code></strong></h2>
 <p>The <code>git rev-list</code> command lists commit objects in reverse chronological order. It can be combined with other commands like <code>git grep</code> or <code>git log</code> to search for commits that match specific criteria.</p>
