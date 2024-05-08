@@ -1,6 +1,6 @@
 Git offers several tools and commands for searching through your repository's history and content. These tools provide powerful capabilities for searching through your repository's history and content, allowing you to find specific commits, changes, or patterns quickly and efficiently.
 
-## git grep
+## **`git grep`**
 
 The `git grep` command searches through the contents of files in the repository for a specific pattern. It supports options like `--all-match` to match all patterns, `--ignore-case` for case-insensitive searches, and `--extended-regexp` to use extended regular expressions.
 
@@ -84,7 +84,7 @@ The `git grep` command searches through the contents of files in the repository 
    ```
 
 
-## git log
+## **`git log`**
 
 The `git log` command displays the commit history of the repository. It allows you to search for commits based on various criteria such as author, date range, commit message, and paths affected. You can use options like `--grep` to search for commits with specific patterns in their commit messages. Perhaps you’re looking not for where a term exists, but when it existed or was introduced. The git log command has a number of powerful tools for finding specific commits by the content of their messages or even the content of the diff they introduce.
 
@@ -165,7 +165,7 @@ git log -L :git_deflate_bound:zlib.c
 
 This will try to figure out what the bounds of that function are and then look through the history and show us every change that was made to the function as a series of patches back to when the function was first created. You could also give it a range of lines or a single line number and you’ll get the same sort of output.
 
-## git blame
+## **`git blame`**
 
 The `git blame` command shows the revision and author of each line in a file. It's useful for identifying when and by whom each line was last modified. You can use it to track down the origin of specific changes.
 

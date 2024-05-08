@@ -49,6 +49,8 @@ git commit --amend
 
 ##### **Interactively Reverting or Editing Commits**
 
+For more information, check out the [Git Rebase](https://git-rebase.io/) practical guide.
+
   ```bash
   git rebase -i <commit-hash>
   ```
@@ -85,6 +87,8 @@ In the interactive rebase editor, you can choose actions for each commit:
 - `squash` or `fixup`: Combine the commit with the previous one.
 - `drop`: Remove the commit.
 
+###### Squashing Commits
+
 For example, to squash the last three commits into a single commit, you can modify the file to look like this:
 
 ```bash
@@ -104,6 +108,74 @@ After saving and closing the file, Git will prompt you to modify the commit mess
 
 Interactive rebasing is a powerful but potentially risky operation. Be cautious and ensure you have a backup or a way to recover your changes if needed.
 
+It’s important to note that these commits are listed in the opposite order than you normally see them using the log command. If you run a log, you see something like this:
+
+```bash
+git log --pretty=format:"%h %s" HEAD~6..HEAD
+
+pqr678 Commit message 6
+mno345 Commit message 5
+jkl012 Commit message 4
+789ghi Commit message 3
+def456 Commit message 2
+abc123 Commit message 1
+```
+Notice the reverse order. The interactive rebase gives you a script that it’s going to run. It will start at the commit you specify on the command line (HEAD~3) and replay the changes introduced in each of these commits from top to bottom. It lists the oldest at the top, rather than the newest, because that’s the first one it will replay.
+
+You need to edit the script so that it stops at the commit you want to edit. To do so, change the word “pick” to the word “edit” for each of the commits you want the script to stop after.
+
+Remember to use `git rebase --continue` to continue the rebase.
+
+###### Reordering Commits
+
+You can also use interactive rebases to reorder or remove commits entirely. If you want to remove commits and/or change the order in which the other two commits are introduced, you can change the rebase script.
+
+```bash
+pick def456 Commit message 2
+pick abc123 Commit message 1
+pick 789ghi Commit message 3
+pick pqr678 Commit message 6
+```
+
+When you save and exit the editor, Git rewinds your branch to the parent of these commits, applies the specified commits in order, and then stops. You effectively change the order of those commits and remove commits completely.
+
+###### Splitting Commits
+
+Splitting a commit undoes a commit and then partially stages and commits as many times as commits you want to end up with. For example, suppose you want to split the middle commit of your three commits. Instead of “Commit message 2 and 3”, you want to split it into two commits: “Commit message 2” for the first, and “Commit message 3” for the second. You can do that in the rebase -i script by changing the instruction on the commit you want to split to “edit”:
+
+```bash
+pick abc123 Commit message 1
+pick def456 Commit message 2 and 3
+edit 789ghi Commit message 4
+```
+
+Then, when the script drops you to the command line, you reset that commit, take the changes that have been reset, and create multiple commits out of them. When you save and exit the editor, Git rewinds to the parent of the first commit in your list, applies the first commit (abc123), applies the second (def456), and drops you to the console. There, you can do a mixed reset of that commit with git reset HEAD^, which effectively undoes that commit and leaves the modified files unstaged. Now you can stage and commit files until you have several commits, and run git rebase --continue when you’re done.
+
+```
+git reset HEAD^
+git add README
+git commit -m 'Commit message 2'
+git add file2.txt
+git commit -m 'Commit message 3'
+git rebase --continue	
+```
+
+Then, git apply the third commit (def456) and you’re done.
+This changes the SHA-1s of the three most recent commits in your list, so make sure no changed commit shows up in that list that you’ve already pushed to a shared repository.
+
+###### Deleting Commits
+
+If you want to get rid of a commit, you can delete it using the rebase -i script. In the list of commits, put the word “drop” before the commit you want to delete (or just delete that line from the rebase script).
+
+Because of the way Git builds commit objects, deleting or altering a commit will cause the rewriting of all the commits that follow it. The further back in your repo’s history you go, the more commits will need to be recreated. This can cause lots of merge conflicts if you have many commits later in the sequence that depend on the one you just deleted.
+
+If you get partway through a rebase like this and decide it’s not a good idea, you can always stop. Type git rebase --abort, and your repo will be returned to the state it was in before you started the rebase.
+
+If you finish a rebase and decide it’s not what you want, you can use git reflog to recover an earlier version of your branch.
+
+##### **filter-branch**
+
+There is another history-rewriting option that you can use if you need to rewrite a larger number of commits in some scriptable way — for instance, changing your email address globally or removing a file from every commit. The command is filter-branch, and it can rewrite huge swaths of your history, so you probably shouldn’t use it unless your project isn’t yet public and other people haven’t based work off the commits you’re about to rewrite. git filter-branch has many pitfalls, and is no longer the recommended way to rewrite history. Instead, consider using git-filter-repo, which is a Python script that does a better job for most applications where you would normally turn to filter-branch. Check its [documentation and source code](https://github.com/newren/git-filter-repo).
 
 ### 2. **Undoing Uncommitted Changes**
 
@@ -301,7 +373,7 @@ Both worktree and index could also be restored at the same time (from a tree) wh
 
 
 ### 6. **Rewriting history**
-In Git, rewriting branches, updating commits, and clearing history are common tasks that allow you to modify the commit history of a repository. These actions can be useful for cleaning up history, organizing commits, or incorporating changes from other branches. 
+In Git, rewriting branches, updating commits, and clearing history are common tasks that allow you to modify the commit history of a repository. These actions can be useful for cleaning up history, organizing commits, or incorporating changes from other branches. Git allows changing the order of the commits, changing messages or modifying files in a commit, squashing together or splitting apart commits, or removing commits entirely — all before you share your work with others.
 
 ##### **git rebase [branch]**
 
