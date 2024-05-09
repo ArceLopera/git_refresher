@@ -104,6 +104,7 @@ nav:
      - Aliases: Advanced/git_alias.md
      - Tagging: Advanced/git_tagging.md
      - Branching: Advanced/git_branch.md
+     - Advanced Merge: Advanced/git_advmerge.md
      - Patching: Advanced/git_patches.md
      - Ignoring Files: Advanced/git_ignore.md
      - Temporary Commits: Advanced/git_stash.md
