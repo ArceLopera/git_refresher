@@ -1003,25 +1003,50 @@
   <h1>Advanced Merge</h1>
 
 <h3 id="merge-conflicts">Merge Conflicts</h3>
-<p>Merge conflicts occur when Git is unable to automatically resolve differences between branches. You can resolve conflicts manually by editing the conflicting files and then committing the changes.</p>
+<p>Merge conflicts occur when Git is unable to automatically resolve differences between branches. You can resolve conflicts manually by editing the conflicting files and then committing the changes. Git’s philosophy is to be smart about determining when a merge resolution is unambiguous, but if there is a conflict, it does not try to be clever about automatically resolving it. Therefore, if you wait too long to merge two branches that diverge quickly, you can run into some issues.</p>
 <div class="highlight"><pre><span></span><code>git merge feature-branch
 <span class="c1"># Resolve conflicts in conflicted files</span>
 git add &lt;resolved-file&gt;
 git commit
 </code></pre></div>
+<p>First of all, if at all possible, try to make sure your working directory is clean before doing a merge that may have conflicts. If you have work in progress, either commit it to a temporary branch or stash it. This makes it so that you can undo anything you try here. If you have unsaved changes in your working directory when you try a merge, some of these tips may help you preserve that work.</p>
 <h3 id="aborting-a-merge">Aborting a Merge</h3>
-<p>If you encounter issues during a merge and want to abort the process, you can use <code>git merge --abort</code>.</p>
-<div class="highlight"><pre><span></span><code>git merge --abort
+<p>If you encounter issues during a merge and want to abort the process, you can use:</p>
+<p><div class="highlight"><pre><span></span><code>git merge --abort
 </code></pre></div>
+The <code>--abort</code> option tries to revert back to your state before you ran the merge. The only cases where it may not be able to do this perfectly would be if you had unstashed, uncommitted changes in your working directory when you ran it, otherwise it should work fine.</p>
+<p>If for some reason you just want to start over, you can also run <code>git reset --hard HEAD</code>, and your repository will be back to the last committed state. Remember that any uncommitted work will be lost, so make sure you don’t want any of your changes.</p>
 <h3 id="ignoring-whitespace">Ignoring Whitespace</h3>
-<p>To ignore whitespace changes during a merge, you can use the <code>-Xignore-space-change</code> or <code>-Xignore-all-space</code> option.</p>
+<p>To ignore whitespace changes during a merge, you can use the <code>-Xignore-space-change</code> or <code>-Xignore-all-space</code> option. If you see that you have a lot of whitespace issues in a merge, you can simply abort it and do it again, this time with -Xignore-all-space or -Xignore-space-change. The first option ignores whitespace completely when comparing lines, the second treats sequences of one or more whitespace characters as equivalent.</p>
 <div class="highlight"><pre><span></span><code>git merge -Xignore-space-change feature-branch
 </code></pre></div>
+<p>This can be identified when looking at the conflict because every line is removed on one side and added again on the other. By default, Git sees all of these lines as being changed, so it can’t merge the files.</p>
+<p>This is a lifesaver if you have someone on your team who likes to occasionally reformat everything from spaces to tabs or vice-versa.</p>
 <h3 id="manual-file-re-merging">Manual File Re-merging</h3>
-<p>If you need to re-merge a file manually after resolving conflicts, you can use <code>git checkout --ours</code> or <code>git checkout --theirs</code>.</p>
-<div class="highlight"><pre><span></span><code>git checkout --ours &lt;file&gt;
-git checkout --theirs &lt;file&gt;
+<p>Accessing the three versions of a file in a conflict can be useful for debugging or troubleshooting. Suppose we have three versions of the hello.rb file: hello.common.rb (common ancestor), hello.ours.rb (current version), and hello.theirs.rb (version to be merged).</p>
+<p><div class="highlight"><pre><span></span><code>git show :1:hello.rb &gt; hello.common.rb
+git show :2:hello.rb &gt; hello.ours.rb
+git show :3:hello.rb &gt; hello.theirs.rb
 </code></pre></div>
+Note: The :1:hello.rb is just a shorthand for looking up that blob SHA-1.</p>
+<p>The <code>git merge-file</code> command is used to merge changes from three different versions of a file: a common ancestor, the current version, and the version to be merged. This command is particularly useful when resolving merge conflicts manually or when automating the merge process in scripts. </p>
+<div class="highlight"><pre><span></span><code>git merge-file <span class="o">[</span>-p <span class="p">|</span> --stdout<span class="o">]</span> &lt;current-file&gt; &lt;base-file&gt; &lt;other-file&gt;
+</code></pre></div>
+<ul>
+<li><strong><code>-p</code> or <code>--stdout</code></strong>: Optional flag to output the merged content to standard output instead of modifying files directly.</li>
+<li><strong><code>&lt;current-file&gt;</code></strong>: The file as it exists in the current branch.</li>
+<li><strong><code>&lt;base-file&gt;</code></strong>: The common ancestor file before any changes were made.</li>
+<li><strong><code>&lt;other-file&gt;</code></strong>: The file to be merged into the current branch.</li>
+</ul>
+<p><strong>Merging Changes from Three Versions</strong>
+   <div class="highlight"><pre><span></span><code>git merge-file -p hello.ours.rb hello.common.rb hello.theirs.rb &gt; hello.rb
+</code></pre></div>
+   This command merges the changes from <code>hello.common.rb</code> (common ancestor), <code>hello.ours.rb</code> (current version), and <code>hello.theirs.rb</code> (version to be merged) and outputs the merged content to <code>hello.rb</code>.</p>
+<ul>
+<li><strong>Manual Conflict Resolution</strong>: Use <code>git merge-file</code> to resolve merge conflicts manually by inspecting and editing the merged content before committing.</li>
+<li><strong>Automated Merge Process</strong>: Integrate <code>git merge-file</code> into scripts or automated processes to perform merges without manual intervention, such as during continuous integration workflows.</li>
+</ul>
+<p>To compare your result to what you had in your branch before the merge, in other words, to see what the merge introduced, you can run <code>git diff --ours</code>. If we want to see how the result of the merge differed from what was on their side, you can run <code>git diff --theirs</code>. Finally, you can see how the file has changed from both sides with <code>git diff --base</code>.</p>
 <h3 id="checking-out-conflicts">Checking Out Conflicts</h3>
 <p>To view the conflicting changes in a file, you can use <code>git checkout --conflict</code>.</p>
 <div class="highlight"><pre><span></span><code>git checkout --conflict &lt;file&gt;
