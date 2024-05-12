@@ -67,11 +67,83 @@ git merge-file [-p | --stdout] <current-file> <base-file> <other-file>
 To compare your result to what you had in your branch before the merge, in other words, to see what the merge introduced, you can run `git diff --ours`. If we want to see how the result of the merge differed from what was on their side, you can run `git diff --theirs`. Finally, you can see how the file has changed from both sides with `git diff --base`.
 
 ### Checking Out Conflicts
-To view the conflicting changes in a file, you can use `git checkout --conflict`.
+
+Perhaps we’re not happy with the resolution at this point for some reason, or maybe manually editing one or both sides still didn’t work well and we need more context. For example, imagine we have two longer lived branches that each have a few commits in them but create a legitimate content conflict when merged.
+
+```bash
+$ git log --graph --oneline --decorate --all
+* f1270f7 (HEAD, master) Update README
+* 9af9d3b Create README
+* 694971d Update phrase to 'hola world'
+| * e3eb223 (mundo) Add more tests
+| * 7cff591 Create initial testing script
+| * c3ffff1 Change text to 'hello mundo'
+|/
+* b7dcc89 Initial hello world code
+```
+
+We now have three unique commits that live only on the master branch and three others that live on the mundo branch. If we try to merge the mundo branch in, we get a conflict.
+
+```bash
+$ git merge mundo
+Auto-merging hello.rb
+CONFLICT (content): Merge conflict in hello.rb
+Automatic merge failed; fix conflicts and then commit the result.
+```
+We would like to see what the merge conflict is. If we open up the file, we’ll see something like this:
+
+```bash
+#! /usr/bin/env ruby
+
+def hello
+<<<<<<< HEAD
+  puts 'hola world'
+=======
+  puts 'hello mundo'
+>>>>>>> mundo
+end
+
+hello()
+```
+Both sides of the merge added content to this file, but some of the commits modified the file in the same place that caused this conflict.
+
+One helpful tool is git checkout with the --conflict option. This will re-checkout the file again and replace the merge conflict markers. This can be useful if you want to reset the markers and try to resolve them again.
 
 ```bash
 git checkout --conflict <file>
 ```
+
+You can pass --conflict either diff3 or merge (which is the default). If you pass it diff3, Git will use a slightly different version of conflict markers, not only giving you the “ours” and “theirs” versions, but also the “base” version inline to give you more context.
+
+```bash
+git checkout --conflict=diff3 hello.rb
+```
+Once we run that, the file will look like this instead:
+
+```bash
+#! /usr/bin/env ruby
+
+def hello
+<<<<<<< ours
+  puts 'hola world'
+||||||| base
+  puts 'hello world'
+=======
+  puts 'hello mundo'
+>>>>>>> theirs
+end
+
+hello()
+```
+If you like this format, you can set it as the default for future merge conflicts by setting the merge.conflictstyle setting to diff3.
+
+```bash
+git config --global merge.conflictstyle diff3
+```
+
+The git checkout command can also take --ours and --theirs options, which can be a really fast way of just choosing either one side or the other without merging things at all.
+
+This can be particularly useful for conflicts of binary files where you can simply choose one side, or where you only want to merge certain files in from another branch — you can do the merge and then checkout certain files from one side or the other before committing.
 
 ### Merge Log
 To view the history of merges in your repository, you can use `git log --merges`.
