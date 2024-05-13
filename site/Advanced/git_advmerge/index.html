@@ -1106,12 +1106,60 @@ If you like this format, you can set it as the default for future merge conflict
 <p>The git checkout command can also take --ours and --theirs options, which can be a really fast way of just choosing either one side or the other without merging things at all.</p>
 <p>This can be particularly useful for conflicts of binary files where you can simply choose one side, or where you only want to merge certain files in from another branch — you can do the merge and then checkout certain files from one side or the other before committing.</p>
 <h3 id="merge-log">Merge Log</h3>
-<p>To view the history of merges in your repository, you can use <code>git log --merges</code>.</p>
-<div class="highlight"><pre><span></span><code>git log --merges
+<p>AQnother useful tool when resolving merge conflicts is git log. This can help you get context on what may have contributed to the conflicts. Reviewing a little bit of history to remember why two lines of development were touching the same area of code can be really helpful sometimes.</p>
+<p>To get a full list of all of the unique commits that were included in either branch involved in this merge, we can use the “triple dot”.</p>
+<p><div class="highlight"><pre><span></span><code>git log --oneline --left-right HEAD...MERGE_HEAD
 </code></pre></div>
+We can further simplify this though to give us much more specific context. If we add the --merge option to git log, it will only show the commits in either side of the merge that touch a file that’s currently conflicted.</p>
+<p><div class="highlight"><pre><span></span><code>git log --oneline --left-right --merge
+</code></pre></div>
+If you run that with the -p option instead, you get just the diffs to the file that ended up in conflict. This can be really helpful in quickly giving you the context you need to help understand why something conflicts and how to more intelligently resolve it.</p>
 <h3 id="combined-diff-format">Combined Diff Format</h3>
-<p>The combined diff format shows changes from multiple branches in a single diff output.</p>
-<div class="highlight"><pre><span></span><code>git diff --combined
+<p>Since Git stages any merge results that are successful, when you run git diff while in a conflicted merge state, you only get what is currently still in conflict. This can be helpful to see what you still have to resolve.</p>
+<p>When you run git diff directly after a merge conflict, it will give you information in a rather unique diff output format.</p>
+<div class="highlight"><pre><span></span><code>git diff
+</code></pre></div>
+<p><div class="highlight"><pre><span></span><code>diff --cc hello.rb
+index 0399cd5,59727f0..0000000
+--- a/hello.rb
++++ b/hello.rb
+@@@ -1,7 -1,7 +1,11 @@@
+  #! /usr/bin/env ruby
+
+  def hello
+++&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+ +  puts &#39;hola world&#39;
+++=======
++   puts &#39;hello mundo&#39;
+++&gt;&gt;&gt;&gt;&gt;&gt;&gt; mundo
+  end
+
+  hello()
+</code></pre></div>
+The format is called “Combined Diff” and gives you two columns of data next to each line. The first column shows you if that line is different (added or removed) between the “ours” branch and the file in your working directory and the second column does the same between the “theirs” branch and your working directory copy.</p>
+<p>So in that example you can see that the &lt;&lt;&lt;&lt;&lt;&lt;&lt; and &gt;&gt;&gt;&gt;&gt;&gt;&gt; lines are in the working copy but were not in either side of the merge. This makes sense because the merge tool stuck them in there for our context, but we’re expected to remove them.</p>
+<p>If we resolve the conflict and run git diff again, we’ll see the same thing, but it’s a little more useful.</p>
+<p><div class="highlight"><pre><span></span><code>vim hello.rb
+git diff
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>diff --cc hello.rb
+index 0399cd5,59727f0..0000000
+--- a/hello.rb
++++ b/hello.rb
+@@@ -1,7 -1,7 +1,7 @@@
+  #! /usr/bin/env ruby
+
+  def hello
+-   puts &#39;hola world&#39;
+ -  puts &#39;hello mundo&#39;
+++  puts &#39;hola mundo&#39;
+  end
+
+  hello()
+</code></pre></div></p>
+<p>This shows us that “hola world” was in our side but not in the working copy, that “hello mundo” was in their side but not in the working copy and finally that “hola mundo” was not in either side but is now in the working copy. This can be useful to review before committing the resolution.</p>
+<p>You can also get this from the git log for any merge to see how something was resolved after the fact. Git will output this format if you run git show on a merge commit, or if you add a --cc option to a git log -p (which by default only shows patches for non-merge commits).</p>
+<div class="highlight"><pre><span></span><code>git log --cc -p -1
 </code></pre></div>
 <h3 id="undoing-merges">Undoing Merges</h3>
 <p>To undo a merge commit and reset the branch to its state before the merge, you can use <code>git reset --hard</code>.</p>
