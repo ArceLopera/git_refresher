@@ -225,31 +225,68 @@ git log --cc -p -1
 
 
 ### Undoing Merges
-To undo a merge commit and reset the branch to its state before the merge, you can use `git reset --hard`.
+
+Now that you know how to create a merge commit, you’ll probably make some by mistake. One of the great things about working with Git is that it’s okay to make mistakes, because it’s possible (and in many cases easy) to fix them.
+
+There are two ways to approach this problem, depending on what your desired outcome is.
+
+#### Fix the References
+
+If the unwanted merge commit only exists on your local repository, the easiest and best solution is to move the branches so that they point where you want them to. In most cases, if you follow the errant git merge with git reset --hard HEAD~, this will reset the branch pointers to what they were before the merge. To undo a merge commit and reset the branch to its state before the merge, you can use `git reset --hard`.
 
 ```bash
 git reset --hard HEAD^
 ```
 
+`reset --hard` usually goes through three steps:
 
++ Move the branch HEAD points to. In this case, we want to move master to where it was before the merge commit (C6).
 
-### Fix the References
-If you need to fix the references after a failed merge, you can manually update the references in the `.git/refs` directory.
++ Make the index look like HEAD.
 
-### Reverse the Commit
-To reverse a merge commit, you can use `git revert`.
++ Make the working directory look like the index.
+
+The downside of this approach is that it’s rewriting history, which can be problematic with a shared repository. This approach also won’t work if any other commits have been created since the merge; moving the refs would effectively lose those changes.
+
+#### Reverse the Commit
+If moving the branch pointers around isn’t going to work for you, Git gives you the option of making a new commit which undoes all the changes from an existing one. Git calls this operation a “revert”. To reverse a merge commit, you can use `git revert`.
 
 ```bash
 git revert -m 1 <merge-commit>
 ```
 
-### Our or Theirs Preference
-During a merge, you can specify whether to prefer changes from the current branch (`--ours`) or the merged branch (`--theirs`).
+```bash
+git revert -m 1 HEAD
+```
+
+### Other types of Merges
+So far we’ve covered the normal merge of two branches, normally handled with what is called the “recursive” strategy of merging. There are other ways to merge branches together however.
+
+#### Our or Theirs Preference
+
+During a merge, you can specify whether to prefer changes from the current branch (`--ours`) or the merged branch (`--theirs`). By default, when Git sees a conflict between two branches being merged, it will add merge conflict markers into your code and mark the file as conflicted and let you resolve it. If you would prefer for Git to simply choose a specific side and ignore the other side instead of letting you manually resolve the conflict, you can pass the merge command either a -Xours or -Xtheirs.
+
+If Git sees this, it will not add conflict markers. Any differences that are mergeable, it will merge. Any differences that conflict, it will simply choose the side you specify in whole, including binary files.
 
 ```bash
 git merge -Xours feature-branch
 git merge -Xtheirs feature-branch
 ```
+
+This option can also be passed to the git merge-file command we saw earlier by running something like git merge-file --ours for individual file merges.
+
+If you want to do something like this but not have Git even try to merge changes from the other side in, there is a more draconian option, which is the “ours” merge strategy. This is different from the “ours” recursive merge option.
+
+This will basically do a fake merge. It will record a new merge commit with both branches as parents, but it will not even look at the branch you’re merging in. It will simply record as the result of the merge the exact code in your current branch.
+```	bash
+git merge -s ours mundo
+Merge made by the 'ours' strategy.
+git diff HEAD HEAD~
+```
+
+You can see that there is no difference between the branch we were on and the result of the merge.
+
+This can often be useful to basically trick Git into thinking that a branch is already merged when doing a merge later on. For example, say you branched off a release branch and have done some work on it that you will want to merge back into your master branch at some point. In the meantime some bugfix on master needs to be backported into your release branch. You can merge the bugfix branch into the release branch and also merge -s ours the same branch into your master branch (even though the fix is already there) so when you later merge the release branch again, there are no conflicts from the bugfix.
 
 ### Subtree Merging
 Subtree merging involves merging in changes from one branch into a subdirectory of another branch.
