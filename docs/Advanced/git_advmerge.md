@@ -288,13 +288,53 @@ You can see that there is no difference between the branch we were on and the re
 
 This can often be useful to basically trick Git into thinking that a branch is already merged when doing a merge later on. For example, say you branched off a release branch and have done some work on it that you will want to merge back into your master branch at some point. In the meantime some bugfix on master needs to be backported into your release branch. You can merge the bugfix branch into the release branch and also merge -s ours the same branch into your master branch (even though the fix is already there) so when you later merge the release branch again, there are no conflicts from the bugfix.
 
-### Subtree Merging
-Subtree merging involves merging in changes from one branch into a subdirectory of another branch.
+#### Subtree Merging
+
+The idea of the subtree merge is that you have two projects, and one of the projects maps to a subdirectory of the other one. When you specify a subtree merge, Git is often smart enough to figure out that one is a subtree of the other and merge appropriately.
+
+An example of this will be adding a separate project into an existing project and then merging the code of the second into a subdirectory of the first.
+
+So, we’ll add the Rack application to our project. We’ll add the Rack project as a remote reference in our own project and then check it out into its own branch:
 
 ```bash
-git merge --squash --no-commit feature-branch
-git read-tree --prefix=subdir/ -u feature-branch
-git commit -m "Merge feature-branch into subdir"
+git remote add rack_remote https://github.com/rack/rack
+git fetch rack_remote --no-tags
+git checkout -b rack_branch rack_remote/master
+```
+Now we have the root of the Rack project in our rack_branch branch and our own project in the master branch. If you check out one and then the other, you can see that they have different project roots.
+
+In this case, we want to pull the Rack project into our master project as a subdirectory. We can do that in Git with git read-tree. `read-tree` reads the root tree of one branch into your current staging area and working directory. We just switched back to your master branch, and we pull the rack_branch branch into the rack subdirectory of our master branch of our main project.
+
+```bash
+git read-tree --prefix=rack/ -u rack_branch
 ```
 
-These advanced merging techniques provide you with greater control and flexibility when managing merges in your Git repository, allowing you to handle complex merging scenarios efficiently.
+When we commit, it looks like we have all the Rack files under that subdirectory — as though we copied them in from a tarball. What gets interesting is that we can fairly easily merge changes from one of the branches to the other. So, if the Rack project updates, we can pull in upstream changes by switching to that branch and pulling it in.
+
+```bash
+git checkout rack_branch
+git pull
+```
+
+Then, we can merge those changes back into our master branch. To pull in the changes and prepopulate the commit message, use the `--squash` option, as well as the recursive merge strategy’s `-Xsubtree` option. The recursive strategy is the default here, but we include it for clarity.
+
+```bash
+git checkout master
+git merge --squash -s recursive -Xsubtree=rack rack_branch
+```
+
+All the changes from the Rack project are merged in and ready to be committed locally. You can also do the opposite — make changes in the rack subdirectory of your master branch and then merge them into your rack_branch branch later to submit them to the maintainers or push them upstream.
+
+This gives us a way to have a workflow somewhat similar to the submodule workflow without using submodules. We can keep branches with other related projects in our repository and subtree merge them into our project occasionally. It is nice in some ways, for example all the code is committed to a single place. However, it has other drawbacks in that it’s a bit more complex and easier to make mistakes in reintegrating changes or accidentally pushing a branch into an unrelated repository.
+
+Another slightly weird thing is that to get a diff between what you have in your rack subdirectory and the code in your rack_branch branch — to see if you need to merge them — you can’t use the normal diff command. Instead, you must run git diff-tree with the branch you want to compare to.
+
+```bash
+git diff-tree -p rack_branch
+```
+
+Or, to compare what is in your rack subdirectory with what the master branch on the server was the last time you fetched, you can run:
+
+```bash
+git diff-tree -p rack_remote/master
+```
