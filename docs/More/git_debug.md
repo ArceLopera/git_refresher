@@ -14,7 +14,7 @@ The `git blame` command is used to show what revision and author last modified e
 git blame file.txt
 ```
 
-In the ouThe ^ prefix designates lines that were introduced in the repository’s initial commit and have remained unchanged ever since.
+In the output, the first column is the commit hash, the second column is the author, and the third column is the line number. The ^ prefix designates lines that were introduced in the repository’s initial commit and have remained unchanged ever since.
 
 ####  `git blame -L`
 The `-L` option allows you to specify line ranges to limit the output to specific parts of the file.
