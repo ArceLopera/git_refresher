@@ -864,6 +864,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../git_debug/" class="md-nav__link">
+        Debugging
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -972,15 +986,16 @@
 
   <h1>Reuse Recorded Resolution</h1>
 
-<p><code>git rerere</code> (reuse recorded resolution) is a useful tool for handling repeated merge conflicts in Git. When enabled, Git records how you resolve a merge conflict and automatically applies the same resolution if the same conflict occurs again in the future. This can be a significant time saver when working on long-lived branches or frequently rebasing/merging.</p>
+<p><code>git rerere</code> (reuse recorded resolution) is a useful tool for handling repeated merge conflicts in Git. When enabled, Git records how you resolve a merge conflict and automatically applies the same resolution if the same conflict occurs again in the future. This can be a significant time saver when working on long-lived branches or frequently rebasing/merging. This same tactic can be used if you want to keep a branch rebased so you don’t have to deal with the same rebasing conflicts each time you do it. Or if you want to take a branch that you merged and fixed a bunch of conflicts and then decide to rebase it instead — you likely won’t have to do all the same conflicts again.</p>
 <h3 id="enabling-git-rerere">Enabling <code>git rerere</code></h3>
 <p>Before you can use <code>git rerere</code>, you need to enable it. You can do this globally or per repository:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Enable rerere globally</span>
+<p><div class="highlight"><pre><span></span><code><span class="c1"># Enable rerere globally</span>
 git config --global rerere.enabled <span class="nb">true</span>
 
 <span class="c1"># Enable rerere for a specific repository</span>
 git config rerere.enabled <span class="nb">true</span>
 </code></pre></div>
+You can also turn it on by creating the .git/rr-cache directory in a specific repository, but the config setting is clearer and enables that feature globally for you.</p>
 <h3 id="basic-usage">Basic Usage</h3>
 <h4 id="setup-a-scenario-for-git-rerere"><strong>Setup a Scenario for <code>git rerere</code></strong></h4>
 <p>Let's set up a scenario where <code>git rerere</code> can be useful. Consider two branches that both modify the same line in a file:</p>
@@ -1007,16 +1022,29 @@ git commit -am <span class="s2">&quot;Change in branch2&quot;</span>
 </code></pre></div>
 <h4 id="merge-with-conflict"><strong>Merge with Conflict</strong></h4>
 <p>Merge <code>branch1</code> into <code>branch2</code>, causing a conflict:</p>
-<div class="highlight"><pre><span></span><code>git checkout branch2
+<p><div class="highlight"><pre><span></span><code>git checkout branch2
 git merge branch1
 </code></pre></div>
+When rerere is enabled, the merge will output an additional line in the log:</p>
+<p><div class="highlight"><pre><span></span><code>Recorded preimage <span class="k">for</span> FILE
+</code></pre></div>
+ Otherwise it should look exactly like a normal merge conflict. At this point, rerere can tell us a few things. Normally, you might run git status at this point to see what all conflicted. However, git rerere will also tell you what it has recorded the pre-merge state for with git rerere status.</p>
+<p><div class="highlight"><pre><span></span><code>git rerere status
+</code></pre></div>
+And git rerere diff will show the current state of the resolution — what you started with to resolve and what you’ve resolved it to.</p>
+<div class="highlight"><pre><span></span><code>git rerere diff
+</code></pre></div>
+<p>Also (and this isn’t really related to rerere), you can use git ls-files -u to see the conflicted files and the before, left and right versions of the file.</p>
+<div class="highlight"><pre><span></span><code>git ls-files -u
+</code></pre></div>
 <p>Resolve the conflict manually:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Edit file.txt to resolve the conflict</span>
+<p><div class="highlight"><pre><span></span><code><span class="c1"># Edit file.txt to resolve the conflict</span>
 <span class="c1"># For example, make the file content: &quot;Line 1 - resolved&quot;</span>
 <span class="nb">echo</span> <span class="s2">&quot;Line 1 - resolved&quot;</span> &gt; file.txt
 git add file.txt
 git commit -m <span class="s2">&quot;Resolve conflict between branch1 and branch2&quot;</span>
 </code></pre></div>
+You can see that it "Recorded resolution for FILE". You can run git rerere diff again to see what rerere will remember.</p>
 <h4 id="reuse-recorded-resolution"><strong>Reuse Recorded Resolution</strong></h4>
 <p>Now, let's create another conflict scenario to see <code>git rerere</code> in action:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Create a new conflicting branch</span>
@@ -1029,16 +1057,20 @@ git commit -am <span class="s2">&quot;Change in branch3&quot;</span>
 git merge branch1
 </code></pre></div>
 <p>At this point, <code>git rerere</code> automatically recognizes the conflict and reuses the previously recorded resolution:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Git should have automatically resolved the conflict</span>
+<p><div class="highlight"><pre><span></span><code><span class="c1"># Git should have automatically resolved the conflict</span>
 <span class="c1"># Check the resolution</span>
 cat file.txt
 
 <span class="c1"># The content should be: &quot;Line 1 - resolved&quot;</span>
 </code></pre></div>
+There should be in the output a line, Resolved FILE using previous resolution. Also, git diff will show you how it was automatically re-resolved. You can also recreate the conflicted file state with git checkout.</p>
+<div class="highlight"><pre><span></span><code>git checkout --conflict<span class="o">=</span>merge file.txt
+</code></pre></div>
 <h4 id="finalize-the-merge"><strong>Finalize the Merge</strong></h4>
 <p>Finalize the merge with the reused resolution:</p>
 <div class="highlight"><pre><span></span><code>git add file.txt
-git commit -m <span class="s2">&quot;Automatically resolve conflict between branch1 and branch3 using rerere&quot;</span>
+git commit -m 
+<span class="c1"># Automatically resolve conflict between branch1 and branch3 using rerere.</span>
 </code></pre></div>
 <h3 id="viewing-and-managing-git-rerere-data">Viewing and Managing <code>git rerere</code> Data</h3>
 <p>You can view recorded resolutions and manage them:</p>
@@ -1077,6 +1109,21 @@ git rerere gc
           </div>
         </a>
       
+      
+        
+        <a href="../git_debug/" class="md-footer__link md-footer__link--next" aria-label="Next: Debugging" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Debugging
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
       
     </nav>
   

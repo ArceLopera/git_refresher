@@ -117,4 +117,4 @@ nav:
      - Plumbing Tools: More/plumbing.md 
      - Searching Tools: More/git_search.md
      - Reuse Recorded Resolution: More/git_rerere.md
-     
+     - Debugging: More/git_debug.md

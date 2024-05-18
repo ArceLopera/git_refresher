@@ -11,7 +11,7 @@ Whether you're a seasoned developer or a code maintainer, this repository is des
 | [Staging Changes](Basics/git_stage.md)         | [Branches](Advanced/git_branch.md) |  [Plumbing Tools](More/plumbing.md) |
 | [Undoing Changes](Basics/git_undoingthings.md) | [Patching](Advanced/git_patches.md) | [Search Tools](More/git_search.md)   |
 | [Remotes](Basics/git_remotes.md)               | [Ignoring Files](Advanced/git_ignore.md)  |   [Rerere](More/git_rerere.md)                            |
-| [Inspect & Compare](Basics/git_inspect.md)     | [Temporary Commits](Advanced/git_stash.md)   |                               |
+| [Inspect & Compare](Basics/git_inspect.md)     | [Temporary Commits](Advanced/git_stash.md)   |     [Debugging](More/git_debug.md)                          |
 
 </center>
 
