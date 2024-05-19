@@ -111,6 +111,7 @@ nav:
      - Interactive Staging: Advanced/git_interactivestaging.md
      - CherryPicking: Advanced/git_cherry.md
      - Checkout: Advanced/git_checkout.md
+     - Submodules: Advanced/git_submodules.md
   - More:
      - Adding SSH Keys to Github: Github/git_ssh.md
      - Signing Commits: More/git_sign.md

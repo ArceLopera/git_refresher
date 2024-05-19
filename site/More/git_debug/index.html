@@ -666,6 +666,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Advanced/git_submodules/" class="md-nav__link">
+        Submodules
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -955,6 +969,7 @@
 <p>The <code>git blame</code> command is used to show what revision and author last modified each line of a file. This is particularly useful for finding out who introduced a bug in a specific line of code.</p>
 <div class="highlight"><pre><span></span><code>git blame file.txt
 </code></pre></div>
+<p>In the output, the first column is the commit hash, the second column is the author, and the third column is the line number. The ^ prefix designates lines that were introduced in the repository’s initial commit and have remained unchanged ever since.</p>
 <h4 id="git-blame-l"><code>git blame -L</code></h4>
 <p>The <code>-L</code> option allows you to specify line ranges to limit the output to specific parts of the file.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Show blame for lines 10 to 20 in file.txt</span>

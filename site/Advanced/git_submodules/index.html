@@ -12,14 +12,14 @@
         <meta name="author" content="ArceLopera">
       
       
-        <link rel="canonical" href="https://arcelopera.github.io/git_refresher/More/git_search/">
+        <link rel="canonical" href="https://arcelopera.github.io/git_refresher/Advanced/git_submodules/">
       
       <link rel="icon" href="../../Images/git.ico">
       <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.15">
     
     
       
-        <title>Searching Tools - Git Refresher</title>
+        <title>Submodules - Git Refresher</title>
       
     
     
@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#git-grep" class="md-skip">
+        <a href="#key-commands-for-managing-git-submodules" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Searching Tools
+              Submodules
             
           </span>
         </div>
@@ -230,13 +230,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../Advanced/git_alias/" class="md-tabs__link">
+      <a href="../git_alias/" class="md-tabs__link md-tabs__link--active">
         Advanced
       </a>
     </li>
@@ -246,15 +248,13 @@
         
   
   
-    
-  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../Github/git_ssh/" class="md-tabs__link md-tabs__link--active">
+      <a href="../../Github/git_ssh/" class="md-tabs__link">
         More
       </a>
     </li>
@@ -504,12 +504,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" data-md-state="indeterminate" type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
       
       
       
@@ -532,7 +534,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Advanced/git_alias/" class="md-nav__link">
+      <a href="../git_alias/" class="md-nav__link">
         Aliases
       </a>
     </li>
@@ -546,7 +548,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Advanced/git_tagging/" class="md-nav__link">
+      <a href="../git_tagging/" class="md-nav__link">
         Tagging
       </a>
     </li>
@@ -560,7 +562,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Advanced/git_branch/" class="md-nav__link">
+      <a href="../git_branch/" class="md-nav__link">
         Branching
       </a>
     </li>
@@ -574,7 +576,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Advanced/git_advmerge/" class="md-nav__link">
+      <a href="../git_advmerge/" class="md-nav__link">
         Advanced Merge
       </a>
     </li>
@@ -588,7 +590,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Advanced/git_patches/" class="md-nav__link">
+      <a href="../git_patches/" class="md-nav__link">
         Patching
       </a>
     </li>
@@ -602,7 +604,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Advanced/git_ignore/" class="md-nav__link">
+      <a href="../git_ignore/" class="md-nav__link">
         Ignoring Files
       </a>
     </li>
@@ -616,7 +618,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Advanced/git_stash/" class="md-nav__link">
+      <a href="../git_stash/" class="md-nav__link">
         Temporary Commits
       </a>
     </li>
@@ -630,7 +632,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Advanced/git_interactivestaging/" class="md-nav__link">
+      <a href="../git_interactivestaging/" class="md-nav__link">
         Interactive Staging
       </a>
     </li>
@@ -644,7 +646,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Advanced/git_cherry/" class="md-nav__link">
+      <a href="../git_cherry/" class="md-nav__link">
         CherryPicking
       </a>
     </li>
@@ -658,7 +660,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Advanced/git_checkout/" class="md-nav__link">
+      <a href="../git_checkout/" class="md-nav__link">
         Checkout
       </a>
     </li>
@@ -670,11 +672,110 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../Advanced/git_submodules/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Submodules
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Submodules
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#key-commands-for-managing-git-submodules" class="md-nav__link">
+    Key Commands for Managing Git Submodules
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Commands for Managing Git Submodules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-adding-a-submodule" class="md-nav__link">
+    1. Adding a Submodule
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-initializing-and-updating-submodules" class="md-nav__link">
+    2. Initializing and Updating Submodules
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-cloning-a-repository-with-submodules" class="md-nav__link">
+    3. Cloning a Repository with Submodules
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-updating-submodules-to-the-latest-commit" class="md-nav__link">
+    4. Updating Submodules to the Latest Commit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-removing-a-submodule" class="md-nav__link">
+    5. Removing a Submodule
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#managing-nested-submodules" class="md-nav__link">
+    Managing Nested Submodules
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#submodule-configuration-in-gitmodules" class="md-nav__link">
+    Submodule Configuration in .gitmodules
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    Summary
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -692,14 +793,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" data-md-state="indeterminate" type="checkbox" id="__nav_4" checked>
       
       
       
@@ -736,7 +835,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../git_sign/" class="md-nav__link">
+      <a href="../../More/git_sign/" class="md-nav__link">
         Signing Commits
       </a>
     </li>
@@ -750,7 +849,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../plumbing/" class="md-nav__link">
+      <a href="../../More/plumbing/" class="md-nav__link">
         Plumbing Tools
       </a>
     </li>
@@ -762,123 +861,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Searching Tools
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../More/git_search/" class="md-nav__link">
         Searching Tools
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#git-grep" class="md-nav__link">
-    git grep
-  </a>
-  
-    <nav class="md-nav" aria-label="git grep">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#options" class="md-nav__link">
-    Options
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#git-log" class="md-nav__link">
-    git log
-  </a>
-  
-    <nav class="md-nav" aria-label="git log">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#git-log-grep" class="md-nav__link">
-    git log --grep
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#git-log-s-git-pickaxe-option" class="md-nav__link">
-    git log -S (Git “pickaxe” option)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#git-log-g" class="md-nav__link">
-    git log -G
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#line-log-search" class="md-nav__link">
-    Line Log Search
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#git-blame" class="md-nav__link">
-    git blame
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#git-rev-list" class="md-nav__link">
-    git rev-list
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#git-show" class="md-nav__link">
-    git show
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -890,7 +877,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../git_rerere/" class="md-nav__link">
+      <a href="../../More/git_rerere/" class="md-nav__link">
         Reuse Recorded Resolution
       </a>
     </li>
@@ -904,7 +891,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../git_debug/" class="md-nav__link">
+      <a href="../../More/git_debug/" class="md-nav__link">
         Debugging
       </a>
     </li>
@@ -943,16 +930,44 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#git-grep" class="md-nav__link">
-    git grep
+  <a href="#key-commands-for-managing-git-submodules" class="md-nav__link">
+    Key Commands for Managing Git Submodules
   </a>
   
-    <nav class="md-nav" aria-label="git grep">
+    <nav class="md-nav" aria-label="Key Commands for Managing Git Submodules">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#options" class="md-nav__link">
-    Options
+  <a href="#1-adding-a-submodule" class="md-nav__link">
+    1. Adding a Submodule
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-initializing-and-updating-submodules" class="md-nav__link">
+    2. Initializing and Updating Submodules
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-cloning-a-repository-with-submodules" class="md-nav__link">
+    3. Cloning a Repository with Submodules
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-updating-submodules-to-the-latest-commit" class="md-nav__link">
+    4. Updating Submodules to the Latest Commit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-removing-a-submodule" class="md-nav__link">
+    5. Removing a Submodule
   </a>
   
 </li>
@@ -963,63 +978,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#git-log" class="md-nav__link">
-    git log
-  </a>
-  
-    <nav class="md-nav" aria-label="git log">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#git-log-grep" class="md-nav__link">
-    git log --grep
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#git-log-s-git-pickaxe-option" class="md-nav__link">
-    git log -S (Git “pickaxe” option)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#git-log-g" class="md-nav__link">
-    git log -G
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#line-log-search" class="md-nav__link">
-    Line Log Search
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#git-blame" class="md-nav__link">
-    git blame
+  <a href="#managing-nested-submodules" class="md-nav__link">
+    Managing Nested Submodules
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#git-rev-list" class="md-nav__link">
-    git rev-list
+  <a href="#submodule-configuration-in-gitmodules" class="md-nav__link">
+    Submodule Configuration in .gitmodules
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#git-show" class="md-nav__link">
-    git show
+  <a href="#summary" class="md-nav__link">
+    Summary
   </a>
   
 </li>
@@ -1038,136 +1012,76 @@
                 
 
 
-  <h1>Searching Tools</h1>
+  <h1>Submodules</h1>
 
-<p>Git offers several tools and commands for searching through your repository's history and content. These tools provide powerful capabilities for searching through your repository's history and content, allowing you to find specific commits, changes, or patterns quickly and efficiently.</p>
-<h2 id="git-grep"><strong><code>git grep</code></strong></h2>
-<p>The <code>git grep</code> command searches through the contents of files in the repository for a specific pattern. It supports options like <code>--all-match</code> to match all patterns, <code>--ignore-case</code> for case-insensitive searches, and <code>--extended-regexp</code> to use extended regular expressions.</p>
-<p><strong><code>git grep &lt;pattern&gt;</code></strong>: Searches for the specified <code>&lt;pattern&gt;</code> in the contents of tracked files within the Git repository.</p>
-<p><strong>Basic Usage</strong>
-   <div class="highlight"><pre><span></span><code>git grep <span class="s2">&quot;search_string&quot;</span>
+<p>Git submodules allow you to include and manage external repositories within your own repository. This is particularly useful when you want to incorporate third-party libraries or other dependencies while maintaining control over their specific versions.</p>
+<h3 id="key-commands-for-managing-git-submodules">Key Commands for Managing Git Submodules</h3>
+<h4 id="1-adding-a-submodule">1. Adding a Submodule</h4>
+<p>To add a submodule to your repository, use the <code>git submodule add</code> command.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Syntax</span>
+git submodule add &lt;repository-url&gt; <span class="o">[</span>&lt;path&gt;<span class="o">]</span>
+
+<span class="c1"># Example</span>
+git submodule add https://github.com/example/library.git lib/library
 </code></pre></div>
-   This command searches for "search_string" in all tracked files in the repository.</p>
-<p><strong>Search in Specific Files</strong>
-   <div class="highlight"><pre><span></span><code><span class="c1"># Searches for &quot;pattern&quot; only in `file1.txt` and `file2.txt`.</span>
-git grep <span class="s2">&quot;pattern&quot;</span> file1.txt file2.txt
-</code></pre></div></p>
-<h3 id="options"><strong>Options</strong></h3>
-<ul>
-<li>
-<p><code>-i</code> or <code>--ignore-case</code>: Performs a <strong>Case-Insensitive Search</strong>.
-   <div class="highlight"><pre><span></span><code><span class="c1"># Performs a case-insensitive search for &quot;pattern&quot;.</span>
-git grep -i <span class="s2">&quot;pattern&quot;</span>
-</code></pre></div></p>
-</li>
-<li>
-<p><code>-n</code> or <code>--line-number</code>: Shows line numbers where the pattern is found.
-   <div class="highlight"><pre><span></span><code><span class="c1"># Shows line numbers where &quot;pattern&quot; is found.</span>
-git grep -n <span class="s2">&quot;pattern&quot;</span>
-</code></pre></div></p>
-</li>
-<li>
-<p><code>-w</code> or <code>--word-regexp</code>: <strong>Search for Whole Words</strong>
-   <div class="highlight"><pre><span></span><code><span class="c1"># Matches &quot;pattern&quot; as a whole word only.</span>
-git grep -w <span class="s2">&quot;pattern&quot;</span>
-</code></pre></div></p>
-</li>
-<li>
-<p><code>-e &lt;pattern&gt;</code>: <strong>Search for Multiple Patterns</strong>
-   <div class="highlight"><pre><span></span><code><span class="c1"># Searches for both &quot;pattern1&quot; and &quot;pattern2&quot;.</span>
-git grep -e <span class="s2">&quot;pattern1&quot;</span> -e <span class="s2">&quot;pattern2&quot;</span>
-</code></pre></div></p>
-</li>
-<li>
-<p><code>--cached</code>: Searches staged changes instead of working directory files.
-   <div class="highlight"><pre><span></span><code>git grep --cached <span class="s2">&quot;pattern&quot;</span>
-</code></pre></div></p>
-</li>
-<li>
-<p><code>-I</code>: Excludes files that match patterns from <code>.gitignore</code> and <code>.git/info/exclude</code>.
-   <div class="highlight"><pre><span></span><code>git grep -I <span class="s2">&quot;pattern&quot;</span>
-</code></pre></div></p>
-</li>
-<li>
-<p><code>--untracked</code>: Includes untracked files in the search.
-   <div class="highlight"><pre><span></span><code>git grep --untracked <span class="s2">&quot;pattern&quot;</span>
-</code></pre></div></p>
-</li>
-<li>
-<p><code>--all-match</code>: Only lines containing all of the specified patterns are matched. 
-   <div class="highlight"><pre><span></span><code>git grep --all-match <span class="s2">&quot;pattern1&quot;</span> <span class="s2">&quot;pattern2&quot;</span>
+<p>This command clones the submodule repository into the specified path and adds a reference to it in your <code>.gitmodules</code> file.</p>
+<h4 id="2-initializing-and-updating-submodules">2. Initializing and Updating Submodules</h4>
+<p>After cloning a repository that contains submodules, you need to initialize and update them.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Initialize submodules</span>
+git submodule init
+
+<span class="c1"># Update submodules</span>
+git submodule update
 </code></pre></div>
-   By default, when you provide multiple patterns, <code>git grep</code> matches lines containing any of the provided patterns. With <code>--all-match</code>, only lines containing all patterns are considered matches.</p>
-</li>
-<li>
-<p><code>--extended-regexp</code>: 
-   This option allows you to use extended regular expressions (ERE) instead of the default basic regular expressions (BRE). Extended regular expressions provide additional features such as alternation (<code>|</code>), grouping (<code>()</code>), and quantifiers (<code>{}</code>, <code>?</code>, <code>*</code>, <code>+</code>) which can make pattern matching more flexible and powerful.
-   <div class="highlight"><pre><span></span><code>git grep --extended-regexp <span class="s2">&quot;pattern1|pattern2&quot;</span>
-</code></pre></div></p>
-</li>
-<li>
-<p><code>-c</code> or <code>--count</code>: Only display a count of the lines that match the given pattern.
-   <div class="highlight"><pre><span></span><code>git grep -c <span class="s2">&quot;pattern&quot;</span>
+<p>The <code>init</code> command initializes the submodules recorded in the <code>.gitmodules</code> file, while the <code>update</code> command fetches and checks out the correct commit specified by the superproject.</p>
+<h4 id="3-cloning-a-repository-with-submodules">3. Cloning a Repository with Submodules</h4>
+<p>When cloning a repository that includes submodules, use the <code>--recurse-submodules</code> flag to automatically initialize and update submodules.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Clone repository and initialize submodules</span>
+git clone --recurse-submodules &lt;repository-url&gt;
+
+<span class="c1"># Example</span>
+git clone --recurse-submodules https://github.com/example/main-project.git
 </code></pre></div>
-   This command searches for "pattern" in all tracked files and displays the total count of lines matching the pattern across all files, rather than displaying the actual matching lines themselves. This can be useful when you're interested in the total number of occurrences of a pattern across multiple files, rather than the specific lines where the pattern occurs.</p>
-</li>
-<li>
-<p><code>-p</code> or <code>--show-function</code> option in <code>git grep</code> allows you to display the surrounding function context of the matched lines, providing more context for each match. This can be particularly useful when searching through source code files where functions are defined.
-   <div class="highlight"><pre><span></span><code>git grep -p <span class="s2">&quot;pattern&quot;</span>
-</code></pre></div></p>
-</li>
-</ul>
-<h2 id="git-log"><strong><code>git log</code></strong></h2>
-<p>The <code>git log</code> command displays the commit history of the repository. It allows you to search for commits based on various criteria such as author, date range, commit message, and paths affected. You can use options like <code>--grep</code> to search for commits with specific patterns in their commit messages. Perhaps you’re looking not for where a term exists, but when it existed or was introduced. The git log command has a number of powerful tools for finding specific commits by the content of their messages or even the content of the diff they introduce.</p>
-<h3 id="git-log-grep"><strong><code>git log --grep</code></strong></h3>
-<p>To search the commit log (across all branches) for the given text:
-<div class="highlight"><pre><span></span><code>git log --all --grep<span class="o">=</span><span class="s1">&#39;Build 0051&#39;</span>
-</code></pre></div></p>
-<p>To do so while ignoring case in the grep search:</p>
-<div class="highlight"><pre><span></span><code>git log --all -i --grep<span class="o">=</span><span class="s1">&#39;Build 0051&#39;</span>
+<h4 id="4-updating-submodules-to-the-latest-commit">4. Updating Submodules to the Latest Commit</h4>
+<p>If you want to update your submodules to their latest commit, use:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Update all submodules to the latest commit</span>
+git submodule update --remote
+
+<span class="c1"># Example</span>
+git submodule update --remote lib/library
 </code></pre></div>
-<p>To search the actual content of commits through a repo's history, use:</p>
-<p><div class="highlight"><pre><span></span><code>git grep <span class="s1">&#39;Build 0051&#39;</span> <span class="k">$(</span>git rev-list --all<span class="k">)</span>
+<p>This command updates the submodule to the latest commit on the default branch.</p>
+<h4 id="5-removing-a-submodule">5. Removing a Submodule</h4>
+<p>To remove a submodule, you need to follow several steps:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Remove the submodule entry from .gitmodules</span>
+git config -f .gitmodules --remove-section submodule.&lt;path&gt;
+
+<span class="c1"># Remove the submodule&#39;s entry from .git/config</span>
+git config -f .git/config --remove-section submodule.&lt;path&gt;
+
+<span class="c1"># Remove the submodule directory from the index</span>
+git rm --cached &lt;path&gt;
+
+<span class="c1"># Remove the submodule directory from the working directory</span>
+rm -rf &lt;path&gt;
 </code></pre></div>
-to show all instances of the given text, the containing file name, and the commit sha1.</p>
-<p>And to do this while ignoring case, use:</p>
-<div class="highlight"><pre><span></span><code>git grep -i <span class="s1">&#39;Build 0051&#39;</span> <span class="k">$(</span>git rev-list --all<span class="k">)</span>
+<p>After performing these steps, commit the changes to complete the removal of the submodule.</p>
+<h3 id="managing-nested-submodules">Managing Nested Submodules</h3>
+<p>Submodules can themselves contain submodules. To initialize and update nested submodules, you need to pass the <code>--recursive</code> flag:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Initialize nested submodules</span>
+git submodule update --init --recursive
+
+<span class="c1"># Update nested submodules to the latest commit</span>
+git submodule update --remote --recursive
 </code></pre></div>
-<p>Note that this searches the entire content of the commit at each stage, and not just the diff changes. To search just the diff changes, use one of the following:</p>
-<p><a href="#git-log--s-git-pickaxe-option">git log -S[searchTerm]</a></p>
-<p><a href="#git-log--g">git log -G[searchTerm]</a></p>
-<h3 id="git-log-s-git-pickaxe-option"><strong><code>git log -S</code> (Git “pickaxe” option)</strong></h3>
-<p>The <code>-S</code> option with <code>git log</code> allows you to search for commits that introduced or removed specific strings of text. It's useful for finding commits that added or removed specific functionality or code snippets.</p>
-<p><div class="highlight"><pre><span></span><code>git log -S <span class="s2">&quot;string&quot;</span> --oneline
+<h3 id="submodule-configuration-in-gitmodules">Submodule Configuration in <code>.gitmodules</code></h3>
+<p>The <code>.gitmodules</code> file keeps track of all submodules, their paths, and URLs. Here’s an example entry:</p>
+<div class="highlight"><pre><span></span><code>[submodule &quot;lib/library&quot;]
+    path = lib/library
+    url = https://github.com/example/library.git
 </code></pre></div>
-If you need to be more specific, you can provide a regular expression to search for with the -G option.</p>
-<h3 id="git-log-g"><strong><code>git log -G</code></strong></h3>
-<p>The <code>-G</code> option with <code>git log</code> allows you to search for commits that changed the number of occurrences of a specific regular expression. It's useful for finding commits that modified specific patterns in the codebase.</p>
-<div class="highlight"><pre><span></span><code>git log -G <span class="s2">&quot;pattern&quot;</span>
-</code></pre></div>
-<p>To illustrate the difference between -S<regex> --pickaxe-regex and -G<regex>, consider a commit with the following diff in the same file:
-<div class="highlight"><pre><span></span><code>+    <span class="k">return</span> frotz<span class="o">(</span>nitfol, two-&gt;ptr, <span class="m">1</span>, <span class="m">0</span><span class="o">)</span><span class="p">;</span>
-...
--    <span class="nv">hit</span> <span class="o">=</span> frotz<span class="o">(</span>nitfol, mf2.ptr, <span class="m">1</span>, <span class="m">0</span><span class="o">)</span><span class="p">;</span>
-</code></pre></div></p>
-<p>While <code>git log -G"frotz\(nitfol"</code> will show this commit, <code>git log -S"frotz\(nitfol" --pickaxe-regex</code> will not (because the number of occurrences of that string did not change).</p>
-<p>Unless <code>--text</code> is supplied patches of binary files without a textconv filter will be ignored.</p>
-<h3 id="line-log-search">Line Log Search</h3>
-<p>git log with the -L option, and it will show you the history of a function or line of code in your codebase.</p>
-<p><div class="highlight"><pre><span></span><code>git log -L <span class="s1">&#39;/int main/&#39;</span>,/^<span class="o">}</span>/:main.c
-<span class="c1">#Shows how the function main() in the file main.c evolved over time.</span>
-</code></pre></div>
-For example, if we wanted to see every change made to the function git_deflate_bound in the zlib.c file, we could run </p>
-<div class="highlight"><pre><span></span><code>git log -L :git_deflate_bound:zlib.c 
-</code></pre></div>
-<p>This will try to figure out what the bounds of that function are and then look through the history and show us every change that was made to the function as a series of patches back to when the function was first created. You could also give it a range of lines or a single line number and you’ll get the same sort of output.</p>
-<h2 id="git-blame"><strong><code>git blame</code></strong></h2>
-<p>The <code>git blame</code> command shows the revision and author of each line in a file. It's useful for identifying when and by whom each line was last modified. You can use it to track down the origin of specific changes.</p>
-<h2 id="git-rev-list"><strong><code>git rev-list</code></strong></h2>
-<p>The <code>git rev-list</code> command lists commit objects in reverse chronological order. It can be combined with other commands like <code>git grep</code> or <code>git log</code> to search for commits that match specific criteria.</p>
-<h2 id="git-show"><strong><code>git show</code></strong></h2>
-<p>The <code>git show</code> command displays information about a specific commit. You can use it to view the changes introduced by a commit and search for specific patterns within those changes.</p>
-<p>These tools provide powerful capabilities for searching through your repository's history and content, allowing you to find specific commits, changes, or patterns quickly and efficiently.</p>
+<h3 id="summary">Summary</h3>
+<p>Git submodules allow you to manage external repositories within your main project. Key commands include adding, initializing, updating, and removing submodules. Understanding these commands can help you effectively incorporate and manage dependencies within your projects.</p>
 
               
             </article>
@@ -1181,7 +1095,7 @@ For example, if we wanted to see every change made to the function git_deflate_b
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../plumbing/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Plumbing Tools" rel="prev">
+        <a href="../git_checkout/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Checkout" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -1190,20 +1104,20 @@ For example, if we wanted to see every change made to the function git_deflate_b
               <span class="md-footer__direction">
                 Previous
               </span>
-              Plumbing Tools
+              Checkout
             </div>
           </div>
         </a>
       
       
         
-        <a href="../git_rerere/" class="md-footer__link md-footer__link--next" aria-label="Next: Reuse Recorded Resolution" rel="next">
+        <a href="../../Github/git_ssh/" class="md-footer__link md-footer__link--next" aria-label="Next: Adding SSH Keys to Github" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Reuse Recorded Resolution
+              Adding SSH Keys to Github
             </div>
           </div>
           <div class="md-footer__button md-icon">
