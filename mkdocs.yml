@@ -119,3 +119,4 @@ nav:
      - Searching Tools: More/git_search.md
      - Reuse Recorded Resolution: More/git_rerere.md
      - Debugging: More/git_debug.md
+     - Bundling: More/git_bundle.md

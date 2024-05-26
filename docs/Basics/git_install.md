@@ -25,6 +25,11 @@ Git is a powerful version control system that helps you manage and track changes
 
     Click "Install" to complete the installation process.
 
+7. Updating Installation:
+
+    ```bash
+    git update-git-for-windows
+    ```
 
 ## macOS
 1. Install Homebrew:
@@ -56,6 +61,13 @@ sudo dnf install git
 ### Arch Linux
 ```bash
 sudo pacman -S git
+```
+
+### Update Git
+
+```bash
+sudo apt update
+sudo apt install git
 ```
 
 ## Verify Installation

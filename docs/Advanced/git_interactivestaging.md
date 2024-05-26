@@ -175,3 +175,10 @@ What now> 1
 
 It shows you that a couple of lines are staged and a couple are unstaged. You’ve partially staged this file. At this point, you can exit the interactive adding script and run git commit to commit the partially staged files.
 
+The -p option or --patch will interactively choose hunks of patch between the index and the work tree and add them to the index. This gives the user a chance to review the difference before adding modified contents to the index. This effectively runs add --interactive, but bypasses the initial command menu and directly jumps to the patch subcommand.
+
+```bash
+git add -p
+```
+
+

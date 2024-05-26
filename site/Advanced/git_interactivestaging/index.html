@@ -885,6 +885,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../More/git_bundle/" class="md-nav__link">
+        Bundling
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -1126,6 +1140,9 @@ e - manually edit the current hunk
   3:        +1/-1        +4/-0 lib/simplegit.rb
 </code></pre></div>
 <p>It shows you that a couple of lines are staged and a couple are unstaged. You’ve partially staged this file. At this point, you can exit the interactive adding script and run git commit to commit the partially staged files.</p>
+<p>The -p option or --patch will interactively choose hunks of patch between the index and the work tree and add them to the index. This gives the user a chance to review the difference before adding modified contents to the index. This effectively runs add --interactive, but bypasses the initial command menu and directly jumps to the patch subcommand.</p>
+<div class="highlight"><pre><span></span><code>git add -p
+</code></pre></div>
 
               
             </article>

@@ -12,14 +12,14 @@
         <meta name="author" content="ArceLopera">
       
       
-        <link rel="canonical" href="https://arcelopera.github.io/git_refresher/Advanced/git_patches/">
+        <link rel="canonical" href="https://arcelopera.github.io/git_refresher/More/git_bundle/">
       
       <link rel="icon" href="../../Images/git.ico">
       <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.15">
     
     
       
-        <title>Patching - Git Refresher</title>
+        <title>Bundling - Git Refresher</title>
       
     
     
@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#using-git-format-patch" class="md-skip">
+        <a href="#creating-a-bundle" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Patching
+              Bundling
             
           </span>
         </div>
@@ -230,15 +230,13 @@
         
   
   
-    
-  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../git_alias/" class="md-tabs__link md-tabs__link--active">
+      <a href="../../Advanced/git_alias/" class="md-tabs__link">
         Advanced
       </a>
     </li>
@@ -248,13 +246,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../Github/git_ssh/" class="md-tabs__link">
+      <a href="../../Github/git_ssh/" class="md-tabs__link md-tabs__link--active">
         More
       </a>
     </li>
@@ -504,14 +504,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" data-md-state="indeterminate" type="checkbox" id="__nav_3" checked>
       
       
       
@@ -534,7 +532,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../git_alias/" class="md-nav__link">
+      <a href="../../Advanced/git_alias/" class="md-nav__link">
         Aliases
       </a>
     </li>
@@ -548,7 +546,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../git_tagging/" class="md-nav__link">
+      <a href="../../Advanced/git_tagging/" class="md-nav__link">
         Tagging
       </a>
     </li>
@@ -562,7 +560,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../git_branch/" class="md-nav__link">
+      <a href="../../Advanced/git_branch/" class="md-nav__link">
         Branching
       </a>
     </li>
@@ -576,7 +574,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../git_advmerge/" class="md-nav__link">
+      <a href="../../Advanced/git_advmerge/" class="md-nav__link">
         Advanced Merge
       </a>
     </li>
@@ -588,110 +586,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Patching
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../Advanced/git_patches/" class="md-nav__link">
         Patching
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#using-git-format-patch" class="md-nav__link">
-    Using git format-patch
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#creating-patches-for-specific-commits" class="md-nav__link">
-    Creating Patches for Specific Commits
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#specifying-output-directory" class="md-nav__link">
-    Specifying Output Directory
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#including-commit-message-in-patch" class="md-nav__link">
-    Including Commit Message in Patch
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#generating-patch-for-unpushed-commits" class="md-nav__link">
-    Generating Patch for Unpushed Commits
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#inspecting-and-applying-patch-files" class="md-nav__link">
-    Inspecting and Applying Patch Files
-  </a>
-  
-    <nav class="md-nav" aria-label="Inspecting and Applying Patch Files">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#how-it-works" class="md-nav__link">
-    How It Works
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#considerations" class="md-nav__link">
-    Considerations
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sharing-patch-files" class="md-nav__link">
-    Sharing Patch Files
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -703,7 +602,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../git_ignore/" class="md-nav__link">
+      <a href="../../Advanced/git_ignore/" class="md-nav__link">
         Ignoring Files
       </a>
     </li>
@@ -717,7 +616,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../git_stash/" class="md-nav__link">
+      <a href="../../Advanced/git_stash/" class="md-nav__link">
         Temporary Commits
       </a>
     </li>
@@ -731,7 +630,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../git_interactivestaging/" class="md-nav__link">
+      <a href="../../Advanced/git_interactivestaging/" class="md-nav__link">
         Interactive Staging
       </a>
     </li>
@@ -745,7 +644,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../git_cherry/" class="md-nav__link">
+      <a href="../../Advanced/git_cherry/" class="md-nav__link">
         CherryPicking
       </a>
     </li>
@@ -759,7 +658,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../git_checkout/" class="md-nav__link">
+      <a href="../../Advanced/git_checkout/" class="md-nav__link">
         Checkout
       </a>
     </li>
@@ -773,7 +672,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../git_submodules/" class="md-nav__link">
+      <a href="../../Advanced/git_submodules/" class="md-nav__link">
         Submodules
       </a>
     </li>
@@ -793,12 +692,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" data-md-state="indeterminate" type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
       
       
       
@@ -835,7 +736,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../More/git_sign/" class="md-nav__link">
+      <a href="../git_sign/" class="md-nav__link">
         Signing Commits
       </a>
     </li>
@@ -849,7 +750,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../More/plumbing/" class="md-nav__link">
+      <a href="../plumbing/" class="md-nav__link">
         Plumbing Tools
       </a>
     </li>
@@ -863,7 +764,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../More/git_search/" class="md-nav__link">
+      <a href="../git_search/" class="md-nav__link">
         Searching Tools
       </a>
     </li>
@@ -877,7 +778,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../More/git_rerere/" class="md-nav__link">
+      <a href="../git_rerere/" class="md-nav__link">
         Reuse Recorded Resolution
       </a>
     </li>
@@ -891,7 +792,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../More/git_debug/" class="md-nav__link">
+      <a href="../git_debug/" class="md-nav__link">
         Debugging
       </a>
     </li>
@@ -903,11 +804,90 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../More/git_bundle/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Bundling
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Bundling
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#creating-a-bundle" class="md-nav__link">
+    Creating a Bundle
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#listing-references-in-a-bundle" class="md-nav__link">
+    Listing References in a Bundle
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cloning-from-a-bundle" class="md-nav__link">
+    Cloning from a Bundle
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fetching-from-a-bundle" class="md-nav__link">
+    Fetching from a Bundle
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bundling-specific-revisions" class="md-nav__link">
+    Bundling Specific Revisions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#applying-a-bundle" class="md-nav__link">
+    Applying a Bundle
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verifying-bundles" class="md-nav__link">
+    Verifying Bundles
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -944,70 +924,50 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#using-git-format-patch" class="md-nav__link">
-    Using git format-patch
+  <a href="#creating-a-bundle" class="md-nav__link">
+    Creating a Bundle
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#creating-patches-for-specific-commits" class="md-nav__link">
-    Creating Patches for Specific Commits
+  <a href="#listing-references-in-a-bundle" class="md-nav__link">
+    Listing References in a Bundle
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#specifying-output-directory" class="md-nav__link">
-    Specifying Output Directory
+  <a href="#cloning-from-a-bundle" class="md-nav__link">
+    Cloning from a Bundle
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#including-commit-message-in-patch" class="md-nav__link">
-    Including Commit Message in Patch
+  <a href="#fetching-from-a-bundle" class="md-nav__link">
+    Fetching from a Bundle
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#generating-patch-for-unpushed-commits" class="md-nav__link">
-    Generating Patch for Unpushed Commits
+  <a href="#bundling-specific-revisions" class="md-nav__link">
+    Bundling Specific Revisions
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#inspecting-and-applying-patch-files" class="md-nav__link">
-    Inspecting and Applying Patch Files
+  <a href="#applying-a-bundle" class="md-nav__link">
+    Applying a Bundle
   </a>
-  
-    <nav class="md-nav" aria-label="Inspecting and Applying Patch Files">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#how-it-works" class="md-nav__link">
-    How It Works
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#considerations" class="md-nav__link">
-    Considerations
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#sharing-patch-files" class="md-nav__link">
-    Sharing Patch Files
+  <a href="#verifying-bundles" class="md-nav__link">
+    Verifying Bundles
   </a>
   
 </li>
@@ -1026,105 +986,97 @@
                 
 
 
-  <h1>Patching</h1>
+  <h1>Bundling</h1>
 
-<p>Creating patches in Git involves generating files that represent the changes introduced by one or more commits. These patches can then be shared with others or applied to different repositories. </p>
-<h2 id="using-git-format-patch"><strong>Using <code>git format-patch</code></strong></h2>
-<p>The <code>git format-patch</code> command generates patch files for one or more commits, formatting them in the "mbox" format by default.</p>
-<div class="highlight"><pre><span></span><code>git format-patch &lt;start-commit&gt;..&lt;end-commit&gt;
-</code></pre></div>
-<p><div class="highlight"><pre><span></span><code>git format-patch HEAD~3..HEAD
-</code></pre></div>
-- This command generates patch files for the last three commits from the current <code>HEAD</code> commit.</p>
-<h2 id="creating-patches-for-specific-commits"><strong>Creating Patches for Specific Commits</strong></h2>
-<p>You can specify individual commits to create patches for by providing their commit hashes.</p>
-<div class="highlight"><pre><span></span><code>git format-patch &lt;commit-hash&gt;
-</code></pre></div>
-<p><div class="highlight"><pre><span></span><code>git format-patch abc123
-</code></pre></div>
-- This command generates a patch file for the commit with the hash <code>abc123</code>.</p>
-<h2 id="specifying-output-directory"><strong>Specifying Output Directory</strong></h2>
-<p>You can specify the output directory for the generated patch files using the <code>-o</code> or <code>--output-directory</code> option.</p>
-<div class="highlight"><pre><span></span><code>git format-patch -o &lt;output-directory&gt; &lt;start-commit&gt;..&lt;end-commit&gt;
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>git format-patch -o patches/ HEAD~3..HEAD
-</code></pre></div>
+<p>Bundling in Git is a way to package multiple Git objects (such as commits, trees, and blobs) into a single file, which can be transferred and applied to another repository. This is particularly useful for scenarios where direct access to a remote repository is not available, such as offline transfers or sneakernet situations.</p>
 <ul>
-<li>This command generates patch files for the last three commits and saves them in the <code>patches/</code> directory.</li>
+<li><strong>Offline Transfers:</strong> When network access is limited or unavailable, you can bundle changes, transfer them via physical media (like USB drives), and apply them to another repository.</li>
+<li><strong>Archiving:</strong> Bundle can be used to archive a specific state of a repository, which can be stored and applied later.</li>
+<li><strong>Distribution:</strong> Distribute a repository snapshot without requiring direct network access to the Git server.</li>
 </ul>
-<h2 id="including-commit-message-in-patch"><strong>Including Commit Message in Patch</strong></h2>
-<p>You can include the commit message as part of the patch file by using the <code>--stdout</code> option.</p>
-<div class="highlight"><pre><span></span><code>git format-patch --stdout &lt;commit-hash&gt;
+<p>By understanding and utilizing Git bundling, you can efficiently manage and transfer repository data in scenarios where traditional network operations are impractical.</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#creating-a-bundle"><code>git bundle create &lt;file&gt; &lt;reference&gt;</code></a></td>
+<td>Creates a bundle file containing the specified reference(s)</td>
+</tr>
+<tr>
+<td><a href="#listing-references-in-a-bundle"><code>git bundle list-heads &lt;file&gt;</code></a></td>
+<td>Lists the references stored in a bundle file</td>
+</tr>
+<tr>
+<td><a href="#cloning-from-a-bundle"><code>git clone &lt;bundle-file&gt; &lt;directory&gt;</code></a></td>
+<td>Clones a new repository from the bundle</td>
+</tr>
+<tr>
+<td><a href="#fetching-from-a-bundle"><code>git fetch &lt;bundle-file&gt; &lt;reference&gt;</code></a></td>
+<td>Fetches updates from a bundle into an existing repository</td>
+</tr>
+<tr>
+<td><a href="#applying-a-bundle"><code>git pull &lt;bundle-file&gt; &lt;reference&gt;</code></a></td>
+<td>Applies changes from a bundle to the current branch</td>
+</tr>
+</tbody>
+</table>
+<h3 id="creating-a-bundle">Creating a Bundle</h3>
+<p>To create a bundle, you use the <code>git bundle create</code> command, specifying the name of the bundle file and the range of commits or references you want to include.</p>
+<p>Suppose you have a repository with the following commit history:</p>
+<div class="highlight"><pre><span></span><code>A -- B -- C -- D (master)
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>git format-patch --stdout abc123 &gt; patch_file.patch
+<p>You want to create a bundle that includes all commits in the master branch.</p>
+<div class="highlight"><pre><span></span><code>git bundle create repo.bundle master
 </code></pre></div>
-<ul>
-<li>This command generates a patch file for the commit with the hash <code>abc123</code> and includes the commit message in the output.</li>
-</ul>
-<h2 id="generating-patch-for-unpushed-commits"><strong>Generating Patch for Unpushed Commits</strong></h2>
-<p>To create patches for unpushed commits, you can specify the branch name along with the <code>git format-patch</code> command.</p>
-<div class="highlight"><pre><span></span><code>git format-patch origin/&lt;branch-name&gt;
+<p>This command creates a file named <code>repo.bundle</code> containing all the commits from the master branch.  If you intend for this to be cloned somewhere else, you should add HEAD as a reference.</p>
+<div class="highlight"><pre><span></span><code>git bundle create repo.bundle HEAD master
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>git format-patch origin/main
+<h3 id="listing-references-in-a-bundle">Listing References in a Bundle</h3>
+<p>You can list the references stored in a bundle file using the <code>git bundle list-heads</code> command. This shows the branches and commits included in the bundle.</p>
+<div class="highlight"><pre><span></span><code>git bundle list-heads repo.bundle
 </code></pre></div>
-<ul>
-<li>This command generates patch files for the commits that are present in the local branch but not in the remote <code>main</code> branch.</li>
-</ul>
-<h2 id="inspecting-and-applying-patch-files"><strong>Inspecting and Applying Patch Files</strong></h2>
-<p>Once the patch files are generated, you can inspect them using any text editor or view the changes using the  <code>git apply --stat</code> command.</p>
-<div class="highlight"><pre><span></span><code>git apply --stat &lt;patch-file&gt;
+<p>Output:
+<div class="highlight"><pre><span></span><code>b1a2d3c4e5f6g7h8i9j0 - refs/heads/master
+</code></pre></div></p>
+<h3 id="cloning-from-a-bundle">Cloning from a Bundle</h3>
+<p>If you want to create a new repository from a bundle, you can use the <code>git clone</code> command with the bundle file.</p>
+<div class="highlight"><pre><span></span><code>git clone repo.bundle new-repo
 </code></pre></div>
-<ul>
-<li>This command displays statistics about the changes introduced by the patch file.</li>
-</ul>
-<p>The command <code>git apply patchtext.patch</code> is used to apply a patch file to the current working directory. </p>
-<div class="highlight"><pre><span></span><code>git apply &lt;patch-file&gt;
+<p>This creates a new repository named <code>new-repo</code> initialized with the contents of the bundle. If you don’t include HEAD in the references, you have to also specify -b master or whatever branch is included because otherwise it won’t know what branch to check out.</p>
+<h3 id="fetching-from-a-bundle">Fetching from a Bundle</h3>
+<p>If you already have a repository and want to fetch updates from a bundle, you can use the <code>git fetch</code> command with the bundle file.</p>
+<p>Suppose you have a repository that already contains commits up to <code>B</code>, and you want to fetch commits <code>C</code> and <code>D</code> from the bundle.</p>
+<div class="highlight"><pre><span></span><code>git fetch repo.bundle master
 </code></pre></div>
-<ul>
-<li>
-<p><strong><code>git apply</code>:</strong> This Git command is used to apply a patch file to the current working directory.</p>
-</li>
-<li>
-<p><strong><code>patchtext.patch</code>:</strong> This is the name of the patch file you want to apply. The patch file contains the changes that you want to apply to your repository.</p>
-</li>
-</ul>
-<h3 id="how-it-works">How It Works</h3>
-<ol>
-<li>
-<p><strong>Ensure Correct Context:</strong> The patch file must be generated in a compatible format with the changes relative to the repository's current state. </p>
-</li>
-<li>
-<p><strong>Navigate to Repository:</strong> First, navigate to the directory of the Git repository where you want to apply the changes.</p>
-</li>
-<li>
-<p><strong>Checkout Target Branch/Commit:</strong> Ensure that you are on the correct branch or commit where you want the changes to be applied. This step ensures that the changes are applied to the correct codebase.</p>
-</li>
-<li>
-<p><strong>Run <code>git apply</code>:</strong> Execute the <code>git apply</code> command followed by the name of the patch file you want to apply.</p>
-</li>
-<li>
-<p><strong>Review Changes:</strong> After applying the patch, review the changes to ensure they were applied correctly. You can use <code>git diff</code> to inspect the differences before and after applying the patch.</p>
-</li>
-<li>
-<p><strong>Stage and Commit (if necessary):</strong> If the changes are satisfactory, stage and commit them to finalize the application of the patch.</p>
-</li>
-</ol>
-<h3 id="considerations">Considerations</h3>
-<ul>
-<li>
-<p><strong>Patch Compatibility:</strong> Ensure that the patch file is compatible with the version of the codebase you are applying it to. Mismatches in context or format can lead to errors or unintended consequences.</p>
-</li>
-<li>
-<p><strong>Review Changes:</strong> Always review the changes introduced by the patch to verify correctness and avoid introducing bugs or conflicts.</p>
-</li>
-<li>
-<p><strong>Backup:</strong> Consider creating a backup or working on a separate branch before applying patches, especially if the changes are significant or experimental.</p>
-</li>
-</ul>
-<p>Using <code>git apply</code> provides a straightforward way to apply patches to a Git repository, allowing you to integrate changes from external sources or collaborators efficiently.</p>
-<h2 id="sharing-patch-files"><strong>Sharing Patch Files</strong></h2>
-<p>You can share the generated patch files with others through email, file sharing services, or version control systems.</p>
-<p>Generating patches in Git using <code>git format-patch</code> provides a convenient way to share changes between repositories or with collaborators. By following these steps and examples, you can create patch files for specific commits or ranges of commits and distribute them efficiently.</p>
+<p>After this command, your repository will include the commits from the bundle.</p>
+<h3 id="bundling-specific-revisions">Bundling Specific Revisions</h3>
+<p>You can also bundle specific revisions or ranges of commits. For example, to bundle commits from a specific tag to the current commit:</p>
+<div class="highlight"><pre><span></span><code>git bundle create updates.bundle v1.0..HEAD
+</code></pre></div>
+<p>This bundles all commits from the <code>v1.0</code> tag to the current <code>HEAD</code>.</p>
+<p>To get the differences between my local changes to the bundle and the remote repository, you can use the <code>git log</code> command with the bundle file. 
+<div class="highlight"><pre><span></span><code>git log --oneline master ^origin/master
+</code></pre></div></p>
+<p>Then only bundle the differences.</p>
+<div class="highlight"><pre><span></span><code>git bundle create updates.bundle master ^origin/master
+</code></pre></div>
+<h3 id="applying-a-bundle">Applying a Bundle</h3>
+<p>To apply a bundle to an existing repository, you can use the <code>git pull</code> command with the bundle file.</p>
+<div class="highlight"><pre><span></span><code>git pull repo.bundle master
+</code></pre></div>
+<p>This applies the changes from the <code>master</code> branch in the bundle to your current repository.</p>
+<h3 id="verifying-bundles">Verifying Bundles</h3>
+<p>The bundle verify command will make sure the file is actually a valid Git bundle and that you have all the necessary ancestors to reconstitute it properly.</p>
+<div class="highlight"><pre><span></span><code>git bundle verify repo.bundle
+</code></pre></div>
+<p>The verify sub-command will tell you the heads as well. The point is to see what can be pulled in, so you can use the fetch or pull commands to import commits from this bundle. Here we’ll fetch the master branch of the bundle to a branch named other-master in our repository.</p>
+<div class="highlight"><pre><span></span><code>git fetch repo.bundle master:other-master
+</code></pre></div>
 
               
             </article>
@@ -1138,7 +1090,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../git_advmerge/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Advanced Merge" rel="prev">
+        <a href="../git_debug/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Debugging" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -1147,26 +1099,11 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Advanced Merge
+              Debugging
             </div>
           </div>
         </a>
       
-      
-        
-        <a href="../git_ignore/" class="md-footer__link md-footer__link--next" aria-label="Next: Ignoring Files" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Ignoring Files
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
       
     </nav>
   
