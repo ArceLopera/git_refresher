@@ -12,14 +12,14 @@
         <meta name="author" content="ArceLopera">
       
       
-        <link rel="canonical" href="https://arcelopera.github.io/git_refresher/Basics/git_configuration/">
+        <link rel="canonical" href="https://arcelopera.github.io/git_refresher/More/git_replace/">
       
       <link rel="icon" href="../../Images/git.ico">
       <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.15">
     
     
       
-        <title>Configuring Git - Git Refresher</title>
+        <title>Replace - Git Refresher</title>
       
     
     
@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#1-open-a-terminalcommand-prompt" class="md-skip">
+        <a href="#basic-usage" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Configuring Git
+              Replace
             
           </span>
         </div>
@@ -207,8 +207,6 @@
         
   
   
-    
-  
 
 
   
@@ -220,7 +218,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../git_refresh/" class="md-tabs__link md-tabs__link--active">
+      <a href="../../git_refresh/" class="md-tabs__link">
         Basics
       </a>
     </li>
@@ -248,13 +246,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../Github/git_ssh/" class="md-tabs__link">
+      <a href="../../Github/git_ssh/" class="md-tabs__link md-tabs__link--active">
         More
       </a>
     </li>
@@ -325,14 +325,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" data-md-state="indeterminate" type="checkbox" id="__nav_2" checked>
       
       
       
@@ -353,14 +351,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" data-md-state="indeterminate" type="checkbox" id="__nav_2_1" checked>
       
       
       
@@ -397,7 +393,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../git_install/" class="md-nav__link">
+      <a href="../../Basics/git_install/" class="md-nav__link">
         Installing Git
       </a>
     </li>
@@ -409,117 +405,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Configuring Git
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../Basics/git_configuration/" class="md-nav__link">
         Configuring Git
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-open-a-terminalcommand-prompt" class="md-nav__link">
-    1. Open a Terminal/Command Prompt
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-set-your-username" class="md-nav__link">
-    2. Set Your Username
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-set-your-email-address" class="md-nav__link">
-    3. Set Your Email Address
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-configure-line-endings" class="md-nav__link">
-    4. Configure Line Endings
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-configure-text-editor-optional" class="md-nav__link">
-    5. Configure Text Editor (Optional)
-  </a>
-  
-    <nav class="md-nav" aria-label="5. Configure Text Editor (Optional)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#git-output-window" class="md-nav__link">
-    Git output window
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-enable-color-output" class="md-nav__link">
-    6. Enable Color Output
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7-check-configuration" class="md-nav__link">
-    7. Check Configuration
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#8-verify-configuration" class="md-nav__link">
-    8. Verify Configuration
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#additional-tips" class="md-nav__link">
-    Additional Tips
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -538,7 +428,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../git_start/" class="md-nav__link">
+      <a href="../../Basics/git_start/" class="md-nav__link">
         Starting a Project
       </a>
     </li>
@@ -552,7 +442,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../git_stage/" class="md-nav__link">
+      <a href="../../Basics/git_stage/" class="md-nav__link">
         Snapshotting
       </a>
     </li>
@@ -566,7 +456,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../git_undoingthings/" class="md-nav__link">
+      <a href="../../Basics/git_undoingthings/" class="md-nav__link">
         Undoing Things
       </a>
     </li>
@@ -580,7 +470,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../git_remotes/" class="md-nav__link">
+      <a href="../../Basics/git_remotes/" class="md-nav__link">
         Remotes
       </a>
     </li>
@@ -594,7 +484,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../git_inspect/" class="md-nav__link">
+      <a href="../../Basics/git_inspect/" class="md-nav__link">
         Inspect & Compare
       </a>
     </li>
@@ -802,12 +692,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" data-md-state="indeterminate" type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
       
       
       
@@ -844,7 +736,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../More/git_sign/" class="md-nav__link">
+      <a href="../git_sign/" class="md-nav__link">
         Signing Commits
       </a>
     </li>
@@ -858,7 +750,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../More/plumbing/" class="md-nav__link">
+      <a href="../plumbing/" class="md-nav__link">
         Plumbing Tools
       </a>
     </li>
@@ -872,7 +764,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../More/git_search/" class="md-nav__link">
+      <a href="../git_search/" class="md-nav__link">
         Searching Tools
       </a>
     </li>
@@ -886,7 +778,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../More/git_rerere/" class="md-nav__link">
+      <a href="../git_rerere/" class="md-nav__link">
         Reuse Recorded Resolution
       </a>
     </li>
@@ -900,7 +792,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../More/git_debug/" class="md-nav__link">
+      <a href="../git_debug/" class="md-nav__link">
         Debugging
       </a>
     </li>
@@ -914,7 +806,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../More/git_bundle/" class="md-nav__link">
+      <a href="../git_bundle/" class="md-nav__link">
         Bundling
       </a>
     </li>
@@ -926,11 +818,116 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../More/git_replace/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Replace
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Replace
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#basic-usage" class="md-nav__link">
+    Basic Usage
+  </a>
+  
+    <nav class="md-nav" aria-label="Basic Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-replacement" class="md-nav__link">
+    Creating a Replacement
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listing-replacements" class="md-nav__link">
+    Listing Replacements
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deleting-a-replacement" class="md-nav__link">
+    Deleting a Replacement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-cases-for-git-replace" class="md-nav__link">
+    Use Cases for git replace
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1-replacing-a-commit" class="md-nav__link">
+    Example 1: Replacing a Commit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2-replacing-a-blob-file-content" class="md-nav__link">
+    Example 2: Replacing a Blob (File Content)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#important-notes" class="md-nav__link">
+    Important Notes
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -967,44 +964,30 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-open-a-terminalcommand-prompt" class="md-nav__link">
-    1. Open a Terminal/Command Prompt
+  <a href="#basic-usage" class="md-nav__link">
+    Basic Usage
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-set-your-username" class="md-nav__link">
-    2. Set Your Username
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-set-your-email-address" class="md-nav__link">
-    3. Set Your Email Address
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-configure-line-endings" class="md-nav__link">
-    4. Configure Line Endings
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-configure-text-editor-optional" class="md-nav__link">
-    5. Configure Text Editor (Optional)
-  </a>
-  
-    <nav class="md-nav" aria-label="5. Configure Text Editor (Optional)">
+    <nav class="md-nav" aria-label="Basic Usage">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#git-output-window" class="md-nav__link">
-    Git output window
+  <a href="#creating-a-replacement" class="md-nav__link">
+    Creating a Replacement
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listing-replacements" class="md-nav__link">
+    Listing Replacements
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deleting-a-replacement" class="md-nav__link">
+    Deleting a Replacement
   </a>
   
 </li>
@@ -1015,29 +998,42 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-enable-color-output" class="md-nav__link">
-    6. Enable Color Output
+  <a href="#use-cases-for-git-replace" class="md-nav__link">
+    Use Cases for git replace
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#7-check-configuration" class="md-nav__link">
-    7. Check Configuration
+  <a href="#examples" class="md-nav__link">
+    Examples
   </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1-replacing-a-commit" class="md-nav__link">
+    Example 1: Replacing a Commit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2-replacing-a-blob-file-content" class="md-nav__link">
+    Example 2: Replacing a Blob (File Content)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#8-verify-configuration" class="md-nav__link">
-    8. Verify Configuration
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#additional-tips" class="md-nav__link">
-    Additional Tips
+  <a href="#important-notes" class="md-nav__link">
+    Important Notes
   </a>
   
 </li>
@@ -1056,88 +1052,126 @@
                 
 
 
-  <h1>Configuring Git</h1>
+  <h1>Replace</h1>
 
-<p>After installing Git, the next step is to configure it with your user information. This ensures that your commits are associated with the correct identity. Follow these steps to configure Git with your user information used across all local repositories:</p>
-<h2 id="1-open-a-terminalcommand-prompt">1. <strong>Open a Terminal/Command Prompt</strong></h2>
+<p>The <code>git replace</code> command in Git allows you to create replacement objects, which can be used to substitute one Git object with another. This feature is particularly useful for rewriting commit history, testing changes without altering the original objects, and temporarily substituting parts of your repository for debugging or other purposes.</p>
+<div class="highlight"><pre><span></span><code>git replace &lt;old-object&gt; &lt;new-object&gt;
+</code></pre></div>
 <ul>
-<li><strong>Windows:</strong> Git Bash, Command Prompt, or PowerShell.</li>
-<li><strong>macOS/Linux:</strong> Terminal.</li>
+<li><strong><code>old-object</code></strong>: The SHA-1 hash of the object you want to replace.</li>
+<li><strong><code>new-object</code></strong>: The SHA-1 hash of the replacement object.</li>
 </ul>
-<h2 id="2-set-your-username">2. <strong>Set Your Username</strong></h2>
-<p>Run the following command, replacing "Your Name" with your actual name:
-   <div class="highlight"><pre><span></span><code>git config --global user.name <span class="s2">&quot;firstname Lastname&quot;</span>
-</code></pre></div></p>
-<h2 id="3-set-your-email-address">3. <strong>Set Your Email Address</strong></h2>
-<p>Run the following command, replacing "your.email@example.com" with your actual email address:
-   <div class="highlight"><pre><span></span><code>git config --global user.email <span class="s2">&quot;your.email@example.com&quot;</span>
-</code></pre></div></p>
-<h2 id="4-configure-line-endings">4. <strong>Configure Line Endings</strong></h2>
-<p>To prevent line ending issues when collaborating across different platforms, set your preferred line ending configuration. For Unix-style line endings (LF), run:
-   <div class="highlight"><pre><span></span><code>git config --global core.autocrlf input
-</code></pre></div>
-   For Windows-style line endings (CRLF), run:
-   <div class="highlight"><pre><span></span><code>git config --global core.autocrlf <span class="nb">true</span>
-</code></pre></div></p>
-<h2 id="5-configure-text-editor-optional">5. <strong>Configure Text Editor (Optional)</strong></h2>
-<p>When you launch VS Code from the command line, you can pass the --wait argument to make the launch command wait until you have closed the new VS Code instance. This can be useful when you configure VS Code as your Git external editor so Git will wait until you close the launched VS Code instance.</p>
-<p>Set your preferred text editor for Git. For example, to use VSCode:
-   <div class="highlight"><pre><span></span><code>git config --global core.editor <span class="s2">&quot;code --wait&quot;</span>
-</code></pre></div>
-   use VS Code's diff and merge capabilities even when using Git from command-line. Add the following to your Git configurations to use VS Code as the diff and merge tool:
-   <div class="highlight"><pre><span></span><code>git config --global -e
-</code></pre></div>
-and change the following:
-   <div class="highlight"><pre><span></span><code><span class="o">[</span>diff<span class="o">]</span>
-   <span class="nv">tool</span> <span class="o">=</span> default-difftool
-<span class="o">[</span>difftool <span class="s2">&quot;default-difftool&quot;</span><span class="o">]</span>
-   <span class="nv">cmd</span> <span class="o">=</span> code --wait --diff <span class="nv">$LOCAL</span> <span class="nv">$REMOTE</span>
-<span class="o">[</span>merge<span class="o">]</span>
-   <span class="nv">tool</span> <span class="o">=</span> code
-<span class="o">[</span>mergetool <span class="s2">&quot;code&quot;</span><span class="o">]</span>
-   <span class="nv">cmd</span> <span class="o">=</span> code --wait --merge <span class="nv">$REMOTE</span> <span class="nv">$LOCAL</span> <span class="nv">$BASE</span> <span class="nv">$MERGED</span>
-</code></pre></div>
-This uses the --diff option that can be passed to VS Code to compare two files side by side. The merge tool will be used the next time Git discovers a merge conflict.</p>
-<p>To summarize, here are some examples of where you can use VS Code as the editor:</p>
-<ul>
-<li><code>git rebase HEAD~3 -i</code> do interactive rebase using VS Code</li>
-<li><code>git commit</code> use VS Code for the commit message</li>
-<li><code>git add -p</code> followed by <code>e</code> for interactive add</li>
-<li><code>git difftool &lt;commit&gt;^ &lt;commit&gt;</code> use VS Code as the diff editor for changes</li>
-</ul>
-<h3 id="git-output-window">Git output window</h3>
-<p>You can always peek under the hood to see the Git commands that are being run. This is helpful if something strange is happening or if you are just curious.</p>
-<p>To open the Git output window, run View &gt; Output and select Log (Git) from the dropdown list.</p>
-<h2 id="6-enable-color-output">6. <strong>Enable Color Output</strong></h2>
-<p>Improve readability by enabling color output in the Git command line:</p>
-<p><div class="highlight"><pre><span></span><code>git config --global color.ui auto
-</code></pre></div>
-This setting adds color to various Git outputs, making it easier to distinguish between different types of information.To view your Git configuration, run:</p>
-<h2 id="7-check-configuration">7. <strong>Check Configuration</strong></h2>
-<p>To view your Git configuration, run:
-   <div class="highlight"><pre><span></span><code>git config --list
-</code></pre></div></p>
-<p>Ensure that your name, email, and other settings are correctly displayed.</p>
-<h2 id="8-verify-configuration">8. <strong>Verify Configuration</strong></h2>
-<p>Run the following commands to verify your configuration:
-   <div class="highlight"><pre><span></span><code>git config user.name
-git config user.email
-</code></pre></div></p>
-<p>These commands should display the values you've just set.</p>
-<h2 id="additional-tips">Additional Tips</h2>
-<ul>
+<h3 id="basic-usage">Basic Usage</h3>
+<h4 id="creating-a-replacement">Creating a Replacement</h4>
+<p>Suppose you have two commit objects, and you want to replace <code>commit1</code> with <code>commit2</code>.</p>
+<ol>
 <li>
-<p><strong>Credential Caching</strong>
-  To avoid entering your credentials repeatedly, you can set up credential caching. On Windows, Git Credential Manager is often used. On macOS/Linux, you can use the credential helper provided by Git:
-  <div class="highlight"><pre><span></span><code>git config --global credential.helper cache
+<p>Identify the SHA-1 hashes of the two commits:
+   <div class="highlight"><pre><span></span><code>git log
+</code></pre></div>
+   Let's say <code>commit1</code> has the SHA-1 <code>abcdef123456...</code> and <code>commit2</code> has <code>123456abcdef...</code>.</p>
+</li>
+<li>
+<p>Create the replacement:
+   <div class="highlight"><pre><span></span><code>git replace abcdef123456 123456abcdef
+</code></pre></div></p>
+</li>
+</ol>
+<p>This command tells Git to use <code>commit2</code> whenever it encounters <code>commit1</code>.</p>
+<h4 id="listing-replacements">Listing Replacements</h4>
+<p>To list all existing replacements, use:
+<div class="highlight"><pre><span></span><code>git replace -l
+</code></pre></div></p>
+<h4 id="deleting-a-replacement">Deleting a Replacement</h4>
+<p>To delete a replacement, use:
+<div class="highlight"><pre><span></span><code>git replace -d &lt;old-object&gt;
+</code></pre></div></p>
+<p>For example:
+<div class="highlight"><pre><span></span><code>git replace -d abcdef123456
+</code></pre></div></p>
+<h3 id="use-cases-for-git-replace">Use Cases for <code>git replace</code></h3>
+<ol>
+<li><strong>Testing Changes</strong>: You can test changes by creating replacement objects without altering the original repository history.</li>
+<li><strong>Rewriting History</strong>: Temporarily rewrite parts of your history for demonstrations or experiments.</li>
+<li><strong>Debugging</strong>: Substitute objects to debug issues in different parts of the repository.</li>
+</ol>
+<h3 id="examples">Examples</h3>
+<h4 id="example-1-replacing-a-commit">Example 1: Replacing a Commit</h4>
+<p>Imagine you have a commit history like this:
+<div class="highlight"><pre><span></span><code>A -- B -- C -- D (master)
+</code></pre></div></p>
+<p>You want to replace commit <code>C</code> with a new commit <code>C'</code> for testing purposes.</p>
+<ol>
+<li>
+<p>Create a new commit <code>C'</code>:
+   <div class="highlight"><pre><span></span><code>git checkout -b temp-branch C
+<span class="nb">echo</span> <span class="s2">&quot;New changes&quot;</span> &gt; file.txt
+git add file.txt
+git commit -m <span class="s2">&quot;Commit C&#39;&quot;</span>
 </code></pre></div></p>
 </li>
 <li>
-<p><strong>SSH Key</strong>
-  If you prefer using SSH for authentication, <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh">generate an SSH key</a> and <a href="../../Github/git_ssh/">associate it with your GitHub account</a>.</p>
+<p>Identify the SHA-1 hashes of <code>C</code> and <code>C'</code>:
+   <div class="highlight"><pre><span></span><code>git log
+</code></pre></div></p>
+</li>
+</ol>
+<p>Let's say <code>C</code> is <code>ccccc</code> and <code>C'</code> is <code>ddddd</code>.</p>
+<ol>
+<li>
+<p>Replace <code>C</code> with <code>C'</code>:
+   <div class="highlight"><pre><span></span><code>git replace ccccc ddddd
+</code></pre></div></p>
+</li>
+<li>
+<p>Verify the replacement:
+   <div class="highlight"><pre><span></span><code>git log
+</code></pre></div></p>
+</li>
+</ol>
+<p>You should see that the history now shows <code>C'</code> instead of <code>C</code>.</p>
+<h4 id="example-2-replacing-a-blob-file-content">Example 2: Replacing a Blob (File Content)</h4>
+<p>Suppose you have a file <code>file.txt</code> with an object ID <code>blob1</code>, and you want to replace its content with another blob <code>blob2</code>.</p>
+<ol>
+<li>
+<p>Identify the SHA-1 hash of the blobs:
+   <div class="highlight"><pre><span></span><code>git hash-object file.txt
+</code></pre></div></p>
+</li>
+<li>
+<p>Create a new blob:
+   <div class="highlight"><pre><span></span><code><span class="nb">echo</span> <span class="s2">&quot;New content&quot;</span> &gt; new_file.txt
+git hash-object -w new_file.txt
+</code></pre></div></p>
+</li>
+</ol>
+<p>Let's say <code>blob1</code> is <code>bbbbb</code> and <code>blob2</code> is <code>fffff</code>.</p>
+<ol>
+<li>
+<p>Replace <code>blob1</code> with <code>blob2</code>:
+   <div class="highlight"><pre><span></span><code>git replace bbbbb fffff
+</code></pre></div></p>
+</li>
+<li>
+<p>Verify the replacement:
+   <div class="highlight"><pre><span></span><code>git cat-file -p bbbbb
+</code></pre></div></p>
+</li>
+</ol>
+<p>This should show the content of <code>blob2</code> instead of <code>blob1</code>.</p>
+<h3 id="important-notes">Important Notes</h3>
+<ul>
+<li><strong>Temporary Nature</strong>: The replacements are temporary and only affect your local repository unless explicitly shared with others.</li>
+<li>
+<p><strong>Sharing Replacements</strong>: To share the replacements, you need to push the <code>.git/refs/replace/</code> namespace to the remote repository:
+  <div class="highlight"><pre><span></span><code>git push origin refs/replace/*
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Removal of Replacements</strong>: When you no longer need the replacement, remove it using the <code>-d</code> flag as shown earlier.</p>
 </li>
 </ul>
-<p>Your Git configuration is now set up. You can start using Git with your personalized settings for version control and collaboration.</p>
+<p>Using <code>git replace</code>, you can flexibly manage and test changes in your repository without permanently altering your commit history or object data.</p>
 
               
             </article>
@@ -1151,7 +1185,7 @@ git config user.email
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../git_install/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Installing Git" rel="prev">
+        <a href="../git_bundle/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Bundling" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -1160,26 +1194,11 @@ git config user.email
               <span class="md-footer__direction">
                 Previous
               </span>
-              Installing Git
+              Bundling
             </div>
           </div>
         </a>
       
-      
-        
-        <a href="../git_start/" class="md-footer__link md-footer__link--next" aria-label="Next: Starting a Project" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Starting a Project
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
       
     </nav>
   
