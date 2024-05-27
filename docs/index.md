@@ -13,7 +13,7 @@ Whether you're a seasoned developer or a code maintainer, this repository is des
 | [Remotes](Basics/git_remotes.md)               | [Patching](Advanced/git_patches.md)                       | [Rerere](More/git_rerere.md)        |
 | [Inspect & Compare](Basics/git_inspect.md)     | [Ignoring Files](Advanced/git_ignore.md)                  | [Debugging](More/git_debug.md)      |
 |                                                | [Temporary Commits](Advanced/git_stash.md)                | [Bundling](More/git_bundle.md)      |
-|                                                | [Interactive Staging](Advanced/git_interactivestaging.md) |                                     |
+|                                                | [Interactive Staging](Advanced/git_interactivestaging.md) | [Replace](More/git_replace.md)      |
 |                                                | [CherryPicking](Advanced/git_checkout.md)                 |                                     |
 |                                                | [Checkout](Advanced/git_stash.md)                         |                                     |
 |                                                | [Submodules](Advanced/git_submodules.md)                  |                                     |
