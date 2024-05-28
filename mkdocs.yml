@@ -121,3 +121,4 @@ nav:
      - Debugging: More/git_debug.md
      - Bundling: More/git_bundle.md
      - Replace: More/git_replace.md
+     - Attributes: More/git_attributes.md
