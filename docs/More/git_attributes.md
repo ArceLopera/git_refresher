@@ -1,4 +1,4 @@
-Git attributes are a powerful feature of Git that allow you to define how different types of files are handled by Git in various operations, such as merging, diffing, and exporting. Git attributes are configured in a file named `.gitattributes` located at the root of your repository or in any subdirectory. 
+Git attributes are a powerful feature of Git that allow you to define how different types of files are handled by Git in various operations, such as merging, diffing, and exporting. Git attributes are configured in a file named `.gitattributes` located at the root of your repository or in any subdirectory  or in the .git/info/attributes file if you don’t want the attributes file committed with your project.. 
 
 The basic syntax for defining attributes in a `.gitattributes` file is:
 ```
@@ -66,6 +66,24 @@ Define a custom diff driver for Markdown files:
    ```
 
 3. Create a script named `markdown-diff` that converts Markdown to a plain text format for comparison.
+
+For word documents:
+```bash
+*.docx diff=word
+```
+This tells Git that any file that matches this pattern (.docx) should use the “word” filter when you try to view a diff that contains changes. What is the “word” filter? You have to set it up. Here you’ll configure Git to use the docx2txt program to convert Word documents into readable text files, which it will then diff properly.
+First, you’ll need to install docx2txt; you can download it from https://sourceforge.net/projects/docx2txt. Follow the instructions in the INSTALL file to put it somewhere your shell can find it. Next, you’ll write a wrapper script to convert output to the format Git expects. Create a file that’s somewhere in your path called docx2txt, and add these contents:
+``` bash
+#!/bin/bash
+docx2txt.pl "$1" -
+```
+Don’t forget to chmod a+x that file. Finally, you can configure Git to use this script:
+
+```bash
+git config diff.word.textconv docx2txt
+```
+
+Now Git knows that if it tries to do a diff between two snapshots, and any of the files end in .docx, it should run those files through the “word” filter, which is defined as the docx2txt program. This effectively makes nice text-based versions of your Word files before attempting to diff them.
 
 #### **Merge Attributes**
    - **`merge`**: Specifies custom merge strategies.
