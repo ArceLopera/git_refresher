@@ -12,14 +12,14 @@
         <meta name="author" content="ArceLopera">
       
       
-        <link rel="canonical" href="https://arcelopera.github.io/git_refresher/Advanced/git_cherry/">
+        <link rel="canonical" href="https://arcelopera.github.io/git_refresher/More/git_notes/">
       
       <link rel="icon" href="../../Images/git.ico">
       <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.15">
     
     
       
-        <title>CherryPicking - Git Refresher</title>
+        <title>Adding Notes - Git Refresher</title>
       
     
     
@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#syntax" class="md-skip">
+        <a href="#use-cases-for-git-notes" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              CherryPicking
+              Adding Notes
             
           </span>
         </div>
@@ -230,15 +230,13 @@
         
   
   
-    
-  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../git_alias/" class="md-tabs__link md-tabs__link--active">
+      <a href="../../Advanced/git_alias/" class="md-tabs__link">
         Advanced
       </a>
     </li>
@@ -248,13 +246,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../Github/git_ssh/" class="md-tabs__link">
+      <a href="../../Github/git_ssh/" class="md-tabs__link md-tabs__link--active">
         More
       </a>
     </li>
@@ -504,14 +504,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" data-md-state="indeterminate" type="checkbox" id="__nav_3" checked>
       
       
       
@@ -534,7 +532,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../git_alias/" class="md-nav__link">
+      <a href="../../Advanced/git_alias/" class="md-nav__link">
         Aliases
       </a>
     </li>
@@ -548,7 +546,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../git_tagging/" class="md-nav__link">
+      <a href="../../Advanced/git_tagging/" class="md-nav__link">
         Tagging
       </a>
     </li>
@@ -562,7 +560,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../git_branch/" class="md-nav__link">
+      <a href="../../Advanced/git_branch/" class="md-nav__link">
         Branching
       </a>
     </li>
@@ -576,7 +574,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../git_advmerge/" class="md-nav__link">
+      <a href="../../Advanced/git_advmerge/" class="md-nav__link">
         Advanced Merge
       </a>
     </li>
@@ -590,7 +588,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../git_patches/" class="md-nav__link">
+      <a href="../../Advanced/git_patches/" class="md-nav__link">
         Patching
       </a>
     </li>
@@ -604,7 +602,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../git_ignore/" class="md-nav__link">
+      <a href="../../Advanced/git_ignore/" class="md-nav__link">
         Ignoring Files
       </a>
     </li>
@@ -618,7 +616,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../git_stash/" class="md-nav__link">
+      <a href="../../Advanced/git_stash/" class="md-nav__link">
         Temporary Commits
       </a>
     </li>
@@ -632,7 +630,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../git_interactivestaging/" class="md-nav__link">
+      <a href="../../Advanced/git_interactivestaging/" class="md-nav__link">
         Interactive Staging
       </a>
     </li>
@@ -644,110 +642,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          CherryPicking
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../Advanced/git_cherry/" class="md-nav__link">
         CherryPicking
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#syntax" class="md-nav__link">
-    Syntax
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#options" class="md-nav__link">
-    Options
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#examples" class="md-nav__link">
-    Examples
-  </a>
-  
-    <nav class="md-nav" aria-label="Examples">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-cherry-picking-a-single-commit" class="md-nav__link">
-    1. Cherry-picking a Single Commit
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-cherry-picking-a-range-of-commits" class="md-nav__link">
-    2. Cherry-picking a Range of Commits
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-cherry-picking-with-edit" class="md-nav__link">
-    3. Cherry-picking with Edit
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-cherry-picking-without-committing" class="md-nav__link">
-    4. Cherry-picking without Committing
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5-cherry-picking-with-merge-strategy" class="md-nav__link">
-    5. Cherry-picking with Merge Strategy
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#use-cases" class="md-nav__link">
-    Use Cases
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -759,7 +658,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../git_checkout/" class="md-nav__link">
+      <a href="../../Advanced/git_checkout/" class="md-nav__link">
         Checkout
       </a>
     </li>
@@ -773,7 +672,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../git_submodules/" class="md-nav__link">
+      <a href="../../Advanced/git_submodules/" class="md-nav__link">
         Submodules
       </a>
     </li>
@@ -793,12 +692,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" data-md-state="indeterminate" type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
       
       
       
@@ -835,7 +736,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../More/git_sign/" class="md-nav__link">
+      <a href="../git_sign/" class="md-nav__link">
         Signing Commits
       </a>
     </li>
@@ -847,11 +748,191 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../More/git_notes/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Adding Notes
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Adding Notes
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#use-cases-for-git-notes" class="md-nav__link">
+    Use Cases for Git Notes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-notes-to-commits" class="md-nav__link">
+    Adding Notes to Commits
+  </a>
+  
+    <nav class="md-nav" aria-label="Adding Notes to Commits">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1-adding-a-note-to-the-latest-commit" class="md-nav__link">
+    Example 1: Adding a Note to the Latest Commit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2-adding-notes-to-a-specific-commit" class="md-nav__link">
+    Example 2: Adding Notes to a Specific Commit
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewing-notes" class="md-nav__link">
+    Viewing Notes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#editing-notes" class="md-nav__link">
+    Editing Notes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#removing-notes" class="md-nav__link">
+    Removing Notes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#listing-all-notes" class="md-nav__link">
+    Listing All Notes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#merging-notes" class="md-nav__link">
+    Merging Notes
+  </a>
+  
+    <nav class="md-nav" aria-label="Merging Notes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-merging-notes" class="md-nav__link">
+    Example: Merging Notes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#splitting-notes-by-ref-namespace" class="md-nav__link">
+    Splitting Notes by Ref Namespace
+  </a>
+  
+    <nav class="md-nav" aria-label="Splitting Notes by Ref Namespace">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-using-a-custom-namespace-for-notes" class="md-nav__link">
+    Example: Using a Custom Namespace for Notes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes-with-multiple-lines" class="md-nav__link">
+    Notes with Multiple Lines
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storing-notes-in-remote-repositories" class="md-nav__link">
+    Storing Notes in Remote Repositories
+  </a>
+  
+    <nav class="md-nav" aria-label="Storing Notes in Remote Repositories">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-pushing-notes-to-a-remote" class="md-nav__link">
+    Example: Pushing Notes to a Remote
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-fetching-notes-from-a-remote" class="md-nav__link">
+    Example: Fetching Notes from a Remote
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-git-notes-face-usability-challenges" class="md-nav__link">
+    Why Git Notes Face Usability Challenges
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    Conclusion
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -863,7 +944,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../More/plumbing/" class="md-nav__link">
+      <a href="../plumbing/" class="md-nav__link">
         Plumbing Tools
       </a>
     </li>
@@ -877,7 +958,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../More/git_search/" class="md-nav__link">
+      <a href="../git_search/" class="md-nav__link">
         Searching Tools
       </a>
     </li>
@@ -891,7 +972,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../More/git_rerere/" class="md-nav__link">
+      <a href="../git_rerere/" class="md-nav__link">
         Reuse Recorded Resolution
       </a>
     </li>
@@ -905,7 +986,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../More/git_debug/" class="md-nav__link">
+      <a href="../git_debug/" class="md-nav__link">
         Debugging
       </a>
     </li>
@@ -919,7 +1000,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../More/git_bundle/" class="md-nav__link">
+      <a href="../git_bundle/" class="md-nav__link">
         Bundling
       </a>
     </li>
@@ -933,7 +1014,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../More/git_replace/" class="md-nav__link">
+      <a href="../git_replace/" class="md-nav__link">
         Replace
       </a>
     </li>
@@ -947,7 +1028,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../More/git_attributes/" class="md-nav__link">
+      <a href="../git_attributes/" class="md-nav__link">
         Attributes
       </a>
     </li>
@@ -961,7 +1042,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../More/git_worktree/" class="md-nav__link">
+      <a href="../git_worktree/" class="md-nav__link">
         Worktree
       </a>
     </li>
@@ -1000,58 +1081,30 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#syntax" class="md-nav__link">
-    Syntax
+  <a href="#use-cases-for-git-notes" class="md-nav__link">
+    Use Cases for Git Notes
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#options" class="md-nav__link">
-    Options
+  <a href="#adding-notes-to-commits" class="md-nav__link">
+    Adding Notes to Commits
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#examples" class="md-nav__link">
-    Examples
-  </a>
-  
-    <nav class="md-nav" aria-label="Examples">
+    <nav class="md-nav" aria-label="Adding Notes to Commits">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-cherry-picking-a-single-commit" class="md-nav__link">
-    1. Cherry-picking a Single Commit
+  <a href="#example-1-adding-a-note-to-the-latest-commit" class="md-nav__link">
+    Example 1: Adding a Note to the Latest Commit
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-cherry-picking-a-range-of-commits" class="md-nav__link">
-    2. Cherry-picking a Range of Commits
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-cherry-picking-with-edit" class="md-nav__link">
-    3. Cherry-picking with Edit
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-cherry-picking-without-committing" class="md-nav__link">
-    4. Cherry-picking without Committing
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5-cherry-picking-with-merge-strategy" class="md-nav__link">
-    5. Cherry-picking with Merge Strategy
+  <a href="#example-2-adding-notes-to-a-specific-commit" class="md-nav__link">
+    Example 2: Adding Notes to a Specific Commit
   </a>
   
 </li>
@@ -1062,8 +1115,117 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#use-cases" class="md-nav__link">
-    Use Cases
+  <a href="#viewing-notes" class="md-nav__link">
+    Viewing Notes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#editing-notes" class="md-nav__link">
+    Editing Notes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#removing-notes" class="md-nav__link">
+    Removing Notes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#listing-all-notes" class="md-nav__link">
+    Listing All Notes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#merging-notes" class="md-nav__link">
+    Merging Notes
+  </a>
+  
+    <nav class="md-nav" aria-label="Merging Notes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-merging-notes" class="md-nav__link">
+    Example: Merging Notes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#splitting-notes-by-ref-namespace" class="md-nav__link">
+    Splitting Notes by Ref Namespace
+  </a>
+  
+    <nav class="md-nav" aria-label="Splitting Notes by Ref Namespace">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-using-a-custom-namespace-for-notes" class="md-nav__link">
+    Example: Using a Custom Namespace for Notes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes-with-multiple-lines" class="md-nav__link">
+    Notes with Multiple Lines
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storing-notes-in-remote-repositories" class="md-nav__link">
+    Storing Notes in Remote Repositories
+  </a>
+  
+    <nav class="md-nav" aria-label="Storing Notes in Remote Repositories">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-pushing-notes-to-a-remote" class="md-nav__link">
+    Example: Pushing Notes to a Remote
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-fetching-notes-from-a-remote" class="md-nav__link">
+    Example: Fetching Notes from a Remote
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-git-notes-face-usability-challenges" class="md-nav__link">
+    Why Git Notes Face Usability Challenges
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    Conclusion
   </a>
   
 </li>
@@ -1082,51 +1244,128 @@
                 
 
 
-  <h1>CherryPicking</h1>
+  <h1>Adding Notes</h1>
 
-<p><code>git cherry-pick</code> is a powerful Git command used to apply individual commits from one branch to another. It allows you to select specific commits and apply them to the current branch, effectively incorporating changes from one branch into another. </p>
-<h2 id="syntax">Syntax</h2>
-<div class="highlight"><pre><span></span><code>git cherry-pick &lt;commit&gt;
-</code></pre></div>
+<p><code>git notes</code> is a command that allows you to add, inspect, and manage additional information (referred to as <em>notes</em>) toobjects without altering the objects themselves. This is particularly useful for attaching metadata like comments, code reviews, or documentation to objectss without changing their hash (which would occur if you amend or edit them directly). It is a lesser-known yet powerful feature of git, often overshadowed by its challenging usability. Git notes allow users to append metadata to commits, blobs, and trees in git without altering the original objects. This feature is highly versatile, enabling a range of applications from tracking time per commit, adding review and testing information, to facilitating fully distributed code reviews. Despite their potential, git notes suffer from limited adoption and usability issues, as seen in GitHub discontinuing their display in 2014.</p>
+<h3 id="use-cases-for-git-notes">Use Cases for Git Notes</h3>
 <ul>
-<li><code>&lt;commit&gt;</code>: The commit hash or reference of the commit you want to cherry-pick.</li>
+<li><strong>Adding documentation</strong> to commits (e.g., explaining why a specific change was made).</li>
+<li><strong>Code reviews</strong> and feedback without altering the commit.</li>
+<li><strong>Tracking external information</strong> (e.g., bug tracker IDs or task numbers) linked to a commit.</li>
+<li><strong>Tracking time per commit</strong> without altering the commit.</li>
 </ul>
-<h2 id="options">Options</h2>
+<h3 id="adding-notes-to-commits">Adding Notes to Commits</h3>
+<p>You can add notes to any commit using the <code>git notes add</code> command. By default, notes are added to the most recent commit.</p>
+<h4 id="example-1-adding-a-note-to-the-latest-commit">Example 1: Adding a Note to the Latest Commit</h4>
+<p>First, create a new commit:
+<div class="highlight"><pre><span></span><code>git commit -m <span class="s2">&quot;Initial commit&quot;</span>
+</code></pre></div></p>
+<p>Now, add a note to this commit:
+<div class="highlight"><pre><span></span><code>git notes add -m <span class="s2">&quot;This is an extra explanation for the initial commit.&quot;</span>
+</code></pre></div></p>
+<p>You can inspect the note with:
+<div class="highlight"><pre><span></span><code>git log --show-notes
+</code></pre></div></p>
+<p>Output:
+<div class="highlight"><pre><span></span><code>commit &lt;hash&gt;
+Author: Your Name &lt;you@example.com&gt;
+Date:   &lt;date&gt;
+
+    Initial commit
+
+Notes:
+    This is an extra explanation for the initial commit.
+</code></pre></div></p>
+<h4 id="example-2-adding-notes-to-a-specific-commit">Example 2: Adding Notes to a Specific Commit</h4>
+<p>To add a note to a specific commit, you need to specify the commit hash:
+<div class="highlight"><pre><span></span><code>git notes add -m <span class="s2">&quot;Fixes bug #1234.&quot;</span> &lt;commit_hash&gt;
+</code></pre></div></p>
+<p>Now if you check the logs:
+<div class="highlight"><pre><span></span><code>git log --show-notes
+</code></pre></div></p>
+<p>You’ll see:
+<div class="highlight"><pre><span></span><code>commit &lt;commit_hash&gt;
+Author: Your Name &lt;you@example.com&gt;
+Date:   &lt;date&gt;
+
+    Some previous commit message
+
+Notes:
+    Fixes bug #1234.
+</code></pre></div></p>
+<h3 id="viewing-notes">Viewing Notes</h3>
+<p>To view notes attached to commits, use:
+<div class="highlight"><pre><span></span><code>git log --show-notes
+</code></pre></div></p>
+<p>Alternatively, to view the note for a specific commit:
+<div class="highlight"><pre><span></span><code>git notes show &lt;commit_hash&gt;
+</code></pre></div></p>
+<h3 id="editing-notes">Editing Notes</h3>
+<p>If you need to modify a note after it’s been created, use:
+<div class="highlight"><pre><span></span><code>git notes edit &lt;commit_hash&gt;
+</code></pre></div></p>
+<p>This will open your default editor where you can modify the note.</p>
+<h3 id="removing-notes">Removing Notes</h3>
+<p>To delete a note from a commit:
+<div class="highlight"><pre><span></span><code>git notes remove &lt;commit_hash&gt;
+</code></pre></div></p>
+<h3 id="listing-all-notes">Listing All Notes</h3>
+<p>To list all notes in your repository:
+<div class="highlight"><pre><span></span><code>git notes list
+</code></pre></div></p>
+<p>This will display all the commit hashes along with their associated notes.</p>
+<h3 id="merging-notes">Merging Notes</h3>
+<p>When collaborating on a project, different contributors might add notes to the same commit. Git provides a way to merge these notes.</p>
+<h4 id="example-merging-notes">Example: Merging Notes</h4>
+<p>First, fetch the notes from the remote repository:
+<div class="highlight"><pre><span></span><code>git fetch origin refs/notes/*:refs/notes/*
+</code></pre></div></p>
+<p>Then, merge the notes from another branch:
+<div class="highlight"><pre><span></span><code>git notes merge
+</code></pre></div></p>
+<h3 id="splitting-notes-by-ref-namespace">Splitting Notes by Ref Namespace</h3>
+<p>You can have multiple sets of notes for the same commit by specifying different namespaces. By default, notes are saved under the <code>refs/notes/commits</code> reference, but you can store them elsewhere using the <code>--ref</code> option.</p>
+<h4 id="example-using-a-custom-namespace-for-notes">Example: Using a Custom Namespace for Notes</h4>
+<p>Add notes under a different reference (e.g., <code>refs/notes/review</code>):
+<div class="highlight"><pre><span></span><code>git notes --ref<span class="o">=</span>review add -m <span class="s2">&quot;This commit has passed the review.&quot;</span> &lt;commit_hash&gt;
+</code></pre></div></p>
+<p>To view these notes:
+<div class="highlight"><pre><span></span><code>git log --show-notes<span class="o">=</span>review
+</code></pre></div></p>
+<p>This allows you to have multiple categories of notes, such as <em>code reviews</em> or <em>documentation</em>, without conflicting with one another.</p>
+<h3 id="notes-with-multiple-lines">Notes with Multiple Lines</h3>
+<p>If you want to add a note with multiple lines, use:
+<div class="highlight"><pre><span></span><code>git notes add
+</code></pre></div></p>
+<p>This will open the default editor, where you can write your multi-line note.</p>
+<p>Alternatively, you can use:
+<div class="highlight"><pre><span></span><code>git notes add -m <span class="s2">&quot;First line&quot;</span> -m <span class="s2">&quot;Second line&quot;</span>
+</code></pre></div></p>
+<h3 id="storing-notes-in-remote-repositories">Storing Notes in Remote Repositories</h3>
+<p>By default, notes are not pushed to remotes. You need to explicitly push and fetch notes.</p>
+<h4 id="example-pushing-notes-to-a-remote">Example: Pushing Notes to a Remote</h4>
+<p>To push notes to a remote repository:
+<div class="highlight"><pre><span></span><code>git push origin refs/notes/commits
+</code></pre></div></p>
+<h4 id="example-fetching-notes-from-a-remote">Example: Fetching Notes from a Remote</h4>
+<p>To fetch notes from a remote:
+<div class="highlight"><pre><span></span><code>git fetch origin refs/notes/commits:refs/notes/commits
+</code></pre></div></p>
+<h3 id="why-git-notes-face-usability-challenges">Why Git Notes Face Usability Challenges</h3>
+<p>Despite their potential, Git notes have limited adoption due to usability challenges and limited toolchain support. For example, GitHub supported displaying notes for a time, but discontinued this feature in 2014 due to low usage and technical limitations.</p>
 <ul>
-<li><strong><code>-e</code> or <code>--edit</code></strong>: Allows you to edit the commit message before committing the cherry-picked commit.</li>
-<li><strong><code>-n</code> or <code>--no-commit</code></strong>: Applies the changes from the commit but does not create a new commit automatically. Useful for cherry-picking multiple commits together.</li>
-<li><strong><code>-x</code> or <code>--signoff</code></strong>: Adds a "Signed-off-by" line to the commit message, indicating authorship.</li>
-<li><strong><code>-m parent-number</code> or <code>--mainline parent-number</code></strong>: Specifies the parent number when cherry-picking a merge commit. Default is 1 (first parent).</li>
-<li><strong><code>-s</code> or <code>--strategy &lt;strategy&gt;</code></strong>: Specifies the merge strategy to use when resolving conflicts. Options include <code>recursive</code> (default), <code>resolve</code>, <code>ours</code>, <code>theirs</code>, etc.</li>
+<li>
+<p><strong>Lack of visibility:</strong> Notes are not shown in a default git log output unless explicitly requested with git log --show-notes. This can make them "invisible" to most users unless they are aware of the feature.</p>
+</li>
+<li>
+<p><strong>Not synchronized by default:</strong> Notes are not pushed or fetched by default when collaborating with remote repositories. Developers must manually handle pushing and fetching notes using commands like git push origin refs/notes/commits and git fetch origin refs/notes/commits:refs/notes/commits.</p>
+</li>
+<li>
+<p><strong>Toolchain integration:</strong> Many popular Git hosting services (e.g., GitHub, GitLab) and GUIs do not natively support Git notes in their interfaces. This limits their visibility and usefulness in typical workflows, which focus more on commit messages and branch structures.</p>
+</li>
 </ul>
-<h2 id="examples">Examples</h2>
-<h3 id="1-cherry-picking-a-single-commit">1. Cherry-picking a Single Commit</h3>
-<p><div class="highlight"><pre><span></span><code>git cherry-pick abc123
-</code></pre></div>
-This command applies the changes from the commit with the hash <code>abc123</code> to the current branch.</p>
-<h3 id="2-cherry-picking-a-range-of-commits">2. Cherry-picking a Range of Commits</h3>
-<p><div class="highlight"><pre><span></span><code>git cherry-pick abc123..def456
-</code></pre></div>
-This command applies the changes from all commits in the range <code>abc123</code> to <code>def456</code> to the current branch.</p>
-<h3 id="3-cherry-picking-with-edit">3. Cherry-picking with Edit</h3>
-<p><div class="highlight"><pre><span></span><code>git cherry-pick -e abc123
-</code></pre></div>
-This command applies the changes from the commit <code>abc123</code> to the current branch and allows you to edit the commit message before committing.</p>
-<h3 id="4-cherry-picking-without-committing">4. Cherry-picking without Committing</h3>
-<p><div class="highlight"><pre><span></span><code>git cherry-pick -n abc123
-</code></pre></div>
-This command applies the changes from the commit <code>abc123</code> to the current branch but does not create a new commit automatically. You can then manually commit the changes using <code>git commit</code>.</p>
-<h3 id="5-cherry-picking-with-merge-strategy">5. Cherry-picking with Merge Strategy</h3>
-<p><div class="highlight"><pre><span></span><code>git cherry-pick -s -X theirs abc123
-</code></pre></div>
-This command applies the changes from the commit <code>abc123</code> to the current branch and resolves conflicts by favoring the changes from the cherry-picked commit (<code>theirs</code> strategy).</p>
-<h2 id="use-cases">Use Cases</h2>
-<ul>
-<li><strong>Porting Fixes:</strong> Cherry-pick commits containing bug fixes or feature enhancements from one branch to another, such as from a development branch to a stable release branch.</li>
-<li><strong>Reverting Changes:</strong> Use cherry-pick to revert specific changes made in one branch from another branch without reverting the entire commit.</li>
-<li><strong>Selectively Applying Changes:</strong> Apply only certain changes from a commit instead of the entire commit by using <code>git cherry-pick -n</code> followed by manual modifications.</li>
-</ul>
-<p><code>git cherry-pick</code> is a versatile command that allows you to apply specific commits from one branch to another. By understanding its options and usage examples, you can effectively incorporate changes from one branch into another, facilitating collaboration and code management in your Git workflow.</p>
+<h3 id="conclusion">Conclusion</h3>
+<p><code>git notes</code> provides a flexible way to attach additional metadata to commits without modifying them. This feature is particularly useful for attaching comments, reviews, or documentation to commits, and can be customized by namespaces for different purposes. It’s also a great way to keep a clean history while still having the context you need.</p>
 
               
             </article>
@@ -1140,7 +1379,7 @@ This command applies the changes from the commit <code>abc123</code> to the curr
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../git_interactivestaging/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Interactive Staging" rel="prev">
+        <a href="../git_sign/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Signing Commits" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -1149,20 +1388,20 @@ This command applies the changes from the commit <code>abc123</code> to the curr
               <span class="md-footer__direction">
                 Previous
               </span>
-              Interactive Staging
+              Signing Commits
             </div>
           </div>
         </a>
       
       
         
-        <a href="../git_checkout/" class="md-footer__link md-footer__link--next" aria-label="Next: Checkout" rel="next">
+        <a href="../plumbing/" class="md-footer__link md-footer__link--next" aria-label="Next: Plumbing Tools" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Checkout
+              Plumbing Tools
             </div>
           </div>
           <div class="md-footer__button md-icon">

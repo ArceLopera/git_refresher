@@ -750,6 +750,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../git_notes/" class="md-nav__link">
+        Adding Notes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../plumbing/" class="md-nav__link">
         Plumbing Tools
       </a>
@@ -866,6 +880,60 @@
     git rev-list
   </a>
   
+    <nav class="md-nav" aria-label="git rev-list">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-usage-of-git-rev-list" class="md-nav__link">
+    Basic Usage of git rev-list
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-use-cases" class="md-nav__link">
+    Common Use Cases
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-options" class="md-nav__link">
+    Advanced Options
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced Options">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#-all-match" class="md-nav__link">
+    --all-match
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-extended-regexp" class="md-nav__link">
+    --extended-regexp
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-bisect" class="md-nav__link">
+    --bisect
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -948,6 +1016,20 @@
     <li class="md-nav__item">
       <a href="../git_attributes/" class="md-nav__link">
         Attributes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../git_worktree/" class="md-nav__link">
+        Worktree
       </a>
     </li>
   
@@ -1056,6 +1138,60 @@
   <a href="#git-rev-list" class="md-nav__link">
     git rev-list
   </a>
+  
+    <nav class="md-nav" aria-label="git rev-list">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-usage-of-git-rev-list" class="md-nav__link">
+    Basic Usage of git rev-list
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-use-cases" class="md-nav__link">
+    Common Use Cases
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-options" class="md-nav__link">
+    Advanced Options
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced Options">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#-all-match" class="md-nav__link">
+    --all-match
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-extended-regexp" class="md-nav__link">
+    --extended-regexp
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-bisect" class="md-nav__link">
+    --bisect
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1206,7 +1342,132 @@ For example, if we wanted to see every change made to the function git_deflate_b
 <h2 id="git-blame"><strong><code>git blame</code></strong></h2>
 <p>The <code>git blame</code> command shows the revision and author of each line in a file. It's useful for identifying when and by whom each line was last modified. You can use it to track down the origin of specific changes.</p>
 <h2 id="git-rev-list"><strong><code>git rev-list</code></strong></h2>
-<p>The <code>git rev-list</code> command lists commit objects in reverse chronological order. It can be combined with other commands like <code>git grep</code> or <code>git log</code> to search for commits that match specific criteria.</p>
+<p>The <code>git rev-list</code> command lists commit objects in reverse chronological order. It can be combined with other commands like <code>git grep</code> or <code>git log</code> to search for commits that match specific criteria.
+<code>git rev-list</code> is a powerful and flexible command in Git used to list commit objects in reverse chronological order. It can be applied in various ways, from simple listing of commits to more advanced filtering options. Here are some common uses of <code>git rev-list</code> with explanations and examples.</p>
+<h3 id="basic-usage-of-git-rev-list">Basic Usage of <code>git rev-list</code></h3>
+<div class="highlight"><pre><span></span><code>git rev-list <span class="o">[</span>options<span class="o">]</span> <span class="o">[</span>&lt;commit&gt;...<span class="o">]</span>
+</code></pre></div>
+<ul>
+<li><strong><code>&lt;commit&gt;</code></strong>: The starting point for listing commits. If none is provided, it defaults to <code>HEAD</code>.</li>
+<li><strong>Options</strong>: A variety of options are available to control the output, such as limiting the number of commits, excluding certain commits, or showing only merge commits.</li>
+</ul>
+<h3 id="common-use-cases">Common Use Cases</h3>
+<hr />
+<h5 id="list-all-commits-in-a-branch"><strong>List All Commits in a Branch</strong></h5>
+<p>This is the most basic use of <code>git rev-list</code>. You can list all the commits in the current branch (or any other branch) in reverse chronological order.</p>
+<p><strong>Example:</strong>
+   <div class="highlight"><pre><span></span><code>git rev-list HEAD
+</code></pre></div></p>
+<p>This lists all commits from the current <code>HEAD</code> to the beginning of the history.</p>
+<hr />
+<h5 id="limit-the-number-of-commits"><strong>Limit the Number of Commits</strong></h5>
+<p>You can limit the number of commits returned by using the <code>--max-count</code> option.</p>
+<p><strong>Example:</strong>
+   <div class="highlight"><pre><span></span><code>git rev-list HEAD --max-count<span class="o">=</span><span class="m">5</span>
+</code></pre></div></p>
+<p>This command lists the most recent 5 commits from the current <code>HEAD</code>.</p>
+<hr />
+<h5 id="list-commits-between-two-branches"><strong>List Commits Between Two Branches</strong></h5>
+<p><code>git rev-list</code> can also be used to show commits that are unique to one branch compared to another.</p>
+<p><strong>Example:</strong>
+   <div class="highlight"><pre><span></span><code>git rev-list branchA --not branchB
+</code></pre></div></p>
+<p>This shows all the commits that exist on <code>branchA</code> but are not present on <code>branchB</code>.</p>
+<hr />
+<h5 id="list-commits-within-a-time-range"><strong>List Commits Within a Time Range</strong></h5>
+<p>You can filter commits by specifying a date range using the <code>--since</code> and <code>--until</code> options.</p>
+<p><strong>Example:</strong>
+   <div class="highlight"><pre><span></span><code>git rev-list HEAD --since<span class="o">=</span><span class="s2">&quot;2 weeks ago&quot;</span>
+</code></pre></div></p>
+<p>This command lists all commits from the last two weeks.</p>
+<p>You can also combine <code>--since</code> and <code>--until</code> to specify a more specific date range:</p>
+<div class="highlight"><pre><span></span><code>git rev-list HEAD --since<span class="o">=</span><span class="s2">&quot;2023-01-01&quot;</span> --until<span class="o">=</span><span class="s2">&quot;2023-02-01&quot;</span>
+</code></pre></div>
+<hr />
+<h5 id="list-commits-by-author"><strong>List Commits by Author</strong></h5>
+<p>You can filter commits by a specific author using the <code>--author</code> option.</p>
+<p><strong>Example:</strong>
+   <div class="highlight"><pre><span></span><code>git rev-list HEAD --author<span class="o">=</span><span class="s2">&quot;John Doe&quot;</span>
+</code></pre></div></p>
+<p>This lists all commits authored by "John Doe" in the current branch.</p>
+<hr />
+<h5 id="list-commits-with-a-specific-message"><strong>List Commits with a Specific Message</strong></h5>
+<p>If you're looking for commits with a particular keyword in the commit message, use the <code>--grep</code> option.</p>
+<p><strong>Example:</strong>
+   <div class="highlight"><pre><span></span><code>git rev-list HEAD --grep<span class="o">=</span><span class="s2">&quot;fix bug&quot;</span>
+</code></pre></div></p>
+<p>This will list all commits whose commit messages contain "fix bug".</p>
+<hr />
+<h5 id="list-only-merge-commits"><strong>List Only Merge Commits</strong></h5>
+<p>Sometimes you want to list only merge commits. This can be done using the <code>--merges</code> option.</p>
+<p><strong>Example:</strong>
+   <div class="highlight"><pre><span></span><code>git rev-list HEAD --merges
+</code></pre></div></p>
+<p>This will show only the merge commits in the current branch.</p>
+<hr />
+<h5 id="list-commits-that-introduced-a-specific-file"><strong>List Commits That Introduced a Specific File</strong></h5>
+<p>You can use <code>git rev-list</code> to trace the history of a file to find out when it was introduced or modified.</p>
+<p><strong>Example:</strong>
+   <div class="highlight"><pre><span></span><code>git rev-list HEAD -- &lt;file-path&gt;
+</code></pre></div></p>
+<p>This lists all commits that modified the specified file.</p>
+<hr />
+<h5 id="list-commits-that-changed-files-in-a-given-directory"><strong>List Commits that Changed Files in a Given Directory</strong></h5>
+<p>If you want to list the commits that modified files in a specific directory, you can provide the directory path.</p>
+<p><strong>Example:</strong>
+   <div class="highlight"><pre><span></span><code>git rev-list HEAD -- path/to/directory/
+</code></pre></div></p>
+<p>This shows all commits that affected the files in the specified directory.</p>
+<hr />
+<h5 id="find-commits-that-introduced-a-bug-via-bisecting"><strong>Find Commits That Introduced a Bug (via Bisecting)</strong></h5>
+<p>You can use <code>git rev-list</code> in combination with <code>git bisect</code> to find a bug in the code by reviewing only a subset of commits.</p>
+<p><strong>Example:</strong>
+   <div class="highlight"><pre><span></span><code>git bisect start HEAD &lt;bad-commit&gt;
+git rev-list --bisect HEAD &lt;bad-commit&gt;
+</code></pre></div></p>
+<p>This can help you narrow down the range of commits to find the specific one that introduced the issue.</p>
+<hr />
+<h5 id="counting-commits"><strong>Counting Commits</strong></h5>
+<p>If you want to know how many commits exist in a certain range or branch, you can combine <code>git rev-list</code> with <code>--count</code>.</p>
+<p><strong>Example:</strong>
+   <div class="highlight"><pre><span></span><code>git rev-list --count HEAD
+</code></pre></div></p>
+<p>This outputs the total number of commits in the current branch.</p>
+<hr />
+<h5 id="view-the-sha-1s-of-all-parents-of-a-commit"><strong>View the SHA-1s of all Parents of a Commit</strong></h5>
+<p>You can view the parent commits for a given commit using <code>git rev-list</code>.</p>
+<p><strong>Example:</strong>
+   <div class="highlight"><pre><span></span><code>git rev-list --parents HEAD
+</code></pre></div></p>
+<p>This will display each commit and its parent(s). For merge commits, more than one parent will be shown.</p>
+<hr />
+<h3 id="advanced-options">Advanced Options</h3>
+<h4 id="-all-match"><code>--all-match</code></h4>
+<ul>
+<li>Use <code>--all-match</code> to show only the commits that match all the given <code>--grep</code> and <code>--author</code> conditions.</li>
+</ul>
+<p><strong>Example:</strong>
+   <div class="highlight"><pre><span></span><code>git rev-list HEAD --grep<span class="o">=</span><span class="s2">&quot;fix&quot;</span> --author<span class="o">=</span><span class="s2">&quot;John&quot;</span> --all-match
+</code></pre></div></p>
+<p>This lists commits where the message contains "fix" <strong>and</strong> the author is "John".</p>
+<hr />
+<h4 id="-extended-regexp"><code>--extended-regexp</code></h4>
+<ul>
+<li>This option enables the use of extended regular expressions in commit message filtering.</li>
+</ul>
+<p><strong>Example:</strong>
+   <div class="highlight"><pre><span></span><code>git rev-list HEAD --grep<span class="o">=</span><span class="s1">&#39;(fix|bug)&#39;</span> --extended-regexp
+</code></pre></div></p>
+<p>This command lists all commits where the message contains either "fix" or "bug".</p>
+<hr />
+<h4 id="-bisect"><code>--bisect</code></h4>
+<ul>
+<li>The <code>--bisect</code> option is used to mark commits for binary searching (bisecting) to find which commit introduced a bug or a feature.</li>
+</ul>
+<p><strong>Example:</strong>
+   <div class="highlight"><pre><span></span><code>git rev-list --bisect &lt;bad-commit&gt;
+</code></pre></div></p>
+<p>This shows the list of commits to be tested during a bisect operation to locate an issue.</p>
 <h2 id="git-show"><strong><code>git show</code></strong></h2>
 <p>The <code>git show</code> command displays information about a specific commit. You can use it to view the changes introduced by a commit and search for specific patterns within those changes.</p>
 <p>These tools provide powerful capabilities for searching through your repository's history and content, allowing you to find specific commits, changes, or patterns quickly and efficiently.</p>
