@@ -15,8 +15,8 @@ Whether you're a seasoned developer or a code maintainer, this repository is des
 |                                                | [Temporary Commits](Advanced/git_stash.md)                | [Bundling](More/git_bundle.md)        |
 |                                                | [Interactive Staging](Advanced/git_interactivestaging.md) | [Replace](More/git_replace.md)        |
 |                                                | [CherryPicking](Advanced/git_checkout.md)                 | [Attrributes](More/git_attributes.md) |
-|                                                | [Checkout](Advanced/git_stash.md)                         |                                       |
-|                                                | [Submodules](Advanced/git_submodules.md)                  |                                       |
+|                                                | [Checkout](Advanced/git_stash.md)                         |                [Notes](More/git_notes.md)                       |
+|                                                | [Submodules](Advanced/git_submodules.md)                  |              [Worktree](More/git_worktree.md)                         |
 
 </center>
 

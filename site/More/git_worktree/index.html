@@ -12,14 +12,14 @@
         <meta name="author" content="ArceLopera">
       
       
-        <link rel="canonical" href="https://arcelopera.github.io/git_refresher/Advanced/git_cherry/">
+        <link rel="canonical" href="https://arcelopera.github.io/git_refresher/More/git_worktree/">
       
       <link rel="icon" href="../../Images/git.ico">
       <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.15">
     
     
       
-        <title>CherryPicking - Git Refresher</title>
+        <title>Worktree - Git Refresher</title>
       
     
     
@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#syntax" class="md-skip">
+        <a href="#how-it-works" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              CherryPicking
+              Worktree
             
           </span>
         </div>
@@ -230,15 +230,13 @@
         
   
   
-    
-  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../git_alias/" class="md-tabs__link md-tabs__link--active">
+      <a href="../../Advanced/git_alias/" class="md-tabs__link">
         Advanced
       </a>
     </li>
@@ -248,13 +246,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../Github/git_ssh/" class="md-tabs__link">
+      <a href="../../Github/git_ssh/" class="md-tabs__link md-tabs__link--active">
         More
       </a>
     </li>
@@ -504,14 +504,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" data-md-state="indeterminate" type="checkbox" id="__nav_3" checked>
       
       
       
@@ -534,7 +532,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../git_alias/" class="md-nav__link">
+      <a href="../../Advanced/git_alias/" class="md-nav__link">
         Aliases
       </a>
     </li>
@@ -548,7 +546,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../git_tagging/" class="md-nav__link">
+      <a href="../../Advanced/git_tagging/" class="md-nav__link">
         Tagging
       </a>
     </li>
@@ -562,7 +560,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../git_branch/" class="md-nav__link">
+      <a href="../../Advanced/git_branch/" class="md-nav__link">
         Branching
       </a>
     </li>
@@ -576,7 +574,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../git_advmerge/" class="md-nav__link">
+      <a href="../../Advanced/git_advmerge/" class="md-nav__link">
         Advanced Merge
       </a>
     </li>
@@ -590,7 +588,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../git_patches/" class="md-nav__link">
+      <a href="../../Advanced/git_patches/" class="md-nav__link">
         Patching
       </a>
     </li>
@@ -604,7 +602,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../git_ignore/" class="md-nav__link">
+      <a href="../../Advanced/git_ignore/" class="md-nav__link">
         Ignoring Files
       </a>
     </li>
@@ -618,7 +616,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../git_stash/" class="md-nav__link">
+      <a href="../../Advanced/git_stash/" class="md-nav__link">
         Temporary Commits
       </a>
     </li>
@@ -632,7 +630,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../git_interactivestaging/" class="md-nav__link">
+      <a href="../../Advanced/git_interactivestaging/" class="md-nav__link">
         Interactive Staging
       </a>
     </li>
@@ -644,110 +642,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          CherryPicking
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../Advanced/git_cherry/" class="md-nav__link">
         CherryPicking
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#syntax" class="md-nav__link">
-    Syntax
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#options" class="md-nav__link">
-    Options
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#examples" class="md-nav__link">
-    Examples
-  </a>
-  
-    <nav class="md-nav" aria-label="Examples">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-cherry-picking-a-single-commit" class="md-nav__link">
-    1. Cherry-picking a Single Commit
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-cherry-picking-a-range-of-commits" class="md-nav__link">
-    2. Cherry-picking a Range of Commits
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-cherry-picking-with-edit" class="md-nav__link">
-    3. Cherry-picking with Edit
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-cherry-picking-without-committing" class="md-nav__link">
-    4. Cherry-picking without Committing
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5-cherry-picking-with-merge-strategy" class="md-nav__link">
-    5. Cherry-picking with Merge Strategy
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#use-cases" class="md-nav__link">
-    Use Cases
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -759,7 +658,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../git_checkout/" class="md-nav__link">
+      <a href="../../Advanced/git_checkout/" class="md-nav__link">
         Checkout
       </a>
     </li>
@@ -773,7 +672,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../git_submodules/" class="md-nav__link">
+      <a href="../../Advanced/git_submodules/" class="md-nav__link">
         Submodules
       </a>
     </li>
@@ -793,12 +692,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" data-md-state="indeterminate" type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
       
       
       
@@ -835,7 +736,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../More/git_sign/" class="md-nav__link">
+      <a href="../git_sign/" class="md-nav__link">
         Signing Commits
       </a>
     </li>
@@ -849,7 +750,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../More/git_notes/" class="md-nav__link">
+      <a href="../git_notes/" class="md-nav__link">
         Adding Notes
       </a>
     </li>
@@ -863,7 +764,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../More/plumbing/" class="md-nav__link">
+      <a href="../plumbing/" class="md-nav__link">
         Plumbing Tools
       </a>
     </li>
@@ -877,7 +778,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../More/git_search/" class="md-nav__link">
+      <a href="../git_search/" class="md-nav__link">
         Searching Tools
       </a>
     </li>
@@ -891,7 +792,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../More/git_rerere/" class="md-nav__link">
+      <a href="../git_rerere/" class="md-nav__link">
         Reuse Recorded Resolution
       </a>
     </li>
@@ -905,7 +806,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../More/git_debug/" class="md-nav__link">
+      <a href="../git_debug/" class="md-nav__link">
         Debugging
       </a>
     </li>
@@ -919,7 +820,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../More/git_bundle/" class="md-nav__link">
+      <a href="../git_bundle/" class="md-nav__link">
         Bundling
       </a>
     </li>
@@ -933,7 +834,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../More/git_replace/" class="md-nav__link">
+      <a href="../git_replace/" class="md-nav__link">
         Replace
       </a>
     </li>
@@ -947,7 +848,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../More/git_attributes/" class="md-nav__link">
+      <a href="../git_attributes/" class="md-nav__link">
         Attributes
       </a>
     </li>
@@ -959,11 +860,117 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../More/git_worktree/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Worktree
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Worktree
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    How it works:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-commands-for-git-worktree" class="md-nav__link">
+    Key Commands for Git Worktree
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Commands for Git Worktree">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-create-a-new-worktree" class="md-nav__link">
+    1. Create a new worktree
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-list-existing-worktrees" class="md-nav__link">
+    2. List existing worktrees
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-remove-a-worktree" class="md-nav__link">
+    3. Remove a worktree
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-prune-worktrees" class="md-nav__link">
+    4. Prune worktrees
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-cases-for-git-worktree" class="md-nav__link">
+    Use Cases for Git Worktree
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparison-with-git-clone" class="md-nav__link">
+    Comparison with git clone
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-points-to-remember" class="md-nav__link">
+    Key Points to Remember
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-workflow" class="md-nav__link">
+    Example Workflow
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1000,58 +1007,44 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#syntax" class="md-nav__link">
-    Syntax
+  <a href="#how-it-works" class="md-nav__link">
+    How it works:
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#options" class="md-nav__link">
-    Options
+  <a href="#key-commands-for-git-worktree" class="md-nav__link">
+    Key Commands for Git Worktree
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#examples" class="md-nav__link">
-    Examples
-  </a>
-  
-    <nav class="md-nav" aria-label="Examples">
+    <nav class="md-nav" aria-label="Key Commands for Git Worktree">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-cherry-picking-a-single-commit" class="md-nav__link">
-    1. Cherry-picking a Single Commit
+  <a href="#1-create-a-new-worktree" class="md-nav__link">
+    1. Create a new worktree
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-cherry-picking-a-range-of-commits" class="md-nav__link">
-    2. Cherry-picking a Range of Commits
+  <a href="#2-list-existing-worktrees" class="md-nav__link">
+    2. List existing worktrees
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-cherry-picking-with-edit" class="md-nav__link">
-    3. Cherry-picking with Edit
+  <a href="#3-remove-a-worktree" class="md-nav__link">
+    3. Remove a worktree
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-cherry-picking-without-committing" class="md-nav__link">
-    4. Cherry-picking without Committing
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5-cherry-picking-with-merge-strategy" class="md-nav__link">
-    5. Cherry-picking with Merge Strategy
+  <a href="#4-prune-worktrees" class="md-nav__link">
+    4. Prune worktrees
   </a>
   
 </li>
@@ -1062,8 +1055,29 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#use-cases" class="md-nav__link">
-    Use Cases
+  <a href="#use-cases-for-git-worktree" class="md-nav__link">
+    Use Cases for Git Worktree
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparison-with-git-clone" class="md-nav__link">
+    Comparison with git clone
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-points-to-remember" class="md-nav__link">
+    Key Points to Remember
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-workflow" class="md-nav__link">
+    Example Workflow
   </a>
   
 </li>
@@ -1082,51 +1096,146 @@
                 
 
 
-  <h1>CherryPicking</h1>
+  <h1>Worktree</h1>
 
-<p><code>git cherry-pick</code> is a powerful Git command used to apply individual commits from one branch to another. It allows you to select specific commits and apply them to the current branch, effectively incorporating changes from one branch into another. </p>
-<h2 id="syntax">Syntax</h2>
-<div class="highlight"><pre><span></span><code>git cherry-pick &lt;commit&gt;
+<p><code>git worktree</code> is a powerful feature in Git that allows you to work on multiple branches simultaneously by creating additional working directories (worktrees) linked to the same Git repository. Each worktree is a separate, fully-fledged working copy of the repository, with its own branch and file state, but sharing the same <code>.git</code> history and object database. This can be incredibly useful for tasks like:</p>
+<ul>
+<li>Working on different branches at the same time without the overhead of cloning the repository again.</li>
+<li>Performing code reviews, testing, or building features in parallel.</li>
+<li>Avoiding the need to stash or commit uncommitted work when switching between branches.</li>
+</ul>
+<h4 id="how-it-works">How it works:</h4>
+<ul>
+<li>The main working directory is still managed as usual, but each additional worktree allows you to check out a different branch or commit without affecting the main directory or other worktrees.</li>
+<li>The <code>.git</code> directory is shared across all worktrees, meaning the version history is common to all of them, but each worktree can operate independently regarding the current branch and working directory.</li>
+</ul>
+<h3 id="key-commands-for-git-worktree">Key Commands for Git Worktree</h3>
+<h4 id="1-create-a-new-worktree">1. <strong>Create a new worktree</strong></h4>
+<p>To create a new worktree for a specific branch or commit:</p>
+<div class="highlight"><pre><span></span><code>git worktree add &lt;path&gt; &lt;branch&gt;
 </code></pre></div>
 <ul>
-<li><code>&lt;commit&gt;</code>: The commit hash or reference of the commit you want to cherry-pick.</li>
+<li><strong><code>&lt;path&gt;</code></strong>: The directory where the new worktree will be created.</li>
+<li><strong><code>&lt;branch&gt;</code></strong>: The branch to be checked out in the new worktree (or a new branch can be created if it doesn’t exist).</li>
 </ul>
-<h2 id="options">Options</h2>
+<p><strong>Example:</strong>
+   <div class="highlight"><pre><span></span><code>git worktree add ../feature-branch feature
+</code></pre></div>
+   This creates a new worktree in the directory <code>../feature-branch</code> and checks out the branch <code>feature</code>. Now, you can work on this branch without interfering with your current working directory.</p>
+<hr />
+<h4 id="2-list-existing-worktrees">2. <strong>List existing worktrees</strong></h4>
+<p>To list all the worktrees associated with the current repository, use:</p>
+<div class="highlight"><pre><span></span><code>git worktree list
+</code></pre></div>
+<p><strong>Example Output:</strong>
+   <div class="highlight"><pre><span></span><code>/path/to/repo            123abc [main]
+/path/to/repo/feature-branch 456def [feature]
+</code></pre></div></p>
+<p>This command shows where your worktrees are located and which branch each one is on.</p>
+<hr />
+<h4 id="3-remove-a-worktree">3. <strong>Remove a worktree</strong></h4>
+<p>Once you're done with a worktree and no longer need it, you can remove it with:</p>
+<div class="highlight"><pre><span></span><code>git worktree remove &lt;path&gt;
+</code></pre></div>
+<p>This command will remove the specified worktree directory. The branch still exists in the repository, but the worktree itself is cleaned up.</p>
+<p><strong>Example:</strong>
+   <div class="highlight"><pre><span></span><code>git worktree remove ../feature-branch
+</code></pre></div></p>
+<p>After running this command, the <code>../feature-branch</code> directory is deleted, but the <code>feature</code> branch remains in the repository.</p>
+<hr />
+<h4 id="4-prune-worktrees">4. <strong>Prune worktrees</strong></h4>
+<p>If a worktree is deleted manually (outside of Git), Git may still have references to it. You can clean up those references using:</p>
+<div class="highlight"><pre><span></span><code>git worktree prune
+</code></pre></div>
+<p>This command removes any worktree records that no longer exist on disk.</p>
+<hr />
+<h3 id="use-cases-for-git-worktree">Use Cases for Git Worktree</h3>
+<ol>
+<li><strong>Simultaneous Work on Multiple Branches:</strong>
+   If you're working on a feature branch but need to quickly switch to another branch (e.g., for a hotfix), instead of committing or stashing your current work, you can create a new worktree for the hotfix branch. This allows you to continue working on the feature branch while addressing the hotfix.</li>
+</ol>
+<p><strong>Example:</strong>
+   <div class="highlight"><pre><span></span><code>git worktree add ../hotfix-branch hotfix
+</code></pre></div></p>
+<p>This creates a separate directory for the hotfix branch without disturbing your ongoing feature development.</p>
+<hr />
+<ol>
+<li><strong>Testing or Reviewing Code in Parallel:</strong>
+   You can use worktrees to test or review code from different branches without switching your main working directory. This is particularly useful if you want to test a branch but keep your primary working directory focused on another task.</li>
+</ol>
+<p><strong>Example:</strong>
+   <div class="highlight"><pre><span></span><code>git worktree add ../test-branch <span class="nb">test</span>
+</code></pre></div></p>
+<hr />
+<ol>
+<li><strong>Building or Running CI/CD in Isolated Environments:</strong>
+   Worktrees are useful in Continuous Integration (CI) or Continuous Deployment (CD) pipelines when multiple branches or configurations need to be tested or built simultaneously. Instead of switching between branches in the same directory, you can create isolated worktrees for each task.</li>
+</ol>
+<hr />
+<h3 id="comparison-with-git-clone">Comparison with <code>git clone</code></h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th><code>git clone</code></th>
+<th><code>git worktree</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Creates a separate Git repository</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Independent <code>.git</code> directory</td>
+<td>Yes</td>
+<td>No (shared)</td>
+</tr>
+<tr>
+<td>Disk usage</td>
+<td>High</td>
+<td>Low (objects and history shared)</td>
+</tr>
+<tr>
+<td>Can switch between branches</td>
+<td>No (independent repo)</td>
+<td>Yes (same repository)</td>
+</tr>
+<tr>
+<td>Easy cleanup</td>
+<td>Moderate</td>
+<td>Easy (with <code>git worktree remove</code>)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="key-points-to-remember">Key Points to Remember</h3>
 <ul>
-<li><strong><code>-e</code> or <code>--edit</code></strong>: Allows you to edit the commit message before committing the cherry-picked commit.</li>
-<li><strong><code>-n</code> or <code>--no-commit</code></strong>: Applies the changes from the commit but does not create a new commit automatically. Useful for cherry-picking multiple commits together.</li>
-<li><strong><code>-x</code> or <code>--signoff</code></strong>: Adds a "Signed-off-by" line to the commit message, indicating authorship.</li>
-<li><strong><code>-m parent-number</code> or <code>--mainline parent-number</code></strong>: Specifies the parent number when cherry-picking a merge commit. Default is 1 (first parent).</li>
-<li><strong><code>-s</code> or <code>--strategy &lt;strategy&gt;</code></strong>: Specifies the merge strategy to use when resolving conflicts. Options include <code>recursive</code> (default), <code>resolve</code>, <code>ours</code>, <code>theirs</code>, etc.</li>
+<li><strong>Shared History:</strong> All worktrees share the same Git history and objects, so they don’t take up much additional disk space.</li>
+<li><strong>Simultaneous Work:</strong> You can work on multiple branches at the same time without needing to commit or stash uncommitted changes.</li>
+<li><strong>Avoid Cloning:</strong> Unlike <code>git clone</code>, <code>git worktree</code> doesn't create an entirely new Git repository. It's lightweight and uses the same object store as the main repository.</li>
 </ul>
-<h2 id="examples">Examples</h2>
-<h3 id="1-cherry-picking-a-single-commit">1. Cherry-picking a Single Commit</h3>
-<p><div class="highlight"><pre><span></span><code>git cherry-pick abc123
+<h3 id="example-workflow">Example Workflow</h3>
+<ol>
+<li>
+<p>Suppose you're working on a <code>feature</code> branch but need to quickly address a bug on the <code>main</code> branch.</p>
+</li>
+<li>
+<p>Instead of stashing your work or committing half-done changes, you can use <code>git worktree</code> to create a new working directory for the <code>main</code> branch.</p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code>git worktree add ../main-branch main
 </code></pre></div>
-This command applies the changes from the commit with the hash <code>abc123</code> to the current branch.</p>
-<h3 id="2-cherry-picking-a-range-of-commits">2. Cherry-picking a Range of Commits</h3>
-<p><div class="highlight"><pre><span></span><code>git cherry-pick abc123..def456
-</code></pre></div>
-This command applies the changes from all commits in the range <code>abc123</code> to <code>def456</code> to the current branch.</p>
-<h3 id="3-cherry-picking-with-edit">3. Cherry-picking with Edit</h3>
-<p><div class="highlight"><pre><span></span><code>git cherry-pick -e abc123
-</code></pre></div>
-This command applies the changes from the commit <code>abc123</code> to the current branch and allows you to edit the commit message before committing.</p>
-<h3 id="4-cherry-picking-without-committing">4. Cherry-picking without Committing</h3>
-<p><div class="highlight"><pre><span></span><code>git cherry-pick -n abc123
-</code></pre></div>
-This command applies the changes from the commit <code>abc123</code> to the current branch but does not create a new commit automatically. You can then manually commit the changes using <code>git commit</code>.</p>
-<h3 id="5-cherry-picking-with-merge-strategy">5. Cherry-picking with Merge Strategy</h3>
-<p><div class="highlight"><pre><span></span><code>git cherry-pick -s -X theirs abc123
-</code></pre></div>
-This command applies the changes from the commit <code>abc123</code> to the current branch and resolves conflicts by favoring the changes from the cherry-picked commit (<code>theirs</code> strategy).</p>
-<h2 id="use-cases">Use Cases</h2>
-<ul>
-<li><strong>Porting Fixes:</strong> Cherry-pick commits containing bug fixes or feature enhancements from one branch to another, such as from a development branch to a stable release branch.</li>
-<li><strong>Reverting Changes:</strong> Use cherry-pick to revert specific changes made in one branch from another branch without reverting the entire commit.</li>
-<li><strong>Selectively Applying Changes:</strong> Apply only certain changes from a commit instead of the entire commit by using <code>git cherry-pick -n</code> followed by manual modifications.</li>
-</ul>
-<p><code>git cherry-pick</code> is a versatile command that allows you to apply specific commits from one branch to another. By understanding its options and usage examples, you can effectively incorporate changes from one branch into another, facilitating collaboration and code management in your Git workflow.</p>
+<ol>
+<li>
+<p>Work on the bug fix in <code>../main-branch</code>, and once done, commit and push the changes.</p>
+</li>
+<li>
+<p>Return to your original directory, where your <code>feature</code> branch remains untouched and ready to continue development.</p>
+</li>
+</ol>
+<p>By using worktrees, you can manage multiple tasks in parallel, avoid interrupting your flow, and work efficiently on different branches.</p>
 
               
             </article>
@@ -1140,7 +1249,7 @@ This command applies the changes from the commit <code>abc123</code> to the curr
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../git_interactivestaging/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Interactive Staging" rel="prev">
+        <a href="../git_attributes/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Attributes" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -1149,26 +1258,11 @@ This command applies the changes from the commit <code>abc123</code> to the curr
               <span class="md-footer__direction">
                 Previous
               </span>
-              Interactive Staging
+              Attributes
             </div>
           </div>
         </a>
       
-      
-        
-        <a href="../git_checkout/" class="md-footer__link md-footer__link--next" aria-label="Next: Checkout" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Checkout
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
       
     </nav>
   

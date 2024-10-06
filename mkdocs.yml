@@ -115,6 +115,7 @@ nav:
   - More:
      - Adding SSH Keys to Github: Github/git_ssh.md
      - Signing Commits: More/git_sign.md
+     - Adding Notes: More/git_notes.md
      - Plumbing Tools: More/plumbing.md 
      - Searching Tools: More/git_search.md
      - Reuse Recorded Resolution: More/git_rerere.md
@@ -122,3 +123,4 @@ nav:
      - Bundling: More/git_bundle.md
      - Replace: More/git_replace.md
      - Attributes: More/git_attributes.md
+     - Worktree: More/git_worktree.md
