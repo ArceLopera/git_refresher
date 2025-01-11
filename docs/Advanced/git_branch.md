@@ -239,6 +239,8 @@ Selecting the three dots (···) in the top right corner of the merge editor op
 
 The three dots next to Incoming, Current, and Result offer options for each view, such as showing a side-by-side diff against base, accepting all changes, or resetting the result.
 
+**Sometimes the °Resolve in Merge Editor° button is not visible. If this happens, you can open the 3-way merge editor by opening the file in the editor and typing git mergetool. This will open the 3-way merge editor.**
+
 
 ## **Branching Strategies**
 
