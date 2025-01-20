@@ -570,6 +570,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#6-git-clone-mirror" class="md-nav__link">
+    6. git clone --mirror
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1016,6 +1023,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../More/git_subtree/" class="md-nav__link">
+        Subtree
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -1153,6 +1174,13 @@
           <li class="md-nav__item">
   <a href="#5-git-clone-recursive" class="md-nav__link">
     5. git clone --recursive
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-git-clone-mirror" class="md-nav__link">
+    6. git clone --mirror
   </a>
   
 </li>
@@ -1367,6 +1395,132 @@ The <code>git init --template</code> command is used to initialize a new Git rep
 <h5 id="example_4">Example:</h5>
 <div class="highlight"><pre><span></span><code>git clone --recursive https://github.com/example/repo.git
 </code></pre></div>
+<h3 id="6-git-clone-mirror">6. <code>git clone --mirror</code></h3>
+<p>When cloning a Git repository, only the default branch (usually main or master) is checked out by default, but all other branches are downloaded. If you want to explicitly ensure all branches are cloned and available locally, you can use the <code>--mirror</code> flag.
+This command allows you to upload your mirrored repository to another remote repository after converting it to a regular repository:</p>
+<hr />
+<h5 id="1-mirror-clone-the-original-repository"><strong>1. Mirror Clone the Original Repository</strong></h5>
+<p>Start by creating a bare mirror clone of the original repository:
+<div class="highlight"><pre><span></span><code>git clone --mirror &lt;original-repository-url&gt; repo.git
+</code></pre></div>
+This clones the repository into <code>repo.git</code>, containing all branches, tags, and references.</p>
+<hr />
+<h5 id="2-convert-the-bare-repository-to-a-regular-repository"><strong>2. Convert the Bare Repository to a Regular Repository</strong></h5>
+<ol>
+<li>
+<p>Navigate into the mirrored repository:
+   <div class="highlight"><pre><span></span><code><span class="nb">cd</span> repo.git
+</code></pre></div></p>
+</li>
+<li>
+<p>Unset the bare configuration:
+   <div class="highlight"><pre><span></span><code>git config --unset core.bare
+</code></pre></div></p>
+</li>
+<li>
+<p>Move <code>.git</code> into a new working directory:
+   <div class="highlight"><pre><span></span><code><span class="nb">cd</span> ..
+mkdir repo
+mv repo.git repo/.git
+<span class="nb">cd</span> repo
+</code></pre></div></p>
+</li>
+<li>
+<p>Check out the default branch to create the working directory:
+   <div class="highlight"><pre><span></span><code>git checkout &lt;branch-name&gt;
+</code></pre></div>
+   Replace <code>&lt;branch-name&gt;</code> with the default branch name, such as <code>main</code> or <code>master</code>.</p>
+</li>
+</ol>
+<hr />
+<h5 id="3-prepare-for-uploading-to-a-new-gitlab-repository"><strong>3. Prepare for Uploading to a New GitLab Repository</strong></h5>
+<h6 id="create-a-new-repository-in-gitlab"><strong>Create a New Repository in GitLab</strong></h6>
+<ol>
+<li>Go to your GitLab/Github instance and create a new repository.</li>
+<li>Copy the repository's SSH or HTTPS URL (e.g., <code>git@gitlab.com:username/new-repo.git</code>).</li>
+</ol>
+<h6 id="set-the-new-repository-as-remote"><strong>Set the New Repository as Remote</strong></h6>
+<ol>
+<li>
+<p>In your local repository, remove the old remote (if any):
+   <div class="highlight"><pre><span></span><code>git remote remove origin
+</code></pre></div></p>
+</li>
+<li>
+<p>Add the new GitLab repository as the remote:
+   <div class="highlight"><pre><span></span><code>git remote add origin &lt;new-repository-url&gt;
+</code></pre></div></p>
+</li>
+<li>
+<p>Verify the remote URL:
+   <div class="highlight"><pre><span></span><code>git remote -v
+</code></pre></div></p>
+</li>
+</ol>
+<hr />
+<h5 id="4-push-all-branches-and-tags-to-the-new-repository"><strong>4. Push All Branches and Tags to the New Repository</strong></h5>
+<ol>
+<li>
+<p>Push all branches to the new repository:
+   <div class="highlight"><pre><span></span><code>git push --all origin
+</code></pre></div></p>
+</li>
+<li>
+<p>Push all tags to the new repository:
+   <div class="highlight"><pre><span></span><code>git push --tags origin
+</code></pre></div></p>
+</li>
+</ol>
+<hr />
+<h5 id="5-verify-the-new-repository"><strong>5. Verify the New Repository</strong></h5>
+<ol>
+<li>Go to the new GitLab repository in your browser.</li>
+<li>Confirm that all branches, tags, and files are present.</li>
+</ol>
+<hr />
+<h5 id="6-optional-set-the-default-branch"><strong>6. Optional: Set the Default Branch</strong></h5>
+<ol>
+<li>In the new GitLab repository, go to <strong>Settings &gt; Repository</strong>.</li>
+<li>Set the default branch (e.g., <code>main</code> or <code>master</code>).</li>
+</ol>
+<hr />
+<h5 id="summary-of-commands"><strong>Summary of Commands</strong></h5>
+<ol>
+<li><strong>Mirror clone the original repository</strong>:
+   <div class="highlight"><pre><span></span><code>git clone --mirror &lt;original-repository-url&gt; repo.git
+</code></pre></div></li>
+<li><strong>Convert to a regular repository</strong>:
+   <div class="highlight"><pre><span></span><code><span class="nb">cd</span> repo.git
+git config --unset core.bare
+<span class="nb">cd</span> ..
+mkdir repo
+mv repo.git repo/.git
+<span class="nb">cd</span> repo
+git checkout &lt;branch-name&gt;
+</code></pre></div></li>
+<li><strong>Set up the new remote</strong>:
+   <div class="highlight"><pre><span></span><code>git remote remove origin
+git remote add origin &lt;new-repository-url&gt;
+</code></pre></div></li>
+<li><strong>Push all branches and tags</strong>:
+   <div class="highlight"><pre><span></span><code>git push --all origin
+git push --tags origin
+</code></pre></div></li>
+<li><strong>Verify and adjust settings in GitLab</strong>.</li>
+</ol>
+<p>This workflow ensures you upload a complete copy of the original repository, including all branches, tags, and history, to the new GitLab repository. this is called Mirror Clone and it is useful for maintaining an exact copy of the repository, including all refs.
+There is also Repository Export: Convenient for platform-managed repositories. Platforms like GitHub and GitLab provide backup or export options that include the full repository, including its .git directory.</p>
+<p>For GitLab:</p>
+<ul>
+<li>Go to the project settings.</li>
+<li>Use the Export project feature.</li>
+<li>Download the exported project, which includes the history.</li>
+</ul>
+<p>For GitHub:</p>
+<ul>
+<li>Use the Archive repository feature (if available) or manually download the .git directory.</li>
+</ul>
+<p>Finally an other strategy is to use <a href="../../More/git_bundle/">Git Bundle</a>: Ideal for transferring repositories when direct cloning is not possible (e.g., no network access).</p>
 
               
             </article>

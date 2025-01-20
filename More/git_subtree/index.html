@@ -12,14 +12,14 @@
         <meta name="author" content="ArceLopera">
       
       
-        <link rel="canonical" href="https://arcelopera.github.io/git_refresher/Basics/git_configuration/">
+        <link rel="canonical" href="https://arcelopera.github.io/git_refresher/More/git_subtree/">
       
       <link rel="icon" href="../../Images/git.ico">
       <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.15">
     
     
       
-        <title>Configuring Git - Git Refresher</title>
+        <title>Subtree - Git Refresher</title>
       
     
     
@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#1-open-a-terminalcommand-prompt" class="md-skip">
+        <a href="#when-to-use-git-subtree" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Configuring Git
+              Subtree
             
           </span>
         </div>
@@ -207,8 +207,6 @@
         
   
   
-    
-  
 
 
   
@@ -220,7 +218,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../git_refresh/" class="md-tabs__link md-tabs__link--active">
+      <a href="../../git_refresh/" class="md-tabs__link">
         Basics
       </a>
     </li>
@@ -248,13 +246,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../Github/git_ssh/" class="md-tabs__link">
+      <a href="../../Github/git_ssh/" class="md-tabs__link md-tabs__link--active">
         More
       </a>
     </li>
@@ -325,14 +325,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" data-md-state="indeterminate" type="checkbox" id="__nav_2" checked>
       
       
       
@@ -353,14 +351,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" data-md-state="indeterminate" type="checkbox" id="__nav_2_1" checked>
       
       
       
@@ -397,7 +393,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../git_install/" class="md-nav__link">
+      <a href="../../Basics/git_install/" class="md-nav__link">
         Installing Git
       </a>
     </li>
@@ -409,117 +405,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Configuring Git
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../Basics/git_configuration/" class="md-nav__link">
         Configuring Git
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-open-a-terminalcommand-prompt" class="md-nav__link">
-    1. Open a Terminal/Command Prompt
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-set-your-username" class="md-nav__link">
-    2. Set Your Username
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-set-your-email-address" class="md-nav__link">
-    3. Set Your Email Address
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-configure-line-endings" class="md-nav__link">
-    4. Configure Line Endings
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-configure-text-editor-optional" class="md-nav__link">
-    5. Configure Text Editor (Optional)
-  </a>
-  
-    <nav class="md-nav" aria-label="5. Configure Text Editor (Optional)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#git-output-window" class="md-nav__link">
-    Git output window
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-enable-color-output" class="md-nav__link">
-    6. Enable Color Output
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7-check-configuration" class="md-nav__link">
-    7. Check Configuration
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#8-verify-configuration" class="md-nav__link">
-    8. Verify Configuration
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#additional-tips" class="md-nav__link">
-    Additional Tips
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -538,7 +428,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../git_start/" class="md-nav__link">
+      <a href="../../Basics/git_start/" class="md-nav__link">
         Starting a Project
       </a>
     </li>
@@ -552,7 +442,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../git_stage/" class="md-nav__link">
+      <a href="../../Basics/git_stage/" class="md-nav__link">
         Snapshotting
       </a>
     </li>
@@ -566,7 +456,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../git_undoingthings/" class="md-nav__link">
+      <a href="../../Basics/git_undoingthings/" class="md-nav__link">
         Undoing Things
       </a>
     </li>
@@ -580,7 +470,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../git_remotes/" class="md-nav__link">
+      <a href="../../Basics/git_remotes/" class="md-nav__link">
         Remotes
       </a>
     </li>
@@ -594,7 +484,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../git_inspect/" class="md-nav__link">
+      <a href="../../Basics/git_inspect/" class="md-nav__link">
         Inspect & Compare
       </a>
     </li>
@@ -802,12 +692,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" data-md-state="indeterminate" type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
       
       
       
@@ -844,7 +736,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../More/git_sign/" class="md-nav__link">
+      <a href="../git_sign/" class="md-nav__link">
         Signing Commits
       </a>
     </li>
@@ -858,7 +750,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../More/git_notes/" class="md-nav__link">
+      <a href="../git_notes/" class="md-nav__link">
         Adding Notes
       </a>
     </li>
@@ -872,7 +764,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../More/plumbing/" class="md-nav__link">
+      <a href="../plumbing/" class="md-nav__link">
         Plumbing Tools
       </a>
     </li>
@@ -886,7 +778,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../More/git_search/" class="md-nav__link">
+      <a href="../git_search/" class="md-nav__link">
         Searching Tools
       </a>
     </li>
@@ -900,7 +792,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../More/git_rerere/" class="md-nav__link">
+      <a href="../git_rerere/" class="md-nav__link">
         Reuse Recorded Resolution
       </a>
     </li>
@@ -914,7 +806,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../More/git_debug/" class="md-nav__link">
+      <a href="../git_debug/" class="md-nav__link">
         Debugging
       </a>
     </li>
@@ -928,7 +820,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../More/git_bundle/" class="md-nav__link">
+      <a href="../git_bundle/" class="md-nav__link">
         Bundling
       </a>
     </li>
@@ -942,7 +834,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../More/git_replace/" class="md-nav__link">
+      <a href="../git_replace/" class="md-nav__link">
         Replace
       </a>
     </li>
@@ -956,7 +848,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../More/git_attributes/" class="md-nav__link">
+      <a href="../git_attributes/" class="md-nav__link">
         Attributes
       </a>
     </li>
@@ -970,7 +862,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../More/git_worktree/" class="md-nav__link">
+      <a href="../git_worktree/" class="md-nav__link">
         Worktree
       </a>
     </li>
@@ -982,11 +874,137 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../More/git_subtree/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Subtree
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Subtree
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#when-to-use-git-subtree" class="md-nav__link">
+    When to Use git subtree
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-git-subtree-commands-with-examples" class="md-nav__link">
+    Key git subtree Commands with Examples
+  </a>
+  
+    <nav class="md-nav" aria-label="Key git subtree Commands with Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-adding-a-subtree" class="md-nav__link">
+    1. Adding a Subtree
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-pulling-updates-from-the-subproject" class="md-nav__link">
+    2. Pulling Updates from the Subproject
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-pushing-changes-back-to-the-subproject" class="md-nav__link">
+    3. Pushing Changes Back to the Subproject
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-splitting-the-subproject" class="md-nav__link">
+    4. Splitting the Subproject
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alternatives-to-git-subtree" class="md-nav__link">
+    Alternatives to git subtree
+  </a>
+  
+    <nav class="md-nav" aria-label="Alternatives to git subtree">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-git-submodule" class="md-nav__link">
+    1. git submodule
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-manual-merging" class="md-nav__link">
+    2. Manual Merging
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-git-merge-with-a-remote" class="md-nav__link">
+    3. git merge with a Remote
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparison-of-subtree-vs-submodule" class="md-nav__link">
+    Comparison of Subtree vs. Submodule
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-to-use-git-subtree_1" class="md-nav__link">
+    When to Use git subtree
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1023,44 +1041,44 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-open-a-terminalcommand-prompt" class="md-nav__link">
-    1. Open a Terminal/Command Prompt
+  <a href="#when-to-use-git-subtree" class="md-nav__link">
+    When to Use git subtree
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-set-your-username" class="md-nav__link">
-    2. Set Your Username
+  <a href="#key-git-subtree-commands-with-examples" class="md-nav__link">
+    Key git subtree Commands with Examples
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-set-your-email-address" class="md-nav__link">
-    3. Set Your Email Address
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-configure-line-endings" class="md-nav__link">
-    4. Configure Line Endings
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-configure-text-editor-optional" class="md-nav__link">
-    5. Configure Text Editor (Optional)
-  </a>
-  
-    <nav class="md-nav" aria-label="5. Configure Text Editor (Optional)">
+    <nav class="md-nav" aria-label="Key git subtree Commands with Examples">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#git-output-window" class="md-nav__link">
-    Git output window
+  <a href="#1-adding-a-subtree" class="md-nav__link">
+    1. Adding a Subtree
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-pulling-updates-from-the-subproject" class="md-nav__link">
+    2. Pulling Updates from the Subproject
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-pushing-changes-back-to-the-subproject" class="md-nav__link">
+    3. Pushing Changes Back to the Subproject
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-splitting-the-subproject" class="md-nav__link">
+    4. Splitting the Subproject
   </a>
   
 </li>
@@ -1071,29 +1089,49 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-enable-color-output" class="md-nav__link">
-    6. Enable Color Output
+  <a href="#alternatives-to-git-subtree" class="md-nav__link">
+    Alternatives to git subtree
+  </a>
+  
+    <nav class="md-nav" aria-label="Alternatives to git subtree">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-git-submodule" class="md-nav__link">
+    1. git submodule
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-manual-merging" class="md-nav__link">
+    2. Manual Merging
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-git-merge-with-a-remote" class="md-nav__link">
+    3. git merge with a Remote
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparison-of-subtree-vs-submodule" class="md-nav__link">
+    Comparison of Subtree vs. Submodule
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#7-check-configuration" class="md-nav__link">
-    7. Check Configuration
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#8-verify-configuration" class="md-nav__link">
-    8. Verify Configuration
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#additional-tips" class="md-nav__link">
-    Additional Tips
+  <a href="#when-to-use-git-subtree_1" class="md-nav__link">
+    When to Use git subtree
   </a>
   
 </li>
@@ -1112,133 +1150,160 @@
                 
 
 
-  <h1>Configuring Git</h1>
+  <h1>Subtree</h1>
 
-<p>After installing Git, the next step is to configure it with your user information. This ensures that your commits are associated with the correct identity. 
-Git uses a series of configuration files to determine non-default behavior that you may want. The first place Git looks for these values is in the system-wide <code>[path]/etc/gitconfig</code> file, which contains settings that are applied to every user on the system and all of their repositories. If you pass the option <code>--system</code> to <code>git config</code>, it reads and writes from this file specifically.</p>
-<p>The next place Git looks is the <code>~/.gitconfig</code> (or <code>~/.config/git/config</code>) file, which is specific to each user. You can make Git read and write to this file by passing the <code>--global</code> option.
-Finally, Git looks for configuration values in the configuration file in the Git directory (<code>.git/config</code>) of whatever repository you’re currently using. These values are specific to that single repository, and represent passing the <code>--local</code> option to <code>git config</code>. If you don’t specify which level you want to work with, this is the default.</p>
-<p>Each of these “levels” (system, global, local) overwrites values in the previous level, so values in <code>.git/config</code> trump those in <code>[path]/etc/gitconfig</code>.
-Git’s configuration files are plain-text, so you can also set these values by manually editing the file and inserting the correct syntax. It’s generally easier to run the git config command, though.</p>
-<p>Follow these steps to configure Git with your user information used across all local repositories:</p>
-<h2 id="1-open-a-terminalcommand-prompt">1. <strong>Open a Terminal/Command Prompt</strong></h2>
+<p>The <code>git subtree</code> command is a Git tool for managing <strong>subprojects</strong> within a single repository. Unlike submodules, it embeds the subproject's history directly into the main repository, simplifying management. This is especially useful when you want tighter integration with the subproject without requiring external references like submodules.</p>
+<hr />
+<h3 id="when-to-use-git-subtree"><strong>When to Use <code>git subtree</code></strong></h3>
+<ol>
+<li><strong>Tightly Integrated Subprojects</strong>: When the subproject is essential and frequently changes alongside the main project.</li>
+<li><strong>Simpler Contributor Workflow</strong>: Contributors don’t need to initialize submodules separately.</li>
+<li><strong>History Integration</strong>: The full history of the subproject is stored in the main repository, making it easier to view changes.</li>
+<li><strong>No Dependency on <code>.gitmodules</code></strong>: You don’t rely on a separate <code>.gitmodules</code> file like in submodules.</li>
+<li><strong>Avoiding Detached HEAD Issues</strong>: Subtrees don't require additional checkout mechanisms that submodules often need.</li>
+<li><strong>Fewer Permissions Issues</strong>: Avoid the need for separate permissions or authentication for the subproject.</li>
+</ol>
+<hr />
+<h3 id="key-git-subtree-commands-with-examples"><strong>Key <code>git subtree</code> Commands with Examples</strong></h3>
+<h4 id="1-adding-a-subtree">1. <strong>Adding a Subtree</strong></h4>
+<p><div class="highlight"><pre><span></span><code>git subtree add --prefix<span class="o">=</span>subdir-name https://github.com/username/repo.git main --squash
+</code></pre></div>
+- <strong><code>--prefix=subdir-name</code></strong>: Directory where the subproject will be added.
+- <strong><code>https://github.com/username/repo.git</code></strong>: URL of the subproject repository.
+- <strong><code>main</code></strong>: The branch of the subproject to add.
+- <strong><code>--squash</code></strong>: Combines the subproject history into a single commit.</p>
+<p>Example:
+<div class="highlight"><pre><span></span><code>git subtree add --prefix<span class="o">=</span>lib/awesome-tool https://github.com/example/awesome-tool.git main --squash
+</code></pre></div>
+Adds the <code>awesome-tool</code> repository under the <code>lib/</code> directory of the main project.</p>
+<hr />
+<h4 id="2-pulling-updates-from-the-subproject">2. <strong>Pulling Updates from the Subproject</strong></h4>
+<p><div class="highlight"><pre><span></span><code>git subtree pull --prefix<span class="o">=</span>subdir-name https://github.com/username/repo.git branch-name --squash
+</code></pre></div>
+- Merges updates from the subproject repository into the main repository.</p>
+<p>Example:
+<div class="highlight"><pre><span></span><code>git subtree pull --prefix<span class="o">=</span>lib/awesome-tool https://github.com/example/awesome-tool.git main --squash
+</code></pre></div>
+Fetches and integrates updates from the <code>main</code> branch of the <code>awesome-tool</code> subproject.</p>
+<hr />
+<h4 id="3-pushing-changes-back-to-the-subproject">3. <strong>Pushing Changes Back to the Subproject</strong></h4>
+<p><div class="highlight"><pre><span></span><code>git subtree push --prefix<span class="o">=</span>subdir-name https://github.com/username/repo.git branch-name
+</code></pre></div>
+- Pushes changes made in the subtree back to the subproject repository.</p>
+<p>Example:
+<div class="highlight"><pre><span></span><code>git subtree push --prefix<span class="o">=</span>lib/awesome-tool https://github.com/example/awesome-tool.git main
+</code></pre></div>
+Updates the <code>main</code> branch of the <code>awesome-tool</code> repository with changes made in the <code>lib/awesome-tool</code> directory.</p>
+<hr />
+<h4 id="4-splitting-the-subproject">4. <strong>Splitting the Subproject</strong></h4>
+<p>If you want to extract the subtree into its own repository:
+<div class="highlight"><pre><span></span><code>git subtree split --prefix<span class="o">=</span>subdir-name --branch<span class="o">=</span>new-branch-name
+</code></pre></div>
+- <strong><code>--prefix=subdir-name</code></strong>: Directory of the subtree.
+- <strong><code>--branch=new-branch-name</code></strong>: Name of the branch to hold the extracted history.</p>
+<p>Example:
+<div class="highlight"><pre><span></span><code>git subtree split --prefix<span class="o">=</span>lib/awesome-tool --branch<span class="o">=</span>split-awesome-tool
+</code></pre></div>
+Creates a new branch (<code>split-awesome-tool</code>) containing only the history of <code>lib/awesome-tool</code>.</p>
+<hr />
+<h3 id="alternatives-to-git-subtree"><strong>Alternatives to <code>git subtree</code></strong></h3>
+<h4 id="1-git-submodule">1. <strong><code>git submodule</code></strong></h4>
 <ul>
-<li><strong>Windows:</strong> Git Bash, Command Prompt, or PowerShell.</li>
-<li><strong>macOS/Linux:</strong> Terminal.</li>
+<li><strong>Use Case</strong>: When you want to maintain a lightweight reference to a subproject.</li>
+<li><strong>Pros</strong>:<ul>
+<li>Keeps the main repository smaller.</li>
+<li>Submodule repositories can be independently managed.</li>
 </ul>
-<h2 id="2-set-your-username">2. <strong>Set Your Username</strong></h2>
-<p>Run the following command, replacing "Your Name" with your actual name:
-   <div class="highlight"><pre><span></span><code>git config --global user.name <span class="s2">&quot;firstname Lastname&quot;</span>
-</code></pre></div></p>
-<h2 id="3-set-your-email-address">3. <strong>Set Your Email Address</strong></h2>
-<p>Run the following command, replacing "your.email@example.com" with your actual email address:
-   <div class="highlight"><pre><span></span><code>git config --global user.email <span class="s2">&quot;your.email@example.com&quot;</span>
-</code></pre></div></p>
-<h2 id="4-configure-line-endings">4. <strong>Configure Line Endings</strong></h2>
-<p>To prevent line ending issues when collaborating across different platforms, set your preferred line ending configuration. For Unix-style line endings (LF), run:
-   <div class="highlight"><pre><span></span><code>git config --global core.autocrlf input
-</code></pre></div>
-   For Windows-style line endings (CRLF), run:
-   <div class="highlight"><pre><span></span><code>git config --global core.autocrlf <span class="nb">true</span>
-</code></pre></div></p>
-<h2 id="5-configure-text-editor-optional">5. <strong>Configure Text Editor (Optional)</strong></h2>
-<p>When you launch VS Code from the command line, you can pass the --wait argument to make the launch command wait until you have closed the new VS Code instance. This can be useful when you configure VS Code as your Git external editor so Git will wait until you close the launched VS Code instance.</p>
-<p>Set your preferred text editor for Git. For example, to use VSCode:
-   <div class="highlight"><pre><span></span><code>git config --global core.editor <span class="s2">&quot;code --wait&quot;</span>
-</code></pre></div>
-   use VS Code's diff and merge capabilities even when using Git from command-line. Add the following to your Git configurations to use VS Code as the diff and merge tool:
-   <div class="highlight"><pre><span></span><code>git config --global -e
-</code></pre></div>
-and change the following:
-   <div class="highlight"><pre><span></span><code><span class="o">[</span>diff<span class="o">]</span>
-   <span class="nv">tool</span> <span class="o">=</span> default-difftool
-<span class="o">[</span>difftool <span class="s2">&quot;default-difftool&quot;</span><span class="o">]</span>
-   <span class="nv">cmd</span> <span class="o">=</span> code --wait --diff <span class="nv">$LOCAL</span> <span class="nv">$REMOTE</span>
-<span class="o">[</span>merge<span class="o">]</span>
-   <span class="nv">tool</span> <span class="o">=</span> code
-<span class="o">[</span>mergetool <span class="s2">&quot;code&quot;</span><span class="o">]</span>
-   <span class="nv">cmd</span> <span class="o">=</span> code --wait --merge <span class="nv">$REMOTE</span> <span class="nv">$LOCAL</span> <span class="nv">$BASE</span> <span class="nv">$MERGED</span>
-</code></pre></div>
-This uses the --diff option that can be passed to VS Code to compare two files side by side. The merge tool will be used the next time Git discovers a merge conflict.</p>
-<p>To summarize, here are some examples of where you can use VS Code as the editor:</p>
+</li>
+<li><strong>Cons</strong>:<ul>
+<li>Requires additional steps for contributors (e.g., <code>git submodule update --init</code>).</li>
+<li>Detached HEAD issues are common.</li>
+</ul>
+</li>
+<li><strong>Example</strong>:
+    <div class="highlight"><pre><span></span><code>git submodule add https://github.com/example/awesome-tool.git lib/awesome-tool
+</code></pre></div></li>
+</ul>
+<h4 id="2-manual-merging">2. <strong>Manual Merging</strong></h4>
 <ul>
-<li><code>git rebase HEAD~3 -i</code> do interactive rebase using VS Code</li>
-<li><code>git commit</code> use VS Code for the commit message</li>
-<li><code>git add -p</code> followed by <code>e</code> for interactive add</li>
-<li><code>git difftool &lt;commit&gt;^ &lt;commit&gt;</code> use VS Code as the diff editor for changes</li>
+<li><strong>Use Case</strong>: For occasional or ad-hoc integration of external projects.</li>
+<li><strong>Pros</strong>:<ul>
+<li>No special tools or commands required.</li>
 </ul>
-<h3 id="git-output-window">Git output window</h3>
-<p>You can always peek under the hood to see the Git commands that are being run. This is helpful if something strange is happening or if you are just curious.</p>
-<p>To open the Git output window, run View &gt; Output and select Log (Git) from the dropdown list.</p>
-<h2 id="6-enable-color-output">6. <strong>Enable Color Output</strong></h2>
-<p>Improve readability by enabling color output in the Git command line:</p>
-<p><div class="highlight"><pre><span></span><code>git config --global color.ui auto
-</code></pre></div>
-This setting adds color to various Git outputs, making it easier to distinguish between different types of information.To view your Git configuration, run:</p>
-<h2 id="7-check-configuration">7. <strong>Check Configuration</strong></h2>
-<p>To view your Git configuration, run:
-   <div class="highlight"><pre><span></span><code>git config --list
-</code></pre></div></p>
-<p>Ensure that your name, email, and other settings are correctly displayed.</p>
-<h2 id="8-verify-configuration">8. <strong>Verify Configuration</strong></h2>
-<p>Run the following commands to verify your configuration:
-   <div class="highlight"><pre><span></span><code>git config user.name
-git config user.email
-</code></pre></div></p>
-<p>These commands should display the values you've just set.</p>
-<h2 id="additional-tips">Additional Tips</h2>
+</li>
+<li><strong>Cons</strong>:<ul>
+<li>No history integration.</li>
+<li>Tedious for frequent updates.</li>
+</ul>
+</li>
+<li><strong>Example</strong>:<ul>
+<li>Copy files manually and commit them with a message like "Update from upstream."</li>
+</ul>
+</li>
+</ul>
+<h4 id="3-git-merge-with-a-remote">3. <strong><code>git merge</code> with a Remote</strong></h4>
 <ul>
-<li><strong>Credential Caching</strong></li>
+<li><strong>Use Case</strong>: For integrating changes from a related project without splitting it into a subtree.</li>
+<li><strong>Pros</strong>:<ul>
+<li>Simple and straightforward.</li>
 </ul>
-<p>To avoid entering your credentials repeatedly, you can set up credential caching. On Windows, Git Credential Manager is often used. On macOS/Linux, you can use the credential helper provided by Git:
-  <div class="highlight"><pre><span></span><code>git config --global credential.helper cache
-</code></pre></div></p>
-<ul>
-<li><strong>SSH Key</strong></li>
+</li>
+<li><strong>Cons</strong>:<ul>
+<li>Does not separate the subproject clearly.</li>
 </ul>
-<p>If you prefer using SSH for authentication, <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh">generate an SSH key</a> and <a href="../../Github/git_ssh/">associate it with your GitHub account</a>.</p>
-<ul>
-<li><strong>Commit templates</strong></li>
+</li>
+<li><strong>Example</strong>:
+    <div class="highlight"><pre><span></span><code>git remote add upstream https://github.com/example/awesome-tool.git
+git fetch upstream
+git merge upstream/main
+</code></pre></div></li>
 </ul>
-<p>Consider a template file at ~/.gitmessage.txt to use as a commit message template.
-   <div class="highlight"><pre><span></span><code><span class="o">[</span>Ticket: X<span class="o">]</span> Subject line <span class="o">(</span>try to keep under <span class="m">50</span> characters<span class="o">)</span>
-
-Multi-line description of commit,
-feel free to be detailed.
-</code></pre></div>
-   then set the commit.template configuration option to the path to this file.</p>
-<div class="highlight"><pre><span></span><code>git config --global commit.template ~/.gitmessage.txt
-</code></pre></div>
-<ul>
-<li><strong>core.pager</strong></li>
-</ul>
-<p>This setting determines which pager is used when Git pages output such as log and diff. You can set it to more or to your favorite pager (by default, it’s less), or you can turn it off by setting it to a blank string:</p>
-<p><div class="highlight"><pre><span></span><code>git config --global core.pager <span class="s1">&#39;&#39;</span>
-</code></pre></div>
-If you run that, Git will print the entire output of all commands, no matter how long they are.</p>
-<ul>
-<li><strong>user.signingkey</strong></li>
-</ul>
-<p>If you’re making signed annotated tags (as discussed in Signing Your Work), setting your GPG signing key as a configuration setting makes things easier. Set your key ID like so:</p>
-<div class="highlight"><pre><span></span><code>git config --global user.signingkey &lt;gpg-key-id&gt;
-</code></pre></div>
-<p>Now, you can sign tags without having to specify your key every time with the git tag command:</p>
-<div class="highlight"><pre><span></span><code>git tag -s &lt;tag-name&gt;
-</code></pre></div>
-<ul>
-<li><strong>core.excludesfile</strong></li>
-</ul>
-<p>You can put patterns in your project’s <code>.gitignore</code> file to have Git not see them as untracked files or try to stage them when you run <code>git add</code> on them.</p>
-<p>But sometimes you want to ignore certain files for all repositories that you work with. In that case, you can set your global <code>.gitignore_global</code> file as follows:</p>
-<p>This setting lets you write a kind of global .gitignore file. If you create a ~/.gitignore_global file with these contents:</p>
-<p><div class="highlight"><pre><span></span><code>*~
-.*.swp
-.DS_Store
-</code></pre></div>
-Then you run 
-<div class="highlight"><pre><span></span><code>git config --global core.excludesfile ~/.gitignore_global
-</code></pre></div></p>
-<p>Git will never again bother you about those files.</p>
+<hr />
+<h3 id="comparison-of-subtree-vs-submodule"><strong>Comparison of Subtree vs. Submodule</strong></h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Subtree</th>
+<th>Submodule</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>History</strong></td>
+<td>Full history of subproject</td>
+<td>No history of subproject</td>
+</tr>
+<tr>
+<td><strong>Ease of Use</strong></td>
+<td>Easier for contributors</td>
+<td>Requires additional setup</td>
+</tr>
+<tr>
+<td><strong>Integration</strong></td>
+<td>Fully integrated</td>
+<td>Lightweight reference</td>
+</tr>
+<tr>
+<td><strong>Repository Size</strong></td>
+<td>Larger due to full history</td>
+<td>Smaller</td>
+</tr>
+<tr>
+<td><strong>Decoupling</strong></td>
+<td>Tightly coupled</td>
+<td>Loosely coupled</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="when-to-use-git-subtree_1"><strong>When to Use <code>git subtree</code></strong></h3>
+<ol>
+<li><strong>Integrated Projects</strong>: For repositories where the subproject is an integral part of the main repository.</li>
+<li><strong>Frequent Updates</strong>: When you frequently update the subproject and prefer a simpler workflow for contributors.</li>
+<li><strong>No External Dependency</strong>: If you want all history and changes in a single repository.</li>
+</ol>
+<p>By using <code>git subtree</code>, you achieve a balance between full integration and flexibility for managing subprojects. It is an excellent choice for projects where simplicity and full history integration are priorities.</p>
 
               
             </article>
@@ -1252,7 +1317,7 @@ Then you run
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../git_install/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Installing Git" rel="prev">
+        <a href="../git_worktree/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Worktree" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -1261,26 +1326,11 @@ Then you run
               <span class="md-footer__direction">
                 Previous
               </span>
-              Installing Git
+              Worktree
             </div>
           </div>
         </a>
       
-      
-        
-        <a href="../git_start/" class="md-footer__link md-footer__link--next" aria-label="Next: Starting a Project" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Starting a Project
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
       
     </nav>
   
