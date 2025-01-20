@@ -57,6 +57,96 @@ The Timeline view, accessible at the bottom of the File Explorer by default, is 
 
 VS Code's built-in Git support provides the Git commit history of the specified file. Selecting a commit will open a diff view of the changes introduced by that commit. When you right-click on a commit, you'll get options to Copy Commit ID and Copy Commit Message.
 
+### `git diff --no-index`
+
+The `--no-index` flag is used to compare two files or directories outside of a Git repository. This allows `git diff` to function as a general-purpose diff tool, even for files not tracked by Git. When using `--no-index`, Git does not check whether the files or directories are part of a Git repository. Instead, it directly compares their contents.
+
+##### Compare Two Files:
+```bash
+git diff --no-index file1.txt file2.txt
+```
+- This command shows the differences between `file1.txt` and `file2.txt`, similar to the output of the `diff` tool.
+- Example Output:
+   ```diff
+   --- file1.txt
+   +++ file2.txt
+   @@ -1,2 +1,2 @@
+    Hello World
+   -Goodbye
+   +Hello Again
+   ```
+
+##### Compare Two Folders:
+```bash
+git diff --no-index folder1/ folder2/
+```
+- Compares all files in `folder1` with corresponding files in `folder2`.
+- Example Output:
+   ```diff
+   diff --git a/folder1/example.txt b/folder2/example.txt
+   --- a/folder1/example.txt
+   +++ b/folder2/example.txt
+   @@ -1 +1 @@
+   -This is file 1
+   +This is file 2
+   ```
+
+##### **Use Cases**:
+1. Compare files before adding them to a Git repository.
+2. Quickly compare files in unrelated directories.
+
+---
+
+### `git diff --stat HEAD other_branch`
+
+This command shows a **summary of changes** between your current branch (`HEAD`) and another branch (`other_branch`) in terms of the number of files changed, insertions, and deletions.
+
+```bash
+git diff --stat HEAD feature_branch
+```
+- Compares the current branch (`HEAD`) with `feature_branch` and shows a summary of differences.
+- Example Output:
+   ```plaintext
+   file1.txt   | 10 +++++-----
+   file2.py    |  2 +-
+   folder/file | 15 +++++++++------
+   3 files changed, 12 insertions(+), 15 deletions(-)
+   ```
+
+##### **Use Cases**:
+1. Quickly assess the magnitude of changes between branches.
+2. Identify which files have been impacted by commits on another branch.
+
+---
+
+### `git diff branch1 branch2 -- path/to/file.txt`
+
+This command compares a specific file (`path/to/file.txt`) between two branches (`branch1` and `branch2`).
+
+- The `--` separator ensures Git interprets `path/to/file.txt` as a file path, not a branch or commit.
+
+```bash
+git diff main feature -- src/file.txt
+```
+- Compares `src/file.txt` between the `main` branch and the `feature` branch.
+- Example Output:
+   ```diff
+   --- a/src/file.txt
+   +++ b/src/file.txt
+   @@ -1,3 +1,3 @@
+    Line 1
+   -Line 2
+   +Updated Line 2
+    Line 3
+   ```
+
+##### **Use Cases**:
+1. Isolate and review changes to a specific file across branches.
+2. Ensure specific files haven't diverged between branches before merging.
+
+---
+
+
 ## **git log**
 
  Displays the commit history.

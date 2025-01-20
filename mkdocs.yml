@@ -124,3 +124,5 @@ nav:
      - Replace: More/git_replace.md
      - Attributes: More/git_attributes.md
      - Worktree: More/git_worktree.md
+     - Subtree: More/git_subtree.md
+     

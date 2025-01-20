@@ -248,3 +248,136 @@ git clone --recursive <repository_url>
 ```bash
 git clone --recursive https://github.com/example/repo.git
 ```
+
+### 6. `git clone --mirror`
+
+When cloning a Git repository, only the default branch (usually main or master) is checked out by default, but all other branches are downloaded. If you want to explicitly ensure all branches are cloned and available locally, you can use the `--mirror` flag.
+This command allows you to upload your mirrored repository to another remote repository after converting it to a regular repository:
+
+---
+
+##### **1. Mirror Clone the Original Repository**
+Start by creating a bare mirror clone of the original repository:
+```bash
+git clone --mirror <original-repository-url> repo.git
+```
+This clones the repository into `repo.git`, containing all branches, tags, and references.
+
+---
+
+##### **2. Convert the Bare Repository to a Regular Repository**
+1. Navigate into the mirrored repository:
+   ```bash
+   cd repo.git
+   ```
+
+2. Unset the bare configuration:
+   ```bash
+   git config --unset core.bare
+   ```
+
+3. Move `.git` into a new working directory:
+   ```bash
+   cd ..
+   mkdir repo
+   mv repo.git repo/.git
+   cd repo
+   ```
+
+4. Check out the default branch to create the working directory:
+   ```bash
+   git checkout <branch-name>
+   ```
+   Replace `<branch-name>` with the default branch name, such as `main` or `master`.
+
+---
+
+##### **3. Prepare for Uploading to a New GitLab Repository**
+###### **Create a New Repository in GitLab**
+1. Go to your GitLab/Github instance and create a new repository.
+2. Copy the repository's SSH or HTTPS URL (e.g., `git@gitlab.com:username/new-repo.git`).
+
+###### **Set the New Repository as Remote**
+1. In your local repository, remove the old remote (if any):
+   ```bash
+   git remote remove origin
+   ```
+
+2. Add the new GitLab repository as the remote:
+   ```bash
+   git remote add origin <new-repository-url>
+   ```
+
+3. Verify the remote URL:
+   ```bash
+   git remote -v
+   ```
+
+---
+
+##### **4. Push All Branches and Tags to the New Repository**
+1. Push all branches to the new repository:
+   ```bash
+   git push --all origin
+   ```
+
+2. Push all tags to the new repository:
+   ```bash
+   git push --tags origin
+   ```
+
+---
+
+##### **5. Verify the New Repository**
+1. Go to the new GitLab repository in your browser.
+2. Confirm that all branches, tags, and files are present.
+
+---
+
+##### **6. Optional: Set the Default Branch**
+1. In the new GitLab repository, go to **Settings > Repository**.
+2. Set the default branch (e.g., `main` or `master`).
+
+---
+
+##### **Summary of Commands**
+1. **Mirror clone the original repository**:
+   ```bash
+   git clone --mirror <original-repository-url> repo.git
+   ```
+2. **Convert to a regular repository**:
+   ```bash
+   cd repo.git
+   git config --unset core.bare
+   cd ..
+   mkdir repo
+   mv repo.git repo/.git
+   cd repo
+   git checkout <branch-name>
+   ```
+3. **Set up the new remote**:
+   ```bash
+   git remote remove origin
+   git remote add origin <new-repository-url>
+   ```
+4. **Push all branches and tags**:
+   ```bash
+   git push --all origin
+   git push --tags origin
+   ```
+5. **Verify and adjust settings in GitLab**.
+
+This workflow ensures you upload a complete copy of the original repository, including all branches, tags, and history, to the new GitLab repository. this is called Mirror Clone and it is useful for maintaining an exact copy of the repository, including all refs.
+There is also Repository Export: Convenient for platform-managed repositories. Platforms like GitHub and GitLab provide backup or export options that include the full repository, including its .git directory.
+
+For GitLab:
+
++ Go to the project settings.
++ Use the Export project feature.
++ Download the exported project, which includes the history.
+
+For GitHub:
+
++ Use the Archive repository feature (if available) or manually download the .git directory.
+
+Finally an other strategy is to use [Git Bundle](../More/git_bundle.md): Ideal for transferring repositories when direct cloning is not possible (e.g., no network access).

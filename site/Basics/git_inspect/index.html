@@ -564,6 +564,27 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#git-diff-no-index" class="md-nav__link">
+    git diff --no-index
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-diff-stat-head-other_branch" class="md-nav__link">
+    git diff --stat HEAD other_branch
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-diff-branch1-branch2-pathtofiletxt" class="md-nav__link">
+    git diff branch1 branch2 -- path/to/file.txt
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1043,6 +1064,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../More/git_subtree/" class="md-nav__link">
+        Subtree
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -1118,6 +1153,27 @@
           <li class="md-nav__item">
   <a href="#timeline-view" class="md-nav__link">
     Timeline view
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-diff-no-index" class="md-nav__link">
+    git diff --no-index
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-diff-stat-head-other_branch" class="md-nav__link">
+    git diff --stat HEAD other_branch
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-diff-branch1-branch2-pathtofiletxt" class="md-nav__link">
+    git diff branch1 branch2 -- path/to/file.txt
   </a>
   
 </li>
@@ -1266,6 +1322,78 @@
 <p>The Timeline view, accessible at the bottom of the File Explorer by default, is a unified view for visualizing time-series events (for example, Git commits) for a file.</p>
 <p><img alt="" src="../../Images/timeline-view.png" /></p>
 <p>VS Code's built-in Git support provides the Git commit history of the specified file. Selecting a commit will open a diff view of the changes introduced by that commit. When you right-click on a commit, you'll get options to Copy Commit ID and Copy Commit Message.</p>
+<h3 id="git-diff-no-index"><code>git diff --no-index</code></h3>
+<p>The <code>--no-index</code> flag is used to compare two files or directories outside of a Git repository. This allows <code>git diff</code> to function as a general-purpose diff tool, even for files not tracked by Git. When using <code>--no-index</code>, Git does not check whether the files or directories are part of a Git repository. Instead, it directly compares their contents.</p>
+<h5 id="compare-two-files">Compare Two Files:</h5>
+<p><div class="highlight"><pre><span></span><code>git diff --no-index file1.txt file2.txt
+</code></pre></div>
+- This command shows the differences between <code>file1.txt</code> and <code>file2.txt</code>, similar to the output of the <code>diff</code> tool.
+- Example Output:
+   <div class="highlight"><pre><span></span><code><span class="gd">--- file1.txt</span><span class="w"></span>
+<span class="gi">+++ file2.txt</span><span class="w"></span>
+<span class="gu">@@ -1,2 +1,2 @@</span><span class="w"></span>
+<span class="w"> </span>Hello World<span class="w"></span>
+<span class="gd">-Goodbye</span><span class="w"></span>
+<span class="gi">+Hello Again</span><span class="w"></span>
+</code></pre></div></p>
+<h5 id="compare-two-folders">Compare Two Folders:</h5>
+<p><div class="highlight"><pre><span></span><code>git diff --no-index folder1/ folder2/
+</code></pre></div>
+- Compares all files in <code>folder1</code> with corresponding files in <code>folder2</code>.
+- Example Output:
+   <div class="highlight"><pre><span></span><code><span class="gh">diff --git a/folder1/example.txt b/folder2/example.txt</span><span class="w"></span>
+<span class="gd">--- a/folder1/example.txt</span><span class="w"></span>
+<span class="gi">+++ b/folder2/example.txt</span><span class="w"></span>
+<span class="gu">@@ -1 +1 @@</span><span class="w"></span>
+<span class="gd">-This is file 1</span><span class="w"></span>
+<span class="gi">+This is file 2</span><span class="w"></span>
+</code></pre></div></p>
+<h5 id="use-cases"><strong>Use Cases</strong>:</h5>
+<ol>
+<li>Compare files before adding them to a Git repository.</li>
+<li>Quickly compare files in unrelated directories.</li>
+</ol>
+<hr />
+<h3 id="git-diff-stat-head-other_branch"><code>git diff --stat HEAD other_branch</code></h3>
+<p>This command shows a <strong>summary of changes</strong> between your current branch (<code>HEAD</code>) and another branch (<code>other_branch</code>) in terms of the number of files changed, insertions, and deletions.</p>
+<p><div class="highlight"><pre><span></span><code>git diff --stat HEAD feature_branch
+</code></pre></div>
+- Compares the current branch (<code>HEAD</code>) with <code>feature_branch</code> and shows a summary of differences.
+- Example Output:
+   <div class="highlight"><pre><span></span><code>file1.txt   | 10 +++++-----
+file2.py    |  2 +-
+folder/file | 15 +++++++++------
+3 files changed, 12 insertions(+), 15 deletions(-)
+</code></pre></div></p>
+<h5 id="use-cases_1"><strong>Use Cases</strong>:</h5>
+<ol>
+<li>Quickly assess the magnitude of changes between branches.</li>
+<li>Identify which files have been impacted by commits on another branch.</li>
+</ol>
+<hr />
+<h3 id="git-diff-branch1-branch2-pathtofiletxt"><code>git diff branch1 branch2 -- path/to/file.txt</code></h3>
+<p>This command compares a specific file (<code>path/to/file.txt</code>) between two branches (<code>branch1</code> and <code>branch2</code>).</p>
+<ul>
+<li>The <code>--</code> separator ensures Git interprets <code>path/to/file.txt</code> as a file path, not a branch or commit.</li>
+</ul>
+<p><div class="highlight"><pre><span></span><code>git diff main feature -- src/file.txt
+</code></pre></div>
+- Compares <code>src/file.txt</code> between the <code>main</code> branch and the <code>feature</code> branch.
+- Example Output:
+   <div class="highlight"><pre><span></span><code><span class="gd">--- a/src/file.txt</span><span class="w"></span>
+<span class="gi">+++ b/src/file.txt</span><span class="w"></span>
+<span class="gu">@@ -1,3 +1,3 @@</span><span class="w"></span>
+<span class="w"> </span>Line 1<span class="w"></span>
+<span class="gd">-Line 2</span><span class="w"></span>
+<span class="gi">+Updated Line 2</span><span class="w"></span>
+<span class="w"> </span>Line 3<span class="w"></span>
+</code></pre></div></p>
+<h5 id="use-cases_2"><strong>Use Cases</strong>:</h5>
+<ol>
+<li>Isolate and review changes to a specific file across branches.</li>
+<li>Ensure specific files haven't diverged between branches before merging.</li>
+</ol>
+<hr />
 <h2 id="git-log"><strong>git log</strong></h2>
 <p>Displays the commit history.</p>
 <p><div class="highlight"><pre><span></span><code>git log
