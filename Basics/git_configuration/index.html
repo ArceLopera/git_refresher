@@ -1167,6 +1167,11 @@ This uses the --diff option that can be passed to VS Code to compare two files s
 <li><code>git add -p</code> followed by <code>e</code> for interactive add</li>
 <li><code>git difftool &lt;commit&gt;^ &lt;commit&gt;</code> use VS Code as the diff editor for changes</li>
 </ul>
+<p>If you only want to use Visual Studio Code without any advanced configurations, use:</p>
+<div class="highlight"><pre><span></span><code>git config --global core.editor <span class="s2">&quot;code --wait&quot;</span>
+git config --global merge.tool code
+git config --global mergetool.code.cmd <span class="s2">&quot;code --wait --merge </span><span class="nv">$REMOTE</span><span class="s2"> </span><span class="nv">$LOCAL</span><span class="s2"> </span><span class="nv">$BASE</span><span class="s2"> </span><span class="nv">$MERGED</span><span class="s2">&quot;</span>
+</code></pre></div>
 <h3 id="git-output-window">Git output window</h3>
 <p>You can always peek under the hood to see the Git commands that are being run. This is helpful if something strange is happening or if you are just curious.</p>
 <p>To open the Git output window, run View &gt; Output and select Log (Git) from the dropdown list.</p>
