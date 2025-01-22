@@ -13,10 +13,12 @@ The `git subtree` command is a Git tool for managing **subprojects** within a si
 ---
 
 ### **Key `git subtree` Commands with Examples**
-#### 1. **Adding a Subtree**
+#### **Adding a Subtree**
+
 ```bash
 git subtree add --prefix=subdir-name https://github.com/username/repo.git main --squash
 ```
+
 - **`--prefix=subdir-name`**: Directory where the subproject will be added.
 - **`https://github.com/username/repo.git`**: URL of the subproject repository.
 - **`main`**: The branch of the subproject to add.
@@ -30,7 +32,7 @@ Adds the `awesome-tool` repository under the `lib/` directory of the main projec
 
 ---
 
-#### 2. **Pulling Updates from the Subproject**
+#### **Pulling Updates from the Subproject**
 ```bash
 git subtree pull --prefix=subdir-name https://github.com/username/repo.git branch-name --squash
 ```
@@ -44,7 +46,7 @@ Fetches and integrates updates from the `main` branch of the `awesome-tool` subp
 
 ---
 
-#### 3. **Pushing Changes Back to the Subproject**
+#### **Pushing Changes Back to the Subproject**
 ```bash
 git subtree push --prefix=subdir-name https://github.com/username/repo.git branch-name
 ```
@@ -58,24 +60,29 @@ Updates the `main` branch of the `awesome-tool` repository with changes made in 
 
 ---
 
-#### 4. **Splitting the Subproject**
+#### **Splitting the Subproject**
+
 If you want to extract the subtree into its own repository:
+
 ```bash
 git subtree split --prefix=subdir-name --branch=new-branch-name
 ```
+
 - **`--prefix=subdir-name`**: Directory of the subtree.
 - **`--branch=new-branch-name`**: Name of the branch to hold the extracted history.
 
 Example:
+
 ```bash
 git subtree split --prefix=lib/awesome-tool --branch=split-awesome-tool
 ```
+
 Creates a new branch (`split-awesome-tool`) containing only the history of `lib/awesome-tool`.
 
 ---
 
 ### **Alternatives to `git subtree`**
-#### 1. **`git submodule`**
+#### **`git submodule`**
 - **Use Case**: When you want to maintain a lightweight reference to a subproject.
 - **Pros**:
     - Keeps the main repository smaller.
@@ -88,7 +95,7 @@ Creates a new branch (`split-awesome-tool`) containing only the history of `lib/
     git submodule add https://github.com/example/awesome-tool.git lib/awesome-tool
     ```
 
-#### 2. **Manual Merging**
+#### **Manual Merging**
 - **Use Case**: For occasional or ad-hoc integration of external projects.
 - **Pros**:
     - No special tools or commands required.
@@ -98,7 +105,7 @@ Creates a new branch (`split-awesome-tool`) containing only the history of `lib/
 - **Example**:
     - Copy files manually and commit them with a message like "Update from upstream."
 
-#### 3. **`git merge` with a Remote**
+#### **`git merge` with a Remote**
 - **Use Case**: For integrating changes from a related project without splitting it into a subtree.
 - **Pros**:
     - Simple and straightforward.

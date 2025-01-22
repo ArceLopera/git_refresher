@@ -67,6 +67,14 @@ To summarize, here are some examples of where you can use VS Code as the editor:
 - `git add -p` followed by `e` for interactive add
 - `git difftool <commit>^ <commit>` use VS Code as the diff editor for changes
 
+If you only want to use Visual Studio Code without any advanced configurations, use:
+
+```bash
+git config --global core.editor "code --wait"
+git config --global merge.tool code
+git config --global mergetool.code.cmd "code --wait --merge $REMOTE $LOCAL $BASE $MERGED"
+```
+
 ### Git output window
 You can always peek under the hood to see the Git commands that are being run. This is helpful if something strange is happening or if you are just curious.
 
