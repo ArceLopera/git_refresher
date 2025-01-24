@@ -1326,8 +1326,6 @@ to show all instances of the given text, the containing file name, and the commi
 <div class="highlight"><pre><span></span><code>git grep -i <span class="s1">&#39;Build 0051&#39;</span> <span class="k">$(</span>git rev-list --all<span class="k">)</span>
 </code></pre></div>
 <p>Note that this searches the entire content of the commit at each stage, and not just the diff changes. To search just the diff changes, use one of the following:</p>
-<p><a href="#git-log--s-git-pickaxe-option">git log -S[searchTerm]</a></p>
-<p><a href="#git-log--g">git log -G[searchTerm]</a></p>
 <h3 id="git-log-s-git-pickaxe-option"><strong><code>git log -S</code> (Git “pickaxe” option)</strong></h3>
 <p>The <code>-S</code> option with <code>git log</code> allows you to search for commits that introduced or removed specific strings of text. It's useful for finding commits that added or removed specific functionality or code snippets.</p>
 <p><div class="highlight"><pre><span></span><code>git log -S <span class="s2">&quot;string&quot;</span> --oneline
