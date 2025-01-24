@@ -116,10 +116,6 @@ git grep -i 'Build 0051' $(git rev-list --all)
 
 Note that this searches the entire content of the commit at each stage, and not just the diff changes. To search just the diff changes, use one of the following:
 
-[git log -S[searchTerm]](#git-log--s-git-pickaxe-option)
-
-[git log -G[searchTerm]](#git-log--g)
-
 
 ### **`git log -S` (Git “pickaxe” option)** 
 

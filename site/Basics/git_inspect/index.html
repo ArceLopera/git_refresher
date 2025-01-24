@@ -1414,6 +1414,10 @@ folder/file | 15 +++++++++------
 <p><div class="highlight"><pre><span></span><code>git log branchB..branchA
 </code></pre></div>
  Identify the commits unique to one branch compared to another, useful for understanding divergent development paths.</p>
+<p>```bash</p>
+<p>git log branchB..branchA --oneline --no-merges
+  ```
+ List the commits unique to one branch compared to another, excluding merge commits.</p>
 <h3 id="git-log-follow-file"><strong>git log --follow [file]</strong></h3>
 <p>Shows the commits that changed the specified file, even across renames.</p>
 <p><div class="highlight"><pre><span></span><code>git log --follow file.txt

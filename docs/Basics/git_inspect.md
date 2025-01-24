@@ -183,6 +183,12 @@ git diff main feature -- src/file.txt
   ```
  Identify the commits unique to one branch compared to another, useful for understanding divergent development paths.
 
+  ```bash
+
+git log branchB..branchA --oneline --no-merges
+  ```
+ List the commits unique to one branch compared to another, excluding merge commits.
+
 ### **git log --follow \[file\]**
 
  Shows the commits that changed the specified file, even across renames.
