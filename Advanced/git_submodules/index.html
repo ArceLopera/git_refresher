@@ -773,6 +773,61 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#managing-dirty-submodules" class="md-nav__link">
+    Managing Dirty Submodules
+  </a>
+  
+    <nav class="md-nav" aria-label="Managing Dirty Submodules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reset-and-clean-all-submodules" class="md-nav__link">
+    Reset and Clean All Submodules
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stash-changes-in-all-submodules" class="md-nav__link">
+    Stash Changes in All Submodules
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stash-changes-including-untracked-files" class="md-nav__link">
+    Stash Changes, Including Untracked Files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-submodules-to-match-the-main-repository" class="md-nav__link">
+    Update Submodules to Match the Main Repository
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#combine-stash-and-clean" class="md-nav__link">
+    Combine Stash and Clean
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manually-commit-or-discard-changes" class="md-nav__link">
+    Manually Commit or Discard Changes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#the-recurse-submodules-flag" class="md-nav__link">
     The --recurse-submodules flag
   </a>
@@ -1138,6 +1193,61 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#managing-dirty-submodules" class="md-nav__link">
+    Managing Dirty Submodules
+  </a>
+  
+    <nav class="md-nav" aria-label="Managing Dirty Submodules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reset-and-clean-all-submodules" class="md-nav__link">
+    Reset and Clean All Submodules
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stash-changes-in-all-submodules" class="md-nav__link">
+    Stash Changes in All Submodules
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stash-changes-including-untracked-files" class="md-nav__link">
+    Stash Changes, Including Untracked Files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-submodules-to-match-the-main-repository" class="md-nav__link">
+    Update Submodules to Match the Main Repository
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#combine-stash-and-clean" class="md-nav__link">
+    Combine Stash and Clean
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manually-commit-or-discard-changes" class="md-nav__link">
+    Manually Commit or Discard Changes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#the-recurse-submodules-flag" class="md-nav__link">
     The --recurse-submodules flag
   </a>
@@ -1303,6 +1413,120 @@ Then we can create a new branch and switch to it in all our submodules.</p>
 <p>One really useful thing you can do is produce a nice unified diff of what is changed in your main project and all your subprojects as well.</p>
 <div class="highlight"><pre><span></span><code>git diff<span class="p">;</span> git submodule foreach <span class="s1">&#39;git diff&#39;</span>
 </code></pre></div>
+<h3 id="managing-dirty-submodules"><strong>Managing Dirty Submodules</strong></h3>
+<h4 id="reset-and-clean-all-submodules"><strong>Reset and Clean All Submodules</strong></h4>
+<div class="highlight"><pre><span></span><code>git submodule foreach --recursive <span class="s1">&#39;git reset --hard &amp;&amp; git clean -fd&#39;</span>
+</code></pre></div>
+<ul>
+<li>Discards all changes (both staged and unstaged).</li>
+<li>Removes all untracked files and directories.</li>
+</ul>
+<p>When you want to completely reset submodules to the state defined in the main repository, with no need to save changes.</p>
+<p><strong>Caution:</strong> This permanently deletes untracked changes. Use <code>git clean -fdn</code> first to preview.</p>
+<hr />
+<h4 id="stash-changes-in-all-submodules"><strong>Stash Changes in All Submodules</strong></h4>
+<div class="highlight"><pre><span></span><code>git submodule foreach --recursive <span class="s1">&#39;git stash&#39;</span>
+</code></pre></div>
+<ul>
+<li>Temporarily saves changes in submodules' working directories (for tracked files only).</li>
+<li>
+<p>Changes can be restored later using <code>git stash pop</code>.</p>
+</li>
+<li>
+<p>When you want to save current progress in submodules without committing.</p>
+</li>
+<li>Useful if you're unsure whether changes are needed later.</li>
+</ul>
+<hr />
+<h4 id="stash-changes-including-untracked-files"><strong>Stash Changes, Including Untracked Files</strong></h4>
+<div class="highlight"><pre><span></span><code>git submodule foreach --recursive <span class="s1">&#39;git stash -u&#39;</span>
+</code></pre></div>
+<ul>
+<li>
+<p>Temporarily saves changes <strong>and untracked files</strong> in submodules.</p>
+</li>
+<li>
+<p>When there are untracked files that also need to be saved along with tracked changes.</p>
+</li>
+</ul>
+<hr />
+<h4 id="update-submodules-to-match-the-main-repository"><strong>Update Submodules to Match the Main Repository</strong></h4>
+<div class="highlight"><pre><span></span><code>git submodule update --init --recursive --force
+</code></pre></div>
+<ul>
+<li>Syncs submodules to the exact commit specified in the main repository.</li>
+<li>
+<p>Reinitializes submodules if they aren't set up yet.</p>
+</li>
+<li>
+<p>If submodules are out of sync or have uncommitted changes you don't care about.</p>
+</li>
+<li>Good for getting a clean state without worrying about intermediate changes.</li>
+</ul>
+<hr />
+<h4 id="combine-stash-and-clean"><strong>Combine Stash and Clean</strong></h4>
+<div class="highlight"><pre><span></span><code>git submodule foreach --recursive <span class="s1">&#39;git stash &amp;&amp; git clean -fd&#39;</span>
+</code></pre></div>
+<ul>
+<li>
+<p>Stashes tracked changes and removes untracked files in submodules.</p>
+</li>
+<li>
+<p>If you want to save changes (tracked files) while cleaning untracked files.</p>
+</li>
+</ul>
+<hr />
+<h4 id="manually-commit-or-discard-changes"><strong>Manually Commit or Discard Changes</strong></h4>
+<div class="highlight"><pre><span></span><code>git submodule foreach --recursive <span class="s1">&#39;git add . &amp;&amp; git commit -m &quot;Save changes in submodule&quot;&#39;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>git submodule foreach --recursive <span class="s1">&#39;git checkout -- .&#39;</span>
+</code></pre></div>
+<ul>
+<li>
+<p>Either commits changes for long-term preservation or discards them selectively.</p>
+</li>
+<li>
+<p>Commit: When changes in submodules are worth preserving.</p>
+</li>
+<li>Discard: When you only want to reset staged and unstaged changes without affecting untracked files.</li>
+</ul>
+<hr />
+<h5 id="when-to-use-each-approach"><strong>When to Use Each Approach</strong></h5>
+<table>
+<thead>
+<tr>
+<th><strong>Scenario</strong></th>
+<th><strong>Best Approach</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Completely reset submodules</td>
+<td><code>git reset --hard &amp;&amp; git clean -fd</code></td>
+</tr>
+<tr>
+<td>Temporarily save changes</td>
+<td><code>git stash</code></td>
+</tr>
+<tr>
+<td>Temporarily save changes, including untracked files</td>
+<td><code>git stash -u</code></td>
+</tr>
+<tr>
+<td>Sync submodules to main repository state</td>
+<td><code>git submodule update --init --recursive --force</code></td>
+</tr>
+<tr>
+<td>Save progress in submodules (commit changes)</td>
+<td><code>git add . &amp;&amp; git commit -m "Save changes in submodule"</code></td>
+</tr>
+<tr>
+<td>Save changes but clean untracked files</td>
+<td><code>git stash &amp;&amp; git clean -fd</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
 <h3 id="the-recurse-submodules-flag">The <code>--recurse-submodules</code> flag</h3>
 <table>
 <thead>
