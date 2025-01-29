@@ -151,6 +151,106 @@ One really useful thing you can do is produce a nice unified diff of what is cha
 git diff; git submodule foreach 'git diff'
 ```
 
+### **Managing Dirty Submodules**
+
+#### **Reset and Clean All Submodules**
+
+  ```bash
+  git submodule foreach --recursive 'git reset --hard && git clean -fd'
+  ```
+
+  - Discards all changes (both staged and unstaged).
+  - Removes all untracked files and directories.
+
+When you want to completely reset submodules to the state defined in the main repository, with no need to save changes.
+
+**Caution:** This permanently deletes untracked changes. Use `git clean -fdn` first to preview.
+
+---
+
+#### **Stash Changes in All Submodules**
+
+  ```bash
+  git submodule foreach --recursive 'git stash'
+  ```
+
+  - Temporarily saves changes in submodules' working directories (for tracked files only).
+  - Changes can be restored later using `git stash pop`.
+
+  - When you want to save current progress in submodules without committing.
+  - Useful if you're unsure whether changes are needed later.
+
+---
+
+#### **Stash Changes, Including Untracked Files**
+
+  ```bash
+  git submodule foreach --recursive 'git stash -u'
+  ```
+
+  - Temporarily saves changes **and untracked files** in submodules.
+
+  - When there are untracked files that also need to be saved along with tracked changes.
+
+---
+
+#### **Update Submodules to Match the Main Repository**
+
+  ```bash
+  git submodule update --init --recursive --force
+  ```
+
+  - Syncs submodules to the exact commit specified in the main repository.
+  - Reinitializes submodules if they aren't set up yet.
+
+  - If submodules are out of sync or have uncommitted changes you don't care about.
+  - Good for getting a clean state without worrying about intermediate changes.
+
+---
+
+#### **Combine Stash and Clean**
+
+  ```bash
+  git submodule foreach --recursive 'git stash && git clean -fd'
+  ```
+
+  - Stashes tracked changes and removes untracked files in submodules.
+
+  - If you want to save changes (tracked files) while cleaning untracked files.
+
+---
+
+#### **Manually Commit or Discard Changes**
+
+  ```bash
+  git submodule foreach --recursive 'git add . && git commit -m "Save changes in submodule"'
+  ```
+
+  ```bash
+  git submodule foreach --recursive 'git checkout -- .'
+  ```
+
+  - Either commits changes for long-term preservation or discards them selectively.
+
+  - Commit: When changes in submodules are worth preserving.
+  - Discard: When you only want to reset staged and unstaged changes without affecting untracked files.
+
+---
+
+##### **When to Use Each Approach**
+
+| **Scenario**                                 | **Best Approach**                                                                 |
+|----------------------------------------------|----------------------------------------------------------------------------------|
+| Completely reset submodules                  | `git reset --hard && git clean -fd`                                             |
+| Temporarily save changes                     | `git stash`                                                                     |
+| Temporarily save changes, including untracked files | `git stash -u`                                                                  |
+| Sync submodules to main repository state     | `git submodule update --init --recursive --force`                               |
+| Save progress in submodules (commit changes) | `git add . && git commit -m "Save changes in submodule"`                        |
+| Save changes but clean untracked files       | `git stash && git clean -fd`                                                    |
+
+---
+
+
 ### The `--recurse-submodules` flag 
 
 
