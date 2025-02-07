@@ -161,6 +161,48 @@ git log -L :git_deflate_bound:zlib.c
 
 This will try to figure out what the bounds of that function are and then look through the history and show us every change that was made to the function as a series of patches back to when the function was first created. You could also give it a range of lines or a single line number and you’ll get the same sort of output.
 
+### Using git log to Find File Deletion
+
+Use git log -- <file-path>: Replace <file-path> with the path to the file you are interested in. This command will show the commit history that affected the specified file.
+
+```bash
+git log -- <file-path>
+```
+Identify Deletion Commit: Look through the output of git log to find the commit where the file was deleted. The commit message or diff in that commit should indicate the deletion.
+
+```bash
+commit abcdef1234567890abcdef1234567890abcdef12
+Author: Author Name <author@example.com>
+Date:   Thu Jun 1 12:00:00 2023 +0200
+
+    Deleted file: example.txt
+
+diff --git a/example.txt b/example.txt
+deleted file mode 100644
+index 1234567890abcdef1234567890abcdef12345678..0000000000000000000000000000000000000000
+```
+View File History Before Deletion: To see the history of the file leading up to its deletion, including its contents and changes, you can use the p option with git log:
+
+```bash
+git log -p -- <file-path>
+```
+This command displays the commit log along with the diff for each commit that affected the specified file. It helps in understanding how the file evolved and what changes led to its deletion.
+
+Find Deletion in Specific Branch or Commit Range: If you suspect the deletion occurred within a specific branch or commit range, you can specify that range with git log:
+
+```bash
+git log -- <file-path>    # All history of the file
+git log --since="3 months ago" -- <file-path>   # History within a time range
+git log branch-name -- <file-path>   # History in a specific branch
+```
+Using git rev-list: Another approach is to use git rev-list with -max-parents=0 to find the first commit where the file was deleted:
+
+```bash
+git rev-list -n 1 --max-parents=0 HEAD -- <file-path>
+```
+
+
+
 ## **`git blame`**
 
 The `git blame` command shows the revision and author of each line in a file. It's useful for identifying when and by whom each line was last modified. You can use it to track down the origin of specific changes.

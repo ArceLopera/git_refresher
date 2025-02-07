@@ -863,6 +863,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#using-git-log-to-find-file-deletion" class="md-nav__link">
+    Using git log to Find File Deletion
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1136,6 +1143,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#using-git-log-to-find-file-deletion" class="md-nav__link">
+    Using git log to Find File Deletion
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1351,6 +1365,33 @@ For example, if we wanted to see every change made to the function git_deflate_b
 <div class="highlight"><pre><span></span><code>git log -L :git_deflate_bound:zlib.c 
 </code></pre></div>
 <p>This will try to figure out what the bounds of that function are and then look through the history and show us every change that was made to the function as a series of patches back to when the function was first created. You could also give it a range of lines or a single line number and you’ll get the same sort of output.</p>
+<h3 id="using-git-log-to-find-file-deletion">Using git log to Find File Deletion</h3>
+<p>Use git log -- <file-path>: Replace <file-path> with the path to the file you are interested in. This command will show the commit history that affected the specified file.</p>
+<p><div class="highlight"><pre><span></span><code>git log -- &lt;file-path&gt;
+</code></pre></div>
+Identify Deletion Commit: Look through the output of git log to find the commit where the file was deleted. The commit message or diff in that commit should indicate the deletion.</p>
+<p><div class="highlight"><pre><span></span><code>commit abcdef1234567890abcdef1234567890abcdef12
+Author: Author Name &lt;author@example.com&gt;
+Date:   Thu Jun <span class="m">1</span> <span class="m">12</span>:00:00 <span class="m">2023</span> +0200
+
+    Deleted file: example.txt
+
+diff --git a/example.txt b/example.txt
+deleted file mode <span class="m">100644</span>
+index 1234567890abcdef1234567890abcdef12345678..0000000000000000000000000000000000000000
+</code></pre></div>
+View File History Before Deletion: To see the history of the file leading up to its deletion, including its contents and changes, you can use the p option with git log:</p>
+<p><div class="highlight"><pre><span></span><code>git log -p -- &lt;file-path&gt;
+</code></pre></div>
+This command displays the commit log along with the diff for each commit that affected the specified file. It helps in understanding how the file evolved and what changes led to its deletion.</p>
+<p>Find Deletion in Specific Branch or Commit Range: If you suspect the deletion occurred within a specific branch or commit range, you can specify that range with git log:</p>
+<p><div class="highlight"><pre><span></span><code>git log -- &lt;file-path&gt;    <span class="c1"># All history of the file</span>
+git log --since<span class="o">=</span><span class="s2">&quot;3 months ago&quot;</span> -- &lt;file-path&gt;   <span class="c1"># History within a time range</span>
+git log branch-name -- &lt;file-path&gt;   <span class="c1"># History in a specific branch</span>
+</code></pre></div>
+Using git rev-list: Another approach is to use git rev-list with -max-parents=0 to find the first commit where the file was deleted:</p>
+<div class="highlight"><pre><span></span><code>git rev-list -n <span class="m">1</span> --max-parents<span class="o">=</span><span class="m">0</span> HEAD -- &lt;file-path&gt;
+</code></pre></div>
 <h2 id="git-blame"><strong><code>git blame</code></strong></h2>
 <p>The <code>git blame</code> command shows the revision and author of each line in a file. It's useful for identifying when and by whom each line was last modified. You can use it to track down the origin of specific changes.</p>
 <h2 id="git-rev-list"><strong><code>git rev-list</code></strong></h2>
