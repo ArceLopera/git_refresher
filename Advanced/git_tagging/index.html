@@ -641,6 +641,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#comparing-local-and-remote-tags" class="md-nav__link">
+    Comparing local and remote tags
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1110,6 +1117,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#comparing-local-and-remote-tags" class="md-nav__link">
+    Comparing local and remote tags
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1208,6 +1222,18 @@ In Git, listing tags allows you to view all tags present in the repository. You 
 <div class="highlight"><pre><span></span><code>git tag -l -n
 </code></pre></div></p>
 <p>Using wildcards with <code>git tag -l</code> allows you to filter and list tags based on specific patterns, making it easier to manage and navigate through tags in your Git repository. Listing tag wildcards requires -l or --list option.</p>
+<h4 id="comparing-local-and-remote-tags"><strong>Comparing local and remote tags</strong></h4>
+<p>To compare local and remote tags:
+<div class="highlight"><pre><span></span><code><span class="c1"># Get local repository tags</span>
+git tag -l &gt; repo1_tags.txt
+
+<span class="c1"># Get tags from the other repository, filtering out ^{} entries</span>
+git ls-remote --tags other-repo <span class="p">|</span> awk <span class="s1">&#39;{print $2}&#39;</span> <span class="p">|</span> grep -v <span class="s1">&#39;\^{}&#39;</span> <span class="p">|</span> sed <span class="s1">&#39;s|refs/tags/||&#39;</span> &gt; repo2_tags.txt
+
+<span class="c1"># Compare local and remote tags</span>
+diff repo1_tags.txt repo2_tags.txt
+</code></pre></div>
+For more details refer to <a href="../../More/plumbing/#git-ls-remote">git ls-remote</a></p>
 <h2 id="pushing-tags-to-remote"><strong>Pushing Tags to Remote</strong></h2>
 <p>By default, the git push command doesn’t transfer tags to remote servers.
 To push a specific tag to the remote repository:
