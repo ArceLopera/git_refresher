@@ -59,6 +59,21 @@ git tag -l -n
 
 Using wildcards with `git tag -l` allows you to filter and list tags based on specific patterns, making it easier to manage and navigate through tags in your Git repository. Listing tag wildcards requires -l or --list option.
 
+#### **Comparing local and remote tags**
+
+To compare local and remote tags:
+```bash
+# Get local repository tags
+git tag -l > repo1_tags.txt
+
+# Get tags from the other repository, filtering out ^{} entries
+git ls-remote --tags other-repo | awk '{print $2}' | grep -v '\^{}' | sed 's|refs/tags/||' > repo2_tags.txt
+
+# Compare local and remote tags
+diff repo1_tags.txt repo2_tags.txt
+```
+For more details refer to [git ls-remote](../More/plumbing.md#git-ls-remote)
+
 ## **Pushing Tags to Remote**
 
 By default, the git push command doesn’t transfer tags to remote servers.

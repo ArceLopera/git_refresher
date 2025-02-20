@@ -212,3 +212,90 @@ This command creates a new commit object based on the provided tree object and p
 ```bash
 git commit-tree <tree> -p <parent> -m "Commit message"  # Create a new commit object with the given tree and parent commit
 ```
+## **`git ls-remote`**
+
+The `git ls-remote` command allows you to view references (branches, tags, and heads) in a remote Git repository without cloning it. It shows the commit hashes associated with each reference, providing a quick way to inspect the state of a remote repository.
+
+```bash
+git ls-remote [<options>] <repository> [<refs>]
+```
+
+- **`<repository>`**: The remote URL or name (like `origin`).
+- **`<refs>`**: Optional. Filter results by specific branches or tags.
+- **`<options>`**: Additional flags to modify the output.
+
+---
+
+### **List All Remote References**
+```bash
+git ls-remote https://github.com/example/repo.git
+```
+**Output:**
+```
+a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6q7r8 refs/heads/main
+b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6q7r8s9 refs/heads/feature-branch
+c3d4e5f6g7h8i9j0k1l2m3n4o5p6q7r8s9t0 refs/tags/v1.0
+```
+
+- **Left column**: Commit hash of the reference.
+- **Right column**: The reference name (`heads` for branches, `tags` for tags).
+
+---
+
+### **Show Only Branches**
+To list only remote branches:
+```bash
+git ls-remote --heads origin
+```
+**Output:**
+```
+a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6q7r8 refs/heads/main
+b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6q7r8s9 refs/heads/feature-branch
+```
+
+---
+
+### **Show Only Tags**
+To list only tags:
+```bash
+git ls-remote --tags origin
+```
+**Output:**
+```
+c3d4e5f6g7h8i9j0k1l2m3n4o5p6q7r8s9t0 refs/tags/v1.0
+```
+
+---
+
+### **Filter by Specific Reference**
+To check the hash of a specific branch or tag:
+```bash
+git ls-remote origin main
+```
+**Output:**
+```
+a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6q7r8 refs/heads/main
+```
+
+### **Useful Options**
+| Option           | Description                                           |
+|------------------|-------------------------------------------------------|
+| `--heads`        | Show only branch references (`refs/heads/`).           |
+| `--tags`         | Show only tag references (`refs/tags/`).               |
+| `--refs`         | Show only references, omitting HEAD and symrefs.       |
+| `--quiet`        | Suppress output, useful for checking access silently.  |
+
+---
+
+
+### **Comparison with `git fetch`**
+| Feature               | Plumbing (`git ls-remote`)                      | Porcelain (`git fetch`)                     |
+|-----------------------|-------------------------------------------------|---------------------------------------------|
+| **Purpose**           | View remote refs without downloading objects.   | Download refs and objects from the remote.   |
+| **Network Usage**     | Minimal (only ref data).                        | Higher (downloads commits and objects).      |
+| **Speed**             | Faster, especially for large repositories.      | Slower due to object transfer.               |
+| **Local Ref Update**  | Does not update local refs.                     | Updates remote-tracking branches (`origin/*`).|
+| **Example Command**   | `git ls-remote origin`                          | `git fetch origin`                           |
+
+---
+

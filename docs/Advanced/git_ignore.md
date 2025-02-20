@@ -55,7 +55,39 @@ temp/*
 **/*.class
 ```
 
-### e. More examples
+### e. Track the folder itself without its contents
+
+Git doesn’t track empty folders directly, only the files within them.
+
+##### **1. Update `.gitignore`**
+```gitignore
+# Ignore everything
+*
+
+# Allow only the folder itself, not its contents
+!myfolder/
+myfolder/*
+
+# Allow a placeholder file to keep the folder tracked
+!myfolder/.keep
+```
+
+##### **2. Add a Placeholder File**
+Git doesn't track empty folders, so add a `.keep` file inside the folder:
+
+```bash
+touch myfolder/.keep
+```
+
+##### **3. Commit the Changes**
+```bash
+git add myfolder/.keep
+git commit -m "Track folder without contents"
+```
+
+Now, Git will track the `myfolder` directory but ignore its contents, except for the `.keep` file.
+
+### f. More examples
 ```
 # ignore all .a files
 *.a

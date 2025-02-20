@@ -149,54 +149,58 @@ git diff main feature -- src/file.txt
 
 ## **git log**
 
- Displays the commit history.
+Displays the commit history.
 
-  ```bash
-  git log
-  ```
- Review the commit history, including commit messages, authors, dates, and commit hashes. By default, with no arguments, git log lists the commits made in that repository in reverse chronological order; that is, the most recent commits show up first
+```bash
+git log
+```
+
+Review the commit history, including commit messages, authors, dates, and commit hashes. By default, with no arguments, git log lists the commits made in that repository in reverse chronological order; that is, the most recent commits show up first
 
 ### **git log --graph --oneline**
 
- Shows a compact view of the commit history with a graph.
+Shows a compact view of the commit history with a graph.
 
-  ```bash
-  git log --graph --oneline
-  ```
- Visualize the branching and merging history of the repository.
+```bash
+git log --graph --oneline
+```
+
+Visualize the branching and merging history of the repository.
 
 ### **git log \{file\}**
 
- Displays the commit history for a specific file.
+Displays the commit history for a specific file.
 
-  ```bash
-  git log file.txt
-  ```
- Review the commit history for a particular file, including changes made to it over time.
+```bash
+git log file.txt
+```
+
+Review the commit history for a particular file, including changes made to it over time.
 
 ### **git log branchB..branchA**
 
- Shows the commits on branchA that are not on branchB.
+Shows the commits on branchA that are not on branchB.
 
-  ```bash
-  git log branchB..branchA
-  ```
- Identify the commits unique to one branch compared to another, useful for understanding divergent development paths.
+```bash
+git log branchB..branchA
+```
 
-  ```bash
+Identify the commits unique to one branch compared to another, useful for understanding divergent development paths.
 
+```bash
 git log branchB..branchA --oneline --no-merges
-  ```
- List the commits unique to one branch compared to another, excluding merge commits.
+```
+
+List the commits unique to one branch compared to another, excluding merge commits.
 
 ### **git log --follow \[file\]**
 
- Shows the commits that changed the specified file, even across renames.
+Shows the commits that changed the specified file, even across renames.
 
-  ```bash
-  git log --follow file.txt
-  ```
- Track the history of changes for a specific file, even if it was renamed in subsequent commits.
+```bash
+git log --follow file.txt
+```
+Track the history of changes for a specific file, even if it was renamed in subsequent commits.
 
 ### **git log --patch**
 
