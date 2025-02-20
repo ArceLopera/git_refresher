@@ -677,8 +677,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#e-more-examples" class="md-nav__link">
-    e. More examples
+  <a href="#e-track-the-folder-itself-without-its-contents" class="md-nav__link">
+    e. Track the folder itself without its contents
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f-more-examples" class="md-nav__link">
+    f. More examples
   </a>
   
 </li>
@@ -1064,8 +1071,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#e-more-examples" class="md-nav__link">
-    e. More examples
+  <a href="#e-track-the-folder-itself-without-its-contents" class="md-nav__link">
+    e. Track the folder itself without its contents
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f-more-examples" class="md-nav__link">
+    f. More examples
   </a>
   
 </li>
@@ -1163,7 +1177,29 @@ temp/*
 <div class="highlight"><pre><span></span><code># Ignore all .class files in any directory
 **/*.class
 </code></pre></div>
-<h3 id="e-more-examples">e. More examples</h3>
+<h3 id="e-track-the-folder-itself-without-its-contents">e. Track the folder itself without its contents</h3>
+<p>Git doesn’t track empty folders directly, only the files within them.</p>
+<h5 id="1-update-gitignore"><strong>1. Update <code>.gitignore</code></strong></h5>
+<div class="highlight"><pre><span></span><code># Ignore everything
+*
+
+# Allow only the folder itself, not its contents
+!myfolder/
+myfolder/*
+
+# Allow a placeholder file to keep the folder tracked
+!myfolder/.keep
+</code></pre></div>
+<h5 id="2-add-a-placeholder-file"><strong>2. Add a Placeholder File</strong></h5>
+<p>Git doesn't track empty folders, so add a <code>.keep</code> file inside the folder:</p>
+<div class="highlight"><pre><span></span><code>touch myfolder/.keep
+</code></pre></div>
+<h5 id="3-commit-the-changes"><strong>3. Commit the Changes</strong></h5>
+<div class="highlight"><pre><span></span><code>git add myfolder/.keep
+git commit -m <span class="s2">&quot;Track folder without contents&quot;</span>
+</code></pre></div>
+<p>Now, Git will track the <code>myfolder</code> directory but ignore its contents, except for the <code>.keep</code> file.</p>
+<h3 id="f-more-examples">f. More examples</h3>
 <p><div class="highlight"><pre><span></span><code># ignore all .a files
 *.a
 

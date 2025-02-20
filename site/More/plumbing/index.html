@@ -903,6 +903,61 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#git-ls-remote" class="md-nav__link">
+    git ls-remote
+  </a>
+  
+    <nav class="md-nav" aria-label="git ls-remote">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#list-all-remote-references" class="md-nav__link">
+    List All Remote References
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#show-only-branches" class="md-nav__link">
+    Show Only Branches
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#show-only-tags" class="md-nav__link">
+    Show Only Tags
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filter-by-specific-reference" class="md-nav__link">
+    Filter by Specific Reference
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#useful-options" class="md-nav__link">
+    Useful Options
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comparison-with-git-fetch" class="md-nav__link">
+    Comparison with git fetch
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1164,6 +1219,61 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#git-ls-remote" class="md-nav__link">
+    git ls-remote
+  </a>
+  
+    <nav class="md-nav" aria-label="git ls-remote">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#list-all-remote-references" class="md-nav__link">
+    List All Remote References
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#show-only-branches" class="md-nav__link">
+    Show Only Branches
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#show-only-tags" class="md-nav__link">
+    Show Only Tags
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filter-by-specific-reference" class="md-nav__link">
+    Filter by Specific Reference
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#useful-options" class="md-nav__link">
+    Useful Options
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comparison-with-git-fetch" class="md-nav__link">
+    Comparison with git fetch
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1308,6 +1418,119 @@ It can be used to view the files and subdirectories stored within a specific tre
 <p>This command creates a new commit object based on the provided tree object and parent commit(s) and optionally stores it in the Git object database.It's typically used in advanced Git workflows or scripting scenarios where manual creation of commits is necessary.</p>
 <div class="highlight"><pre><span></span><code>git commit-tree &lt;tree&gt; -p &lt;parent&gt; -m <span class="s2">&quot;Commit message&quot;</span>  <span class="c1"># Create a new commit object with the given tree and parent commit</span>
 </code></pre></div>
+<h2 id="git-ls-remote"><strong><code>git ls-remote</code></strong></h2>
+<p>The <code>git ls-remote</code> command allows you to view references (branches, tags, and heads) in a remote Git repository without cloning it. It shows the commit hashes associated with each reference, providing a quick way to inspect the state of a remote repository.</p>
+<div class="highlight"><pre><span></span><code>git ls-remote <span class="o">[</span>&lt;options&gt;<span class="o">]</span> &lt;repository&gt; <span class="o">[</span>&lt;refs&gt;<span class="o">]</span>
+</code></pre></div>
+<ul>
+<li><strong><code>&lt;repository&gt;</code></strong>: The remote URL or name (like <code>origin</code>).</li>
+<li><strong><code>&lt;refs&gt;</code></strong>: Optional. Filter results by specific branches or tags.</li>
+<li><strong><code>&lt;options&gt;</code></strong>: Additional flags to modify the output.</li>
+</ul>
+<hr />
+<h3 id="list-all-remote-references"><strong>List All Remote References</strong></h3>
+<p><div class="highlight"><pre><span></span><code>git ls-remote https://github.com/example/repo.git
+</code></pre></div>
+<strong>Output:</strong>
+<div class="highlight"><pre><span></span><code>a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6q7r8 refs/heads/main
+b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6q7r8s9 refs/heads/feature-branch
+c3d4e5f6g7h8i9j0k1l2m3n4o5p6q7r8s9t0 refs/tags/v1.0
+</code></pre></div></p>
+<ul>
+<li><strong>Left column</strong>: Commit hash of the reference.</li>
+<li><strong>Right column</strong>: The reference name (<code>heads</code> for branches, <code>tags</code> for tags).</li>
+</ul>
+<hr />
+<h3 id="show-only-branches"><strong>Show Only Branches</strong></h3>
+<p>To list only remote branches:
+<div class="highlight"><pre><span></span><code>git ls-remote --heads origin
+</code></pre></div>
+<strong>Output:</strong>
+<div class="highlight"><pre><span></span><code>a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6q7r8 refs/heads/main
+b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6q7r8s9 refs/heads/feature-branch
+</code></pre></div></p>
+<hr />
+<h3 id="show-only-tags"><strong>Show Only Tags</strong></h3>
+<p>To list only tags:
+<div class="highlight"><pre><span></span><code>git ls-remote --tags origin
+</code></pre></div>
+<strong>Output:</strong>
+<div class="highlight"><pre><span></span><code>c3d4e5f6g7h8i9j0k1l2m3n4o5p6q7r8s9t0 refs/tags/v1.0
+</code></pre></div></p>
+<hr />
+<h3 id="filter-by-specific-reference"><strong>Filter by Specific Reference</strong></h3>
+<p>To check the hash of a specific branch or tag:
+<div class="highlight"><pre><span></span><code>git ls-remote origin main
+</code></pre></div>
+<strong>Output:</strong>
+<div class="highlight"><pre><span></span><code>a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6q7r8 refs/heads/main
+</code></pre></div></p>
+<h3 id="useful-options"><strong>Useful Options</strong></h3>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--heads</code></td>
+<td>Show only branch references (<code>refs/heads/</code>).</td>
+</tr>
+<tr>
+<td><code>--tags</code></td>
+<td>Show only tag references (<code>refs/tags/</code>).</td>
+</tr>
+<tr>
+<td><code>--refs</code></td>
+<td>Show only references, omitting HEAD and symrefs.</td>
+</tr>
+<tr>
+<td><code>--quiet</code></td>
+<td>Suppress output, useful for checking access silently.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="comparison-with-git-fetch"><strong>Comparison with <code>git fetch</code></strong></h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Plumbing (<code>git ls-remote</code>)</th>
+<th>Porcelain (<code>git fetch</code>)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Purpose</strong></td>
+<td>View remote refs without downloading objects.</td>
+<td>Download refs and objects from the remote.</td>
+</tr>
+<tr>
+<td><strong>Network Usage</strong></td>
+<td>Minimal (only ref data).</td>
+<td>Higher (downloads commits and objects).</td>
+</tr>
+<tr>
+<td><strong>Speed</strong></td>
+<td>Faster, especially for large repositories.</td>
+<td>Slower due to object transfer.</td>
+</tr>
+<tr>
+<td><strong>Local Ref Update</strong></td>
+<td>Does not update local refs.</td>
+<td>Updates remote-tracking branches (<code>origin/*</code>).</td>
+</tr>
+<tr>
+<td><strong>Example Command</strong></td>
+<td><code>git ls-remote origin</code></td>
+<td><code>git fetch origin</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
 
               
             </article>

@@ -1396,33 +1396,32 @@ folder/file | 15 +++++++++------
 <hr />
 <h2 id="git-log"><strong>git log</strong></h2>
 <p>Displays the commit history.</p>
-<p><div class="highlight"><pre><span></span><code>git log
+<div class="highlight"><pre><span></span><code>git log
 </code></pre></div>
- Review the commit history, including commit messages, authors, dates, and commit hashes. By default, with no arguments, git log lists the commits made in that repository in reverse chronological order; that is, the most recent commits show up first</p>
+<p>Review the commit history, including commit messages, authors, dates, and commit hashes. By default, with no arguments, git log lists the commits made in that repository in reverse chronological order; that is, the most recent commits show up first</p>
 <h3 id="git-log-graph-oneline"><strong>git log --graph --oneline</strong></h3>
 <p>Shows a compact view of the commit history with a graph.</p>
-<p><div class="highlight"><pre><span></span><code>git log --graph --oneline
+<div class="highlight"><pre><span></span><code>git log --graph --oneline
 </code></pre></div>
- Visualize the branching and merging history of the repository.</p>
+<p>Visualize the branching and merging history of the repository.</p>
 <h3 id="git-log-file"><strong>git log {file}</strong></h3>
 <p>Displays the commit history for a specific file.</p>
-<p><div class="highlight"><pre><span></span><code>git log file.txt
+<div class="highlight"><pre><span></span><code>git log file.txt
 </code></pre></div>
- Review the commit history for a particular file, including changes made to it over time.</p>
+<p>Review the commit history for a particular file, including changes made to it over time.</p>
 <h3 id="git-log-branchbbrancha"><strong>git log branchB..branchA</strong></h3>
 <p>Shows the commits on branchA that are not on branchB.</p>
-<p><div class="highlight"><pre><span></span><code>git log branchB..branchA
+<div class="highlight"><pre><span></span><code>git log branchB..branchA
 </code></pre></div>
- Identify the commits unique to one branch compared to another, useful for understanding divergent development paths.</p>
-<p>```bash</p>
-<p>git log branchB..branchA --oneline --no-merges
-  ```
- List the commits unique to one branch compared to another, excluding merge commits.</p>
+<p>Identify the commits unique to one branch compared to another, useful for understanding divergent development paths.</p>
+<div class="highlight"><pre><span></span><code>git log branchB..branchA --oneline --no-merges
+</code></pre></div>
+<p>List the commits unique to one branch compared to another, excluding merge commits.</p>
 <h3 id="git-log-follow-file"><strong>git log --follow [file]</strong></h3>
 <p>Shows the commits that changed the specified file, even across renames.</p>
 <p><div class="highlight"><pre><span></span><code>git log --follow file.txt
 </code></pre></div>
- Track the history of changes for a specific file, even if it was renamed in subsequent commits.</p>
+Track the history of changes for a specific file, even if it was renamed in subsequent commits.</p>
 <h3 id="git-log-patch"><strong>git log --patch</strong></h3>
 <p>Shows the commit history in a unified diff format. One of the more helpful options is -p or --patch, which shows the difference (the patch output) introduced in each commit. You can also limit the number of log entries displayed, such as using -2 to show only the last two entries.</p>
 <div class="highlight"><pre><span></span><code>git log -p -2
